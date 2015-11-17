@@ -7879,6 +7879,7 @@ html[lang="en-SCT"] .main-nav {
   color: #FFF;
   text-decoration: none;
   line-height: 25px;
+  border: none;
 }
 .nav-list-primary-more > a > i {
   margin-left: 10px;
