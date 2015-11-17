@@ -1,0 +1,68 @@
+block settings
+	- var title = "Employment and Support Allowance (ESA)"
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "#"}, 
+		{title: "Benefits", href: "#"},
+		{title: "ESA"}])
+
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p
+				span.badge NEW
+				| This page is part of #[a(href="#") our new approach to digital advice].
+
+block content
+	.main-content
+		.beta-index-page
+
+			.beta-index-page__box.col-md-12.col-sm-12
+				.beta-index-page__section.col-md-6.col-sm-12
+					h2 Before you claim ESA
+				.beta-index-page__links.col-md-6.col-sm-12
+					ul.li--no-style
+						li
+							a(href="eligible-for-esa.html") Check if you're eligible for ESA
+						li
+							a(href="#") How much ESA could you get
+
+			.beta-index-page__box.col-md-12.col-sm-12 
+				.beta-index-page__section.col-md-6.col-sm-12
+					h2 Help with your ESA claim
+				.beta-index-page__links.col-md-6.col-sm-12
+					ul.li--no-style
+						li
+							a(href="#") Claiming ESA (filling out the ESA1 form)
+						li
+							a(href="filling-in-esa50.html") Filling in the ESA50 form about your health and ability
+						li
+							a(href="preparing-esa.html") Preparing for your ESA medical assessment
+						li
+							a(href="#") Getting your ESA decision after the assessment
+						li
+							a(href="#") What to do if you're not awarded ESA
+
+			.beta-index-page__box.col-md-12.col-sm-12
+				.beta-index-page__section.col-md-6.col-sm-12
+					h2 While you're getting ESA
+				.beta-index-page__links.col-md-6.col-sm-12
+					ul.li--no-style
+						li
+							a(href="#") Challenging an ESA decision
+						li
+							a(href="#") Your money and benefits during an ESA reconsideration
+						li
+							a(href="#") About the ESA support group and work-related activity group
+						li
+							a(href="#") What to do if you’ve been sanctioned while on ESA
+						li
+							a(href="#") ESA: Reporting changes to the DWP
+						li
+							a(href="#") Work you can do while getting ESA
