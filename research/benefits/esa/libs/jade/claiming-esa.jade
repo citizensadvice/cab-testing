@@ -1,0 +1,124 @@
+block settings
+	- var title = "Claiming ESA (filling in the ESA1 form)"
+	- var sidebar = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "ESA", href: "./"}, 
+		{title: "Help with your ESA claim", href: "./"}, 
+		{title: "Claiming ESA (filling in the ESA1 form)"}])
+
+block sidebar
+	- var section = "Help with your ESA claim"
+	+sidebar([
+		{title: "Claiming ESA (filling in the ESA1 form)", href: "claiming-esa.html"},
+		{title: "Filling in the ESA50 form about your health and ability", href: "filling-in-esa50.html"},
+		{title: "Preparing for your ESA medical assessment", href: "preparing-esa.html"},
+		{title: "Getting your ESA decision after the assessment", href: "esa-decision.html"},
+		{title: "What to do if you're not awarded ESA", href: "not-awarded-esa.html"}
+		],4)
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		div
+			How long it takes to claim ESA
+
+Applying for ESA takes quite a long time. From start to finish, it can take up to a year to get a final decision.
+
+Getting money straight away
+
+If this is the first time you’ve applied for ESA, you’ll get some money straight away if the Department for Work and Pensions (DWP) thinks you’re likely to be eligible for ESA when you first apply . You’ll have to send a sicknote from your GP with your claim form to show that you’re not fit for work. Even if the DWP eventually decides you won’t get ESA, you won’t have to pay that money back.
+
+You should get the first payment into your bank or building society account within 3 weeks.
+
+If you're getting statutory sick pay
+
+If you’re getting Statutory Sick Pay, you can fill in the ESA claim form up to 3 months before it's due to finish. This will help you get your ESA money quicker. You’ll need to get your employer to fill in form SSP1.
+
+Download the SSP1 form PDF .
+
+How to claim ESA
+
+There are 3 stages to applying for ESA:
+
+1. Fill in the claim form (called ESA1) - everyone has to do this.
+2. Complete a questionnaire about your health and abilities (called ESA50) - most people have to do this.
+3. Go to a medical assessment with a healthcare practitioner - most people have to do this.
+
+There can be a gap of several weeks, or even months, between each stage of the process.
+
+Warning
+If you don’t return your ESA50 form or attend your medical assessment, you’ll be considered fit for work. You won’t be able to make another claim for ESA unless you have a different or deteriorating condition.
+
+Fill in the claim form (ESA1)
+
+You can start your ESA claim:
+
+by phone - an adviser will fill in the ESA1 claim form for you during the call
+by filling in an ESA1 form and giving it to your local Jobcentre or posting it to the DWP
+You can’t send your claim online.
+
+Most people apply on the phone - you can get your first ESA payment more quickly if you apply this way. The phone call usually lasts between 20 and 30 minutes.
+
+Information you need to hand
+
+Whichever way you apply, you’ll need to provide information including:
+
+your National Insurance number
+what your illness or disability is
+your doctor’s contact details
+work you’re doing or details of benefits that you get
+rent or mortgage details for where you live
+any savings or investments you’ve got, or other money coming in (like benefits or child maintenance)
+bank account details for where you want ESA paid
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});

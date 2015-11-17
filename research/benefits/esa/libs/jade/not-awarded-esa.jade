@@ -1,0 +1,100 @@
+block settings
+	- var title = "What to do if you're not awarded ESA"
+	- var sidebar = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "ESA", href: "./"}, 
+		{title: "Help with your ESA claim", href: "./"}, 
+		{title: "What to do if you're not awarded ESA"}])
+
+block sidebar
+	- var section = "Help with your ESA claim"
+	+sidebar([
+		{title: "Claiming ESA (filling in the ESA1 form)", href: "claiming-esa.html"},
+		{title: "Filling in the ESA50 form about your health and ability", href: "filling-in-esa50.html"},
+		{title: "Preparing for your ESA medical assessment", href: "preparing-esa.html"},
+		{title: "Getting your ESA decision after the assessment", href: "esa-decision.html"},
+		{title: "What to do if you're not awarded ESA", href: "not-awarded-esa.html"}
+		],4)
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		div
+			h2 Challenge the decision
+
+			p You can #[a ask the DWP to rethink their decision]. This is called mandatory reconsideration. You have to ask within one month of getting your decision letter.
+
+			h2 Other benefits you could get
+
+			p You may be able to claim #[a Jobseeker’s Allowance (JSA)] instead of ESA. You’ll need to meet the usual rules for people who claim JSA, for example you’ll need to be actively looking for work. If your condition or a disability means you can only work or look for work a limited number of hours each week, you can try and agree this with the Jobcentre.
+
+			p You should tell the Jobcentre that you’re able and willing to look for work, otherwise you won’t get any JSA.
+
+			.callout
+				h3 Worth remembering
+				
+				p Claiming JSA during a mandatory reconsideration shouldn’t affect your ESA reconsideration request .
+
+			p You can use this #[a benefits checker] from Turn2us to see what other benefits you may be able to get.
+
+			h3 Other help with living costs
+
+			p You can:
+			ul
+				li ask friends or family if they can help with essentials
+				li find out if there are any #[a foodbanks in your area and what other help might be available locally]
+				li find out if you can #[a get more help with your living costs]
+				li consider asking a charity for help - the #[a Turn2us website] tells you about charities that could help you
+				li talk to an adviser at #[a Citizens Advice] to find out what other help is available in your area
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});
