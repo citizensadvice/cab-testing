@@ -1,0 +1,570 @@
+/**
+ * FORMS
+ */
+
+// Normalize non-controls
+//
+// Restyle and baseline non-control form elements.
+//
+// 'Borrowed' from Bootstrap v4
+//
+// Basic form styling
+
+// Buttons
+
+form {
+    .invalid {
+        color: @red;
+        .spacing(padding-top,@box-spacing/4);
+        clear: both;
+    }
+    .valid {
+        color: @green;
+        .spacing(padding-top,@box-spacing/4);
+        clear: both;
+    }
+    small {
+        color: @gray-3;
+    }
+}
+
+fieldset,
+.form__group {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    .spacing(margin-bottom,@box-spacing);
+}
+
+legend {
+    color: @heritage-blue;
+}
+
+label,
+.form__label {
+    display: block;
+    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    //margin-bottom: 5px;
+    .spacing(margin-bottom,@box-spacing*.5);
+    font-weight: @font-weight-bolder;
+    .form__label--inline {
+        display: inline-block;
+    }
+}
+.radio, .checkbox, .radio--inline, .checkbox--inline { 
+    font-weight: @font-weight-bold;
+    input {
+        .spacing(margin-right,@box-spacing/2);
+    }
+}
+    
+.form__label--hidden {
+    .screenreader;
+}
+
+span.form-hint {
+    display: block;
+    color: @gray-3;
+    .spacing(margin-bottom,@box-spacing*.5);
+    .spacing(margin-top,-@box-spacing*.5);
+    font-weight: @font-weight-base;
+}
+
+textarea,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=search] {
+    .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 0;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 70%;
+    &.search--full-width {
+       width: 100%;
+    }
+}
+
+input[type=checkbox] + label {
+    font-weight: normal;
+    padding-left: .5em;
+}
+
+input[type=text][size="1"] {
+    width: 3em;
+}
+
+
+select {
+    max-width: 100%;
+    width: 100%;
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+input[type="file"] {
+    display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+textarea,
+input,
+select {
+    border: 1px solid @gray-6;
+}
+
+textarea {
+    .spacing(height,@box-spacing*8);
+    resize: vertical;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="text"],
+input[id*="dob-"],
+input[class*="dob-"],
+textarea,
+select {
+    width: 100%;
+    .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+    border-radius: @form-border-radius;
+    &:focus:required:invalid {
+//      border-color: @red;
+        outline: 2px solid @red;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNyb3NzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYxMiA3OTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYxMiA3OTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNEOTUzNEYiIGQ9Ik00NDcsNTQ0LjRjLTE0LjQsMTQuNC0zNy42LDE0LjQtNTEuOSwwTDMwNiw0NTEuN2wtODkuMSw5Mi43Yy0xNC40LDE0LjQtMzcuNiwxNC40LTUxLjksMGMtMTQuNC0xNC40LTE0LjQtMzcuNiwwLTUxLjlsOTIuNC05Ni40TDE2NSwyOTkuNmMtMTQuNC0xNC40LTE0LjQtMzcuNiwwLTUxLjlzMzcuNi0xNC40LDUxLjksMGw4OS4yLDkyLjdsODkuMS05Mi43YzE0LjQtMTQuNCwzNy42LTE0LjQsNTEuOSwwYzE0LjQsMTQuNCwxNC40LDM3LjYsMCw1MS45TDM1NC43LDM5Nmw5Mi40LDk2LjRDNDYxLjQsNTA2LjgsNDYxLjQsNTMwLDQ0Nyw1NDQuNHoiLz48L3N2Zz4=);
+        padding-right: 2.25em;
+        background-repeat: no-repeat;
+        background-position: center right .6em;
+        -webkit-background-size: 1.5em 1.5em;
+        background-size: 1.5em 1.5em;
+        & ~ .invalid {
+            display: block !important;
+        }
+    }
+    &:focus:required:valid {
+//      border-color: @green;
+        outline: 2px solid @green;
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNoZWNrIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYxMiA3OTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYxMiA3OTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiM1Q0I4NUMiIGQ9Ik0yMzMuOCw2MTAuMWMtMTMuMywwLTI1LjktNi4yLTM0LTE2LjlMOTAuNSw0NDguOEM3Ni4zLDQzMCw4MCw0MDMuMyw5OC44LDM4OS4xYzE4LjgtMTQuMyw0NS41LTEwLjUsNTkuOCw4LjNsNzEuOSw5NWwyMjAuOS0yNTAuNWMxMi41LTIwLDM4LjgtMjYuMSw1OC44LTEzLjZjMjAsMTIuNCwyNi4xLDM4LjcsMTMuNiw1OC44TDI3MCw1OTBjLTcuNCwxMi0yMC4yLDE5LjQtMzQuMywyMC4xQzIzNS4xLDYxMC4xLDIzNC41LDYxMC4xLDIzMy44LDYxMC4xeiIvPjwvc3ZnPg==);
+        padding-right: 2.25em;
+        background-repeat: no-repeat;
+        background-position: center right .6em;
+        -webkit-background-size: 1.5em 1.5em;
+        background-size: 1.5em 1.5em;
+        & ~ .valid {
+            display: block !important;
+        }
+    }
+    &:focus {
+//        border-color: @heritage-blue-lighter;
+//        outline: none;
+        border-width: 1px;
+        outline: 2px solid @heritage-blue-lighter;
+    }
+}
+
+input[type="file"] {
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+output {
+    display: block;
+    padding-top: 11px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: @black;
+}
+
+// Reset height for `textarea`s
+textarea.form__field {
+    height: auto;
+}
+
+.radio,
+.checkbox {
+    .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+    cursor: pointer;
+    border-radius: @form-border-radius;
+    position: relative;
+    display: block;
+    .spacing(margin-right,@box-spacing-horizontal/2);
+    z-index: 1;
+    input {
+        &:before {
+            content: '';
+            display: block;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            -webkit-user-select: none;
+            cursor: pointer;
+            border-radius: @form-border-radius;
+            border: 1px solid @gray-6;
+            z-index: -1;
+            background-color: @gray-8;
+            box-sizing: border-box;
+        }
+        &:hover:before {
+            border-color: @gray-5;
+        }
+        &:disabled {
+            cursor: not-allowed !important;
+            &:before {
+                cursor: not-allowed !important;
+                background-color: @form-disabled-bg;
+                border-color: @form-disabled-bg;
+            }
+        }
+        &:checked {
+            &:before {
+                border-color: @blue-light;
+                background-color: @blue-lighter;
+            }
+            &:hover:before {
+                border-color: @blue-light;
+            }
+        }
+    }
+    &--inline {
+        clear: none;
+        //float: left;
+    }
+
+    &--block {
+        clear: left;
+        float: left;
+        p {
+           display: block;
+           float: right;
+           margin: 0; 
+            span {
+                font-weight: @font-weight-bolder;
+            }
+        }
+    }
+}
+
+.multi-select {
+    padding: 0;
+    .spacing(height,@box-spacing*5.5);
+    option {
+        .spacing(padding,@box-spacing-vertical/2,@box-spacing-horizontal/2);
+        -webkit-appearance: none;
+    }
+    @media only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+        .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+        height: auto !important;
+    }
+}
+
+.dropdown {
+    border-radius: @form-border-radius;
+    border: 1px solid @gray-6;
+    .btn-icon("\F0D7",@color:@black,@border:no-border);
+    padding-right: 0;
+    background-color: @white;
+    display: inline-block;
+    width: 100%;
+    &:after {
+        pointer-events:none;
+    }
+    select {
+        background: none;
+        border: none;
+        cursor: pointer;
+        -webkit-appearance: none;
+        padding-right: 2em;
+    }
+}
+
+.checkbox, .radio {
+    display: inline-block;
+}
+
+input[id*="dob-"],
+input[class*="dob-"] {
+    border-radius: @form-border-radius;
+    display: inline-block;
+    padding-right: 0;
+}
+
+/*.date {
+    display: table;
+}
+.form-group-date {
+    width: 31%;
+    display: table-cell;
+    float: left;
+    margin-right: 3.5%;
+    &:last-child {
+        margin: 0;
+    }
+}*/
+.form-group-date {
+    width: 5rem;
+    display: inline-block;
+    float: left;
+    .spacing(margin-right,@box-spacing-horizontal/2);
+    &:last-child {
+        margin: 0;
+    }
+}
+
+*:disabled,
+.disabled {
+    cursor: not-allowed !important;
+    color: @form-disabled-text;
+    background-color: @form-disabled-bg;
+    //border: 1px solid @form-disabled-bg;
+    resize: none;
+}
+
+.field-group {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    label,
+    input,
+    button {
+        display: table-cell;
+        width: auto;
+        margin-right: 0;
+        border-radius: 0;
+    }
+    input {
+        border-radius: 0;
+        border-right: 0;
+        width: 100%;
+    }
+    *:first-child {
+        border-radius: @form-border-radius 0 0 @form-border-radius;
+    }
+    *:last-child {
+        border-radius: 0 @form-border-radius @form-border-radius 0;
+    }
+
+    &--buttons {
+    }
+    &--toggle {
+        label {
+            .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+            text-align: center;
+            input[type="radio"],
+            input[type="checkbox"] {
+                width: auto;
+                margin-right: .25em;
+            }
+            input[type="radio"]:before,
+            input[type="checkbox"]:before {
+                border-radius: 0;
+                border-width: 1px 0;
+                border-color: @gray-6;
+            }
+            input[type="radio"]:checked:before,
+            input[type="checkbox"]:checked:before {
+                border-color: @gray-6;
+            }
+            &:last-child input:before {
+                border-radius: 0 @form-border-radius @form-border-radius 0;
+                border-right-width: 1px;
+            }
+            &:first-child {
+                border-radius: @form-border-radius 0 0 @form-border-radius;
+            }
+            &:last-child {
+                border-radius: 0 @form-border-radius @form-border-radius 0;
+            }
+        }
+        button {
+            .spacing(padding,@box-spacing-vertical,0);
+        }
+    }
+    &--dropdown {
+        .dropdown {
+            display: table-cell;
+            border-radius: 0 @form-border-radius @form-border-radius 0;
+            //.btn-primary;
+            background-color: @gray-8;
+            padding: 0;
+            width: auto;
+        }
+        input:first-of-type {
+            border-radius: @form-border-radius 0 0 @form-border-radius;
+        }
+    }
+    .field {
+        display: table-cell;
+        width: 100%;
+        .spacing(padding-right,1);
+        input,
+        .dropdown {
+            border-radius: @form-border-radius;
+        }
+    }
+    .function {
+        display: table-cell;
+        button {
+            margin-right: 0;
+            border-radius: @form-border-radius;
+        }
+    }
+}
+
+// Custom dropdown icons
+.select--custom-icon() {
+
+    display: inline-block;
+    overflow: hidden; // Hide the arrow
+    vertical-align: middle;
+
+    & > select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 0; //If you want a border set it on the parent
+        background: transparent;
+        .spacing(padding,@box-spacing-vertical);
+
+        // We need to push the pointer off the side so it is hidden in the overflow
+        // In webkit / blink there is no pointer to move
+        // In IE the padding is on the outside of the pointer, but in Firefox it is on the inside
+        // In IE8 and below we cannot move the pointer
+
+        // The width, plus the pointer, plus the padding (for IE9+)
+        // This needs to be at least 1.75em to hide the pointer in IE
+        // (In our case this is therefore 1em + .75em padding)
+        // In <=IE8 this will be ignored
+        width: calc( ~"100% + 1.75em" );
+
+        // The image width plus some padding so the text isn't against the arrow in Blink/Webkit
+        // In IE/Firefox there will be extra space between the text and arrow due to the native arrow
+        // In <=IE8 this will be ignored
+        margin: 0 calc( ~"33px + .75em" ) 0 0;
+
+        // For chrome - the outline is cut off on the right so hide it completely */
+        outline: none;
+
+        /* The right positioning is the extra width from above
+               In <=IE8 this will be ignored as we've used the four value poitioning syntax
+            */
+    }
+}
+
+.custom-dropdown {
+    .select--custom-icon;
+    position: relative;
+    width: 85%;
+    float: left;
+    background: @gray-6;
+
+    & > i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: @heritage-blue;
+        color: white;
+        padding: 0 .75em;
+        font-size: 1.3em;
+        pointer-events: none; 
+        &:before {
+            padding: 0;
+        }
+    }
+    &__select {
+        width: 80%;
+    }
+    &__button {
+        width: 17%;
+        float: right;
+    }
+}
+
+// If pointer events aren't supported hide the custom dropdown
+.no-pointer-events .custom-dropdown > i {
+    display: none;
+}
+
+// Overrider attibute selector
+input.custom-dropdown__button {
+    margin-left: 1%;
+    width: 14%;
+    float: left;
+    border-radius: 0;
+    padding: .75em;
+}
+
+/* Search fields used in blocks */
+.search-inline {
+    display: table;
+    margin: 1em 0;
+
+    & > label {
+        display: block;
+        width: 5em;
+        font-weight: bold;
+    }
+
+    &__field {
+        display: table-cell;
+        width: 100%;
+        padding-right: .5em;
+       
+        & > input {
+             width: 100%;
+        }
+    }
+
+    &__button {
+        display: table-cell;
+
+        & > input, & > button {
+            padding: .75em .6em;
+        }
+    }
+
+    &--hide-label {
+
+        & > label {
+            .screenreader;
+        }
+    }
+}
+
+/*.search-icon {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxNjY0cHgiIGhlaWdodD0iMTY2NHB4IiB2aWV3Qm94PSI2NTQgLTM3MiAxNjY0IDE2NjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgNjU0IC0zNzIgMTY2NCAxNjY0OyINCgkgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMDA0Qjg4O30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTgwNiwzMzJjMC0xMjMuMy00My44LTIyOC44LTEzMS41LTMxNi41QzE1ODYuOC03Mi4yLDE0ODEuMy0xMTYsMTM1OC0xMTZzLTIyOC44LDQzLjgtMzE2LjUsMTMxLjUNCglDOTUzLjgsMTAzLjIsOTEwLDIwOC43LDkxMCwzMzJzNDMuOCwyMjguOCwxMzEuNSwzMTYuNUMxMTI5LjIsNzM2LjIsMTIzNC43LDc4MCwxMzU4LDc4MHMyMjguOC00My44LDMxNi41LTEzMS41DQoJQzE3NjIuMiw1NjAuOCwxODA2LDQ1NS4zLDE4MDYsMzMyeiBNMjMxOCwxMTY0YzAsMzQuNy0xMi43LDY0LjctMzgsOTBzLTU1LjMsMzgtOTAsMzhjLTM2LDAtNjYtMTIuNy05MC0zOGwtMzQzLTM0Mg0KCWMtMTE5LjMsODIuNy0yNTIuMywxMjQtMzk5LDEyNGMtOTUuMywwLTE4Ni41LTE4LjUtMjczLjUtNTUuNXMtMTYyLTg3LTIyNS0xNTBzLTExMy0xMzgtMTUwLTIyNVM2NTQsNDI3LjMsNjU0LDMzMg0KCXMxOC41LTE4Ni41LDU1LjUtMjczLjVzODctMTYyLDE1MC0yMjVzMTM4LTExMywyMjUtMTUwUzEyNjIuNy0zNzIsMTM1OC0zNzJzMTg2LjUsMTguNSwyNzMuNSw1NS41czE2Miw4NywyMjUsMTUwczExMywxMzgsMTUwLDIyNQ0KCVMyMDYyLDIzNi43LDIwNjIsMzMyYzAsMTQ2LjctNDEuMywyNzkuNy0xMjQsMzk5bDM0MywzNDNDMjMwNS43LDEwOTguNywyMzE4LDExMjguNywyMzE4LDExNjR6Ii8+DQo8L3N2Zz4NCg==);
+    .spacing(padding-right,3);
+    background-repeat: no-repeat;
+    background-position: center right .6rem;
+    .spacing(-webkit-background-size,1.4);
+   .spacing(background-size,1.4);
+}*/
