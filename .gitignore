@@ -1,0 +1,9 @@
+# CodeKit config
+config.codekit
+
+# Annoying CSS and .map files that shouldn't be there
+*.map
+
+# Other files
+.DS_Store
+README.html
