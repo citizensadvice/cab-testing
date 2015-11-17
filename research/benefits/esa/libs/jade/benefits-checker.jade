@@ -1,0 +1,76 @@
+block settings
+	- var title = "Check what benefits you could get"
+	- var sidebar = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "./"}, 
+		{title: "Benefits", href: "./"},
+		{title: "Benefits eligibility"}])
+
+block sidebar
+	- var section = "Benefits"
+	+sidebar([
+		{title: "Check what benefits you could get", href: "#"}
+		],0)
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+
+block content
+	.articleContent
+		div
+			#benefits_checker.widget
+				link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+				link(href="https://elearning.citizensadvice.org.uk/beta/benefitsChecker/benefitsChecker.css")
+				script
+					$(function() {  $.loadScriptTag('https://elearning.citizensadvice.org.uk/beta/benefitsChecker/benefitsCheckerBeta.js').then(function() { CABWidgets.benefitsChecker(document.getElementById("benefits_checker")) }) });
+
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});
