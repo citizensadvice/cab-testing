@@ -1,0 +1,114 @@
+block settings
+	- var title = "How much ESA you can get"
+	- var sidebar = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "ESA", href: "./"}, 
+		{title: "Before you claim ESA", href: "./"}, 
+		{title: "How much ESA you can get"}])
+
+block sidebar
+	- var section = "Before you claim ESA"
+	+sidebar([
+		{title: "Check if you're eligible for ESA", href: "#"},
+		{title: "How much ESA you can get", href: "how-much-esa.html"}
+		],1)
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		div
+			p Not everyone gets the same amount of ESA, so we can’t tell you exactly how much you’ll get before you apply. However, there are standard amounts you could get.
+
+			h2 ESA rates
+
+			h3 While you’re waiting for your application to be assessed 
+
+			p This is called the ‘assessment phase’ - this usually lasts for 13 weeks but could be much longer.
+
+			p If you're aged 25 or over, you'll get up to £73.10 per week.
+
+			p If you're aged 24 or less, you'll get upto £57.90 per week.
+
+			p If you’re a carer or have a severe disability, you could get an extra amount (called a premium).
+
+			p If you apply for income-related ESA and you're in a couple, the standard amount you'll get will be £114.85. If you’re in a couple and one of you is under 18 you’ll get less than the standard amount for couples aged over 18.
+
+			h3 If your application is approved
+
+			p If the DWP have decided you’re not fit for work (ie you have limited capability for work), you’ll be put into either the ‘support group’ or the ‘work-related activity group’.
+
+			h4 Support group
+
+			p You’ll get up to £109.30 a week. You’ll be in this group if the DWP decide that you’re not well enough to work and not well enough to be helped to improve your chance of getting work in the future.
+
+			p If you’re entitled to income-related ESA, you’ll get an extra £15.75 a week, called the Enhanced Disability Premium . If you’re in a couple this will be £22.60.
+
+			p If you were getting a premium during the assessment phase as a carer or someone with a severe disability, this will continue.
+
+			h4 Work-related activity group
+
+			p You’ll get up to £102.15 a week. You’ll be in this group if the DWP decide that you’re not well enough to work but are well enough to be helped to improve your chances of getting work in the future.
+
+			p Once you’re assessed, the extra money you get should be backdated to the 14th week of your claim.
+
+			p If you were getting a premium during the assessment phase as a carer or someone with a severe disability, this will continue.
+			
+			.callout--related
+				h3 Next steps
+				
+				p
+					a How to claim ESA
+					br
+					a Check you're eligible for ESA
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});
