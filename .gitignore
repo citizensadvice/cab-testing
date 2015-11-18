@@ -5,5 +5,5 @@ config.codekit
 *.map
 
 # Other files
-.DS_Store
+*.DS_Store
 README.html
