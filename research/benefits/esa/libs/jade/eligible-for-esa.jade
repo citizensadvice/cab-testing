@@ -1,6 +1,7 @@
 block settings
 	- var title = "Check if you're eligible for ESA"
 	- var sidebar = true
+	- var sidebarSiblings = true
 	- var toolbars = true
 	- var mockup = true
 
@@ -20,6 +21,11 @@ block sidebar
 		{title: "Check if you're eligible for ESA", href: "eligible-for-esa.html"},
 		{title: "How much ESA you can get", href: "how-much-esa.html"}
 		],0)
+
+	- var section = "Benefits"
+	+sidebarSiblings([
+		{title: "Check what benefits you could get", href: "benefits-checker.html"}
+		])
 
 block section-notice
 	aside.section-notice

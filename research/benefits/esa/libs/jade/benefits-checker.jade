@@ -12,7 +12,7 @@ block breadcrumbs
 		{title: "Benefits", href: "./"},
 		{title: "Benefits eligibility"}])
 
-block sidebar
+//block sidebar
 	- var section = "Benefits"
 	+sidebar([
 		{title: "Check what benefits you could get", href: "#"}
@@ -30,8 +30,7 @@ block content
 			#benefits_checker.widget
 				link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 				link(href="https://elearning.citizensadvice.org.uk/beta/benefitsChecker/benefitsChecker.css")
-				script
-					$(function() {  $.loadScriptTag('https://elearning.citizensadvice.org.uk/beta/benefitsChecker/benefitsCheckerBeta.js').then(function() { CABWidgets.benefitsChecker(document.getElementById("benefits_checker")) }) });
+				script $(function() {  $.loadScriptTag('https://elearning.citizensadvice.org.uk/beta/benefitsChecker/benefitsCheckerBeta.js').then(function() { CABWidgets.benefitsChecker(document.getElementById("benefits_checker")) }) });
 
 
 	#simpleModal.modal
