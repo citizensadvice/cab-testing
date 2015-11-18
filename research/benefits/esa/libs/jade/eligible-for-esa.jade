@@ -1,0 +1,135 @@
+block settings
+	- var title = "Check if you're eligible for ESA"
+	- var sidebar = true
+	- var sidebarSiblings = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "./"}, 
+		{title: "Benefits", href: "./"},
+		{title: "ESA", href: "./"}, 
+		{title: "Before you claim ESA", href: "./"}, 
+		{title: "Check if you're eligible for ESA"}])
+
+block sidebar
+	- var section = "Before you claim ESA"
+	+sidebar([
+		{title: "Check if you're eligible for ESA", href: "eligible-for-esa.html"},
+		{title: "How much ESA you can get", href: "how-much-esa.html"}
+		],0)
+
+	- var section = "Benefits"
+	+sidebarSiblings([
+		{title: "Check what benefits you could get", href: "benefits-checker.html"}
+		])
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a our new approach to digital advice].
+				
+block content
+	.articleContent
+		div
+			.callout--warning
+				h3 Universal Credit
+				p Universal Credit (UC) will eventually replace income-related ESA (you'll still be able to claim contributory ESA).
+				p UC is currently being rolled out to certain areas across the UK. Depending where you live and what your personal circumstances are,&nbsp;you might be able to claim UC instead of income-related ESA.
+				p To see if you live in a UC area, follow these steps:
+				ul
+					li #[a find your nearest Jobcentre] if you don’t know it
+					li #[a check if your nearest Jobcentre is in a UC area]
+				p #[a Read more about UC].
+
+		p Have you got:
+		ul
+			li an illness
+			li a health condition, or
+			li a disability
+		p that means you find it difficult or impossible to work?
+		p If you have, you might be able to get money from the government to help you.
+		p ESA is a payment you could get every 2 weeks to help with your living costs.
+		h2 Can you get ESA?
+		.callout--warning
+			p If you have a visa that says “no recourse to public funds” or you’re subject to immigration control, your immigration status could be at risk if you apply for benefits. Contact your #[a nearest Citizens Advice] to get advice.
+		p There are 2 types of ESA - called ‘contribution-based’ and ‘income-related’. You can be eligible for either, or both at the same time.
+
+		h4 Contribution-based ESA
+		p You may be able to get contribution-based ESA if:
+		ul 
+			li you have a health condition that makes it difficult or impossible to work
+			li you’re not getting Statutory Sick Pay (SSP) from an employer (but you can apply up to 3 months before your SSP ends - if you get ESA, it will be paid as soon as your SSP ends)
+			li you’re not old enough to get the State Pension
+			li you don’t work, are going to stop work or the work you do will be ‘#[a permitted work]’ when you claim ESA
+			li you live in the UK. If you live in the EEA or Switzerland you may get ESA if you have previously lived in the UK - the rules are complicated so it might be best to #[a get advice] if this applies to you
+			li you’ve paid at least 26 weeks class 1 or class 2 National Insurance (NI) contributions in one of the last 2 complete tax years and have been paid or credited with NI contributions for at least 50 weeks in each of the last 2 complete tax years. You can #[a check your national insurance record] if you’re not sure.
+		p You can’t get contribution-based ESA at the same time as Income Support, income-based Jobseeker’s Allowance or contributory Jobseeker’s Allowance. If you get these benefits and want to claim contribution-based ESA instead, you can do, but you’ll need to stop your current claim to claim contribution-based ESA instead.
+		p If you have a partner who is getting one of these benefits, you may still be able to get contribution-based ESA at the same time.
+		h4 Income-related ESA
+		p If you haven’t paid enough NI contributions to get contribution-based ESA, you may be able to get income-related ESA if:
+		ul 
+			li you’re not old enough to get the State Pension. If you’re not old enough to get State Pension but old enough to get Pension Credit you can choose to claim either income-related ESA or Pension Credit
+			li you don’t work, are going to stop work or the work you do will be ‘#[a permitted work]’ when you claim ESA
+			li you live in the UK
+			li you have savings or investments worth less than £16,000
+			li your partner works less than 24 hours per week
+			li you’re either a British citizen, EEA national or you’re not ‘#[a subject to immigration control]’
+			li you have the #[a right to reside and pass the habitual residence test] (British citizens who live in the UK and haven’t recently lived abroad will automatically pass this criteria)
+		p You or your partner can’t receive income-related ESA at the same time as Income Support, income-based JSA or Pension Credit. If you or your partner receives Income Support or income-based JSA you’ll have to stop the claim and claim income-related ESA instead.
+		.callout
+			h3 Worth remembering
+			p If your income is low and you get contribution-based ESA, you may also get income-related ESA. Make sure you fill in both parts of the ESA claim form giving your details, those of your partner so that you can be considered for both parts of ESA.
+
+		h2 If you’re not eligible
+		p You can see if you can get any other benefits using the #[a Turn2us benefits checker].
+		
+		.callout--related
+			h4 Next steps
+			p #[a How much ESA could you get?] 
+			p #[a Help with your ESA claim]
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});

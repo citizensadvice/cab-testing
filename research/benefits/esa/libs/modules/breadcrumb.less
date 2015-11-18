@@ -1,0 +1,130 @@
+/**
+ * BREADCRUMB
+ *
+ * Beta breadcrumb amends.
+ * Functional changes to be made in 
+ */
+
+.main-breadcrumb {
+    padding: 0;
+    clear: left;
+    // Hack as we have Bootstrap in the mix
+    background-color: @heritage-blue-lightest;
+    padding: 0;
+    max-width: none;
+    width: @full-page-width;
+
+    .main-breadcrumb__content {
+        .limit-width(@max-page-width);
+        margin: 0 auto;   
+        background-color: transparent;
+        .spacing(padding,@box-spacing-vertical/2,@box-spacing-horizontal);
+        max-width: @breakpoint-lg;
+    }
+    
+    .breadcrumb__extent-link {
+        display: none;
+    }
+
+    .breadcrumb__item {
+        font-size: @font-size-base;
+        line-height: (@line-height-small * 2);
+        
+        &>i {
+            .spacing(margin,0,@box-spacing-horizontal*.5,0,0);
+            color: @blue-light;
+        }
+    }
+    
+    .breadcrumb__item a {
+        .spacing(margin,0,@box-spacing-horizontal*.5,0,0);
+        color: @text-color;
+    }
+
+    @media( max-width: @screen-xs-max ) {
+        display: none;
+    }
+}
+
+@media (max-width: @max-page-width-before-the-share-bar-ruins-it-all) and (min-width: @screen-sm-min) {
+    .js .main-breadcrumb {
+        padding-right: unit(@box-spacing-horizontal*3.5*@base-size,px);
+        padding-right: @box-spacing-horizontal*3.5;
+    }
+}
+
+// .breadcrumb is a generic class for displaying breadcrumbs
+.breadcrumb__item {
+    white-space: nowrap;
+
+    @media (max-width: @screen-xs-max ) {
+        white-space: normal;
+    }
+
+    .ie8 & {
+    // IE8 is having difficulty with the wrapping.  This fixes it
+        display: inline-block;
+    }
+    
+    > i {
+        margin-right: unit(@box-spacing-horizontal*.5*@base-size,px);
+        margin-right: @box-spacing-horizontal*.5;
+    }
+
+    &:last-child a {
+        border: none;
+        margin-right: unit(@box-spacing-horizontal*.5*@base-size,px);
+        margin-right: @box-spacing-horizontal*.5;
+    }
+}
+
+.breadcrumb__extent-link {
+    background-color: @white;
+    display: inline-block;
+    color: @black;
+    padding: .1em .5em;
+    white-space: nowrap;
+    display: inline-block;
+
+    a {
+        border: none;
+    }
+
+    &:link {
+        color: @black;
+        text-decoration: none;
+    }
+
+    i {
+        background: @heritage-blue;
+        color: @white;
+        margin: -.1em -.5em -.1em 1em;
+        padding: .2em .3em;
+        display: inline-block;
+    }
+
+    .js & {
+        // Don't show the cursor if the JS is enabled as this won't be a clickable link
+        cursor: default;
+    }
+}
+
+.breadcrumb__extent-popup {
+    .popup;
+    max-width: 400px;
+    margin-top: unit(@box-spacing*@base-size,px);
+    margin-top: @box-spacing;
+    // Bring things a little closer together in this popup
+    p, ul {
+        .spacing(margin,@box-spacing/2,0);
+    }
+
+    li {
+        margin: 0;
+    }
+
+    &__arrow {
+        .popup-arrow;
+    }
+}
+

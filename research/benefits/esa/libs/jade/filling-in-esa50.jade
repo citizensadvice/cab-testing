@@ -1,0 +1,210 @@
+block settings
+	- var title = "Filling in the ESA50 form about your health and ability"
+	- var sidebar = true
+	- var toolbars = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "./"}, 
+		{title: "Benefits", href: "./"},
+		{title: "ESA", href: "./"}, 
+		{title: "Help with your ESA claim", href: "./"}, 
+		{title: "Filling in the ESA50 form about your health and ability"}])
+
+block sidebar
+	- var section = "Help with your ESA claim"
+	+sidebar([
+		{title: "Claiming ESA (filling in the ESA1 form)", href: "claiming-esa.html"},
+		{title: "Filling in the ESA50 form about your health and ability", href: "filling-in-esa50.html"},
+		{title: "Preparing for your ESA medical assessment", href: "preparing-esa.html"},
+		{title: "Getting your ESA decision after the assessment", href: "esa-decision.html"},
+		{title: "What to do if you're not awarded ESA", href: "not-awarded-esa.html"}
+		],1)
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		div
+			h2 What the ESA50 form is for
+
+			p Your ESA50 form tells the DWP about your illness or disability and how it affects your ability to work. The DWP will send you the form after you’ve completed your initial claim form (ESA1).
+
+			p It’s a really important part of your application, because it’s your chance to show why your illness, health condition or disability means you should get ESA.
+
+			p It’s a long form to fill in and asks you for lots of information, but don’t be embarrassed about anything. You’re being asked to show why ESA is the right benefit for you. Your application is more likely to be successful if you take your time and make sure you don't miss out any details about your condition.  
+
+			h2 Deadline for sending in your ESA50 form
+
+			p You must send back the form #[strong within 28 days] of getting it from the DWP. If you don’t, the DWP will assume you’re fit for work and will stop your claim. If you’re late sending back the form you must still fill it in and send it as soon as you can. Tell the DWP why you are late sending the form back - there’s a place to do this on the form.
+
+			h3 If you need to send the form back late
+
+			p If you have a good reason why your form is late – for example, because you’ve been in hospital or had an emergency at home – you should still send it, but make sure you write the reason it’s late on the form. There’s a box to do this in.
+
+			p Someone at the DWP will then decide whether they can still accept the form.
+
+			h3 Filling in the ESA50 form
+
+			p The DWP will send you the ESA50 form after you've sent them your first claim form (ESA1). You can either fill in the form that the DWP sends you, or download a copy and either print it and fill it in or fill it in on a computer and print the completed form.
+
+			p You can’t fill the form in online.
+
+			h3 How to fill in the ESA50 form
+
+			p When you complete the form, do the following to give yourself the best chance of success:
+			ul
+				li read the notes on the form before you start to answer the questions
+				li if you need someone to help you complete the form, explain this on the form and include their contact details at the end
+				li if you can only fill in the form slowly or with pain, or if filling in the form has caused you anxiety or stress, explain this on the form
+				li don’t underestimate your problems - you could ask someone who knows you to check your answers to make sure you’ve not overestimated or underestimated your ability
+
+			h3 Answering the questions
+
+			p The questions on the form will test your ability to carry out certain activities. There are 17 activities listed in total - 10 relating to physical health and 7 relating to mental health.
+
+			h4 Describe what you can do ‘most of the time’
+
+			p For each activity, you should select which applies to you most of the time, eg what you can do on a repeated and regular basis. Most people have good days and bad days - if you can’t repeat an activity regularly, don’t say you can do it. Otherwise the assessor might think you can manage more than you can.
+
+			p For example, if you can’t reliably or regularly sit for a long period of time, don’t answer that you can - even if you can at certain times.
+
+			p Think of the activities in a work setting, not just at home, eg if you were given a desk job but would struggle to sit at a desk all day on a regular basis.
+
+			p Below each activity is a box where you should write more detail about what you can manage and what effect doing that activity will have on your health. Think about the following when you answer the questions:
+			ul
+				li try and give an estimate of how frequent the bad days are and how often you could perform each activity
+				li how performing an activity on a repeated basis may impact you, eg cause pain, dizziness or tiredness
+				li whether there’s a risk to your health in carrying out the activity
+
+			.callout
+				h3 Example question and answer: physical health
+
+				p Aleem has severe arthritis in his hips. He's on the waiting list for hip replacements but had to give up his job as a cleaner in the meantime as he's in too much pain. Because of his arthritis, he finds it difficult to walk long distances. He has to use a walking stick when walking around.
+
+				p This is how Aleem answers the first question. He includes:
+				ul 
+					li how often he has good days and bad days
+					li how unreliable the bad days are
+					li how performing an activity on a repeated basis may affect him, eg cause pain or tiredness
+					li risk to his health in carrying out the activity
+				
+				img(src="assets/images/ESA-q8.JPG", alt="Example answer for physical ability as shown on the ESA50 form")
+
+				p "I always have to use a walking stick when I walk because I don't have enough strength in my legs to walk without it. The pain in my hips varies from day to day, so I can't reliably walk any particular distance. Some days I might be able to walk 50 meters. Other days I might be able to walk 200 meters. The level of pain and how far I can walk is unpredictable and can't be easily managed with medication or pain relief. On days when I can walk 200 meters, I would need to sit down and rest for a while after that as it would make me really tired and I would be in some pain. So even on good days, I wouldn't be able to walk the longer distance repeatedly in a day, or even day after day."
+
+			.callout
+				h3 Example of question and answer: mental health
+
+				p Anita has a mental health condition. She has good days and bad days. On the bad days she experiences a lot of stress and anxiety and struggles to leave her home.
+
+				p This is how Anita answers the third question. She includes:
+				ul
+					li how often she has good days and bad days
+					li how unreliable the bad days are
+					li how performing an activity on a repeated basis may impact her
+					li risk to her health in carrying out the activity
+
+				img(src="assets/images/ESA-q2.JPG", alt="Example answer for mental health as shown on the ESA50 form")
+
+				p "My condition means that I have good days and bad days - these are unpredictable and triggered by events outside my control. Within each month I will have some bad days. On the bad days I either can't do any of these daily tasks or can only do a limited number. For example, I might be able to get up and eat something, but I wouldn't be able to cook a proper meal or leave the house. This would make it very hard for me to have a job because some days leaving the house would cause me too much stress and anxiety. "
+
+			p Once you’ve finished, it’s a good idea to keep a copy of the form yourself, so that you can take it with you to your assessment if you want to. It can be a helpful way to make sure that you don’t forget anything you want to mention at the assessment.
+
+			h2 Getting extra help with the ESA50 form
+
+			p If you’re having problems and need extra help filling in the form, you can #[a contact your local Citizens Advice]. They can give you advice on:
+			ul 
+				li what the questions mean and what they are asking for
+				li what sort of things you can say on the form and what you can leave out
+				li what to do if you’re finding it difficult to physically fill in the form
+
+			h2 Sending medical evidence with your ESA50 form
+
+			p It’s often a good idea to send in medical evidence with your form - like a doctor’s letter. If you can send a letter that shows how your condition affects your ability to work, you stand a better chance of being properly assessed.
+
+			p You can ask your doctor, consultant or other healthcare professional to write a letter for you and send it back with your form. You can also ask for a printout of your medical records.
+
+			p Some doctors won’t write letters to help with benefit applications, and others charge for doing it. It’s a good idea to check what your GP or consultant will do.
+
+			h3 If you can’t get medical evidence
+
+			p If your doctor, consultant or healthcare professional won’t write a letter or wants to charge too much, you’ll have to send your ESA50 form without medical evidence. 
+
+			p However, when the Health Assessment Advisory Service reviews your ESA50 form, they may ask your doctor for medical evidence if they think it’s needed and the doctor will have to give it to them.
+
+			.callout--related
+				h3 What happens next
+
+				p The details you put on the form will be reviewed by an assessor. The assessor is independent from the DWP and will have had medical training, like doctors and nurses. 
+
+				p If they think it’s clear from what you’ve said on the form that you aren’t able to look for work in the near future, they can recommend that you get ESA straight away.
+
+				p Most people, though, are asked to go for a medical, called a ‘Work Capability Assessment’. The assessments are carried out by the Health Assessment Advisory Service. 
+
+				p It could take several weeks, or even months, before you get your medical assessment appointment.
+
+				p The service will phone you to arrange a date and time for the assessment. If you’d rather be contacted in a different way, you can let the Health Assessment Advisory Service know by emailing them, or you can get someone else to call them for you and let them know you’d prefer to be emailed.
+
+				p Email: customer-relations@chdauk.co.uk
+					br
+					| Phone: 0800 288 8777
+
+				p When they contact you, the service will also tell you which of their centres you need to go to for your assessment.
+
+				h4 If you can't travel to an assessment
+
+				p If your illness or disability makes it difficult or impossible for you to travel to an assessment, you can ask for the assessment to be done at home instead. Tell the Health Assessment Advisory Service when they call – they’ll ask you to provide information from your doctor, or other medical professional, to explain why you can’t travel. 
+
+				h3 Prepare for the next steps
+
+				p 
+					a Preparing for your medical ‘fit for work’ assessment
+
+	#simpleModal.modal
+			.extent-country-select
+					form
+						h2 Advice can vary depending on where you live
+							fieldset
+								label(for="exampleInputFile") Where do you live?
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-GB", checked)
+									| England
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-SCT")
+									| Scotland
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Wales
+								label.radio
+									input(type="radio", name="radio", value="?lang=en-WLS")
+									| Cmyru
+								label.radio.radio--outline
+									input(type="radio", name="radio", value="?lang=cy")
+									| Northern Ireland
+							button#closeSimple.btn.btn-primary.right-button-icon(type="submit") Continue
+
+	script.
+		$(document).ready(function(){
+			$("#showSimpleModal").click(function() {
+				$("div#simpleModal").addClass("show");
+				return false;
+			});
+			$("#closeSimple").click(function() {
+				$("div#simpleModal").removeClass("show");
+				return false;
+			});
+		});
+		//close modal when clicking the esc keyboard button
+		$(document).keyup(function(event){
+			if(event.which=='27'){
+				$("div#simpleModal").removeClass('show');
+			}
+		});
