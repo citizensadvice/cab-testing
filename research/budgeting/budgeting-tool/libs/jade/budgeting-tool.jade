@@ -13,11 +13,52 @@ block breadcrumbs
 		{title: "Templates", href: "index.html#templates"},
 		{title: "Budgeting Tool"}])
 
-//block sidebar
-	- var section = "Nav"
-	+sidebar([
-		{title: "Budgeting Tool"}
-		],0)
+block script
+	script.
+		$(document).ready(function() {
+			var fieldTitles = [
+				"Housing benefit",
+				"Child benefit",
+				"Disability Living Allowance",
+				"Incapacity Benefit",
+				"Jobseeker's Allowance",
+				"Council Tax Benefit",
+				"Statutory Maternity Pay",
+				"Carer's Allowance"
+			];
+			$.each(fieldTitles, function( index, value ) {
+				$("#select").append('<option data-id="'+index+'">'+value+'</option>');
+			});
+			
+			/*var i = $('#fields-body fieldset').size();
+			
+			$('#addField').click(function() {
+				$('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>').appendTo('#fields-body');
+				i++;
+				return false;
+			});
+			
+			$('.remove-field').click(function() {
+				//$(this).parent().parent().remove();
+				//return false;
+				console.log
+			});*/
+
+			var wrapper = $("#fields-body");
+			var i = 0;
+			$("#addField").click(function(e){
+				e.preventDefault();
+				if(i < fieldTitles.length){
+					$(wrapper).append('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					i++;
+				}
+			});
+
+			$(wrapper).on("click",".remove-field", function(e){
+				e.preventDefault();
+				$(this).parent().parent('fieldset').remove();
+			})
+		});
 
 block section-notice
 	aside.section-notice
@@ -30,44 +71,18 @@ block content
 		.main-content__right
 			h2(style="margin-top: 0;") Income - Benefits
 
-			fieldset
-				label(for="income") Income support
-					a.remove.u-pull-right(href="#") Remove
-				.field-group.field-group--dropdown
-					input#income(placeholder="£", type="number")
-					.dropdown
-						select#exampleSelect1
-							option Weekly
-							option Monthly
-							option Yearly
+			#fields-body
 
 			fieldset
-				label(for="income") Tax credit
-					a.remove.u-pull-right(href="#") Remove
-				.field-group.field-group--dropdown
-					input#income(placeholder="£", type="number")
-					.dropdown
-						select#exampleSelect1
-							option Weekly
-							option Monthly
-							option Yearly
-
-			fieldset
-				label(for="addbenefit") Add another benefit
+				
 				.field-group.well
+					label(for="addbenefit", style="display:block;") Add another benefit
 					.field
 						.dropdown(style="width:100%;")
-							select#exampleSelect1
-								option Housing benefit
-								option Child benefit
-								option Disability Living Allowance
-								option Incapacity Benefit
-								option Jobseeker's Allowance
-								option Council Tax Benefit
-								option Statutory Maternity Pay
-								option Carer's Allowance
+							select#select
+
 					.function
-						button.btn.btn-success.plus-button-icon(type="button") Add
+						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
 			button.btn.btn-primary-light.left-button-icon(type="button") Income
 			button.btn.btn-primary.right-button-icon(type="button") Household

@@ -32,6 +32,53 @@
       });
       
     </script>
+    <script>
+      $(document).ready(function() {
+      	var fieldTitles = [
+      		"Housing benefit",
+      		"Child benefit",
+      		"Disability Living Allowance",
+      		"Incapacity Benefit",
+      		"Jobseeker's Allowance",
+      		"Council Tax Benefit",
+      		"Statutory Maternity Pay",
+      		"Carer's Allowance"
+      	];
+      	$.each(fieldTitles, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value+'</option>');
+      	});
+      	
+      	/*var i = $('#fields-body fieldset').size();
+      	
+      	$('#addField').click(function() {
+      		$('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>').appendTo('#fields-body');
+      		i++;
+      		return false;
+      	});
+      	
+      	$('.remove-field').click(function() {
+      		//$(this).parent().parent().remove();
+      		//return false;
+      		console.log
+      	});*/
+      
+      	var wrapper = $("#fields-body");
+      	var i = 0;
+      	$("#addField").click(function(e){
+      		e.preventDefault();
+      		if(i < fieldTitles.length){
+      			$(wrapper).append('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			i++;
+      		}
+      	});
+      
+      	$(wrapper).on("click",".remove-field", function(e){
+      		e.preventDefault();
+      		$(this).parent().parent('fieldset').remove();
+      	})
+      });
+      
+    </script>
   </head>
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
@@ -87,51 +134,17 @@
         <div class="articleContent">
           <div class="main-content__right">
             <h2 style="margin-top: 0;">Income - Benefits</h2>
+            <div id="fields-body"></div>
             <fieldset>
-              <label for="income">Income support<a href="#" class="remove u-pull-right">Remove</a></label>
-              <div class="field-group field-group--dropdown">
-                <input id="income" placeholder="£" type="number">
-                <div class="dropdown">
-                  <select id="exampleSelect1">
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                    <option>Yearly</option>
-                  </select>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset>
-              <label for="income">Tax credit<a href="#" class="remove u-pull-right">Remove</a></label>
-              <div class="field-group field-group--dropdown">
-                <input id="income" placeholder="£" type="number">
-                <div class="dropdown">
-                  <select id="exampleSelect1">
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                    <option>Yearly</option>
-                  </select>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset>
-              <label for="addbenefit">Add another benefit</label>
               <div class="field-group well">
+                <label for="addbenefit" style="display:block;">Add another benefit</label>
                 <div class="field">
                   <div style="width:100%;" class="dropdown">
-                    <select id="exampleSelect1">
-                      <option>Housing benefit</option>
-                      <option>Child benefit</option>
-                      <option>Disability Living Allowance</option>
-                      <option>Incapacity Benefit</option>
-                      <option>Jobseeker's Allowance</option>
-                      <option>Council Tax Benefit</option>
-                      <option>Statutory Maternity Pay</option>
-                      <option>Carer's Allowance</option>
-                    </select>
+                    <select id="select"></select>
                   </div>
                 </div>
                 <div class="function">
-                  <button type="button" class="btn btn-success plus-button-icon">Add</button>
+                  <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
                 </div>
               </div>
             </fieldset>
