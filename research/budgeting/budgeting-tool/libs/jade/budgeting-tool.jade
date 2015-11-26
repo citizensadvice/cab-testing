@@ -26,38 +26,36 @@ block script
 				"Statutory Maternity Pay",
 				"Carer's Allowance"
 			];
+
 			$.each(fieldTitles, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value+'</option>');
 			});
-			
-			/*var i = $('#fields-body fieldset').size();
-			
-			$('#addField').click(function() {
-				$('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>').appendTo('#fields-body');
-				i++;
-				return false;
-			});
-			
-			$('.remove-field').click(function() {
-				//$(this).parent().parent().remove();
-				//return false;
-				console.log
-			});*/
 
 			var wrapper = $("#fields-body");
-			var i = 0;
 			$("#addField").click(function(e){
+				var dataId = $('#fieldOptions').find(':selected').data("id");
+				$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+
 				e.preventDefault();
-				if(i < fieldTitles.length){
-					$(wrapper).append('<fieldset><label for="field'+i+'">'+fieldTitles[i]+'<a class="remove-field remove u-pull-right">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+i+'" placeholder="£" /><div class="dropdown"><select id="select'+i+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-					i++;
-				}
+				$(wrapper).append('<fieldset><label for="field'+dataId+'">'+fieldTitles[dataId]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
 			});
 
 			$(wrapper).on("click",".remove-field", function(e){
+				var thisId = $(this).data("id");
 				e.preventDefault();
 				$(this).parent().parent('fieldset').remove();
+				$("#select").append('<option data-id="'+thisId+'">'+fieldTitles[thisId]+'</option>');
 			})
+
+			var x = 0;
+			$(".side-nav-beta.tools").each(function() {
+				$("a", this).each(function() {
+					if(x>0){
+						$(this).prepend( x +'. ');
+					}
+					x++;
+				});
+			});
 		});
 
 block section-notice
@@ -76,16 +74,16 @@ block content
 			fieldset
 				
 				.field-group.well
-					label(for="addbenefit", style="display:block;") Add another benefit
-					.field
+					label(style="display:block;") Add another benefit
+					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select
 
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			button.btn.btn-primary-light.left-button-icon(type="button") Income
-			button.btn.btn-primary.right-button-icon(type="button") Household
+			button.btn.btn-primary-light.left-button-icon(type="button") Previous
+			button.btn.btn-primary.right-button-icon(type="button") Next
 
 		nav.side-nav-beta.tools
 			ul
@@ -94,25 +92,21 @@ block content
 						span Budgeting tool
 				li
 					ul
-						li.side-nav-beta__sibling.-visited
-							a(href="#") Start
 						li.side-nav-beta__sibling.-current
 							a(href="#") Income
 						li.side-nav-beta__sibling
-							a(href="#") 1. Bills
+							a(href="#") Bills
 						li.side-nav-beta__sibling
-							a(href="#") 2. Household
+							a(href="#") Household
 						li.side-nav-beta__sibling
-							a(href="#") 3. Leisure
+							a(href="#") Leisure
 						li.side-nav-beta__sibling
-							a(href="#") 4. Travel
+							a(href="#") Travel
 						li.side-nav-beta__sibling
-							a(href="#") 5. Car
+							a(href="#") Car
 						li.side-nav-beta__sibling
-							a(href="#") 6. Child
+							a(href="#") Child
 						li.side-nav-beta__sibling
-							a(href="#") 7. Family
-						li.side-nav-beta__sibling
-							a(href="#") 8. Debt
+							a(href="#") Family
 						li.side-nav-beta__sibling
 							a(href="budgeting-tool-results.html") Results
