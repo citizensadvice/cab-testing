@@ -38,112 +38,108 @@
       // Income values
       var income = [];
       income.push([
-      	{name: 'Bills'},
+      	{name: "Wages", y: "450"}
+      ]);
+      income.push([
+      	{name: "Lodger(s)", y: "70"}
+      ]);
+      income.push([
+      	{name: "Pension", y: "30"}
+      ]);
+      income.push([
+      	{name: "Child Support"},
       	[
-      		{name: 'sub', y: '2'},
-      		{name: 'sub', y: '3'},
-      		{name: 'sub', y: '4'}
+      		{name: "Child maintenance or support", y: "15"},
+      		{name: "Child benefit", y: "50"},
+      		{name: "Guardian's Allwance", y: "70"}
       	]
-      ]);
-      income.push([
-      	{name: 'Household'},
-      	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
-      	]
-      ]);
-      income.push([
-      	{name: 'Leisure'},
-      	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
-      	]
-      ]);
-      income.push([
-      	{name: 'Travel', y: '4'}
-      ]);
-      income.push([
-      	{name: 'Car'},
-      	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
-      	]
-      ]);
-      income.push([
-      	{name: 'Child', y: '5'}
-      ]);
-      income.push([
-      	{name: 'Family'},
-      	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
-      	]
-      ]);
-      income.push([
-      	{name: 'Debt', y: '5'}
-      ]);
-      income.push([
-      	{name: 'Savings', y: '5'}
       ]);
       
       // Spending values
       var spending = [];
       spending.push([
-      	{name: 'Bills'},
+      	{name: "Bills"},
       	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"}
       	]
       ]);
       spending.push([
-      	{name: 'Household'},
+      	{name: "Household"},
       	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"}
       	]
       ]);
       spending.push([
-      	{name: 'Leisure'},
+      	{name: "Leisure"},
       	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"}
       	]
       ]);
       spending.push([
-      	{name: 'Travel', y: '4'}
+      	{name: "Travel", y: "4"}
       ]);
       spending.push([
-      	{name: 'Car', y: '5'},
+      	{name: "Car", y: "5"},
       	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"}
       	]
       ]);
       spending.push([
-      	{name: 'Child', y: '10'}
+      	{name: "Child", y: "10"}
       ]);
       spending.push([
-      	{name: 'Family'},
+      	{name: "Family"},
       	[
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'},
-      		{name: 'sub', y: '5'}
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"},
+      		{name: "sub", y: "5"}
       	]
       ]);
       spending.push([
-      	{name: 'Debt', y: '5'}
+      	{name: "Debt", y: "5"}
       ]);
       spending.push([
-      	{name: 'Savings', y: '5'}
+      	{name: "Savings", y: "5"}
       ]);
+      
+      // Make simplified arrays for highcharts
+      incomeChart = [];
+      $.each(income, function( index, value ) {
+      	if (value.length > 1) {
+      		incomeChart.push(value[0]);
+      		var curTotal = 0;
+      		$.each(value[1], function( index, value ) {
+      			curTotal += parseInt(value.y);
+      		});
+      		incomeChart[index]["y"] = curTotal;
+      	} else {
+      		incomeChart.push(value[0]);
+      		incomeChart[index]["y"] = parseInt(incomeChart[index].y);
+      	}
+      });
+      
+      spendingChart = [];
+      $.each(spending, function( index, value ) {
+      	if (value.length > 1) {
+      		spendingChart.push(value[0]);
+      		var curTotal = 0;
+      		$.each(value[1], function( index, value ) {
+      			curTotal += parseInt(value.y);
+      		});
+      		spendingChart[index]["y"] = curTotal;
+      	} else {
+      		spendingChart.push(value[0]);
+      		spendingChart[index]["y"] = parseInt(spendingChart[index].y);
+      	}
+      });
       
       // Work out totals
       var totalIncome = 0;
@@ -168,9 +164,20 @@
       	}
       });
       
-      // Build income and spending tables
       $(document).ready(function() {
       
+      	// Add totals to the page
+      	$('#totals #income').append(totalIncome);
+      	$('#totals #spending').append(totalSpending);
+      	var totalFig = totalIncome - totalSpending;
+      
+      	if (totalFig <= 0) {
+      		$('#totals').append('<h3>You are spending £'+Math.abs(totalFig)+' more than your income</h3>');
+      	} else {
+      		$('#totals').append('<h3>You are spending £'+totalFig+' less than your income</h3>');
+      	}
+      
+      	// Build income and spending tables
       	$.each(income, function( index, value ) {
       		if (value.length > 1) {
       			var curTotal = 0;
@@ -221,6 +228,15 @@
       	});
       	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
       
+      	var x = 0;
+      	$(".side-nav-beta.tools").each(function() {
+      		$("a", this).each(function() {
+      			if(x>0){
+      				$(this).prepend( x +'. ');
+      			}
+      			x++;
+      		});
+      	});
       });
       
       // Create overview chart
@@ -303,22 +319,7 @@
       		series: [{
       			name: 'Income',
       			colorByPoint: true,
-      			data: [{
-      				name: 'Wages',
-      				y: 50
-      			}, {
-      				name: 'Lodger(s)',
-      				y: 50
-      			}, {
-      				name: 'Pension',
-      				y: 50
-      			}, {
-      				name: 'Child Support',
-      				y: 50
-      			}, {
-      				name: 'Benefits',
-      				y: 50
-      			}],
+      			data: incomeChart,
       			dataLabels: {
       				formatter: function () {
       					return this.point.name + ' £' + this.y;
@@ -366,7 +367,7 @@
       		series: [{
       			name: 'Spending',
       			colorByPoint: true,
-      			data: JSON.parse(spending),
+      			data: spendingChart,
       			dataLabels: {
       				formatter: function () {
       					return this.point.name + ' £' + this.y;
@@ -378,18 +379,6 @@
       				enabled: false
       			}
       		}
-      	});
-      });
-      
-      $(document).ready(function() {
-      	var x = 0;
-      	$(".side-nav-beta.tools").each(function() {
-      		$("a", this).each(function() {
-      			if(x>0){
-      				$(this).prepend( x +'. ');
-      			}
-      			x++;
-      		});
       	});
       });
       		
@@ -449,9 +438,9 @@
         <div class="articleContent">
           <div class="main-content__right">
             <h2>Results</h2>
-            <p> Total monthly income: <strong>£250.00</strong><br>Total spending: <strong>£450.00</strong></p>
-            <h3>You are spending £200 more than your income</h3>
-            <!--h3 You are spending [UnderAmount] less than your income-->
+            <div id="totals">
+              <p>Total monthly income: <strong id="income">£</strong><br>Total spending: <strong id="spending">£</strong></p>
+            </div>
             <div class="well">
               <div id="overview-chart" style="min-width: 300px; margin: 0 auto;"></div>
             </div>
