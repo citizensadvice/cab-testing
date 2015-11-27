@@ -35,7 +35,195 @@
     <script src="../libs/javascript/vendor/highcharts/highcharts.js"></script>
     <script src="../libs/javascript/vendor/highcharts/modules/exporting.js"></script>
     <script>
-      // OVERVIEW CHART
+      // Income values
+      var income = [];
+      income.push([
+      	{name: 'Bills'},
+      	[
+      		{name: 'sub', y: '2'},
+      		{name: 'sub', y: '3'},
+      		{name: 'sub', y: '4'}
+      	]
+      ]);
+      income.push([
+      	{name: 'Household'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      income.push([
+      	{name: 'Leisure'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      income.push([
+      	{name: 'Travel', y: '4'}
+      ]);
+      income.push([
+      	{name: 'Car'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      income.push([
+      	{name: 'Child', y: '5'}
+      ]);
+      income.push([
+      	{name: 'Family'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      income.push([
+      	{name: 'Debt', y: '5'}
+      ]);
+      income.push([
+      	{name: 'Savings', y: '5'}
+      ]);
+      
+      // Spending values
+      var spending = [];
+      spending.push([
+      	{name: 'Bills'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      spending.push([
+      	{name: 'Household'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      spending.push([
+      	{name: 'Leisure'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      spending.push([
+      	{name: 'Travel', y: '4'}
+      ]);
+      spending.push([
+      	{name: 'Car', y: '5'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      spending.push([
+      	{name: 'Child', y: '10'}
+      ]);
+      spending.push([
+      	{name: 'Family'},
+      	[
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'},
+      		{name: 'sub', y: '5'}
+      	]
+      ]);
+      spending.push([
+      	{name: 'Debt', y: '5'}
+      ]);
+      spending.push([
+      	{name: 'Savings', y: '5'}
+      ]);
+      
+      // Work out totals
+      var totalIncome = 0;
+      $.each(income, function( index, value ) {
+      	if (value.length > 1) {
+      		$.each(value[1], function( index, value ) {
+      			totalIncome += parseInt(value.y);
+      		});
+      	} else {
+      		totalIncome += parseInt(value[0].y);
+      	}
+      });
+      
+      var totalSpending = 0;
+      $.each(spending, function( index, value ) {
+      	if (value.length > 1) {
+      		$.each(value[1], function( index, value ) {
+      			totalSpending += parseInt(value.y);
+      		});
+      	} else {
+      		totalSpending += parseInt(value[0].y);
+      	}
+      });
+      
+      // Build income and spending tables
+      $(document).ready(function() {
+      
+      	$.each(income, function( index, value ) {
+      		if (value.length > 1) {
+      			var curTotal = 0;
+      			$.each(value[1], function( index, value ) {
+      				curTotal += parseInt(value.y);
+      			});
+      
+      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+curTotal+'</td></tr>');
+      
+      			$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+      
+      			var curIndex = index;
+      			$.each(value[1], function( index, value ) {
+      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      			});
+      
+      		} else {
+      
+      			$.each(value, function( index, value ) {
+      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      			});
+      		}
+      	});
+      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalIncome+'</td></tr>');
+      
+      	$.each(spending, function( index, value ) {
+      		if (value.length > 1) {
+      			var curTotal = 0;
+      			$.each(value[1], function( index, value ) {
+      				curTotal += parseInt(value.y);
+      			});
+      
+      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+curTotal+'</td></tr>');
+      
+      			$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+      
+      			var curIndex = index;
+      			$.each(value[1], function( index, value ) {
+      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      			});
+      
+      		} else {
+      
+      			$.each(value, function( index, value ) {
+      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      			});
+      		}
+      	});
+      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
+      
+      });
+      
+      // Create overview chart
       $(function () {
       	var chart = new Highcharts.Chart({
       		colors: ['#004B88', '#FCBB69'],
@@ -68,11 +256,11 @@
       		},
       		series: [{
       			name: 'Income',
-      			data: [250]
+      			data: JSON.parse("["+totalIncome+"]")
       		},
       				{
       			name: 'Spending',
-      			data: [450]
+      			data: JSON.parse("["+totalSpending+"]")
       		}],
       		navigation: {
       			buttonOptions: {
@@ -82,7 +270,7 @@
       	});
       });
       
-      // INCOME CHART
+      // Create income chart
       $(function () {
       	var chart = new Highcharts.Chart({
       		colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
@@ -145,13 +333,13 @@
       	});
       });
       
-      // MOBILE CHART
+      // Create spending chart
       $(function () {
       	var chart = new Highcharts.Chart({
       		colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
       		chart: {
       			type: 'pie',
-      			renderTo: 'mobile-spending-chart',
+      			renderTo: 'spending-chart',
       			backgroundColor:'#f2f2f2'
       		},
       		title: {
@@ -178,34 +366,7 @@
       		series: [{
       			name: 'Spending',
       			colorByPoint: true,
-      			data: [{
-      				name: 'Bills',
-      				y: 6
-      			}, {
-      				name: 'Household',
-      				y: 11
-      			}, {
-      				name: 'Leisure',
-      				y: 10
-      			}, {
-      				name: 'Travel',
-      				y: 4
-      			}, {
-      				name: 'Car',
-      				y: 7
-      			}, {
-      				name: 'Child',
-      				y: 7
-      			}, {
-      				name: 'Family',
-      				y: 3
-      			}, {
-      				name: 'Debt',
-      				y: 14
-      			}, {
-      				name: 'Savings',
-      				y: 1
-      			}],
+      			data: JSON.parse(spending),
       			dataLabels: {
       				formatter: function () {
       					return this.point.name + ' £' + this.y;
@@ -219,172 +380,6 @@
       		}
       	});
       });
-      
-      /* DESKTOP CHART
-      $(function () {
-      
-      	var //colors = Highcharts.getOptions().colors,
-      		categories = ['Bills', 'Household', 'Leisure', 'Travel', 'Car', 'Child', 'Family', 'Debt', 'Savings'],
-      		//colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
-      		data = [{
-      			y: 6,
-      			color: '#f8a980',
-      			drilldown: {
-      				name: 'Bills',
-      				categories: ['Rent or mortgage', 'Council Tax / Rates', 'Buildings and contents insurance', 'Gas and electricity', 'Water', 'TV licence'],
-      				data: [1, 1, 1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 11,
-      			color: '#ffbf47',
-      			drilldown: {
-      				name: 'Household',
-      				categories: ['Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)', 'Work lunches and coffees, teas etc', 'Cigarettes and tobacco', 'Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)', 'Clothing and footwear', 'Repairs and house maintenance', 'Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)', 'Haircuts', 'Laundrette', 'Medicines (including prescription charges)', 'Dentistry', 'Insurance (life or home, but not travel)'],
-      				data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 10,
-      			color: '#b9db9b',
-      			drilldown: {
-      				name: 'Leisure',
-      				categories: ['Meals and drinks out', 'Memberships (eg gym or cinema membership)', 'Magazines and newspapers', 'Books or music (in any format)', 'Website subscriptions (eg news, dating or music/video streaming websites)', 'Season tickets', 'Cinema or theatre tickets', 'Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ', 'Cigarettes or other tobacco', 'Lottery and pools'],
-      				data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 4,
-      			color: '#a5bddc',
-      			drilldown: {
-      				name: 'Travel',
-      				categories: ['Public transport (including season tickets', 'Taxis', 'Bicycle (including running costs such as repair or rental', 'Car rental (including petrol'],
-      				data: [1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 7,
-      			color: '#b5afd7',
-      			drilldown: {
-      				name: 'Car',
-      				categories: ['Car insurance', 'Road tax', 'Fuel', 'MOT', 'Car maintenance', 'Breakdown or recovery', 'Parking/congestion charges'],
-      				data: [1, 1, 1, 1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 7,
-      			color: '#81cec6',
-      			drilldown: {
-      				name: 'Child',
-      				categories: ['Childcare', 'Child support/maintenance', 'Tuition fees', 'School uniform', 'School meals', 'Pocket money and school trips', 'Nappies and baby items (if you haven’t already included in groceries)'],
-      				data: [1 ,1 ,1 ,1 ,1 ,1 ,1]
-      			}
-      		}, {
-      			y: 3,
-      			color: '#f499be',
-      			drilldown: {
-      				name: 'Family',
-      				categories: ['Adult care (eg care home costs for an elderly relative)', 'Christmas and birthday presents', 'Pet-related expenses (eg vet bills, pet food and insurance)'],
-      				data: [1, 1, 1]
-      			}
-      		}, {
-      			y: 14,
-      			color: '#e76568',
-      			drilldown: {
-      				name: 'Debt',
-      				categories: ['Mortgage, rent or any loans secured against your home', 'Council Tax', 'Credit card, store card debts or payday loans', 'Bank or building society loans', 'Personal loans', 'Catalogue, home credit or in-store credit debts', 'Overdrafts' , 'Money borrowed from friends or family', 'Income Tax, National Insurance and VAT', 'Gas and electricity bills', 'Child maintenance', 'TV licence', 'Hire purchase agreements', 'Court fines'],
-      				data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      			}
-      		}, {
-      			y: 1,
-      			color: '#87c3d0',
-      			drilldown: {
-      				name: 'Savings',
-      				categories: ['Savings'],
-      				data: [1]
-      			}
-      		}],
-      		sectionData = [],
-      		spendingData = [],
-      		i,
-      		j,
-      		dataLen = data.length,
-      		drillDataLen,
-      		brightness;
-      
-      	// Build the data arrays
-      	for (i = 0; i < dataLen; i += 1) {
-      
-      		// add browser data
-      		sectionData.push({
-      			name: categories[i],
-      			y: data[i].y,
-      			color: data[i].color
-      		});
-      
-      		// add version data
-      		drillDataLen = data[i].drilldown.data.length;
-      		for (j = 0; j < drillDataLen; j += 1) {
-      			brightness = 0.2 - (j / drillDataLen) / 5;
-      			spendingData.push({
-      				name: data[i].drilldown.categories[j],
-      				y: data[i].drilldown.data[j],
-      				color: Highcharts.Color(data[i].color).brighten(brightness).get()
-      			});
-      		}
-      	}
-      
-      	// Create the chart
-      	var chart = new Highcharts.Chart({
-      		chart: {
-      			type: 'pie',
-      			renderTo: 'desktop-spending-chart',
-      			backgroundColor:'#f2f2f2'
-      		},
-      		title: {
-      			text: null
-      		},
-      		plotOptions: {
-      			pie: {
-      				shadow: false,
-      				center: ['50%', '50%'],
-      				cursor: 'pointer',
-      				dataLabels: {
-      					enabled: true
-      				}
-      			}
-      		},
-      		tooltip: {
-      			formatter: function () {
-      				return this.point.name + ': <b>£' + this.y + '</b>';
-      			}
-      		},
-      		series: [{
-      			name: 'Spending',
-      			data: sectionData,
-      			size: '70%',
-      			dataLabels: {
-      				formatter: function () {
-      					// display only if larger than 5
-      					return this.y > 5 ? this.point.name : null;
-      				},
-      				color: '#ffffff',
-      				distance: -30
-      			}
-      		}, {
-      			name: 'Spending',
-      			data: spendingData,
-      			size: '80%',
-      			innerSize: '70%',
-      			dataLabels: {
-      				formatter: function () {
-      					// display only if larger than 25
-      					return this.y > 25 ? this.point.name + ': £' + this.y : null;
-      				}
-      			}
-      		}],
-      		navigation: {
-      			buttonOptions: {
-      				enabled: false
-      			}
-      		}
-      	});
-      });*/
       
       $(document).ready(function() {
       	var x = 0;
@@ -499,535 +494,29 @@
             </ul>
             <p>Ask <a href="">local Citizens Advice</a> whether they offer these services.</p>
             <h2 id="detailed">Income breakdown</h2>
-            <table class="full-width">
+            <table id="income-table" class="full-width">
               <thead>
                 <tr>
                   <th scope="col" colspan="2">Income</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Wages</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr>
-                  <td>Lodger(s)</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr>
-                  <td>Pension</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Child Support</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Child maintenance or support</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Child Benefit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Child Tax Credit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Guardian’s Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Benefits</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Attendance Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Bereavement Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Bereavement payment (lump-sum)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Carer’s Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Disability Living Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Employment and Support Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Housing Benefit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Incapacity Benefit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Income Support</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Industrial Injuries Benefit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Jobseeker’s Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Maternity Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Pension Credit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Personal Independence Payment</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Severe Disablement Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Universal Credit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>War Widow’s (or Widower’s) Pension</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Widowed Parent’s Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Widow’s Pension</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Winter Fuel Payment and Christmas Bonus</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Working Tax Credit</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Young Person’s Bridging Allowance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="total">
-                  <td>Total</td>
-                  <td class="amount">£250.00</td>
-                </tr>
-              </tbody>
+              <tbody id="tbody"></tbody>
             </table>
             <div class="well">
               <div id="income-chart" style="min-width: 310px; margin: 0 auto;"></div>
             </div>
             <h2>Spending breakdown</h2>
-            <table class="full-width">
+            <table id="spending-table" class="full-width">
               <thead>
                 <tr>
                   <th scope="col" colspan="2">Spending</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="table-collapse--toggle">
-                  <td>Bills</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Rent or mortgage</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Council Tax / Rates</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Buildings and contents insurance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Gas and electricity</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Water</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>TV licence</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Household</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Work lunches and coffees, teas etc</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Cigarettes and tobacco</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Clothing and footwear</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Repairs and house maintenance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Haircuts</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Laundrette</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Medicines (including prescription charges)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Dentistry</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Insurance (life or home, but not travel)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Leisure</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Meals and drinks out</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Memberships (eg gym or cinema membership)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Magazines and newspapers</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Books or music (in any format)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Website subscriptions (eg news, dating or music/video streaming websites)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Season tickets</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Cinema or theatre tickets</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) </td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Cigarettes or other tobacco</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Lottery and pools</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Travel</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Public transport (including season tickets)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Taxis </td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Bicycle (including running costs such as repair or rental)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Car rental (including petrol)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Car hire as purchase payment</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Car</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Car insurance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Road tax</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Fuel</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>MOT</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Car maintenance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Breakdown or recovery</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Parking/congestion charges</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Child</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Childcare</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Child support/maintenance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Tuition fees</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>School uniform</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>School meals </td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Pocket money and school trips</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Nappies and baby items (if you haven’t already included in groceries)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Family</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Adult care (eg care home costs for an elderly relative)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Christmas and birthday presents</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Pet-related expenses (eg vet bills, pet food and insurance)</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr class="table-collapse--toggle">
-                  <td>Debt</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="table-collapse">
-                  <td colspan="2">
-                    <table class="full-width">
-                      <tbody>
-                        <tr>
-                          <td>Mortgage, rent or any loans secured against your home</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Council Tax</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Credit card, store card debts or payday loans</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Bank or building society loans</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Personal loans</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Catalogue, home credit or in-store credit debts</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Overdrafts </td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Money borrowed from friends or family</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Income Tax, National Insurance and VAT</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Gas and electricity bills</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Child maintenance</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>TV licence</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Hire purchase agreements</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                        <tr>
-                          <td>Court fines</td>
-                          <td class="amount">£0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Savings</td>
-                  <td class="amount">£50.00</td>
-                </tr>
-                <tr class="total">
-                  <td>Total</td>
-                  <td class="amount">£450.00</td>
-                </tr>
-              </tbody>
+              <tbody id="tbody"></tbody>
             </table>
             <div class="well">
               <!--div#desktop-spending-chart.hide-mobile(style="min-width: 310px; margin: 0 auto;")-->
-              <div id="mobile-spending-chart" style="min-width: 310px; margin: 0 auto;"></div>
+              <div id="spending-chart" style="min-width: 310px; margin: 0 auto;"></div>
             </div>
           </div>
           <nav class="side-nav-beta tools">
