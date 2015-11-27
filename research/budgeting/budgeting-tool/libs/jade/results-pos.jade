@@ -26,20 +26,48 @@ block script
 		// Income values
 		var income = [];
 		income.push([
-			{name: "Wages", y: "450"}
+			{name: "Wages", y: Math.floor(Math.random()*250)+1}
 		]);
 		income.push([
-			{name: "Lodger(s)", y: "70"}
+			{name: "Lodger(s)", y: Math.floor(Math.random()*250)+1}
 		]);
 		income.push([
-			{name: "Pension", y: "30"}
+			{name: "Pension", y: Math.floor(Math.random()*250)+1}
 		]);
 		income.push([
 			{name: "Child Support"},
 			[
-				{name: "Child maintenance or support", y: "15"},
-				{name: "Child benefit", y: "50"},
-				{name: "Guardian's Allwance", y: "70"}
+				{name: "Child maintenance or support", y: Math.floor(Math.random()*250)+1},
+				{name: "Child Benefit", y: Math.floor(Math.random()*250)+1},
+				//{name: "Child Tax Credit", y: Math.floor(Math.random()*250)+1},
+				{name: "Guardian's Allwance", y: Math.floor(Math.random()*250)+1}
+			]
+		]);
+		income.push([
+			{name: "Benefits"},
+			[
+				{name: "Attendance Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Bereavement Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Bereavement payment (lump-sum)", y: Math.floor(Math.random()*250)+1},
+				{name: "Carer’s Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Disability Living Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Employment and Support Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Housing Benefit", y: Math.floor(Math.random()*250)+1},
+				{name: "Incapacity Benefit", y: Math.floor(Math.random()*250)+1},
+				{name: "Income Support", y: Math.floor(Math.random()*250)+1},
+				{name: "Industrial Injuries Benefit", y: Math.floor(Math.random()*250)+1},
+				{name: "Jobseeker’s Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Maternity Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Pension Credit", y: Math.floor(Math.random()*250)+1},
+				{name: "Personal Independence Payment", y: Math.floor(Math.random()*250)+1},
+				{name: "Severe Disablement Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Universal Credit", y: Math.floor(Math.random()*250)+1},
+				{name: "War Widow’s (or Widower’s) Pension", y: Math.floor(Math.random()*250)+1},
+				{name: "Widowed Parent’s Allowance", y: Math.floor(Math.random()*250)+1},
+				{name: "Widow’s Pension", y: Math.floor(Math.random()*250)+1},
+				{name: "Winter Fuel Payment and Christmas Bonus", y: Math.floor(Math.random()*250)+1},
+				{name: "Working Tax Credit", y: Math.floor(Math.random()*250)+1},
+				{name: "Young Person’s Bridging Allowance", y: Math.floor(Math.random()*250)+1}
 			]
 		]);
 
@@ -48,54 +76,109 @@ block script
 		spending.push([
 			{name: "Bills"},
 			[
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"}
+				{name: "Rent or mortgage", y: Math.floor(Math.random()*100)+1},
+				{name: "Council Tax / Rates", y: Math.floor(Math.random()*100)+1},
+				{name: "Buildings and contents insurance", y: Math.floor(Math.random()*100)+1},
+				{name: "Gas and electricity", y: Math.floor(Math.random()*100)+1},
+				{name: "Water", y: Math.floor(Math.random()*100)+1},
+				{name: "TV licence", y: Math.floor(Math.random()*100)+1}
 			]
 		]);
 		spending.push([
 			{name: "Household"},
 			[
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"}
+				{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: Math.floor(Math.random()*100)+1},
+				{name: "Work lunches and coffees, teas etc", y: Math.floor(Math.random()*100)+1},
+				{name: "Cigarettes and tobacco", y: Math.floor(Math.random()*100)+1},
+				{name: "Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)", y: Math.floor(Math.random()*100)+1},
+				{name: "Clothing and footwear", y: Math.floor(Math.random()*100)+1},
+				{name: "Repairs and house maintenance", y: Math.floor(Math.random()*100)+1},
+				{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: Math.floor(Math.random()*100)+1},
+				{name: "Haircuts", y: Math.floor(Math.random()*100)+1},
+				{name: "Laundrette", y: Math.floor(Math.random()*100)+1},
+				{name: "Medicines (including prescription charges)", y: Math.floor(Math.random()*100)+1},
+				{name: "Dentistry", y: Math.floor(Math.random()*100)+1},
+				{name: "Insurance (life or home, but not travel)", y: Math.floor(Math.random()*100)+1}
 			]
 		]);
 		spending.push([
 			{name: "Leisure"},
 			[
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"}
+				{name: "Meals and drinks out", y: Math.floor(Math.random()*100)+1},
+				{name: "Memberships (eg gym or cinema membership)", y: Math.floor(Math.random()*100)+1},
+				{name: "Magazines and newspapers", y: Math.floor(Math.random()*100)+1},
+				{name: "Books or music (in any format)", y: Math.floor(Math.random()*100)+1},
+				{name: "Website subscriptions (eg news, dating or music/video streaming websites)", y: Math.floor(Math.random()*100)+1},
+				{name: "Season tickets", y: Math.floor(Math.random()*100)+1},
+				{name: "Cinema or theatre tickets", y: Math.floor(Math.random()*100)+1},
+				{name: "Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ", y: Math.floor(Math.random()*100)+1},
+				{name: "Cigarettes or other tobacco", y: Math.floor(Math.random()*100)+1},
+				{name: "Lottery and pools", y: Math.floor(Math.random()*100)+1}
 			]
 		]);
 		spending.push([
-			{name: "Travel", y: "4"}
-		]);
-		spending.push([
-			{name: "Car", y: "5"},
+			{name: "Travel"},
 			[
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"}
+				{name: "Public transport (including season tickets)", y: Math.floor(Math.random()*100)+1},
+				{name: "Taxis ", y: Math.floor(Math.random()*100)+1},
+				{name: "Bicycle (including running costs such as repair or rental)", y: Math.floor(Math.random()*100)+1},
+				{name: "Car rental (including petrol)", y: Math.floor(Math.random()*100)+1},
+				{name: "Car hire as purchase payment", y: Math.floor(Math.random()*100)+1}
 			]
 		]);
 		spending.push([
-			{name: "Child", y: "10"}
+			{name: "Car"},
+			[
+				{name: "Car insurance", y: Math.floor(Math.random()*100)+1},
+				{name: "Road tax", y: Math.floor(Math.random()*100)+1},
+				{name: "Fuel", y: Math.floor(Math.random()*100)+1},
+				{name: "MOT", y: Math.floor(Math.random()*100)+1},
+				{name: "Car maintenance", y: Math.floor(Math.random()*100)+1},
+				{name: "Breakdown or recovery", y: Math.floor(Math.random()*100)+1},
+				{name: "Parking/congestion charges", y: Math.floor(Math.random()*100)+1}
+			]
+		]);
+		spending.push([
+			{name: "Child"},
+			[
+				{name: "Childcare", y: Math.floor(Math.random()*100)+1},
+				{name: "Child support/maintenance", y: Math.floor(Math.random()*100)+1},
+				{name: "Tuition fees", y: Math.floor(Math.random()*100)+1},
+				{name: "School uniform", y: Math.floor(Math.random()*100)+1},
+				{name: "School meals ", y: Math.floor(Math.random()*100)+1},
+				{name: "Pocket money and school trips", y: Math.floor(Math.random()*100)+1},
+				{name: "Nappies and baby items (if you haven’t already included in groceries)", y: Math.floor(Math.random()*100)+1}
+			]
 		]);
 		spending.push([
 			{name: "Family"},
 			[
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"},
-				{name: "sub", y: "5"}
+				{name: "Adult care (eg care home costs for an elderly relative)", y: Math.floor(Math.random()*100)+1},
+				{name: "Christmas and birthday presents", y: Math.floor(Math.random()*100)+1},
+				{name: "Pet-related expenses (eg vet bills, pet food and insurance)", y: Math.floor(Math.random()*100)+1}
 			]
 		]);
 		spending.push([
-			{name: "Debt", y: "5"}
+			{name: "Debt"},
+			[
+				{name: "Mortgage, rent or any loans secured against your home", y: Math.floor(Math.random()*100)+1},
+				{name: "Council Tax", y: Math.floor(Math.random()*100)+1},
+				{name: "Credit card, store card debts or payday loans", y: Math.floor(Math.random()*100)+1},
+				{name: "Bank or building society loans", y: Math.floor(Math.random()*100)+1},
+				{name: "Personal loans", y: Math.floor(Math.random()*100)+1},
+				{name: "Catalogue, home credit or in-store credit debts", y: Math.floor(Math.random()*100)+1},
+				{name: "Overdrafts ", y: Math.floor(Math.random()*100)+1},
+				{name: "Money borrowed from friends or family", y: Math.floor(Math.random()*100)+1},
+				{name: "Income Tax, National Insurance and VAT", y: Math.floor(Math.random()*100)+1},
+				{name: "Gas and electricity bills", y: Math.floor(Math.random()*100)+1},
+				{name: "Child maintenance", y: Math.floor(Math.random()*100)+1},
+				{name: "TV licence", y: Math.floor(Math.random()*100)+1},
+				{name: "Hire purchase agreements", y: Math.floor(Math.random()*100)+1},
+				{name: "Court fines", y: Math.floor(Math.random()*100)+1}
+			]
 		]);
 		spending.push([
-			{name: "Savings", y: "5"}
+			{name: "Savings", y: Math.floor(Math.random()*100)+1}
 		]);
 
 		// Make simplified arrays for highcharts
