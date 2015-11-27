@@ -38,48 +38,48 @@
       // Income values
       var income = [];
       income.push([
-      	{name: "Wages", y: Math.floor(Math.random()*250)+1}
+      	{name: "Wages", y: Math.floor(Math.random()*1500)+1}
       ]);
       income.push([
-      	{name: "Lodger(s)", y: Math.floor(Math.random()*250)+1}
+      	{name: "Lodger(s)", y: Math.floor(Math.random()*1500)+1}
       ]);
       income.push([
-      	{name: "Pension", y: Math.floor(Math.random()*250)+1}
+      	{name: "Pension", y: Math.floor(Math.random()*1500)+1}
       ]);
       income.push([
       	{name: "Child Support"},
       	[
-      		{name: "Child maintenance or support", y: Math.floor(Math.random()*250)+1},
-      		{name: "Child Benefit", y: Math.floor(Math.random()*250)+1},
-      		//{name: "Child Tax Credit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Guardian's Allwance", y: Math.floor(Math.random()*250)+1}
+      		{name: "Child maintenance or support", y: Math.floor(Math.random()*50)+1},
+      		{name: "Child Benefit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Child Tax Credit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Guardian's Allwance", y: Math.floor(Math.random()*50)+1}
       	]
       ]);
       income.push([
       	{name: "Benefits"},
       	[
-      		{name: "Attendance Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Bereavement Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Bereavement payment (lump-sum)", y: Math.floor(Math.random()*250)+1},
-      		{name: "Carer’s Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Disability Living Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Employment and Support Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Housing Benefit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Incapacity Benefit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Income Support", y: Math.floor(Math.random()*250)+1},
-      		{name: "Industrial Injuries Benefit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Jobseeker’s Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Maternity Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Pension Credit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Personal Independence Payment", y: Math.floor(Math.random()*250)+1},
-      		{name: "Severe Disablement Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Universal Credit", y: Math.floor(Math.random()*250)+1},
-      		{name: "War Widow’s (or Widower’s) Pension", y: Math.floor(Math.random()*250)+1},
-      		{name: "Widowed Parent’s Allowance", y: Math.floor(Math.random()*250)+1},
-      		{name: "Widow’s Pension", y: Math.floor(Math.random()*250)+1},
-      		{name: "Winter Fuel Payment and Christmas Bonus", y: Math.floor(Math.random()*250)+1},
-      		{name: "Working Tax Credit", y: Math.floor(Math.random()*250)+1},
-      		{name: "Young Person’s Bridging Allowance", y: Math.floor(Math.random()*250)+1}
+      		{name: "Attendance Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Bereavement Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Bereavement payment (lump-sum)", y: Math.floor(Math.random()*50)+1},
+      		{name: "Carer’s Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Disability Living Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Employment and Support Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Housing Benefit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Incapacity Benefit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Income Support", y: Math.floor(Math.random()*50)+1},
+      		{name: "Industrial Injuries Benefit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Jobseeker’s Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Maternity Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Pension Credit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Personal Independence Payment", y: Math.floor(Math.random()*50)+1},
+      		{name: "Severe Disablement Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Universal Credit", y: Math.floor(Math.random()*50)+1},
+      		{name: "War Widow’s (or Widower’s) Pension", y: Math.floor(Math.random()*50)+1},
+      		{name: "Widowed Parent’s Allowance", y: Math.floor(Math.random()*50)+1},
+      		{name: "Widow’s Pension", y: Math.floor(Math.random()*50)+1},
+      		{name: "Winter Fuel Payment and Christmas Bonus", y: Math.floor(Math.random()*50)+1},
+      		{name: "Working Tax Credit", y: Math.floor(Math.random()*50)+1},
+      		{name: "Young Person’s Bridging Allowance", y: Math.floor(Math.random()*50)+1}
       	]
       ]);
       
@@ -256,8 +256,10 @@
       
       	if (totalFig <= 0) {
       		$('#totals').append('<h3>You are spending £'+Math.abs(totalFig)+' more than your income</h3>');
+      		$('#covering').hide();
       	} else {
       		$('#totals').append('<h3>You are spending £'+totalFig+' less than your income</h3>');
+      		$('#not-covering').hide();
       	}
       
       	// Build income and spending tables
@@ -531,7 +533,17 @@
               <li> <a class="a-pdf-doc">Download your full budget sheet to save or print</a></li>
               <li> <a href="#detailed">See a detailed breakdown of your income and spending</a></li>
             </ul>
-            <div class="callout--confirmation">
+            <div id="not-covering" class="callout--alert">
+              <h3>Your income isn’t covering your costs</h3>
+              <p>As your income isn’t covering your living costs:</p>
+              <ul>
+                <li>see if there’s any way you can <a>cut your costs/reduce your spending</a></li>
+                <li>see if you can <a>get help towards your living costs</a></li>
+                <li>make sure you’re <a>prioritising the right bills</a> - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt</li>
+                <li>if you’re really struggling with your money and are in lots of debt, you can get help from your <a href="">local Citizens Advice</a></li>
+              </ul>
+            </div>
+            <div id="covering" class="callout--confirmation">
               <h3>You’ve got some money left each month</h3>
               <p>As you’ve got some money spare each month you could consider:</p>
               <ul>
