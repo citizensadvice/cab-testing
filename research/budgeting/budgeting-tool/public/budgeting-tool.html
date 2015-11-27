@@ -34,35 +34,74 @@
     </script>
     <script>
       $(document).ready(function() {
-      	var fieldTitles = [
-      		"Housing benefit",
-      		"Child benefit",
-      		"Disability Living Allowance",
-      		"Incapacity Benefit",
-      		"Jobseeker's Allowance",
-      		"Council Tax Benefit",
-      		"Statutory Maternity Pay",
-      		"Carer's Allowance"
-      	];
       
-      	$.each(fieldTitles, function( index, value ) {
-      		$("#select").append('<option data-id="'+index+'">'+value+'</option>');
+      	var fields = [];
+      		fields.push([
+      			"Housing benefit",
+      			"Help text"
+      		]);
+      		fields.push([
+      			"Child benefit",
+      			"Help text"
+      		]);
+      		fields.push([
+      			"Disability Living Allowance",
+      			""
+      		]);
+      		fields.push([
+      			"Incapacity Benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Jobseeker's Allowance",
+      			"Help text"
+      		]);
+      		fields.push([
+      			"Council Tax Benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Statutory Maternity Pay",
+      			""
+      		]);
+      		fields.push([
+      			"Carer's Allowance",
+      			""
+      		]);
+      
+      	$.each(fields, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
       	});
       
-      	var wrapper = $("#fields-body");
       	$("#addField").click(function(e){
+      		e.preventDefault();
+      
       		var dataId = $('#fieldOptions').find(':selected').data("id");
       		$('#fieldOptions option[data-id="'+dataId+'"]').remove();
       
-      		e.preventDefault();
-      		$(wrapper).append('<fieldset><label for="field'+dataId+'">'+fieldTitles[dataId]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      		
+      		var optionCount = $('#select option').length;
+      		if (optionCount < 1) {
+      			$('#add-more').hide();
+      		}
       	});
       
-      	$(wrapper).on("click",".remove-field", function(e){
-      		var thisId = $(this).data("id");
+      	$("#fields-body").on("click",".remove-field", function(e){
       		e.preventDefault();
+      
+      		var thisId = $(this).data("id");
       		$(this).parent().parent('fieldset').remove();
-      		$("#select").append('<option data-id="'+thisId+'">'+fieldTitles[thisId]+'</option>');
+      		$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount > 0) {
+      			$('#add-more').show();
+      		}
       	})
       
       	var x = 0;
@@ -74,6 +113,7 @@
       			x++;
       		});
       	});
+      
       });
       
     </script>
@@ -134,7 +174,7 @@
             <h2 style="margin-top: 0;">Benefits</h2>
             <div id="fields-body"></div>
             <fieldset>
-              <div class="field-group well">
+              <div id="add-more" class="field-group well">
                 <label style="display:block;">Add more</label>
                 <div id="fieldOptions" class="field">
                   <div style="width:100%;" class="dropdown">
@@ -159,10 +199,7 @@
                   <li class="side-nav-beta__sibling"><a href="#">Household</a></li>
                   <li class="side-nav-beta__sibling"><a href="#">Leisure</a></li>
                   <li class="side-nav-beta__sibling"><a href="#">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#">Car</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#">Child</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="budgeting-tool-results.html">Results</a></li>
+                  <li class="side-nav-beta__sibling"><a href="results-pos.html">Results</a></li>
                 </ul>
               </li>
             </ul>
