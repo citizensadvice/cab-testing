@@ -178,16 +178,6 @@
       		}
       	})
       
-      	var x = 0;
-      	$(".side-nav-beta.tools").each(function() {
-      		$("a", this).each(function() {
-      			if(x>0){
-      				$(this).prepend( x +'. ');
-      			}
-      			x++;
-      		});
-      	});
-      
       });
       
     </script>
@@ -249,7 +239,7 @@
             <div id="fields-body"></div>
             <fieldset>
               <div id="add-more" class="field-group well">
-                <label style="display:block;">Add more</label>
+                <label style="display:block;">Add an item</label>
                 <div id="fieldOptions" class="field">
                   <div style="width:100%;" class="dropdown">
                     <select id="select"></select>
@@ -259,8 +249,9 @@
                   <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
                 </div>
               </div>
-            </fieldset><a href="#" style="border: none;">
-              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="#" style="border: none;">
+            </fieldset>
+            <!--a(href="#", style="border: none;")button.btn.btn-primary-light.left-button-icon(type="button") Previous
+            --><a href="#" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">

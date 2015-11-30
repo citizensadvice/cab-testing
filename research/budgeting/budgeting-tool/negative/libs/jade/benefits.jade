@@ -153,16 +153,6 @@ block script
 				}
 			})
 
-			var x = 0;
-			$(".side-nav-beta.tools").each(function() {
-				$("a", this).each(function() {
-					if(x>0){
-						$(this).prepend( x +'. ');
-					}
-					x++;
-				});
-			});
-
 		});
 
 block section-notice
@@ -181,7 +171,7 @@ block content
 			fieldset
 				
 				#add-more.field-group.well
-					label(style="display:block;") Add more
+					label(style="display:block;") Add an item
 					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select
@@ -189,7 +179,7 @@ block content
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			a(href="#", style="border: none;")
+			//a(href="#", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
 			a(href="#", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
