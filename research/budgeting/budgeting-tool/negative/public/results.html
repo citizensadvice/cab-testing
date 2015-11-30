@@ -29,6 +29,16 @@
       var filename = document.location.pathname.match(/[^\/]+$/)[0];
       $(document).ready(function() {
       	$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
+      
+      	var x = 0;
+      	$(".side-nav-beta.tools").each(function() {
+      		$("a", this).each(function() {
+      			if(x>0){
+      				$(this).prepend( x +'. ');
+      			}
+      			x++;
+      		});
+      	});
       });
       
     </script>
@@ -38,15 +48,14 @@
       // Income values
       var income = [];
       income.push([
-      	{name: "Wages", y: Math.floor(Math.random()*1500)+1}
+      	{name: "Income"},
+      	[
+      		{name: "Wages", y: Math.floor(Math.random()*1500)+1},
+      		{name: "Lodger(s)", y: Math.floor(Math.random()*1500)+1},
+      		{name: "Pension", y: Math.floor(Math.random()*1500)+1}
+      	]
       ]);
-      income.push([
-      	{name: "Lodger(s)", y: Math.floor(Math.random()*1500)+1}
-      ]);
-      income.push([
-      	{name: "Pension", y: Math.floor(Math.random()*1500)+1}
-      ]);
-      income.push([
+      /*income.push([
       	{name: "Child Support"},
       	[
       		{name: "Child maintenance or support", y: Math.floor(Math.random()*50)+1},
@@ -81,7 +90,7 @@
       		{name: "Working Tax Credit", y: Math.floor(Math.random()*50)+1},
       		{name: "Young Person’s Bridging Allowance", y: Math.floor(Math.random()*50)+1}
       	]
-      ]);
+      ]);*/
       
       // Spending values
       var spending = [];
@@ -128,7 +137,7 @@
       		{name: "Lottery and pools", y: Math.floor(Math.random()*100)+1}
       	]
       ]);
-      spending.push([
+      /*spending.push([
       	{name: "Travel"},
       	[
       		{name: "Public transport (including season tickets)", y: Math.floor(Math.random()*100)+1},
@@ -169,7 +178,7 @@
       		{name: "Christmas and birthday presents", y: Math.floor(Math.random()*100)+1},
       		{name: "Pet-related expenses (eg vet bills, pet food and insurance)", y: Math.floor(Math.random()*100)+1}
       	]
-      ]);
+      ]);*/
       spending.push([
       	{name: "Debt"},
       	[
@@ -312,16 +321,6 @@
       		}
       	});
       	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
-      
-      	var x = 0;
-      	$(".side-nav-beta.tools").each(function() {
-      		$("a", this).each(function() {
-      			if(x>0){
-      				$(this).prepend( x +'. ');
-      			}
-      			x++;
-      		});
-      	});
       });
       
       // Create overview chart
@@ -607,7 +606,10 @@
           </div>
           <nav class="side-nav-beta tools">
             <ul>
-              <li class="side-nav-beta__heading -active -open"><a><span>Budgeting tool</span></a></li>
+              <!--li.side-nav-beta__heading.-active.-open
+              a
+              	span Budgeting tool
+              -->
               <li>
                 <ul>
                   <li class="side-nav-beta__sibling"><a href="tool-01.html">Income</a></li>

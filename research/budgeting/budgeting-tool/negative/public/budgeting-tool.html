@@ -29,6 +29,111 @@
       var filename = document.location.pathname.match(/[^\/]+$/)[0];
       $(document).ready(function() {
       	$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
+      
+      	var x = 0;
+      	$(".side-nav-beta.tools").each(function() {
+      		$("a", this).each(function() {
+      			if(x>0){
+      				$(this).prepend( x +'. ');
+      			}
+      			x++;
+      		});
+      	});
+      });
+      
+    </script>
+    <script>
+      $(document).ready(function() {
+      
+      	var fields = [];
+      		fields.push([
+      			"Housing benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Child benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Disability Living Allowance",
+      			""
+      		]);
+      		fields.push([
+      			"Incapacity Benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Jobseeker's Allowance",
+      			""
+      		]);
+      		fields.push([
+      			"Council Tax Benefit",
+      			""
+      		]);
+      		fields.push([
+      			"Statutory Maternity Pay",
+      			""
+      		]);
+      		fields.push([
+      			"Carer's Allowance",
+      			""
+      		]);
+      
+      	$.each(fields, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+      
+      		/*
+      		// Uncomment this to populate the page without add/remove functionality
+      		if (value[1] === "" || value[1] == null) {
+      			$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      		$('#add-more').hide();
+      		*/
+      	});
+      
+      	$("#addField").click(function(e){
+      		e.preventDefault();
+      
+      		var dataId = $('#fieldOptions').find(':selected').data("id");
+      		$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+      
+      		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      		
+      		var optionCount = $('#select option').length;
+      		if (optionCount < 1) {
+      			$('#add-more').hide();
+      		}
+      	});
+      
+      	$("#fields-body").on("click",".remove-field", function(e){
+      		e.preventDefault();
+      
+      		var thisId = $(this).data("id");
+      		$(this).parent().parent('fieldset').remove();
+      		$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount > 0) {
+      			$('#add-more').show();
+      		}
+      	})
+      
+      	var x = 0;
+      	$(".side-nav-beta.tools").each(function() {
+      		$("a", this).each(function() {
+      			if(x>0){
+      				$(this).prepend( x +'. ');
+      			}
+      			x++;
+      		});
+      	});
+      
       });
       
     </script>
@@ -81,51 +186,48 @@
         </div>
       </aside>
       <div class="main-content">
-        <div id="main" role="main" class="main-content__right">
-          <div class="title">
-            <h1 class="title__heading js-ref"><span class="title__title">Doing a budget</span></h1>
+        <div class="title">
+          <h1 class="title__heading js-ref"><span class="title__title">Doing a budget</span></h1>
+        </div>
+        <div class="articleContent">
+          <div class="main-content__right">
+            <h2 style="margin-top: 0;">Income</h2>
+            <div id="fields-body"></div>
+            <fieldset>
+              <div id="add-more" class="field-group well">
+                <label style="display:block;">Add more</label>
+                <div id="fieldOptions" class="field">
+                  <div style="width:100%;" class="dropdown">
+                    <select id="select"></select>
+                  </div>
+                </div>
+                <div class="function">
+                  <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
+                </div>
+              </div>
+            </fieldset><a href="#" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="#" style="border: none;">
+              <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
-          <div class="callout--alert">
-            <If>you’ve got bailiffs coming or have received court papers, or are facing eviction you should get advice straight away. </If>
-            <Read>our <a href="#">online advice</a> or <a href="#">get help from your local Citizens Advice</a></Read>
-          </div>
-          <p>Doing a budget will help you:</p>
-          <ul>
-            <li>see where your money goes each month</li>
-            <li>see where you could cut your spending</li>
-            <li>spot problems early - for example, if you’re spending more than you’ve got coming in</li>
-            <li>start the process of finding the right solution to pay off debts</li>
-            <li>see you whether you can afford loan repayments, if you’re considering <a href="#">borrowing money</a></li>
-          </ul>
-          <p>Doing your budget can take a bit of time - but it’ll be worth it. It can help to do your budget every month, or every few months, especially if your circumstances change.</p>
-          <h2>What you’ll need</h2>
-          <p>Decide whether you're doing the budget for:</p>
-          <ul>
-            <li>just you</li>
-            <li>for you and your partner, or </li>
-            <li>for your family</li>
-          </ul>
-          <p>You then need to know the details below for everyone you want to include. </p>
-          <p>First, you’ll need amounts for all the money you’ve got coming in, for example:</p>
-          <ul>
-            <li>earnings from work (you’ll need your net income - the amount you get after tax and National Insurance has been taken off) - you should be able to get earning amounts from your payslips or bank statement</li>
-            <li>any benefits you get - you can find the amounts in a bank statement </li>
-            <li>child support or maintenance you get from an ex-partner</li>
-            <li>money from a lodger</li>
-            <li>money from relatives or friends living with you</li>
-            <li>pensions</li>
-            <li>anything from investments and savings </li>
-          </ul>
-          <p>Then, you’ll need the amounts for all your money going out, for example:</p>
-          <ul>
-            <li>household bills - gas, electricity, water, telephone, TV, internet, Council Tax, insurance</li>
-            <li>mortgage or rent payments</li>
-            <li>any purchases shown on your bank statements or credit card statements for the last month</li>
-            <li>any purchases you made with cash over the last month (you might have receipts for these or you might have to make some guesses about what you’ve bought)  </li>
-          </ul>
-          <p>The more accurate your figures are, the more accurate and useful the results will be to you. However, if you just want to input rough figures, you can do that and get a rougher idea of your budget. </p>
-          <p><a href="budgeting-tool.html" style="border: none;">
-              <button class="btn btn-primary right-button-icon">Start</button></a></p>
+          <nav class="side-nav-beta tools">
+            <ul>
+              <!--li.side-nav-beta__heading.-active.-open
+              a
+              	span Budgeting tool
+              -->
+              <li>
+                <ul>
+                  <li class="side-nav-beta__sibling"><a href="tool-01.html">Income</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-02.html">Bills</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-03.html">Household</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-04.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-05.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-05.html">Savings</a></li>
+                  <li class="side-nav-beta__sibling"><a href="results.html">Results</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
         </div>
         <div class="print-only">
           <h2>This section is print only</h2>
