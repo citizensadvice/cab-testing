@@ -3544,9 +3544,6 @@ tr > th {
 tr > th:last-child {
   border-right: 0;
 }
-tr:hover {
-  background-color: #f2f2f2;
-}
 td > *:first-child {
   padding-top: 0;
 }
@@ -3756,7 +3753,8 @@ table.simple-table td {
   padding: 0;
 }
 .table-collapse > td > table {
-  margin: 0;
+  margin: 1px 0;
+  background-color: #f2f2f2;
 }
 .table-collapse:hover {
   background: none;
@@ -12750,4 +12748,3 @@ span[id*="overlay_button"] {
     padding-left: 1em;
   }
 }
-/*# sourceMappingURL=site.css.map */

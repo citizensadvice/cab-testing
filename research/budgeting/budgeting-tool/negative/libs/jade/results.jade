@@ -69,6 +69,8 @@ block script
 				//{name: "Young Person’s Bridging Allowance", y: ""}
 			]
 		]);*/
+
+		// These are fake arrays for testing
 		income.push([
 			{name: "Employment and Support Allowance", y: "442.65"}
 		]);
@@ -260,6 +262,10 @@ block script
 			} else {
 				$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
 				$('#not-covering').hide();
+			}
+
+			if (incomeChart.length < 2) {
+				$('#income-chart').parent().hide();
 			}
 
 			// Build income and spending tables
