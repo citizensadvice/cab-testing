@@ -1,6 +1,6 @@
 block settings
 	- var title = "Doing a budget"
-	- var sectionTitle = "Family"
+	- var sectionTitle = "Travel"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -20,22 +20,30 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Adult care (eg care home costs for an elderly relative)",
+				"Public transport (including season tickets)",
 				""
 			]);
 			fields.push([
-				"Christmas and birthday presents",
+				"Taxis",
 				""
 			]);
 			fields.push([
-				"Pet-related expenses (eg vet bills, pet food and insurance)",
+				"Bicycle (including running costs such as repair or rental)",
+				""
+			]);
+			fields.push([
+				"Car rental (including petrol)",
+				""
+			]);
+			fields.push([
+				"Car hire as purchase payment",
 				""
 			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
 
-				
+				/*
 				// Uncomment this to populate the page without add/remove functionality
 				if (value[1] === "" || value[1] == null) {
 					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
@@ -43,7 +51,7 @@ block script
 					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
 				}
 				$('#add-more').hide();
-				
+				*/
 			});
 
 			$("#addField").click(function(e){
@@ -91,9 +99,9 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p How much do you spend on these family-related expenses?
+				p How much do you spend on transport?
+
 			fieldset
-				
 				#add-more.field-group.well
 					label(style="display:block;") Add an item
 					.field#fieldOptions

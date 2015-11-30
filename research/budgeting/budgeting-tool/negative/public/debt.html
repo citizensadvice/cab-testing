@@ -45,91 +45,59 @@
       
       	var fields = [];
       	fields.push([
-      		"Attendance Allowance",
+      		"Mortgage, rent or any loans secured against your home",
       		""
       	]);
       	fields.push([
-      		"Bereavement Allowance",
+      		"Council Tax",
       		""
       	]);
       	fields.push([
-      		"Bereavement payment (lump-sum)",
+      		"Credit card, store card debts or payday loans",
       		""
       	]);
       	fields.push([
-      		"Carer’s Allowance",
+      		"Bank or building society loans",
       		""
       	]);
       	fields.push([
-      		"Disability Living Allowance",
+      		"Personal loans",
       		""
       	]);
       	fields.push([
-      		"Employment and Support Allowance",
+      		"Catalogue, home credit or in-store credit debts",
       		""
       	]);
       	fields.push([
-      		"Housing Benefit",
+      		"Overdrafts",
       		""
       	]);
       	fields.push([
-      		"Incapacity Benefit",
+      		"Money borrowed from friends or family",
       		""
       	]);
       	fields.push([
-      		"Income Support",
+      		"Income Tax, National Insurance and VAT",
       		""
       	]);
       	fields.push([
-      		"Industrial Injuries Benefit",
+      		"Gas and electricity bills",
       		""
       	]);
       	fields.push([
-      		"Jobseeker’s Allowance",
+      		"Child maintenance",
       		""
       	]);
       	fields.push([
-      		"Maternity Allowance",
+      		"TV licence",
       		""
       	]);
       	fields.push([
-      		"Pension Credit",
+      		"Hire purchase agreements",
       		""
       	]);
       	fields.push([
-      		"Personal Independence Payment",
-      		""
-      	]);
-      	fields.push([
-      		"Severe Disablement Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Universal Credit",
-      		""
-      	]);
-      	fields.push([
-      		"War Widow’s (or Widower’s) Pension",
-      		""
-      	]);
-      	fields.push([
-      		"Widowed Parent’s Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Widow’s Pension",
-      		""
-      	]);
-      	fields.push([
-      		"Winter Fuel Payment and Christmas Bonus",
-      		""
-      	]);
-      	fields.push([
-      		"Working Tax Credit",
-      		""
-      	]);
-      	fields.push([
-      		"Young Person’s Bridging Allowance",
+      		"Court fines",
       		""
       	]);
       
@@ -235,13 +203,39 @@
         </div>
         <div class="articleContent">
           <div class="main-content__right">
-            <h2 style="margin-top: 0;">Benefits</h2>
+            <h2 style="margin-top: 0;">Debt</h2>
             <div id="fields-body">
-              <p>Select any benefit you receive and then enter the amount you get.</p>
+              <p>If you have debts that you’re regularly paying off as part of a debt management plan, IVA or an agreement direct with your creditors, you should include those regular payments here. Select and enter any current repayments you are making.</p>
+              <fieldset>
+                <label for="field-1">Payment to a debt management company</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-1" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-1">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="field-2">Payment into an IVA</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-2" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-2">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
             </div>
             <fieldset>
               <div id="add-more" class="field-group well">
-                <label style="display:block;">Add an item</label>
+                <label style="display:block;">Payments direct to my creditors</label>
                 <div id="fieldOptions" class="field">
                   <div style="width:100%;" class="dropdown">
                     <select id="select"></select>
@@ -251,9 +245,8 @@
                   <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
                 </div>
               </div>
-            </fieldset>
-            <!--a(href="#", style="border: none;")button.btn.btn-primary-light.left-button-icon(type="button") Previous
-            --><a href="bills.html" style="border: none;">
+            </fieldset><a href="family.html" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="results.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">

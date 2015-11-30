@@ -1,6 +1,6 @@
 block settings
 	- var title = "Doing a budget"
-	- var sectionTitle = "Bills"
+	- var sectionTitle = "Debt"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -18,47 +18,68 @@ block script
 	script.
 		$(document).ready(function() {
 
-			$('input[name="package"]').bind('change',function(){
-				var showOrHide = ($(this).val() == 1) ? true : false;
-				$('#package').toggle(showOrHide);
-				var showOrHide = ($(this).val() == 2) ? true : false;
-				$('#non-package').toggle(showOrHide);
-			});
-
-			/*var fields = [];
+			var fields = [];
 			fields.push([
-				"Rent or mortgage",
+				"Mortgage, rent or any loans secured against your home",
 				""
 			]);
 			fields.push([
-				"Council Tax / Rates",
+				"Council Tax",
 				""
 			]);
 			fields.push([
-				"Building and contents insurance",
+				"Credit card, store card debts or payday loans",
 				""
 			]);
 			fields.push([
-				"Gas and electricity",
+				"Bank or building society loans",
 				""
 			]);
 			fields.push([
-				"Water",
+				"Personal loans",
 				""
 			]);
 			fields.push([
-				"TV license",
+				"Catalogue, home credit or in-store credit debts",
 				""
 			]);
 			fields.push([
-				"Phone, TV and internet",
+				"Overdrafts",
+				""
+			]);
+			fields.push([
+				"Money borrowed from friends or family",
+				""
+			]);
+			fields.push([
+				"Income Tax, National Insurance and VAT",
+				""
+			]);
+			fields.push([
+				"Gas and electricity bills",
+				""
+			]);
+			fields.push([
+				"Child maintenance",
+				""
+			]);
+			fields.push([
+				"TV licence",
+				""
+			]);
+			fields.push([
+				"Hire purchase agreements",
+				""
+			]);
+			fields.push([
+				"Court fines",
 				""
 			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
 
-				
+				/*
 				// Uncomment this to populate the page without add/remove functionality
 				if (value[1] === "" || value[1] == null) {
 					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
@@ -66,7 +87,7 @@ block script
 					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
 				}
 				$('#add-more').hide();
-				
+				*/
 			});
 
 			$("#addField").click(function(e){
@@ -98,7 +119,7 @@ block script
 				if (optionCount > 0) {
 					$('#add-more').show();
 				}
-			})*/
+			})
 
 		});
 
@@ -114,10 +135,10 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p Enter the amount you spend on these bills 
+				p If you have debts that you’re regularly paying off as part of a debt management plan, IVA or an agreement direct with your creditors, you should include those regular payments here. Select and enter any current repayments you are making.
 				
 				fieldset
-					label(for="field-1") Rent or mortgage
+					label(for="field-1") Payment to a debt management company
 					.field-group.field-group--dropdown(style="clear:both")
 						input#field-1(placeholder="£", type="number")
 						.dropdown
@@ -127,7 +148,7 @@ block content
 								option Yearly
 				
 				fieldset
-					label(for="field-2") Council Tax / Rates
+					label(for="field-2") Payment into an IVA
 					.field-group.field-group--dropdown(style="clear:both")
 						input#field-2(placeholder="£", type="number")
 						.dropdown
@@ -135,108 +156,11 @@ block content
 								option Weekly
 								option Monthly
 								option Yearly
-				
-				fieldset
-					label(for="field-3") Building and contents insurance
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-3(placeholder="£", type="number")
-						.dropdown
-							select#select-3
-								option Weekly
-								option Monthly
-								option Yearly
-				
-				fieldset
-					label(for="field-4") Gas and electricity
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-4(placeholder="£", type="number")
-						.dropdown
-							select#select-4
-								option Weekly
-								option Monthly
-								option Yearly
-				
-				fieldset
-					label(for="field-5") Gas and electricity
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-5(placeholder="£", type="number")
-						.dropdown
-							select#select-5
-								option Weekly
-								option Monthly
-								option Yearly
-				
-				fieldset
-					label(for="field-6") TV licence
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-6(placeholder="£", type="number")
-						.dropdown
-							select#select-6
-								option Weekly
-								option Monthly
-								option Yearly
-				fieldset
-					label(for="toggle") Phone, TV and internet
-					label#package-toggle.radio.radio--inline
-						input(name="package", type="radio", value="1")
-						| I have a package deal
-					label#non-package-toggle.radio.radio--inline
-						input(name="package", type="radio", value="2")
-						| I pay for them separately
-				
 
-					#package.field-group.field-group--dropdown(style="clear:both;display:none")
-						input#field-package(placeholder="£", type="number")
-						.dropdown
-							select#select-package
-								option Weekly
-								option Monthly
-								option Yearly
+			fieldset
 				
-				#non-package(style="display:none")
-					fieldset
-						label(for="field-7") Home phone
-						.field-group.field-group--dropdown(style="clear:both")
-							input#field-7(placeholder="£", type="number")
-							.dropdown
-								select#select-7
-									option Weekly
-									option Monthly
-									option Yearly
-
-					fieldset
-						label(for="field-8") TV subscription (eg Sky)
-						.field-group.field-group--dropdown(style="clear:both")
-							input#field-8(placeholder="£", type="number")
-							.dropdown
-								select#select-8
-									option Weekly
-									option Monthly
-									option Yearly
-
-					fieldset
-						label(for="field-9") Internet
-						.field-group.field-group--dropdown(style="clear:both")
-							input#field-9(placeholder="£", type="number")
-							.dropdown
-								select#select-9
-									option Weekly
-									option Monthly
-									option Yearly
-
-					fieldset
-						label(for="field-10") Mobile phone (if PAYG please estimate)
-						.field-group.field-group--dropdown(style="clear:both")
-							input#field-10(placeholder="£", type="number")
-							.dropdown
-								select#select-10
-									option Weekly
-									option Monthly
-									option Yearly
-
-			//fieldset
 				#add-more.field-group.well
-					label(style="display:block;") Add an item
+					label(style="display:block;") Payments direct to my creditors
 					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select
@@ -244,9 +168,9 @@ block content
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			a(href="benefits.html", style="border: none;")
+			a(href="family.html", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
-			a(href="household.html", style="border: none;")
+			a(href="results.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
 
 		include sidebar.jade
