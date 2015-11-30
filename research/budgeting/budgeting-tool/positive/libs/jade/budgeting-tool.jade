@@ -1,5 +1,6 @@
 block settings
 	- var title = "Doing a budget"
+	- var sectionTitle = "Income"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -36,7 +37,7 @@ block script
 				]);
 				fields.push([
 					"Jobseeker's Allowance",
-					"Help text"
+					""
 				]);
 				fields.push([
 					"Council Tax Benefit",
@@ -117,7 +118,7 @@ block section-notice
 block content
 	.articleContent
 		.main-content__right
-			h2(style="margin-top: 0;") Benefits
+			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
 
