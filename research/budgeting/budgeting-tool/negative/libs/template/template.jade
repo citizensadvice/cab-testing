@@ -37,12 +37,10 @@ html
 			$(document).ready(function() {
 				$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
 
-				var x = 0;
+				var x = 1;
 				$(".side-nav-beta.tools").each(function() {
 					$("a", this).each(function() {
-						if(x>0){
-							$(this).prepend( x +'. ');
-						}
+						$(this).prepend( x +'. ');
 						x++;
 					});
 				});

@@ -30,12 +30,10 @@
       $(document).ready(function() {
       	$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
       
-      	var x = 0;
+      	var x = 1;
       	$(".side-nav-beta.tools").each(function() {
       		$("a", this).each(function() {
-      			if(x>0){
-      				$(this).prepend( x +'. ');
-      			}
+      			$(this).prepend( x +'. ');
       			x++;
       		});
       	});
@@ -47,160 +45,162 @@
     <script>
       // Income values
       var income = [];
-      income.push([
+      /*income.push([
       	{name: "Income"},
       	[
-      		{name: "Wages", y: Math.floor(Math.random()*1500)+1},
-      		{name: "Lodger(s)", y: Math.floor(Math.random()*1500)+1},
-      		{name: "Pension", y: Math.floor(Math.random()*1500)+1}
+      		{name: "Wages", y: ""},
+      		{name: "Lodger(s)", y: ""},
+      		{name: "Pension", y: ""}
       	]
-      ]);
+      ]);*/
       /*income.push([
       	{name: "Child Support"},
       	[
-      		{name: "Child maintenance or support", y: Math.floor(Math.random()*50)+1},
-      		{name: "Child Benefit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Child Tax Credit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Guardian's Allwance", y: Math.floor(Math.random()*50)+1}
+      		{name: "Child maintenance or support", y: ""},
+      		{name: "Child Benefit", y: ""},
+      		{name: "Child Tax Credit", y: ""},
+      		{name: "Guardian's Allwance", y: ""}
       	]
-      ]);
+      ]);*/
       income.push([
       	{name: "Benefits"},
       	[
-      		{name: "Attendance Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Bereavement Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Bereavement payment (lump-sum)", y: Math.floor(Math.random()*50)+1},
-      		{name: "Carer’s Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Disability Living Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Employment and Support Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Housing Benefit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Incapacity Benefit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Income Support", y: Math.floor(Math.random()*50)+1},
-      		{name: "Industrial Injuries Benefit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Jobseeker’s Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Maternity Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Pension Credit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Personal Independence Payment", y: Math.floor(Math.random()*50)+1},
-      		{name: "Severe Disablement Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Universal Credit", y: Math.floor(Math.random()*50)+1},
-      		{name: "War Widow’s (or Widower’s) Pension", y: Math.floor(Math.random()*50)+1},
-      		{name: "Widowed Parent’s Allowance", y: Math.floor(Math.random()*50)+1},
-      		{name: "Widow’s Pension", y: Math.floor(Math.random()*50)+1},
-      		{name: "Winter Fuel Payment and Christmas Bonus", y: Math.floor(Math.random()*50)+1},
-      		{name: "Working Tax Credit", y: Math.floor(Math.random()*50)+1},
-      		{name: "Young Person’s Bridging Allowance", y: Math.floor(Math.random()*50)+1}
+      		//{name: "Attendance Allowance", y: ""},
+      		//{name: "Bereavement Allowance", y: ""},
+      		//{name: "Bereavement payment (lump-sum)", y: ""},
+      		//{name: "Carer’s Allowance", y: ""},
+      		//{name: "Disability Living Allowance", y: ""},
+      		{name: "Employment and Support Allowance", y: "442.65"},
+      		{name: "Housing Benefit", y: "580.67"},
+      		//{name: "Incapacity Benefit", y: ""},
+      		//{name: "Income Support", y: ""},
+      		//{name: "Industrial Injuries Benefit", y: ""},
+      		//{name: "Jobseeker’s Allowance", y: ""},
+      		//{name: "Maternity Allowance", y: ""},
+      		//{name: "Pension Credit", y: ""},
+      		{name: "Personal Independence Payment", y: "333.23"}
+      		//{name: "Severe Disablement Allowance", y: ""},
+      		//{name: "Universal Credit", y: ""},
+      		//{name: "War Widow’s (or Widower’s) Pension", y: ""},
+      		//{name: "Widowed Parent’s Allowance", y: ""},
+      		//{name: "Widow’s Pension", y: ""},
+      		//{name: "Winter Fuel Payment and Christmas Bonus", y: ""},
+      		//{name: "Working Tax Credit", y: ""},
+      		//{name: "Young Person’s Bridging Allowance", y: ""}
       	]
-      ]);*/
+      ]);
       
       // Spending values
       var spending = [];
       spending.push([
       	{name: "Bills"},
       	[
-      		{name: "Rent or mortgage", y: Math.floor(Math.random()*100)+1},
-      		{name: "Council Tax / Rates", y: Math.floor(Math.random()*100)+1},
-      		{name: "Buildings and contents insurance", y: Math.floor(Math.random()*100)+1},
-      		{name: "Gas and electricity", y: Math.floor(Math.random()*100)+1},
-      		{name: "Water", y: Math.floor(Math.random()*100)+1},
-      		{name: "TV licence", y: Math.floor(Math.random()*100)+1}
+      		//{name: "Rent or mortgage", y: ""},
+      		{name: "Council Tax / Rates", y: "120.83"},
+      		//{name: "Buildings and contents insurance", y: ""},
+      		{name: "Gas and electricity", y: "77"},
+      		{name: "Water", y: "35"},
+      		{name: "TV licence", y: "12.13"},
+      		{name: "Phone TV & Internet", y: "90"}
       	]
       ]);
       spending.push([
       	{name: "Household"},
       	[
-      		{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Work lunches and coffees, teas etc", y: Math.floor(Math.random()*100)+1},
-      		{name: "Cigarettes and tobacco", y: Math.floor(Math.random()*100)+1},
-      		{name: "Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Clothing and footwear", y: Math.floor(Math.random()*100)+1},
-      		{name: "Repairs and house maintenance", y: Math.floor(Math.random()*100)+1},
-      		{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Haircuts", y: Math.floor(Math.random()*100)+1},
-      		{name: "Laundrette", y: Math.floor(Math.random()*100)+1},
-      		{name: "Medicines (including prescription charges)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Dentistry", y: Math.floor(Math.random()*100)+1},
-      		{name: "Insurance (life or home, but not travel)", y: Math.floor(Math.random()*100)+1}
+      		{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: "294.67"},
+      		//{name: "Work lunches and coffees, teas etc", y: ""},
+      		//{name: "Cigarettes and tobacco", y: ""},
+      		//{name: "Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)", y: ""},
+      		{name: "Clothing and footwear", y: "300"},
+      		//{name: "Repairs and house maintenance", y: ""},
+      		//{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: ""},
+      		//{name: "Haircuts", y: ""},
+      		//{name: "Laundrette", y: ""},
+      		//{name: "Medicines (including prescription charges)", y: ""},
+      		//{name: "Dentistry", y: ""},
+      		//{name: "Insurance (life or home, but not travel)", y: ""},
+      		{name: "Magazines and newspapers", y: "16.68"}
       	]
       ]);
       spending.push([
       	{name: "Leisure"},
       	[
-      		{name: "Meals and drinks out", y: Math.floor(Math.random()*100)+1},
-      		{name: "Memberships (eg gym or cinema membership)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Magazines and newspapers", y: Math.floor(Math.random()*100)+1},
-      		{name: "Books or music (in any format)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Website subscriptions (eg news, dating or music/video streaming websites)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Season tickets", y: Math.floor(Math.random()*100)+1},
-      		{name: "Cinema or theatre tickets", y: Math.floor(Math.random()*100)+1},
-      		{name: "Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ", y: Math.floor(Math.random()*100)+1},
-      		{name: "Cigarettes or other tobacco", y: Math.floor(Math.random()*100)+1},
-      		{name: "Lottery and pools", y: Math.floor(Math.random()*100)+1}
+      		//{name: "Meals and drinks out", y: ""},
+      		//{name: "Memberships (eg gym or cinema membership)", y: ""},
+      		//{name: "Magazines and newspapers", y: ""},
+      		//{name: "Books or music (in any format)", y: ""},
+      		//{name: "Website subscriptions (eg news, dating or music/video streaming websites)", y: ""},
+      		//{name: "Season tickets", y: ""},
+      		//{name: "Cinema or theatre tickets", y: ""},
+      		//{name: "Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ", y: ""},
+      		//{name: "Cigarettes or other tobacco", y: ""},
+      		{name: "Lottery and pools", y: "65"}
       	]
       ]);
       /*spending.push([
       	{name: "Travel"},
       	[
-      		{name: "Public transport (including season tickets)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Taxis ", y: Math.floor(Math.random()*100)+1},
-      		{name: "Bicycle (including running costs such as repair or rental)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Car rental (including petrol)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Car hire as purchase payment", y: Math.floor(Math.random()*100)+1}
+      		{name: "Public transport (including season tickets)", y: ""},
+      		{name: "Taxis ", y: ""},
+      		{name: "Bicycle (including running costs such as repair or rental)", y: ""},
+      		{name: "Car rental (including petrol)", y: ""},
+      		{name: "Car hire as purchase payment", y: ""}
       	]
-      ]);
-      spending.push([
+      ]);*/
+      /*spending.push([
       	{name: "Car"},
       	[
-      		{name: "Car insurance", y: Math.floor(Math.random()*100)+1},
-      		{name: "Road tax", y: Math.floor(Math.random()*100)+1},
-      		{name: "Fuel", y: Math.floor(Math.random()*100)+1},
-      		{name: "MOT", y: Math.floor(Math.random()*100)+1},
-      		{name: "Car maintenance", y: Math.floor(Math.random()*100)+1},
-      		{name: "Breakdown or recovery", y: Math.floor(Math.random()*100)+1},
-      		{name: "Parking/congestion charges", y: Math.floor(Math.random()*100)+1}
+      		{name: "Car insurance", y: ""},
+      		{name: "Road tax", y: ""},
+      		{name: "Fuel", y: ""},
+      		{name: "MOT", y: ""},
+      		{name: "Car maintenance", y: ""},
+      		{name: "Breakdown or recovery", y: ""},
+      		{name: "Parking/congestion charges", y: ""}
       	]
-      ]);
-      spending.push([
+      ]);*/
+      /*spending.push([
       	{name: "Child"},
       	[
-      		{name: "Childcare", y: Math.floor(Math.random()*100)+1},
-      		{name: "Child support/maintenance", y: Math.floor(Math.random()*100)+1},
-      		{name: "Tuition fees", y: Math.floor(Math.random()*100)+1},
-      		{name: "School uniform", y: Math.floor(Math.random()*100)+1},
-      		{name: "School meals ", y: Math.floor(Math.random()*100)+1},
-      		{name: "Pocket money and school trips", y: Math.floor(Math.random()*100)+1},
-      		{name: "Nappies and baby items (if you haven’t already included in groceries)", y: Math.floor(Math.random()*100)+1}
-      	]
-      ]);
-      spending.push([
-      	{name: "Family"},
-      	[
-      		{name: "Adult care (eg care home costs for an elderly relative)", y: Math.floor(Math.random()*100)+1},
-      		{name: "Christmas and birthday presents", y: Math.floor(Math.random()*100)+1},
-      		{name: "Pet-related expenses (eg vet bills, pet food and insurance)", y: Math.floor(Math.random()*100)+1}
+      		{name: "Childcare", y: ""},
+      		{name: "Child support/maintenance", y: ""},
+      		{name: "Tuition fees", y: ""},
+      		{name: "School uniform", y: ""},
+      		{name: "School meals ", y: ""},
+      		{name: "Pocket money and school trips", y: ""},
+      		{name: "Nappies and baby items (if you haven’t already included in groceries)", y: ""}
       	]
       ]);*/
       spending.push([
-      	{name: "Debt"},
+      	{name: "Family"},
       	[
-      		{name: "Mortgage, rent or any loans secured against your home", y: Math.floor(Math.random()*100)+1},
-      		{name: "Council Tax", y: Math.floor(Math.random()*100)+1},
-      		{name: "Credit card, store card debts or payday loans", y: Math.floor(Math.random()*100)+1},
-      		{name: "Bank or building society loans", y: Math.floor(Math.random()*100)+1},
-      		{name: "Personal loans", y: Math.floor(Math.random()*100)+1},
-      		{name: "Catalogue, home credit or in-store credit debts", y: Math.floor(Math.random()*100)+1},
-      		{name: "Overdrafts ", y: Math.floor(Math.random()*100)+1},
-      		{name: "Money borrowed from friends or family", y: Math.floor(Math.random()*100)+1},
-      		{name: "Income Tax, National Insurance and VAT", y: Math.floor(Math.random()*100)+1},
-      		{name: "Gas and electricity bills", y: Math.floor(Math.random()*100)+1},
-      		{name: "Child maintenance", y: Math.floor(Math.random()*100)+1},
-      		{name: "TV licence", y: Math.floor(Math.random()*100)+1},
-      		{name: "Hire purchase agreements", y: Math.floor(Math.random()*100)+1},
-      		{name: "Court fines", y: Math.floor(Math.random()*100)+1}
+      		//{name: "Adult care (eg care home costs for an elderly relative)", y: ""},
+      		{name: "Christmas and birthday presents", y: "54.17"},
+      		{name: "Pet-related expenses (eg vet bills, pet food and insurance)", y: "120"}
       	]
       ]);
       spending.push([
-      	{name: "Savings", y: Math.floor(Math.random()*100)+1}
+      	{name: "Debt"},
+      	[
+      		//{name: "Mortgage, rent or any loans secured against your home", y: ""},
+      		//{name: "Council Tax", y: ""},
+      		{name: "Credit card, store card debts or payday loans", y: "250"},
+      		//{name: "Bank or building society loans", y: ""},
+      		{name: "Personal loans", y: "210"},
+      		//{name: "Catalogue, home credit or in-store credit debts", y: ""},
+      		//{name: "Overdrafts ", y: ""},
+      		//{name: "Money borrowed from friends or family", y: ""},
+      		//{name: "Income Tax, National Insurance and VAT", y: ""},
+      		//{name: "Gas and electricity bills", y: ""},
+      		//{name: "Child maintenance", y: ""},
+      		//{name: "TV licence", y: ""},
+      		//{name: "Hire purchase agreements", y: ""},
+      		//{name: "Court fines", y: ""}
+      	]
       ]);
+      /*spending.push([
+      	{name: "Savings", y: ""}
+      ]);*/
       
       // Make simplified arrays for highcharts
       incomeChart = [];
@@ -209,12 +209,12 @@
       		incomeChart.push(value[0]);
       		var curTotal = 0;
       		$.each(value[1], function( index, value ) {
-      			curTotal += parseInt(value.y);
+      			curTotal += parseFloat(value.y);
       		});
       		incomeChart[index]["y"] = curTotal;
       	} else {
       		incomeChart.push(value[0]);
-      		incomeChart[index]["y"] = parseInt(incomeChart[index].y);
+      		incomeChart[index]["y"] = parseFloat(incomeChart[index].y);
       	}
       });
       
@@ -224,12 +224,12 @@
       		spendingChart.push(value[0]);
       		var curTotal = 0;
       		$.each(value[1], function( index, value ) {
-      			curTotal += parseInt(value.y);
+      			curTotal += parseFloat(value.y);
       		});
       		spendingChart[index]["y"] = curTotal;
       	} else {
       		spendingChart.push(value[0]);
-      		spendingChart[index]["y"] = parseInt(spendingChart[index].y);
+      		spendingChart[index]["y"] = parseFloat(spendingChart[index].y);
       	}
       });
       
@@ -238,10 +238,11 @@
       $.each(income, function( index, value ) {
       	if (value.length > 1) {
       		$.each(value[1], function( index, value ) {
-      			totalIncome += parseInt(value.y);
+      			var curVal = parseFloat(value.y);
+      			totalIncome += curVal;
       		});
       	} else {
-      		totalIncome += parseInt(value[0].y);
+      		totalIncome += parseFloat(value[0].y);
       	}
       });
       
@@ -249,10 +250,11 @@
       $.each(spending, function( index, value ) {
       	if (value.length > 1) {
       		$.each(value[1], function( index, value ) {
-      			totalSpending += parseInt(value.y);
+      			var curVal = parseFloat(value.y);
+      			totalSpending += curVal;
       		});
       	} else {
-      		totalSpending += parseInt(value[0].y);
+      		totalSpending += parseFloat(value[0].y);
       	}
       });
       
@@ -264,10 +266,10 @@
       	var totalFig = totalIncome - totalSpending;
       
       	if (totalFig <= 0) {
-      		$('#totals').append('<h3>You are spending £'+Math.abs(totalFig)+' more than your income</h3>');
+      		$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
       		$('#covering').hide();
       	} else {
-      		$('#totals').append('<h3>You are spending £'+totalFig+' less than your income</h3>');
+      		$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
       		$('#not-covering').hide();
       	}
       
@@ -276,22 +278,22 @@
       		if (value.length > 1) {
       			var curTotal = 0;
       			$.each(value[1], function( index, value ) {
-      				curTotal += parseInt(value.y);
+      				curTotal += parseFloat(value.y);
       			});
       
-      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+curTotal+'</td></tr>');
+      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
@@ -301,22 +303,22 @@
       		if (value.length > 1) {
       			var curTotal = 0;
       			$.each(value[1], function( index, value ) {
-      				curTotal += parseInt(value.y);
+      				curTotal += parseFloat(value.y);
       			});
       
-      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+curTotal+'</td></tr>');
+      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+value.y+'</td></tr>');
+      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
@@ -612,12 +614,12 @@
               -->
               <li>
                 <ul>
-                  <li class="side-nav-beta__sibling"><a href="tool-01.html">Income</a></li>
+                  <li class="side-nav-beta__sibling"><a href="benefits.html">Benefits</a></li>
                   <li class="side-nav-beta__sibling"><a href="tool-02.html">Bills</a></li>
                   <li class="side-nav-beta__sibling"><a href="tool-03.html">Household</a></li>
-                  <li class="side-nav-beta__sibling"><a href="tool-04.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-04.html">Family</a></li>
+                  <li class="side-nav-beta__sibling"><a href="tool-05.html">Leisure</a></li>
                   <li class="side-nav-beta__sibling"><a href="tool-05.html">Debt</a></li>
-                  <li class="side-nav-beta__sibling"><a href="tool-05.html">Savings</a></li>
                   <li class="side-nav-beta__sibling"><a href="results.html">Results</a></li>
                 </ul>
               </li>
