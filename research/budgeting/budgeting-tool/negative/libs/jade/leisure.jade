@@ -1,6 +1,6 @@
 block settings
 	- var title = "Doing a budget"
-	- var sectionTitle = "Household"
+	- var sectionTitle = "Leisure"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -20,57 +20,45 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)",
+				"Meals and drinks out",
 				""
 			]);
 			fields.push([
-				"Work lunches and coffees, teas etc",
-				""
-			]);
-			fields.push([
-				"Cigarettes and tobacco",
-				""
-			]);
-			fields.push([
-				"Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)",
-				""
-			]);
-			fields.push([
-				"Clothing and footwear",
-				""
-			]);
-			fields.push([
-				"Repairs and house maintenance",
-				""
-			]);
-			fields.push([
-				"Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)",
-				""
-			]);
-			fields.push([
-				"Haircuts",
-				""
-			]);
-			fields.push([
-				"Laundrette",
-				""
-			]);
-			fields.push([
-				"Medicines (including prescription charges)",
-				""
-			]);
-			fields.push([
-				"Dentistry",
-				""
-			]);
-			fields.push([
-				"Insurance (life or home, but not travel)",
+				"Memberships (eg gym or cinema membership)",
 				""
 			]);
 			fields.push([
 				"Magazines and newspapers",
 				""
 			]);
+			fields.push([
+				"Books or music (in any format)",
+				""
+			]);
+			fields.push([
+				"Website subscriptions (eg news, dating or music/video streaming websites)",
+				""
+			]);
+			fields.push([
+				"Season tickets",
+				""
+			]);
+			fields.push([
+				"Cinema or theatre tickets",
+				""
+			]);
+			fields.push([
+				"Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ",
+				""
+			]);
+			fields.push([
+				"Cigarettes or other tobacco",
+				""
+			]);
+			fields.push([
+					"Lottery and pools",
+					""
+				]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
@@ -144,9 +132,9 @@ block content
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			a(href="bills.html", style="border: none;")
+			a(href="household.html", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
-			a(href="leisure.html", style="border: none;")
+			a(href="family.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
 
 		include sidebar.jade

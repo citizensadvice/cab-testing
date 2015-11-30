@@ -45,93 +45,45 @@
       
       	var fields = [];
       	fields.push([
-      		"Attendance Allowance",
+      		"Meals and drinks out",
       		""
       	]);
       	fields.push([
-      		"Bereavement Allowance",
+      		"Memberships (eg gym or cinema membership)",
       		""
       	]);
       	fields.push([
-      		"Bereavement payment (lump-sum)",
+      		"Magazines and newspapers",
       		""
       	]);
       	fields.push([
-      		"Carer’s Allowance",
+      		"Books or music (in any format)",
       		""
       	]);
       	fields.push([
-      		"Disability Living Allowance",
+      		"Website subscriptions (eg news, dating or music/video streaming websites)",
       		""
       	]);
       	fields.push([
-      		"Employment and Support Allowance",
+      		"Season tickets",
       		""
       	]);
       	fields.push([
-      		"Housing Benefit",
+      		"Cinema or theatre tickets",
       		""
       	]);
       	fields.push([
-      		"Incapacity Benefit",
+      		"Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ",
       		""
       	]);
       	fields.push([
-      		"Income Support",
+      		"Cigarettes or other tobacco",
       		""
       	]);
       	fields.push([
-      		"Industrial Injuries Benefit",
-      		""
-      	]);
-      	fields.push([
-      		"Jobseeker’s Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Maternity Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Pension Credit",
-      		""
-      	]);
-      	fields.push([
-      		"Personal Independence Payment",
-      		""
-      	]);
-      	fields.push([
-      		"Severe Disablement Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Universal Credit",
-      		""
-      	]);
-      	fields.push([
-      		"War Widow’s (or Widower’s) Pension",
-      		""
-      	]);
-      	fields.push([
-      		"Widowed Parent’s Allowance",
-      		""
-      	]);
-      	fields.push([
-      		"Widow’s Pension",
-      		""
-      	]);
-      	fields.push([
-      		"Winter Fuel Payment and Christmas Bonus",
-      		""
-      	]);
-      	fields.push([
-      		"Working Tax Credit",
-      		""
-      	]);
-      	fields.push([
-      		"Young Person’s Bridging Allowance",
-      		""
-      	]);
+      			"Lottery and pools",
+      			""
+      		]);
       
       	$.each(fields, function( index, value ) {
       		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
@@ -235,9 +187,9 @@
         </div>
         <div class="articleContent">
           <div class="main-content__right">
-            <h2 style="margin-top: 0;">Benefits</h2>
+            <h2 style="margin-top: 0;">Leisure</h2>
             <div id="fields-body">
-              <p>Select any benefit you receive and then enter the amount you get.</p>
+              <p>Enter how much you spend on each of these household and personal expenses.</p>
             </div>
             <fieldset>
               <div id="add-more" class="field-group well">
@@ -251,9 +203,8 @@
                   <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
                 </div>
               </div>
-            </fieldset>
-            <!--a(href="#", style="border: none;")button.btn.btn-primary-light.left-button-icon(type="button") Previous
-            --><a href="bills.html" style="border: none;">
+            </fieldset><a href="household.html" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="family.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">
