@@ -284,7 +284,12 @@
       		$('#not-covering').hide();
       	}
       
+      	// Hide pie charts if there is only one income source
       	if (incomeChart.length < 2) {
+      		$('#income-chart').parent().hide();
+      	}
+      
+      	if (spendingChart.length < 2) {
       		$('#income-chart').parent().hide();
       	}
       
