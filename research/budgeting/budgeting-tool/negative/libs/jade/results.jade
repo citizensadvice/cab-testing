@@ -1,0 +1,565 @@
+block settings
+	- var title = "Doing a budget"
+	//- var sidebar = true
+	//- var toolbars = true
+	//- var cookiemonster = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Budgeting Tool", href: "index.html"},
+		{title: "Results"}])
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+
+block script
+	script(src="../libs/javascript/vendor/highcharts/highcharts.js")
+	script(src="../libs/javascript/vendor/highcharts/modules/exporting.js")
+	script.
+		// Income values
+		var income = [];
+		/*income.push([
+			{name: "Income"},
+			[
+				{name: "Wages", y: ""},
+				{name: "Lodger(s)", y: ""},
+				{name: "Pension", y: ""}
+			]
+		]);*/
+		/*income.push([
+			{name: "Child Support"},
+			[
+				{name: "Child maintenance or support", y: ""},
+				{name: "Child Benefit", y: ""},
+				{name: "Child Tax Credit", y: ""},
+				{name: "Guardian's Allwance", y: ""}
+			]
+		]);*/
+		/*income.push([
+			{name: "Benefits"},
+			[
+				//{name: "Attendance Allowance", y: ""},
+				//{name: "Bereavement Allowance", y: ""},
+				//{name: "Bereavement payment (lump-sum)", y: ""},
+				//{name: "Carer’s Allowance", y: ""},
+				//{name: "Disability Living Allowance", y: ""},
+				{name: "Employment and Support Allowance", y: "442.65"},
+				{name: "Housing Benefit", y: "580.67"},
+				//{name: "Incapacity Benefit", y: ""},
+				//{name: "Income Support", y: ""},
+				//{name: "Industrial Injuries Benefit", y: ""},
+				//{name: "Jobseeker’s Allowance", y: ""},
+				//{name: "Maternity Allowance", y: ""},
+				//{name: "Pension Credit", y: ""},
+				{name: "Personal Independence Payment", y: "333.23"}
+				//{name: "Severe Disablement Allowance", y: ""},
+				//{name: "Universal Credit", y: ""},
+				//{name: "War Widow’s (or Widower’s) Pension", y: ""},
+				//{name: "Widowed Parent’s Allowance", y: ""},
+				//{name: "Widow’s Pension", y: ""},
+				//{name: "Winter Fuel Payment and Christmas Bonus", y: ""},
+				//{name: "Working Tax Credit", y: ""},
+				//{name: "Young Person’s Bridging Allowance", y: ""}
+			]
+		]);*/
+		income.push([
+			{name: "Employment and Support Allowance", y: "442.65"}
+		]);
+		income.push([
+			{name: "Housing Benefit", y: "580.67"}
+		]);
+		income.push([
+			{name: "Personal Independence Payment", y: "333.23"}
+		]);
+
+		// Spending values
+		var spending = [];
+		spending.push([
+			{name: "Bills"},
+			[
+				//{name: "Rent or mortgage", y: ""},
+				{name: "Council Tax / Rates", y: "120.83"},
+				//{name: "Buildings and contents insurance", y: ""},
+				{name: "Gas and electricity", y: "77"},
+				{name: "Water", y: "35"},
+				{name: "TV licence", y: "12.13"},
+				{name: "Phone TV & Internet", y: "90"}
+			]
+		]);
+		spending.push([
+			{name: "Household"},
+			[
+				{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: "294.67"},
+				//{name: "Work lunches and coffees, teas etc", y: ""},
+				//{name: "Cigarettes and tobacco", y: ""},
+				//{name: "Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)", y: ""},
+				{name: "Clothing and footwear", y: "300"},
+				//{name: "Repairs and house maintenance", y: ""},
+				//{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: ""},
+				//{name: "Haircuts", y: ""},
+				//{name: "Laundrette", y: ""},
+				//{name: "Medicines (including prescription charges)", y: ""},
+				//{name: "Dentistry", y: ""},
+				//{name: "Insurance (life or home, but not travel)", y: ""},
+				{name: "Magazines and newspapers", y: "16.68"}
+			]
+		]);
+		spending.push([
+			{name: "Leisure"},
+			[
+				//{name: "Meals and drinks out", y: ""},
+				//{name: "Memberships (eg gym or cinema membership)", y: ""},
+				//{name: "Magazines and newspapers", y: ""},
+				//{name: "Books or music (in any format)", y: ""},
+				//{name: "Website subscriptions (eg news, dating or music/video streaming websites)", y: ""},
+				//{name: "Season tickets", y: ""},
+				//{name: "Cinema or theatre tickets", y: ""},
+				//{name: "Holiday (include cost of travel, accommodation, expenses while you’re there and travel insurance) ", y: ""},
+				//{name: "Cigarettes or other tobacco", y: ""},
+				{name: "Lottery and pools", y: "65"}
+			]
+		]);
+		spending.push([
+			{name: "Travel"},
+			[
+				{name: "Public transport (including season tickets)", y: "91"},
+				//{name: "Taxis ", y: ""},
+				//{name: "Bicycle (including running costs such as repair or rental)", y: ""},
+				//{name: "Car rental (including petrol)", y: ""},
+				//{name: "Car hire as purchase payment", y: ""}
+			]
+		]);
+		/*spending.push([
+			{name: "Car"},
+			[
+				{name: "Car insurance", y: ""},
+				{name: "Road tax", y: ""},
+				{name: "Fuel", y: ""},
+				{name: "MOT", y: ""},
+				{name: "Car maintenance", y: ""},
+				{name: "Breakdown or recovery", y: ""},
+				{name: "Parking/congestion charges", y: ""}
+			]
+		]);*/
+		/*spending.push([
+			{name: "Child"},
+			[
+				{name: "Childcare", y: ""},
+				{name: "Child support/maintenance", y: ""},
+				{name: "Tuition fees", y: ""},
+				{name: "School uniform", y: ""},
+				{name: "School meals ", y: ""},
+				{name: "Pocket money and school trips", y: ""},
+				{name: "Nappies and baby items (if you haven’t already included in groceries)", y: ""}
+			]
+		]);*/
+		spending.push([
+			{name: "Family"},
+			[
+				//{name: "Adult care (eg care home costs for an elderly relative)", y: ""},
+				{name: "Christmas and birthday presents", y: "54.17"},
+				{name: "Pet-related expenses (eg vet bills, pet food and insurance)", y: "120"}
+			]
+		]);
+		spending.push([
+			{name: "Debt"},
+			[
+				//{name: "Mortgage, rent or any loans secured against your home", y: ""},
+				//{name: "Council Tax", y: ""},
+				{name: "Credit card, store card debts or payday loans", y: "250"},
+				//{name: "Bank or building society loans", y: ""},
+				{name: "Personal loans", y: "210"},
+				//{name: "Catalogue, home credit or in-store credit debts", y: ""},
+				//{name: "Overdrafts ", y: ""},
+				//{name: "Money borrowed from friends or family", y: ""},
+				//{name: "Income Tax, National Insurance and VAT", y: ""},
+				//{name: "Gas and electricity bills", y: ""},
+				//{name: "Child maintenance", y: ""},
+				//{name: "TV licence", y: ""},
+				//{name: "Hire purchase agreements", y: ""},
+				//{name: "Court fines", y: ""}
+			]
+		]);
+		/*spending.push([
+			{name: "Savings", y: ""}
+		]);*/
+
+		// Make simplified arrays for highcharts
+		incomeChart = [];
+		$.each(income, function( index, value ) {
+			if (value.length > 1) {
+				incomeChart.push(value[0]);
+				var curTotal = 0;
+				$.each(value[1], function( index, value ) {
+					curTotal += parseFloat(value.y);
+				});
+				incomeChart[index]["y"] = parseFloat((curTotal).toFixed(2));
+			} else {
+				incomeChart.push(value[0]);
+				incomeChart[index]["y"] = parseFloat(incomeChart[index].y);
+			}
+		});
+
+		spendingChart = [];
+		$.each(spending, function( index, value ) {
+			if (value.length > 1) {
+				spendingChart.push(value[0]);
+				var curTotal = 0;
+				$.each(value[1], function( index, value ) {
+					curTotal += parseFloat(value.y);
+				});
+				spendingChart[index]["y"] = parseFloat((curTotal).toFixed(2));
+			} else {
+				spendingChart.push(value[0]);
+				spendingChart[index]["y"] = parseFloat(spendingChart[index].y);
+			}
+		});
+
+		// Work out totals
+		var totalIncome = 0;
+		$.each(income, function( index, value ) {
+			if (value.length > 1) {
+				$.each(value[1], function( index, value ) {
+					var curVal = parseFloat(value.y);
+					totalIncome += curVal;
+				});
+			} else {
+				totalIncome += parseFloat(value[0].y);
+			}
+		});
+
+		var totalSpending = 0;
+		$.each(spending, function( index, value ) {
+			if (value.length > 1) {
+				$.each(value[1], function( index, value ) {
+					var curVal = parseFloat(value.y);
+					totalSpending += curVal;
+				});
+			} else {
+				totalSpending += parseFloat(value[0].y);
+			}
+		});
+
+		$(document).ready(function() {
+
+			// Add totals to the page
+			$('#totals #income').append(totalIncome);
+			$('#totals #spending').append(totalSpending);
+			var totalFig = totalIncome - totalSpending;
+
+			if (totalFig <= 0) {
+				$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
+				$('#covering').hide();
+			} else {
+				$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
+				$('#not-covering').hide();
+			}
+
+			// Build income and spending tables
+			$.each(income, function( index, value ) {
+				if (value.length > 1) {
+					var curTotal = 0;
+					$.each(value[1], function( index, value ) {
+						curTotal += parseFloat(value.y);
+					});
+
+					$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+
+					$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+
+					var curIndex = index;
+					$.each(value[1], function( index, value ) {
+						$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+					});
+
+				} else {
+
+					$.each(value, function( index, value ) {
+						$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+					});
+				}
+			});
+			$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalIncome+'</td></tr>');
+
+			$.each(spending, function( index, value ) {
+				if (value.length > 1) {
+					var curTotal = 0;
+					$.each(value[1], function( index, value ) {
+						curTotal += parseFloat(value.y);
+					});
+
+					$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+
+					$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+
+					var curIndex = index;
+					$.each(value[1], function( index, value ) {
+						$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+					});
+
+				} else {
+
+					$.each(value, function( index, value ) {
+						$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+					});
+				}
+			});
+			$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
+		});
+
+		// Create overview chart
+		$(function () {
+			var chart = new Highcharts.Chart({
+				colors: ['#004B88', '#FCBB69'],
+				chart: {
+					type: 'column',
+					renderTo: 'overview-chart',
+					backgroundColor:'rgba(255,255,255,0)'
+				},
+				title: {
+					text: null
+				},
+				xAxis: {
+					labels: {
+						enabled: false
+					}
+				},
+				yAxis: {
+					title:
+					{
+						enabled: false
+					}
+				},
+				tooltip: {
+					formatter: function () {
+						return this.series.name + ': <b>£' + this.y + '</b>';
+					}
+				},
+				credits: {
+					enabled: false
+				},
+				series: [{
+					name: 'Income',
+					data: JSON.parse("["+totalIncome+"]")
+				},
+						{
+					name: 'Spending',
+					data: JSON.parse("["+totalSpending+"]")
+				}],
+				navigation: {
+					buttonOptions: {
+						enabled: false
+					}
+				}
+			});
+		});
+
+		// Create income chart
+		$(function () {
+			var chart = new Highcharts.Chart({
+				colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
+				chart: {
+					type: 'pie',
+					renderTo: 'income-chart',
+					backgroundColor:'rgba(255,255,255,0)'
+				},
+				title: {
+					text: null
+				},
+				tooltip: {
+					formatter: function () {
+						var name = this.point.name,
+						formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+						return formatted + ' <b>£' + this.y + '</b>';
+					}
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: false,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true
+						},
+						showInLegend: false
+					}
+				},
+				credits: {
+					enabled: false
+				},
+				series: [{
+					name: 'Income',
+					colorByPoint: true,
+					data: incomeChart,
+					dataLabels: {
+						formatter: function () {
+							var name = this.point.name,
+							formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+							return formatted + ' £' + this.y;
+						}
+					}
+				}],
+				navigation: {
+					buttonOptions: {
+						enabled: false
+					}
+				}
+			});
+		});
+
+		// Create spending chart
+		$(function () {
+			var chart = new Highcharts.Chart({
+				colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
+				chart: {
+					type: 'pie',
+					renderTo: 'spending-chart',
+					backgroundColor:'rgba(255,255,255,0)'
+				},
+				title: {
+					text: null
+				},
+				tooltip: {
+					formatter: function () {
+						var name = this.point.name,
+						formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+						return formatted + ' <b>£' + this.y + '</b>';
+					}
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: false,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true
+						},
+						showInLegend: false
+					}
+				},
+				credits: {
+					enabled: false
+				},
+				series: [{
+					name: 'Spending',
+					colorByPoint: true,
+					data: spendingChart,
+					dataLabels: {
+						formatter: function () {
+							var name = this.point.name,
+							formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+							return formatted + ' £' + this.y;
+						}
+					}
+				}],
+				navigation: {
+					buttonOptions: {
+						enabled: false
+					}
+				}
+			});
+		});
+				
+block content
+	.articleContent
+		.main-content__right
+			
+			h2 Results
+
+			#totals
+				p
+					| Total monthly income: #[strong#income £]
+					br
+					| Total spending: #[strong#spending £]
+
+			.well
+				div#overview-chart(style="min-width: 300px; margin: 0 auto;")
+
+			ul
+				li 
+					a.a-pdf-doc Download your full budget sheet to save or print
+				li 
+					a(href="#detailed") See a detailed breakdown of your income and spending
+
+			#not-covering.callout--alert
+				h3 Your income isn’t covering your costs
+
+				p As your income isn’t covering your living costs:
+				ul
+					li see if there’s any way you can #[a cut your costs/reduce your spending]
+					li see if you can #[a get help towards your living costs]
+					li make sure you’re #[a prioritising the right bills] - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt
+					li if you’re really struggling with your money and are in lots of debt, you can get help from your #[a(href="") local Citizens Advice]
+
+			#covering.callout--confirmation
+				h3 You’ve got some money left each month
+
+				p As you’ve got some money spare each month you could consider:
+				ul
+					li #[a(href="") saving some money]
+					li increasing your repayments, if you’re repaying debts
+
+			.callout--alert
+				h3 Your living costs 
+
+				p The amounts you put in for the following areas look a bit high. There might be good reasons for this, but it might be worth checking if you can cut your costs in these areas:
+				ul
+					li Gas and electricity - short para of advice and LINK
+					li Phone/TV/broadband - short para of advice and LINK 
+					li Food - short para of advice and LINK 
+					li Insurance - short para of advice and LINK 
+
+			h3 Dealing with debts
+
+			p If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on #[a(href="") getting out of debt], or get help from your #[a(href="") local Citizens Advice]. 
+
+			h3 Tips for keeping on top of your budget
+
+			p Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.
+			ul
+				li Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.
+				li Sign up for online banking - it can be quicker and easier to check your bank balance.
+
+			p Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:
+			ul
+				li how to reduce your costs
+				li how to budget
+				li how to set up and use a bank account
+				li how to set up standing orders and direct debits 
+
+			p Ask #[a(href="") local Citizens Advice] whether they offer these services.
+
+			h2#detailed Income breakdown
+
+			table#income-table.full-width
+				thead
+					tr
+						th(scope="col", colspan="2") Income
+				tbody#tbody
+
+			.well
+				div#income-chart(style="min-width: 310px; margin: 0 auto;")
+
+			h2 Spending breakdown
+
+			table#spending-table.full-width
+				thead
+					tr
+						th(scope="col", colspan="2") Spending
+				tbody#tbody
+			
+			.well
+				div#spending-chart(style="min-width: 310px; margin: 0 auto;")
+
+			p
+				a(href="index.html", style="border: none;")
+					button.btn.btn-secondary.restart-button-icon Restart
+				a(href="javascript:window.print()", style="border: none;")
+					button.btn.btn-secondary.print-button-icon Print
+
+		include sidebar.jade

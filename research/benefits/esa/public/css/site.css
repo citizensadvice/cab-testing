@@ -7884,10 +7884,6 @@ html[lang="en-SCT"] .main-nav {
 .nav-list-primary-more > a > i {
   margin-left: 10px;
 }
-.nav-list-primary-more:hover,
-.nav-list-primary-more.active {
-  background-color: #003A6A;
-}
 .nav-list-primary-more:hover > a,
 .nav-list-primary-more.active > a {
   background-color: #003A6A;
@@ -11324,10 +11320,10 @@ input.tablesort-filter {
   }
 }
 .side-nav-beta.sibling {
-  border: 0 solid #006278;
+  border: 0 solid #A5BDDC;
   border-top-width: 8px;
   border-top-width: 0.5rem;
-  background-color: #f2f2f2;
+  background-color: #f2f8ff;
 }
 .side-nav-beta.sibling .side-nav-beta__sibling a:hover {
   background-color: #dfdfdf;
