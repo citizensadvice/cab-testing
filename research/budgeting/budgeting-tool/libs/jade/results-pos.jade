@@ -1,5 +1,5 @@
 block settings
-	- var title = "Budgeting tool"
+	- var title = "Doing a budget"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -366,7 +366,7 @@ block script
 				chart: {
 					type: 'pie',
 					renderTo: 'income-chart',
-					backgroundColor:'#f2f2f2'
+					backgroundColor:'rgba(255,255,255,0)'
 				},
 				title: {
 					text: null
@@ -414,7 +414,7 @@ block script
 				chart: {
 					type: 'pie',
 					renderTo: 'spending-chart',
-					backgroundColor:'#f2f2f2'
+					backgroundColor:'rgba(255,255,255,0)'
 				},
 				title: {
 					text: null
@@ -544,7 +544,12 @@ block content
 				tbody#tbody
 			
 			.well
-				//div#desktop-spending-chart.hide-mobile(style="min-width: 310px; margin: 0 auto;")
 				div#spending-chart(style="min-width: 310px; margin: 0 auto;")
+
+			p
+				a(href="start-page.html", style="border: none;")
+					button.btn.btn-secondary.restart-button-icon Restart
+				a(href="javascript:window.print()", style="border: none;")
+					button.btn.btn-secondary.print-button-icon Print
 
 		include sidebar.jade
