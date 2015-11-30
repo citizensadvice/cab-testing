@@ -62,7 +62,7 @@
       		{name: "Guardian's Allwance", y: ""}
       	]
       ]);*/
-      income.push([
+      /*income.push([
       	{name: "Benefits"},
       	[
       		//{name: "Attendance Allowance", y: ""},
@@ -88,6 +88,15 @@
       		//{name: "Working Tax Credit", y: ""},
       		//{name: "Young Person’s Bridging Allowance", y: ""}
       	]
+      ]);*/
+      income.push([
+      	{name: "Employment and Support Allowance", y: "442.65"}
+      ]);
+      income.push([
+      	{name: "Housing Benefit", y: "580.67"}
+      ]);
+      income.push([
+      	{name: "Personal Independence Payment", y: "333.23"}
       ]);
       
       // Spending values
@@ -211,7 +220,7 @@
       		$.each(value[1], function( index, value ) {
       			curTotal += parseFloat(value.y);
       		});
-      		incomeChart[index]["y"] = curTotal;
+      		incomeChart[index]["y"] = parseFloat((curTotal).toFixed(2));
       	} else {
       		incomeChart.push(value[0]);
       		incomeChart[index]["y"] = parseFloat(incomeChart[index].y);
@@ -226,7 +235,7 @@
       		$.each(value[1], function( index, value ) {
       			curTotal += parseFloat(value.y);
       		});
-      		spendingChart[index]["y"] = curTotal;
+      		spendingChart[index]["y"] = parseFloat((curTotal).toFixed(2));
       	} else {
       		spendingChart.push(value[0]);
       		spendingChart[index]["y"] = parseFloat(spendingChart[index].y);
@@ -386,7 +395,9 @@
       		},
       		tooltip: {
       			formatter: function () {
-      				return this.point.name + ': <b>£' + this.y + '</b>';
+      				var name = this.point.name,
+      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				return formatted + ' <b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -408,7 +419,9 @@
       			data: incomeChart,
       			dataLabels: {
       				formatter: function () {
-      					return this.point.name + ' £' + this.y;
+      					var name = this.point.name,
+      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					return formatted + ' £' + this.y;
       				}
       			}
       		}],
@@ -434,7 +447,9 @@
       		},
       		tooltip: {
       			formatter: function () {
-      				return this.point.name + ': <b>£' + this.y + '</b>';
+      				var name = this.point.name,
+      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				return formatted + ' <b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -456,7 +471,9 @@
       			data: spendingChart,
       			dataLabels: {
       				formatter: function () {
-      					return this.point.name + ' £' + this.y;
+      					var name = this.point.name,
+      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					return formatted + ' £' + this.y;
       				}
       			}
       		}],
@@ -508,7 +525,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html#templates" title="Templates">Templates</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Budgeting tool</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Budgeting Tool">Budgeting Tool</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Results</span>
         </div>
       </nav>
       <aside class="section-notice">
