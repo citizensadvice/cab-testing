@@ -40,19 +40,6 @@
       });
       
     </script>
-    <script>
-      $(document).ready(function() {
-      
-      	$('input[name="package"]').bind('change',function(){
-      		var showOrHide = ($(this).val() == 1) ? true : false;
-      		$('#package').toggle(showOrHide);
-      		var showOrHide = ($(this).val() == 2) ? true : false;
-      		$('#non-package').toggle(showOrHide);
-      	});
-      
-      });
-      
-    </script>
   </head>
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
@@ -92,7 +79,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Doing a budget">Doing a budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Bills</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Doing a budget">Doing a budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Savings</span>
         </div>
       </nav>
       <aside class="section-notice">
@@ -107,11 +94,10 @@
         </div>
         <div class="articleContent">
           <div class="main-content__right">
-            <h2 style="margin-top: 0;">Bills</h2>
+            <h2 style="margin-top: 0;">Savings</h2>
             <div id="fields-body">
-              <p>Enter the amount you spend on these bills </p>
+              <p>If you regularly put money into a pension, savings or investments, enter the amount here</p>
               <fieldset>
-                <label for="field-1">Rent or mortgage</label>
                 <div style="clear:both" class="field-group field-group--dropdown">
                   <input id="field-1" placeholder="£" type="number">
                   <div class="dropdown">
@@ -123,157 +109,8 @@
                   </div>
                 </div>
               </fieldset>
-              <fieldset>
-                <label for="field-2">Council Tax / Rates</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-2" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-2">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="field-3">Building and contents insurance</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-3" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-3">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="field-4">Gas and electricity</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-4" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-4">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="field-5">Water</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-5" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-5">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="field-6">TV licence</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-6" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-6">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="toggle">Phone, TV and internet</label>
-                <label id="package-toggle" class="radio radio--inline">
-                  <input name="package" type="radio" value="1">I have a package deal
-                </label>
-                <label id="non-package-toggle" class="radio radio--inline">
-                  <input name="package" type="radio" value="2">I pay for them separately
-                </label>
-                <div id="package" style="clear:both;display:none" class="field-group field-group--dropdown">
-                  <input id="field-package" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-package">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <div id="non-package" style="display:none">
-                <fieldset>
-                  <label for="field-7">Home phone</label>
-                  <div style="clear:both" class="field-group field-group--dropdown">
-                    <input id="field-7" placeholder="£" type="number">
-                    <div class="dropdown">
-                      <select id="select-7">
-                        <option>Weekly</option>
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <label for="field-8">TV subscription (eg Sky)</label>
-                  <div style="clear:both" class="field-group field-group--dropdown">
-                    <input id="field-8" placeholder="£" type="number">
-                    <div class="dropdown">
-                      <select id="select-8">
-                        <option>Weekly</option>
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <label for="field-9">Internet</label>
-                  <div style="clear:both" class="field-group field-group--dropdown">
-                    <input id="field-9" placeholder="£" type="number">
-                    <div class="dropdown">
-                      <select id="select-9">
-                        <option>Weekly</option>
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset>
-                  <label for="field-10">Mobile phone (if PAYG please estimate)</label>
-                  <div style="clear:both" class="field-group field-group--dropdown">
-                    <input id="field-10" placeholder="£" type="number">
-                    <div class="dropdown">
-                      <select id="select-10">
-                        <option>Weekly</option>
-                        <option>Monthly</option>
-                        <option>Yearly</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
-            <!--fieldset
-            #add-more.field-group.well
-            	label(style="display:block;") Add an item
-            	.field#fieldOptions
-            		.dropdown(style="width:100%;")
-            			select#select
-            
-            	.function
-            		button#addField.btn.btn-success.plus-button-icon(type="button") Add
-            
-            --><a href="benefits.html" style="border: none;">
-              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="household.html" style="border: none;">
+            </div><a href="#" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="#" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">

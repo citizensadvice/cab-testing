@@ -89,6 +89,8 @@
       		//{name: "Young Person’s Bridging Allowance", y: ""}
       	]
       ]);*/
+      
+      // These are fake arrays for testing
       income.push([
       	{name: "Employment and Support Allowance", y: "442.65"}
       ]);
@@ -282,6 +284,15 @@
       		$('#not-covering').hide();
       	}
       
+      	// Hide pie charts if there is only one income source
+      	if (incomeChart.length < 2) {
+      		$('#income-chart').parent().hide();
+      	}
+      
+      	if (spendingChart.length < 2) {
+      		$('#income-chart').parent().hide();
+      	}
+      
       	// Build income and spending tables
       	$.each(income, function( index, value ) {
       		if (value.length > 1) {
@@ -397,7 +408,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      				return formatted + ' <b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -421,7 +432,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      					return formatted + ' £' + this.y;
+      					return formatted + '<br>£' + this.y;
       				}
       			}
       		}],
@@ -449,7 +460,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      				return formatted + ' <b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -473,7 +484,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      					return formatted + ' £' + this.y;
+      					return formatted + '<br>£' + this.y;
       				}
       			}
       		}],
