@@ -397,7 +397,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      				return formatted + ' <b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -421,7 +421,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      					return formatted + ' £' + this.y;
+      					return formatted + '<br>£' + this.y;
       				}
       			}
       		}],
@@ -449,7 +449,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      				return formatted + ' <b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
       		plotOptions: {
@@ -473,7 +473,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
-      					return formatted + ' £' + this.y;
+      					return formatted + '<br>£' + this.y;
       				}
       			}
       		}],
