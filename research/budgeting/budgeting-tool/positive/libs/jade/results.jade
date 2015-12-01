@@ -456,10 +456,10 @@ block content
 			.well
 				div#spending-chart(style="min-width: 310px; margin: 0 auto;")
 
-			p
-				a.no-print(href="index.html", style="border: none;")
+			p.no-print
+				a(href="index.html", style="border: none;")
 					button.btn.btn-secondary.restart-button-icon Restart
-				a.no-print(href="javascript:window.print()", style="border: none;")
+				a(href="javascript:window.print()", style="border: none;")
 					button.btn.btn-secondary.print-button-icon Print
 
 		include sidebar.jade
