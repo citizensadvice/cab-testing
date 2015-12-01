@@ -264,7 +264,7 @@
       		},
       		tooltip: {
       			formatter: function () {
-      				return this.series.name + ': <b>£' + this.y + '</b>';
+      				return this.series.name + ': <b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
       			}
       		},
       		credits: {
@@ -302,7 +302,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-      				return formatted + '<br><b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
       			}
       		},
       		plotOptions: {
@@ -326,7 +326,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-      					return formatted + '<br>£' + this.y;
+      					return formatted + '<br>£' + Highcharts.numberFormat(this.y,2,'.',',');
       				}
       			}
       		}],
@@ -354,7 +354,7 @@
       			formatter: function () {
       				var name = this.point.name,
       				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-      				return formatted + '<br><b>£' + this.y + '</b>';
+      				return formatted + '<br><b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
       			}
       		},
       		plotOptions: {
@@ -378,7 +378,7 @@
       				formatter: function () {
       					var name = this.point.name,
       					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-      					return formatted + '<br>£' + this.y;
+      					return formatted + '<br>£' + Highcharts.numberFormat(this.y,2,'.',',');
       				}
       			}
       		}],
