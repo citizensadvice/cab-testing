@@ -23,6 +23,11 @@ block script
 				$('#package').toggle(showOrHide);
 				var showOrHide = ($(this).val() == 2) ? true : false;
 				$('#non-package').toggle(showOrHide);
+
+				if ($(this).val() == 3) {
+					$('#package').hide(showOrHide);
+					$('#non-package').hide(showOrHide);
+				}
 			});
 
 		});
@@ -102,12 +107,15 @@ block content
 								option Yearly
 				fieldset
 					label(for="toggle") Phone, TV and internet
-					label#package-toggle.radio.radio--inline
+					label.radio.radio--inline
 						input(name="package", type="radio", value="1")
 						| I have a package deal
-					label#non-package-toggle.radio.radio--inline
+					label.radio.radio--inline
 						input(name="package", type="radio", value="2")
 						| I pay for them separately
+					label.radio.radio--inline
+						input(checked, name="package", type="radio", value="3")
+						| None
 				
 
 					#package.field-group.field-group--dropdown(style="clear:both;display:none")

@@ -48,6 +48,11 @@
       		$('#package').toggle(showOrHide);
       		var showOrHide = ($(this).val() == 2) ? true : false;
       		$('#non-package').toggle(showOrHide);
+      
+      		if ($(this).val() == 3) {
+      			$('#package').hide(showOrHide);
+      			$('#non-package').hide(showOrHide);
+      		}
       	});
       
       });
@@ -190,11 +195,14 @@
               </fieldset>
               <fieldset>
                 <label for="toggle">Phone, TV and internet</label>
-                <label id="package-toggle" class="radio radio--inline">
+                <label class="radio radio--inline">
                   <input name="package" type="radio" value="1">I have a package deal
                 </label>
-                <label id="non-package-toggle" class="radio radio--inline">
+                <label class="radio radio--inline">
                   <input name="package" type="radio" value="2">I pay for them separately
+                </label>
+                <label class="radio radio--inline">
+                  <input checked name="package" type="radio" value="3">None
                 </label>
                 <div id="package" style="clear:both;display:none" class="field-group field-group--dropdown">
                   <input id="field-package" placeholder="£" type="number">
