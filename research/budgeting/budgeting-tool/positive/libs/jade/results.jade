@@ -145,8 +145,8 @@ block script
 		$(document).ready(function() {
 
 			// Add totals to the page
-			$('#totals #income').append(totalIncome);
-			$('#totals #spending').append(totalSpending);
+			$('#totals #income').append((totalIncome).toFixed(2));
+			$('#totals #spending').append((totalSpending).toFixed(2));
 			var totalFig = totalIncome - totalSpending;
 
 			if (totalFig <= 0) {
