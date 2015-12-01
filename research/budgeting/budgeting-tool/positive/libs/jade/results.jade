@@ -20,6 +20,13 @@ block section-notice
 			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
 
 block script
+	style.
+		@media print {
+			.table-collapse {
+				display: table-row !important;
+			}
+		}
+
 	script(src="../libs/javascript/vendor/highcharts/highcharts.js")
 	script(src="../libs/javascript/vendor/highcharts/modules/exporting.js")
 	script.
