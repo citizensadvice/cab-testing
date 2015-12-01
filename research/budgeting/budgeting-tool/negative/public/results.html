@@ -324,7 +324,7 @@
       			});
       		}
       	});
-      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+totalIncome+'</td></tr>');
+      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalIncome).toFixed(2)+'</td></tr>');
       
       	$.each(spending, function( index, value ) {
       		if (value.length > 1) {
@@ -349,7 +349,7 @@
       			});
       		}
       	});
-      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+totalSpending+'</td></tr>');
+      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalSpending).toFixed(2)+'</td></tr>');
       });
       
       // Create overview chart
