@@ -300,23 +300,23 @@
       				curTotal += parseFloat(value.y);
       			});
       
-      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
-      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalIncome+'</td></tr>');
+      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+totalIncome+'</td></tr>');
       
       	$.each(spending, function( index, value ) {
       		if (value.length > 1) {
@@ -325,23 +325,23 @@
       				curTotal += parseFloat(value.y);
       			});
       
-      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
-      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
+      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+totalSpending+'</td></tr>');
       });
       
       // Create overview chart
@@ -406,7 +406,7 @@
       		tooltip: {
       			formatter: function () {
       				var name = this.point.name,
-      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
@@ -430,7 +430,7 @@
       			dataLabels: {
       				formatter: function () {
       					var name = this.point.name,
-      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       					return formatted + '<br>£' + this.y;
       				}
       			}
@@ -458,7 +458,7 @@
       		tooltip: {
       			formatter: function () {
       				var name = this.point.name,
-      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
@@ -482,7 +482,7 @@
       			dataLabels: {
       				formatter: function () {
       					var name = this.point.name,
-      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       					return formatted + '<br>£' + this.y;
       				}
       			}
