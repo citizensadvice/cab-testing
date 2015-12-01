@@ -67,10 +67,6 @@ block script
 				"Insurance (life or home, but not travel)",
 				""
 			]);
-			fields.push([
-				"Magazines and newspapers",
-				""
-			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
@@ -131,7 +127,7 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p Enter how much you spend on each of these household and personal expenses.
+				p Enter how much you spend on household and personal expenses. Leave fields empty which do not apply to you.
 
 			fieldset
 				
@@ -144,7 +140,7 @@ block content
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			a(href="bills.html", style="border: none;")
+			a(href="#", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
 			a(href="leisure.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next

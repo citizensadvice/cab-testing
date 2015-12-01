@@ -75,6 +75,10 @@ block script
 				"Court fines",
 				""
 			]);
+			fields.push([
+				"Student loans",
+				""
+			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
@@ -123,6 +127,22 @@ block script
 
 		});
 
+		$(document).ready(function() {
+
+			$('input[name="debt"]').bind('change',function(){
+				var showOrHide = ($(this).val() == 1) ? true : false;
+				$('#management').toggle(showOrHide);
+				var showOrHide = ($(this).val() == 2) ? true : false;
+				$('#iva').toggle(showOrHide);
+
+				if ($(this).val() == 3) {
+					$('#management').hide(showOrHide);
+					$('#iva').hide(showOrHide);
+				}
+			});
+
+		});
+
 block section-notice
 	aside.section-notice
 		h2.screenreader Notice
@@ -136,8 +156,19 @@ block content
 
 			#fields-body
 				p If you have debts that you’re regularly paying off as part of a debt management plan, IVA or an agreement direct with your creditors, you should include those regular payments here. Select and enter any current repayments you are making.
-				
+
 				fieldset
+					label.radio.radio--inline
+						input(name="debt", type="radio", value="1")
+						| Debt management company
+					label.radio.radio--inline
+						input(name="debt", type="radio", value="2")
+						| IVA
+					label.radio.radio--inline
+						input(name="debt", type="radio", value="3")
+						| None
+				
+				fieldset#management(style="display:none")
 					label(for="field-1") Payment to a debt management company
 					.field-group.field-group--dropdown(style="clear:both")
 						input#field-1(placeholder="£", type="number")
@@ -147,7 +178,7 @@ block content
 								option Monthly
 								option Yearly
 				
-				fieldset
+				fieldset#iva(style="display:none")
 					label(for="field-2") Payment into an IVA
 					.field-group.field-group--dropdown(style="clear:both")
 						input#field-2(placeholder="£", type="number")
@@ -168,7 +199,7 @@ block content
 					.function
 						button#addField.btn.btn-success.plus-button-icon(type="button") Add
 
-			a(href="family.html", style="border: none;")
+			a(href="#", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
 			a(href="results.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
