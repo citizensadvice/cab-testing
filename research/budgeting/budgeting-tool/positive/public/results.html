@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <title>Citizens Advice style guide - Your budget
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="/static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../libs/vendors/prism/prism.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <link href="https://www.citizensadvice.org.uk/static/layout/favicon.ico" rel="shortcut icon">
+    <link href="https://www.citizensadvice.org.uk/static/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Javascript-->
+    <script src="../libs/javascript/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../libs/javascript/beta-dap-accordion.js"></script>
+    <script src="../libs/javascript/collapse.js"></script>
+    <script src="../libs/vendors/prism/prism.js"></script>
+    <script src="../libs/javascript/smooth.js"></script>
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
+      
+      	var x = 1;
+      	$(".side-nav-beta.tools").each(function() {
+      		$("a", this).each(function() {
+      			$(this).prepend( x +'. ');
+      			x++;
+      		});
+      	});
+      });
+      
+    </script>
+    <style>
+      @media print {
+      	.table-collapse {
+      		display: table-row !important;
+      	}
+      }
+      
+    </style>
+    <script src="../libs/javascript/vendor/highcharts/highcharts.js"></script>
+    <script src="../libs/javascript/vendor/highcharts/modules/exporting.js"></script>
+    <script>
+      // Income values
+      var income = [];
+      income.push([
+      	{name: "Wages", y: "2600"}
+      ]);
+      
+      // Spending values
+      var spending = [];
+      spending.push([
+      	{name: "Bills"},
+      	[
+      		{name: "Rent or mortgage", y: "550"},
+      		{name: "Council Tax / Rates", y: "92.83"},
+      		{name: "Gas and electricity", y: "70"},
+      		{name: "Water", y: "25"},
+      		{name: "TV licence", y: "12.13"},
+      		{name: "Phone TV & Internet", y: "110"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Household"},
+      	[
+      		{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: "281.67"},
+      		{name: "Clothing and footwear", y: "300"},
+      		{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: "175"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Leisure"},
+      	[
+      		{name: "Meals and drinks out", y: "55"},
+      		{name: "Memberships (eg gym or cinema membership)", y: "195"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Travel"},
+      	[
+      		{name: "Public transport (including season tickets)", y: "144.8"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Family"},
+      	[
+      		{name: "Christmas and birthday presents", y: "25"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Debt"},
+      	[
+      		{name: "Credit card, store card debts or payday loans", y: "100"}
+      	]
+      ]);
+      spending.push([
+      	{name: "Savings", y: "200"}
+      ]);
+      
+      // Make simplified arrays for highcharts
+      incomeChart = [];
+      $.each(income, function( index, value ) {
+      	if (value.length > 1) {
+      		incomeChart.push(value[0]);
+      		var curTotal = 0;
+      		$.each(value[1], function( index, value ) {
+      			curTotal += parseFloat(value.y);
+      		});
+      		incomeChart[index]["y"] = parseFloat((curTotal).toFixed(2));
+      	} else {
+      		incomeChart.push(value[0]);
+      		incomeChart[index]["y"] = parseFloat(incomeChart[index].y);
+      	}
+      });
+      
+      spendingChart = [];
+      $.each(spending, function( index, value ) {
+      	if (value.length > 1) {
+      		spendingChart.push(value[0]);
+      		var curTotal = 0;
+      		$.each(value[1], function( index, value ) {
+      			curTotal += parseFloat(value.y);
+      		});
+      		spendingChart[index]["y"] = parseFloat((curTotal).toFixed(2));
+      	} else {
+      		spendingChart.push(value[0]);
+      		spendingChart[index]["y"] = parseFloat(spendingChart[index].y);
+      	}
+      });
+      
+      // Work out totals
+      var totalIncome = 0;
+      $.each(income, function( index, value ) {
+      	if (value.length > 1) {
+      		$.each(value[1], function( index, value ) {
+      			var curVal = parseFloat(value.y);
+      			totalIncome += curVal;
+      		});
+      	} else {
+      		totalIncome += parseFloat(value[0].y);
+      	}
+      });
+      
+      var totalSpending = 0;
+      $.each(spending, function( index, value ) {
+      	if (value.length > 1) {
+      		$.each(value[1], function( index, value ) {
+      			var curVal = parseFloat(value.y);
+      			totalSpending += curVal;
+      		});
+      	} else {
+      		totalSpending += parseFloat(value[0].y);
+      	}
+      });
+      
+      $(document).ready(function() {
+      
+      	// Add totals to the page
+      	$('#totals #income').append((totalIncome).toFixed(2));
+      	$('#totals #spending').append((totalSpending).toFixed(2));
+      	var totalFig = totalIncome - totalSpending;
+      
+      	if (totalFig <= 0) {
+      		$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
+      		$('#covering').hide();
+      	} else {
+      		$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
+      		$('#not-covering').hide();
+      	}
+      
+      	// Hide pie charts if there is only one income source
+      	if (incomeChart.length < 2) {
+      		$('#income-chart').parent().hide();
+      	}
+      
+      	if (spendingChart.length < 2) {
+      		$('#income-chart').parent().hide();
+      	}
+      
+      	// Build income and spending tables
+      	$.each(income, function( index, value ) {
+      		if (value.length > 1) {
+      			var curTotal = 0;
+      			$.each(value[1], function( index, value ) {
+      				curTotal += parseFloat(value.y);
+      			});
+      
+      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
+      
+      			$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+      
+      			var curIndex = index;
+      			$.each(value[1], function( index, value ) {
+      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      			});
+      
+      		} else {
+      
+      			$.each(value, function( index, value ) {
+      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      			});
+      		}
+      	});
+      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalIncome).toFixed(2)+'</td></tr>');
+      
+      	$.each(spending, function( index, value ) {
+      		if (value.length > 1) {
+      			var curTotal = 0;
+      			$.each(value[1], function( index, value ) {
+      				curTotal += parseFloat(value.y);
+      			});
+      
+      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
+      
+      			$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
+      
+      			var curIndex = index;
+      			$.each(value[1], function( index, value ) {
+      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      			});
+      
+      		} else {
+      
+      			$.each(value, function( index, value ) {
+      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      			});
+      		}
+      	});
+      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalSpending).toFixed(2)+'</td></tr>');
+      });
+      
+      // Create overview chart
+      $(function () {
+      	var chart = new Highcharts.Chart({
+      		colors: ['#004B88', '#FCBB69'],
+      		chart: {
+      			type: 'column',
+      			renderTo: 'overview-chart',
+      			backgroundColor:'rgba(255,255,255,0)'
+      		},
+      		title: {
+      			text: null
+      		},
+      		xAxis: {
+      			labels: {
+      				enabled: false
+      			}
+      		},
+      		yAxis: {
+      			title:
+      			{
+      				enabled: false
+      			}
+      		},
+      		tooltip: {
+      			formatter: function () {
+      				return this.series.name + ': <b>£' + this.y + '</b>';
+      			}
+      		},
+      		credits: {
+      			enabled: false
+      		},
+      		series: [{
+      			name: 'Income',
+      			data: JSON.parse("["+totalIncome+"]")
+      		},
+      				{
+      			name: 'Spending',
+      			data: JSON.parse("["+totalSpending+"]")
+      		}],
+      		navigation: {
+      			buttonOptions: {
+      				enabled: false
+      			}
+      		}
+      	});
+      });
+      
+      // Create income chart
+      $(function () {
+      	var chart = new Highcharts.Chart({
+      		colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
+      		chart: {
+      			type: 'pie',
+      			renderTo: 'income-chart',
+      			backgroundColor:'rgba(255,255,255,0)'
+      		},
+      		title: {
+      			text: null
+      		},
+      		tooltip: {
+      			formatter: function () {
+      				var name = this.point.name,
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
+      				return formatted + '<br><b>£' + this.y + '</b>';
+      			}
+      		},
+      		plotOptions: {
+      			pie: {
+      				allowPointSelect: false,
+      				cursor: 'pointer',
+      				dataLabels: {
+      					enabled: true
+      				},
+      				showInLegend: false
+      			}
+      		},
+      		credits: {
+      			enabled: false
+      		},
+      		series: [{
+      			name: 'Income',
+      			colorByPoint: true,
+      			data: incomeChart,
+      			dataLabels: {
+      				formatter: function () {
+      					var name = this.point.name,
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
+      					return formatted + '<br>£' + this.y;
+      				}
+      			}
+      		}],
+      		navigation: {
+      			buttonOptions: {
+      				enabled: false
+      			}
+      		}
+      	});
+      });
+      
+      // Create spending chart
+      $(function () {
+      	var chart = new Highcharts.Chart({
+      		colors: ['#f8a980', '#ffbf47', '#b9db9b', '#a5bddc', '#b5afd7', '#81cec6', '#f499be', '#e76568', '#87c3d0'],
+      		chart: {
+      			type: 'pie',
+      			renderTo: 'spending-chart',
+      			backgroundColor:'rgba(255,255,255,0)'
+      		},
+      		title: {
+      			text: null
+      		},
+      		tooltip: {
+      			formatter: function () {
+      				var name = this.point.name,
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
+      				return formatted + '<br><b>£' + this.y + '</b>';
+      			}
+      		},
+      		plotOptions: {
+      			pie: {
+      				allowPointSelect: false,
+      				cursor: 'pointer',
+      				dataLabels: {
+      					enabled: true
+      				},
+      				showInLegend: false
+      			}
+      		},
+      		credits: {
+      			enabled: false
+      		},
+      		series: [{
+      			name: 'Spending',
+      			colorByPoint: true,
+      			data: spendingChart,
+      			dataLabels: {
+      				formatter: function () {
+      					var name = this.point.name,
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
+      					return formatted + '<br>£' + this.y;
+      				}
+      			}
+      		}],
+      		navigation: {
+      			buttonOptions: {
+      				enabled: false
+      			}
+      		}
+      	});
+      });
+      		
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <!--header.styleguide--header.mockup
+    .styleguide--header--content
+    	a(href="index.html")
+    		img(src="assets/images/ca-logo-hz-white-280px.svg")
+    -->
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo no-print"><img alt="Citizens Advice" src="assets/images/ca-logo_100px.svg"></a><a href="index.html" title="Citizens Advice home" class="main-header__logo no-print wide"><img alt="Citizens Advice" src="assets/images/ca-logo-hz-white-280px.svg"></a><a href="index.html" title="Citizens Advice home" class="main-header__logo print-only"><img alt="Citizens Advice" src="assets/images/ca-logo-hz-280px.svg"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Results</span>
+        </div>
+      </nav>
+      <aside class="section-notice">
+        <h2 class="screenreader">Notice</h2>
+        <div class="section-notice__content">
+          <p><span class="badge">NEW</span> This page is part of <a href="#">our new approach to digital advice</a>.</p>
+        </div>
+      </aside>
+      <div class="main-content">
+        <div class="title">
+          <h1 class="title__heading js-ref"><span class="title__title">Your budget</span></h1>
+        </div>
+        <div class="articleContent">
+          <div class="main-content__right">
+            <h2>Results</h2>
+            <div id="totals">
+              <p>Total monthly income: <strong id="income">£</strong><br>Total monthly spending: <strong id="spending">£</strong></p>
+            </div>
+            <div class="well">
+              <div id="overview-chart" style="min-width: 300px; margin: 0 auto;"></div>
+            </div>
+            <ul class="no-print">
+              <li> <a class="a-pdf-doc">Download your full budget sheet to save or print</a></li>
+              <li> <a href="#detailed">See a detailed breakdown of your income and spending</a></li>
+            </ul>
+            <div id="not-covering" class="callout--alert">
+              <h3>Your income isn’t covering your costs</h3>
+              <p>As your income isn’t covering your living costs:</p>
+              <ul>
+                <li>see if there’s any way you can <a>cut your costs/reduce your spending</a></li>
+                <li>see if you can <a>get help towards your living costs</a></li>
+                <li>make sure you’re <a>prioritising the right bills</a> - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt</li>
+                <li>if you’re really struggling with your money and are in lots of debt, you can get help from your <a href="">local Citizens Advice</a></li>
+              </ul>
+            </div>
+            <div id="covering" class="callout--confirmation">
+              <h3>You’ve got some money left each month</h3>
+              <p>As you’ve got some money spare each month you could consider:</p>
+              <ul>
+                <li><a href="">saving some money</a></li>
+                <li>increasing your repayments, if you’re repaying debts</li>
+              </ul>
+            </div>
+            <div class="callout--alert">
+              <h3>Your living costs </h3>
+              <p>The amounts you put in for the following areas look a bit high. There might be good reasons for this, but it might be worth checking if you can cut your costs in these areas:</p>
+              <ul>
+                <li>Gas and electricity - short para of advice and LINK</li>
+                <li>Phone/TV/broadband - short para of advice and LINK </li>
+                <li>Food - short para of advice and LINK </li>
+                <li>Insurance - short para of advice and LINK </li>
+              </ul>
+            </div>
+            <h3>Dealing with debts</h3>
+            <p>If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on <a href="">getting out of debt</a>, or get help from your <a href="">local Citizens Advice</a>. </p>
+            <h3>Tips for keeping on top of your budget</h3>
+            <p>Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.</p>
+            <ul>
+              <li>Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.</li>
+              <li>Sign up for online banking - it can be quicker and easier to check your bank balance.</li>
+            </ul>
+            <p>Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:</p>
+            <ul>
+              <li>how to reduce your costs</li>
+              <li>how to budget</li>
+              <li>how to set up and use a bank account</li>
+              <li>how to set up standing orders and direct debits </li>
+            </ul>
+            <p>Ask <a href="">local Citizens Advice</a> whether they offer these services.</p>
+            <h2 id="detailed">Monthly income breakdown</h2>
+            <table id="income-table" class="full-width">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Income</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+            <div class="well">
+              <div id="income-chart" style="min-width: 310px; margin: 0 auto;"></div>
+            </div>
+            <h2>Monthly spending breakdown</h2>
+            <table id="spending-table" class="full-width">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Spending</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+            <div class="well">
+              <div id="spending-chart" style="min-width: 310px; margin: 0 auto;"></div>
+            </div>
+            <p class="no-print"><a href="index.html" style="border: none;">
+                <button class="btn btn-secondary restart-button-icon">Restart</button></a><a href="javascript:window.print()" style="border: none;">
+                <button class="btn btn-secondary print-button-icon">Print</button></a></p>
+          </div>
+          <nav class="side-nav-beta tools">
+            <ul>
+              <!--li.side-nav-beta__heading.-active.-open
+              a
+              	span Budgeting tool
+              -->
+              <li>
+                <ul>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="benefits.html">Income</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="bills.html">Bills</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="savings.html">Savings</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p> <img alt="" height="100" src="assets/images/ca-logo_100px.svg" width="100">Copyright © 2015 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../libs/javascript/advisor.js"></script>
+    <script src="../libs/javascript/core.js"></script>
+  </body>
+</html>

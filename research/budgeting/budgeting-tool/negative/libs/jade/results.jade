@@ -1,5 +1,5 @@
 block settings
-	- var title = "Doing a budget"
+	- var title = "Your budget"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -10,7 +10,7 @@ extends ../template/template.jade
 block breadcrumbs
 	+breadcrumbs([
 		{title: "Home", href: "index.html"},
-		{title: "Doing a budget", href: "index.html"},
+		{title: "Your budget", href: "index.html"},
 		{title: "Results"}])
 
 block section-notice
@@ -20,6 +20,13 @@ block section-notice
 			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
 
 block script
+	style.
+		@media print {
+			.table-collapse {
+				display: table-row !important;
+			}
+		}
+
 	script(src="../libs/javascript/vendor/highcharts/highcharts.js")
 	script(src="../libs/javascript/vendor/highcharts/modules/exporting.js")
 	script.
@@ -280,23 +287,23 @@ block script
 						curTotal += parseFloat(value.y);
 					});
 
-					$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+					$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
 
 					$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
 
 					var curIndex = index;
 					$.each(value[1], function( index, value ) {
-						$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+						$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
 					});
 
 				} else {
 
 					$.each(value, function( index, value ) {
-						$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+						$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
 					});
 				}
 			});
-			$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalIncome+'</td></tr>');
+			$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalIncome).toFixed(2)+'</td></tr>');
 
 			$.each(spending, function( index, value ) {
 				if (value.length > 1) {
@@ -305,23 +312,23 @@ block script
 						curTotal += parseFloat(value.y);
 					});
 
-					$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+					$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
 
 					$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
 
 					var curIndex = index;
 					$.each(value[1], function( index, value ) {
-						$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+						$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
 					});
 
 				} else {
 
 					$.each(value, function( index, value ) {
-						$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+						$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
 					});
 				}
 			});
-			$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
+			$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalSpending).toFixed(2)+'</td></tr>');
 		});
 
 		// Create overview chart
@@ -386,7 +393,7 @@ block script
 				tooltip: {
 					formatter: function () {
 						var name = this.point.name,
-						formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+						formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
 						return formatted + '<br><b>£' + this.y + '</b>';
 					}
 				},
@@ -410,7 +417,7 @@ block script
 					dataLabels: {
 						formatter: function () {
 							var name = this.point.name,
-							formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+							formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
 							return formatted + '<br>£' + this.y;
 						}
 					}
@@ -438,7 +445,7 @@ block script
 				tooltip: {
 					formatter: function () {
 						var name = this.point.name,
-						formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+						formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
 						return formatted + '<br><b>£' + this.y + '</b>';
 					}
 				},
@@ -462,7 +469,7 @@ block script
 					dataLabels: {
 						formatter: function () {
 							var name = this.point.name,
-							formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+							formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
 							return formatted + '<br>£' + this.y;
 						}
 					}
@@ -490,7 +497,7 @@ block content
 			.well
 				div#overview-chart(style="min-width: 300px; margin: 0 auto;")
 
-			ul
+			ul.no-print
 				li 
 					a.a-pdf-doc Download your full budget sheet to save or print
 				li 
@@ -566,7 +573,7 @@ block content
 			.well
 				div#spending-chart(style="min-width: 310px; margin: 0 auto;")
 
-			p
+			p.no-print
 				a(href="index.html", style="border: none;")
 					button.btn.btn-secondary.restart-button-icon Restart
 				a(href="javascript:window.print()", style="border: none;")

@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="keywords">
     <meta name="description">
-    <title>Citizens Advice style guide - Doing a budget
+    <title>Citizens Advice style guide - Your budget
     </title>
     <!-- Mobile Specific Metas-->
     <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
@@ -40,6 +40,14 @@
       });
       
     </script>
+    <style>
+      @media print {
+      	.table-collapse {
+      		display: table-row !important;
+      	}
+      }
+      
+    </style>
     <script src="../libs/javascript/vendor/highcharts/highcharts.js"></script>
     <script src="../libs/javascript/vendor/highcharts/modules/exporting.js"></script>
     <script>
@@ -300,23 +308,23 @@
       				curTotal += parseFloat(value.y);
       			});
       
-      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+      			$("#income-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#income-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$('#income-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$("#income-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
-      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalIncome+'</td></tr>');
+      	$("#income-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalIncome).toFixed(2)+'</td></tr>');
       
       	$.each(spending, function( index, value ) {
       		if (value.length > 1) {
@@ -325,23 +333,23 @@
       				curTotal += parseFloat(value.y);
       			});
       
-      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount">£'+(curTotal).toFixed(2)+'</td></tr>');
+      			$("#spending-table #tbody").append('<tr class="table-collapse--toggle"><td>'+value[0].name+'</td><td class="amount"><span class="pound">£</span>'+(curTotal).toFixed(2)+'</td></tr>');
       
       			$("#spending-table #tbody").append('<tr class="table-collapse"><td colspan="2"><table class="full-width" data-id="'+index+'"><tbody></tbody></table></td></tr>');
       
       			var curIndex = index;
       			$.each(value[1], function( index, value ) {
-      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$('#spending-table table[data-id="'+curIndex+'"]').append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       
       		} else {
       
       			$.each(value, function( index, value ) {
-      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount">£'+parseFloat(value.y).toFixed(2)+'</td></tr>');
+      				$("#spending-table #tbody").append('<tr><td>'+value.name+'</td><td class="amount"><span class="pound">£</span>'+parseFloat(value.y).toFixed(2)+'</td></tr>');
       			});
       		}
       	});
-      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount">£'+totalSpending+'</td></tr>');
+      	$("#spending-table #tbody").append('<tr class="total"><td>Total</td><td class="amount"><span class="pound">£</span>'+(totalSpending).toFixed(2)+'</td></tr>');
       });
       
       // Create overview chart
@@ -406,7 +414,7 @@
       		tooltip: {
       			formatter: function () {
       				var name = this.point.name,
-      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
@@ -430,7 +438,7 @@
       			dataLabels: {
       				formatter: function () {
       					var name = this.point.name,
-      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       					return formatted + '<br>£' + this.y;
       				}
       			}
@@ -458,7 +466,7 @@
       		tooltip: {
       			formatter: function () {
       				var name = this.point.name,
-      				formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      				formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       				return formatted + '<br><b>£' + this.y + '</b>';
       			}
       		},
@@ -482,7 +490,7 @@
       			dataLabels: {
       				formatter: function () {
       					var name = this.point.name,
-      					formatted = name.length > 15 ? name.substring(0, 15) + '...' : name;
+      					formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
       					return formatted + '<br>£' + this.y;
       				}
       			}
@@ -535,7 +543,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Doing a budget">Doing a budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Results</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Results</span>
         </div>
       </nav>
       <aside class="section-notice">
@@ -546,7 +554,7 @@
       </aside>
       <div class="main-content">
         <div class="title">
-          <h1 class="title__heading js-ref"><span class="title__title">Doing a budget</span></h1>
+          <h1 class="title__heading js-ref"><span class="title__title">Your budget</span></h1>
         </div>
         <div class="articleContent">
           <div class="main-content__right">
@@ -557,7 +565,7 @@
             <div class="well">
               <div id="overview-chart" style="min-width: 300px; margin: 0 auto;"></div>
             </div>
-            <ul>
+            <ul class="no-print">
               <li> <a class="a-pdf-doc">Download your full budget sheet to save or print</a></li>
               <li> <a href="#detailed">See a detailed breakdown of your income and spending</a></li>
             </ul>
@@ -629,7 +637,7 @@
             <div class="well">
               <div id="spending-chart" style="min-width: 310px; margin: 0 auto;"></div>
             </div>
-            <p><a href="index.html" style="border: none;">
+            <p class="no-print"><a href="index.html" style="border: none;">
                 <button class="btn btn-secondary restart-button-icon">Restart</button></a><a href="javascript:window.print()" style="border: none;">
                 <button class="btn btn-secondary print-button-icon">Print</button></a></p>
           </div>

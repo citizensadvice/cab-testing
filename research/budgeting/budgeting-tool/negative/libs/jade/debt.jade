@@ -1,5 +1,5 @@
 block settings
-	- var title = "Doing a budget"
+	- var title = "Your budget"
 	- var sectionTitle = "Debt"
 	//- var sidebar = true
 	//- var toolbars = true
@@ -11,7 +11,7 @@ extends ../template/template.jade
 block breadcrumbs
 	+breadcrumbs([
 		{title: "Home", href: "index.html"},
-		{title: "Doing a budget", href: "index.html"},
+		{title: "Your budget", href: "index.html"},
 		{title: sectionTitle}])
 
 block script
@@ -165,8 +165,8 @@ block content
 						input(name="debt", type="radio", value="2")
 						| IVA
 					label.radio.radio--inline
-						input(name="debt", type="radio", value="3")
-						| None
+						input(checked, name="debt", type="radio", value="3")
+						| Neither of these
 				
 				fieldset#management(style="display:none")
 					label(for="field-1") Payment to a debt management company

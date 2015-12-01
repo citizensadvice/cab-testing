@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="keywords">
     <meta name="description">
-    <title>Citizens Advice style guide - Doing a budget
+    <title>Citizens Advice style guide - Your budget
     </title>
     <!-- Mobile Specific Metas-->
     <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
@@ -48,6 +48,11 @@
       		$('#package').toggle(showOrHide);
       		var showOrHide = ($(this).val() == 2) ? true : false;
       		$('#non-package').toggle(showOrHide);
+      
+      		if ($(this).val() == 3) {
+      			$('#package').hide(showOrHide);
+      			$('#non-package').hide(showOrHide);
+      		}
       	});
       
       });
@@ -92,7 +97,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Doing a budget">Doing a budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Bills</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Bills</span>
         </div>
       </nav>
       <aside class="section-notice">
@@ -103,7 +108,7 @@
       </aside>
       <div class="main-content">
         <div class="title">
-          <h1 class="title__heading js-ref"><span class="title__title">Doing a budget</span></h1>
+          <h1 class="title__heading js-ref"><span class="title__title">Your budget</span></h1>
         </div>
         <div class="articleContent">
           <div class="main-content__right">
@@ -190,11 +195,14 @@
               </fieldset>
               <fieldset>
                 <label for="toggle">Phone, TV and internet</label>
-                <label id="package-toggle" class="radio radio--inline">
+                <label class="radio radio--inline">
                   <input name="package" type="radio" value="1">I have a package deal
                 </label>
-                <label id="non-package-toggle" class="radio radio--inline">
+                <label class="radio radio--inline">
                   <input name="package" type="radio" value="2">I pay for them separately
+                </label>
+                <label class="radio radio--inline">
+                  <input checked name="package" type="radio" value="3">Neither
                 </label>
                 <div id="package" style="clear:both;display:none" class="field-group field-group--dropdown">
                   <input id="field-package" placeholder="£" type="number">
