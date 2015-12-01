@@ -1,0 +1,32 @@
+/**
+ * BUTTON ICON MIXIN
+ *
+ * Mixin to add icons to buttons by picking the content, position, color and border.
+ */
+
+.btn-icon(@icon: "\f054"; @position: right; @color: @white; @border: false) {
+    position: relative;
+    padding-@{position}: 2.5em;
+    &:after {
+        @{position}: 1em;
+        font-family: 'Helvetica', 'FontAwesome';
+        font-weight: 300;
+        content: @icon;
+        color: @color;
+        text-align: center;
+        .vertical-align(absolute);
+        top: 52%;
+    }
+    & when (@border = true) {
+        padding-@{position}: 3.5em;
+        &:before {
+            @{position}: 0.5em;
+            content: "";
+            width: 2em;
+            height: 2em;
+            border: 2px solid @color;
+            .round(@round-colour: @color;);
+            .vertical-align(absolute);  
+        }
+    }
+}
