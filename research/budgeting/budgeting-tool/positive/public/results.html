@@ -42,6 +42,15 @@
     </script>
     <style>
       @media print {
+      	@page {
+      		margin: 2cm 1cm; 
+      	}
+      	table {
+      		border-color: rgba(255,255,255,0) !important;
+      	}
+      	.table-collapse--toggle td:first-of-type:before {
+      		content: "";
+      	}
       	.table-collapse {
       		display: table-row !important;
       	}
