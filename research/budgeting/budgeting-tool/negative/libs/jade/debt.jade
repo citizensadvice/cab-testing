@@ -1,0 +1,176 @@
+block settings
+	- var title = "Doing a budget"
+	- var sectionTitle = "Debt"
+	//- var sidebar = true
+	//- var toolbars = true
+	//- var cookiemonster = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Doing a budget", href: "index.html"},
+		{title: sectionTitle}])
+
+block script
+	script.
+		$(document).ready(function() {
+
+			var fields = [];
+			fields.push([
+				"Mortgage, rent or any loans secured against your home",
+				""
+			]);
+			fields.push([
+				"Council Tax",
+				""
+			]);
+			fields.push([
+				"Credit card, store card debts or payday loans",
+				""
+			]);
+			fields.push([
+				"Bank or building society loans",
+				""
+			]);
+			fields.push([
+				"Personal loans",
+				""
+			]);
+			fields.push([
+				"Catalogue, home credit or in-store credit debts",
+				""
+			]);
+			fields.push([
+				"Overdrafts",
+				""
+			]);
+			fields.push([
+				"Money borrowed from friends or family",
+				""
+			]);
+			fields.push([
+				"Income Tax, National Insurance and VAT",
+				""
+			]);
+			fields.push([
+				"Gas and electricity bills",
+				""
+			]);
+			fields.push([
+				"Child maintenance",
+				""
+			]);
+			fields.push([
+				"TV licence",
+				""
+			]);
+			fields.push([
+				"Hire purchase agreements",
+				""
+			]);
+			fields.push([
+				"Court fines",
+				""
+			]);
+
+			$.each(fields, function( index, value ) {
+				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+
+				/*
+				// Uncomment this to populate the page without add/remove functionality
+				if (value[1] === "" || value[1] == null) {
+					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				} else {
+					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				}
+				$('#add-more').hide();
+				*/
+			});
+
+			$("#addField").click(function(e){
+				e.preventDefault();
+
+				var dataId = $('#fieldOptions').find(':selected').data("id");
+				$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+
+				if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+					$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				} else {
+					$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				}
+				
+				var optionCount = $('#select option').length;
+				if (optionCount < 1) {
+					$('#add-more').hide();
+				}
+			});
+
+			$("#fields-body").on("click",".remove-field", function(e){
+				e.preventDefault();
+
+				var thisId = $(this).data("id");
+				$(this).parent().parent('fieldset').remove();
+				$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+
+				var optionCount = $('#select option').length;
+				if (optionCount > 0) {
+					$('#add-more').show();
+				}
+			})
+
+		});
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		.main-content__right
+			h2(style="margin-top: 0;") #{sectionTitle}
+
+			#fields-body
+				p If you have debts that you’re regularly paying off as part of a debt management plan, IVA or an agreement direct with your creditors, you should include those regular payments here. Select and enter any current repayments you are making.
+				
+				fieldset
+					label(for="field-1") Payment to a debt management company
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-1(placeholder="£", type="number")
+						.dropdown
+							select#select-1
+								option Weekly
+								option Monthly
+								option Yearly
+				
+				fieldset
+					label(for="field-2") Payment into an IVA
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-2(placeholder="£", type="number")
+						.dropdown
+							select#select-2
+								option Weekly
+								option Monthly
+								option Yearly
+
+			fieldset
+				
+				#add-more.field-group.well
+					label(style="display:block;") Payments direct to my creditors
+					.field#fieldOptions
+						.dropdown(style="width:100%;")
+							select#select
+
+					.function
+						button#addField.btn.btn-success.plus-button-icon(type="button") Add
+
+			a(href="family.html", style="border: none;")
+				button.btn.btn-primary-light.left-button-icon(type="button") Previous
+			a(href="results.html", style="border: none;")
+				button.btn.btn-primary.right-button-icon(type="button") Next
+
+		include sidebar.jade

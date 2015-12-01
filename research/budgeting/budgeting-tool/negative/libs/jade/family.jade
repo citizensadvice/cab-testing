@@ -1,0 +1,111 @@
+block settings
+	- var title = "Doing a budget"
+	- var sectionTitle = "Family"
+	//- var sidebar = true
+	//- var toolbars = true
+	//- var cookiemonster = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Doing a budget", href: "index.html"},
+		{title: sectionTitle}])
+
+block script
+	script.
+		$(document).ready(function() {
+
+			var fields = [];
+			fields.push([
+				"Adult care (eg care home costs for an elderly relative)",
+				""
+			]);
+			fields.push([
+				"Christmas and birthday presents",
+				""
+			]);
+			fields.push([
+				"Pet-related expenses (eg vet bills, pet food and insurance)",
+				""
+			]);
+
+			$.each(fields, function( index, value ) {
+				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+
+				
+				// Uncomment this to populate the page without add/remove functionality
+				if (value[1] === "" || value[1] == null) {
+					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				} else {
+					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				}
+				$('#add-more').hide();
+				
+			});
+
+			$("#addField").click(function(e){
+				e.preventDefault();
+
+				var dataId = $('#fieldOptions').find(':selected').data("id");
+				$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+
+				if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+					$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				} else {
+					$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+				}
+				
+				var optionCount = $('#select option').length;
+				if (optionCount < 1) {
+					$('#add-more').hide();
+				}
+			});
+
+			$("#fields-body").on("click",".remove-field", function(e){
+				e.preventDefault();
+
+				var thisId = $(this).data("id");
+				$(this).parent().parent('fieldset').remove();
+				$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+
+				var optionCount = $('#select option').length;
+				if (optionCount > 0) {
+					$('#add-more').show();
+				}
+			})
+
+		});
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.articleContent
+		.main-content__right
+			h2(style="margin-top: 0;") #{sectionTitle}
+
+			#fields-body
+				p How much do you spend on these family-related expenses?
+			fieldset
+				
+				#add-more.field-group.well
+					label(style="display:block;") Add an item
+					.field#fieldOptions
+						.dropdown(style="width:100%;")
+							select#select
+
+					.function
+						button#addField.btn.btn-success.plus-button-icon(type="button") Add
+
+			a(href="travel.html", style="border: none;")
+				button.btn.btn-primary-light.left-button-icon(type="button") Previous
+			a(href="debt.html", style="border: none;")
+				button.btn.btn-primary.right-button-icon(type="button") Next
+
+		include sidebar.jade

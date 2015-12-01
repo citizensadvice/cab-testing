@@ -1,0 +1,68 @@
+block settings
+	- var title = "Doing a budget"
+	- var sidebar = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Doing a budget"}])
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.callout--alert
+		If you’ve got bailiffs coming or have received court papers, or are facing eviction you should get advice straight away. 
+
+		Read our #[a(href="#") online advice] or #[a(href="#") get help from your local Citizens Advice]
+
+
+	p Doing a budget will help you:
+	ul
+		li see where your money goes each month
+		li see where you could cut your spending
+		li spot problems early - for example, if you’re spending more than you’ve got coming in
+		li start the process of finding the right solution to pay off debts
+		li see you whether you can afford loan repayments, if you’re considering #[a(href="#") borrowing money]
+
+	p Doing your budget can take a bit of time - but it’ll be worth it. It can help to do your budget every month, or every few months, especially if your circumstances change.
+
+
+	h2 What you’ll need
+
+	p Decide whether you're doing the budget for:
+	ul
+		li just you
+		li for you and your partner, or 
+		li for your family
+
+	p You then need to know the details below for everyone you want to include. 
+
+	p First, you’ll need amounts for all the money you’ve got coming in, for example:
+	ul
+		li earnings from work (you’ll need your net income - the amount you get after tax and National Insurance has been taken off) - you should be able to get earning amounts from your payslips or bank statement
+		li any benefits you get - you can find the amounts in a bank statement 
+		li child support or maintenance you get from an ex-partner
+		li money from a lodger
+		li money from relatives or friends living with you
+		li pensions
+		li anything from investments and savings 
+
+	p Then, you’ll need the amounts for all your money going out, for example:
+	ul
+		li household bills - gas, electricity, water, telephone, TV, internet, Council Tax, insurance
+		li mortgage or rent payments
+		li any purchases shown on your bank statements or credit card statements for the last month
+		li any purchases you made with cash over the last month (you might have receipts for these or you might have to make some guesses about what you’ve bought)  
+
+	p The more accurate your figures are, the more accurate and useful the results will be to you. However, if you just want to input rough figures, you can do that and get a rougher idea of your budget. 
+
+	p
+		a(href="benefits.html", style="border: none;")
+			button.btn.btn-primary.right-button-icon Start
