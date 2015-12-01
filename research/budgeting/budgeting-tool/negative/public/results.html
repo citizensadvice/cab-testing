@@ -28,7 +28,7 @@
     <script>
       var filename = document.location.pathname.match(/[^\/]+$/)[0];
       $(document).ready(function() {
-      	$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
+      	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
       
       	var x = 1;
       	$(".side-nav-beta.tools").each(function() {
@@ -553,7 +553,7 @@
           <div class="main-content__right">
             <h2>Results</h2>
             <div id="totals">
-              <p>Total monthly income: <strong id="income">£</strong><br>Total spending: <strong id="spending">£</strong></p>
+              <p>Total monthly income: <strong id="income">£</strong><br>Total monthly spending: <strong id="spending">£</strong></p>
             </div>
             <div class="well">
               <div id="overview-chart" style="min-width: 300px; margin: 0 auto;"></div>
@@ -606,7 +606,7 @@
               <li>how to set up standing orders and direct debits </li>
             </ul>
             <p>Ask <a href="">local Citizens Advice</a> whether they offer these services.</p>
-            <h2 id="detailed">Income breakdown</h2>
+            <h2 id="detailed">Monthly income breakdown</h2>
             <table id="income-table" class="full-width">
               <thead>
                 <tr>
@@ -618,7 +618,7 @@
             <div class="well">
               <div id="income-chart" style="min-width: 310px; margin: 0 auto;"></div>
             </div>
-            <h2>Spending breakdown</h2>
+            <h2>Monthly spending breakdown</h2>
             <table id="spending-table" class="full-width">
               <thead>
                 <tr>
@@ -642,14 +642,14 @@
               -->
               <li>
                 <ul>
-                  <li class="side-nav-beta__sibling"><a href="benefits.html">Benefits</a></li>
-                  <li class="side-nav-beta__sibling"><a href="bills.html">Bills</a></li>
-                  <li class="side-nav-beta__sibling"><a href="household.html">Household</a></li>
-                  <li class="side-nav-beta__sibling"><a href="leisure.html">Leisure</a></li>
-                  <li class="side-nav-beta__sibling"><a href="travel.html">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="family.html">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="debt.html">Debt</a></li>
-                  <li class="side-nav-beta__sibling"><a href="results.html">Results</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="benefits.html">Benefits</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="bills.html">Bills</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
                 </ul>
               </li>
             </ul>

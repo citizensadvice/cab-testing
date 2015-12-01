@@ -28,7 +28,7 @@
     <script>
       var filename = document.location.pathname.match(/[^\/]+$/)[0];
       $(document).ready(function() {
-      	$('.side-nav-beta a[href="' + filename + '"]').addClass('-current');
+      	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
       
       	var x = 1;
       	$(".side-nav-beta.tools").each(function() {
@@ -245,7 +245,7 @@
                   <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
                 </div>
               </div>
-            </fieldset><a href="family.html" style="border: none;">
+            </fieldset><a href="#" style="border: none;">
               <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="results.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
@@ -257,14 +257,14 @@
               -->
               <li>
                 <ul>
-                  <li class="side-nav-beta__sibling"><a href="benefits.html">Benefits</a></li>
-                  <li class="side-nav-beta__sibling"><a href="bills.html">Bills</a></li>
-                  <li class="side-nav-beta__sibling"><a href="household.html">Household</a></li>
-                  <li class="side-nav-beta__sibling"><a href="leisure.html">Leisure</a></li>
-                  <li class="side-nav-beta__sibling"><a href="travel.html">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="family.html">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="debt.html">Debt</a></li>
-                  <li class="side-nav-beta__sibling"><a href="results.html">Results</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="benefits.html">Benefits</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="bills.html">Bills</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
                 </ul>
               </li>
             </ul>
