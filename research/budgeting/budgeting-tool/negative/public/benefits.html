@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="keywords">
     <meta name="description">
-    <title>Citizens Advice style guide - Your budget
+    <title>Citizens Advice - Your budget
     </title>
     <!-- Mobile Specific Metas-->
     <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
@@ -30,12 +30,15 @@
       $(document).ready(function() {
       	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
       
+      	var resultsNo = $(".side-nav-beta__sibling").length;
       	var x = 1;
       	$(".side-nav-beta.tools").each(function() {
-      		$("a", this).each(function() {
-      			$(this).prepend( x +'. ');
-      			x++;
-      		});
+      			$("a", this).each(function() {
+      				if (x != resultsNo) {
+      					$(this).prepend( x +'. ');
+      					x++;
+      				}
+      			});
       	});
       });
       
@@ -138,12 +141,12 @@
       
       		/*
       		// Uncomment this to populate the page without add/remove functionality
-      		if (value[1] === "" || value[1] == null) {
-      			$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-      		} else {
-      			$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-      		}
-      		$('#add-more').hide();
+      			if (value[1] === "" || value[1] == null) {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			} else {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			}
+      			$('#add-more').hide();
       		*/
       	});
       
@@ -237,11 +240,11 @@
           <div class="main-content__right">
             <h2 style="margin-top: 0;">Benefits</h2>
             <div id="fields-body">
-              <p>Select any benefit you receive and then enter the amount you get.</p>
+              <p>You might be getting a benefit without realising it, so check our list below. Select and add any you receive, entering the amounts you get. Go to the next section if you don't get any.</p>
             </div>
             <fieldset>
               <div id="add-more" class="field-group well">
-                <label style="display:block;">Add an item</label>
+                <label style="display:block;">Add a benefit</label>
                 <div id="fieldOptions" class="field">
                   <div style="width:100%;" class="dropdown">
                     <select id="select"></select>

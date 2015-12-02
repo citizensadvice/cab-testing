@@ -20,20 +20,20 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Public transport (including season tickets)",
-				""
+				"Public transport",
+				"Including season tickets"
 			]);
 			fields.push([
 				"Taxis",
 				""
 			]);
 			fields.push([
-				"Bicycle (including running costs such as repair or rental)",
-				""
+				"Bicycle",
+				"Including running costs such as repair or rental"
 			]);
 			fields.push([
-				"Car rental (including petrol)",
-				""
+				"Car rental",
+				"Including petrol"
 			]);
 			fields.push([
 				"Car hire as purchase payment",
@@ -44,13 +44,13 @@ block script
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
 
 				
-				// Uncomment this to populate the page without add/remove functionality
-				if (value[1] === "" || value[1] == null) {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				} else {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				}
-				$('#add-more').hide();
+				// Comment this out to populate the page with add/remove functionality
+					if (value[1] === "" || value[1] == null) {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					} else {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					}
+					$('#add-more').hide();
 				
 			});
 

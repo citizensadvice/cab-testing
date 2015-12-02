@@ -113,12 +113,12 @@ block script
 
 				/*
 				// Uncomment this to populate the page without add/remove functionality
-				if (value[1] === "" || value[1] == null) {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				} else {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				}
-				$('#add-more').hide();
+					if (value[1] === "" || value[1] == null) {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					} else {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					}
+					$('#add-more').hide();
 				*/
 			});
 
@@ -167,12 +167,12 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p Select any benefit you receive and then enter the amount you get.
+				p You might be getting a benefit without realising it, so check our list below. Select and add any you receive, entering the amounts you get. Go to the next section if you don't get any.
 
 			fieldset
 				
 				#add-more.field-group.well
-					label(style="display:block;") Add an item
+					label(style="display:block;") Add a benefit
 					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select

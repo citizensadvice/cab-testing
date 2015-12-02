@@ -22,6 +22,15 @@ block section-notice
 block script
 	style.
 		@media print {
+			@page {
+				margin: 2cm 1cm; 
+			}
+			table {
+				border-color: rgba(255,255,255,0) !important;
+			}
+			.table-collapse--toggle td:first-of-type:before {
+				content: "";
+			}
 			.table-collapse {
 				display: table-row !important;
 			}
@@ -33,7 +42,10 @@ block script
 		// Income values
 		var income = [];
 		income.push([
-			{name: "Wages", y: "2600"}
+			{name: "Income"},
+			[
+				{name: "Wages", y: "2600"},
+			]
 		]);
 
 		// Spending values
@@ -46,44 +58,44 @@ block script
 				{name: "Gas and electricity", y: "70"},
 				{name: "Water", y: "25"},
 				{name: "TV licence", y: "12.13"},
-				{name: "Phone TV & Internet", y: "110"}
+				{name: "Phone TV & Internet", y: "110"},
 			]
 		]);
 		spending.push([
 			{name: "Household"},
 			[
-				{name: "Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)", y: "281.67"},
+				{name: "Grocery shopping", y: "281.67"},
 				{name: "Clothing and footwear", y: "300"},
-				{name: "Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)", y: "175"}
+				{name: "Hire purchases or conditional sale items", y: "175"},
 			]
 		]);
 		spending.push([
 			{name: "Leisure"},
 			[
 				{name: "Meals and drinks out", y: "55"},
-				{name: "Memberships (eg gym or cinema membership)", y: "195"}
+				{name: "Memberships", y: "195"},
 			]
 		]);
 		spending.push([
 			{name: "Travel"},
 			[
-				{name: "Public transport (including season tickets)", y: "144.8"}
+				{name: "Public transport", y: "144.8"},
 			]
 		]);
 		spending.push([
 			{name: "Family"},
 			[
-				{name: "Christmas and birthday presents", y: "25"}
+				{name: "Christmas and birthday presents", y: "25"},
 			]
 		]);
 		spending.push([
 			{name: "Debt"},
 			[
-				{name: "Credit card, store card debts or payday loans", y: "100"}
+				{name: "Credit card, store card debts or payday loans", y: "100"},
 			]
 		]);
 		spending.push([
-			{name: "Savings", y: "200"}
+			{name: "Savings", y: "200"},
 		]);
 
 		// Make simplified arrays for highcharts
@@ -243,7 +255,7 @@ block script
 				},
 				tooltip: {
 					formatter: function () {
-						return this.series.name + ': <b>£' + this.y + '</b>';
+						return this.series.name + ': <b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
 					}
 				},
 				credits: {
@@ -251,11 +263,11 @@ block script
 				},
 				series: [{
 					name: 'Income',
-					data: JSON.parse("["+totalIncome+"]")
+					data: JSON.parse("["+(totalIncome).toFixed(2)+"]")
 				},
 						{
 					name: 'Spending',
-					data: JSON.parse("["+totalSpending+"]")
+					data: JSON.parse("["+(totalSpending).toFixed(2)+"]")
 				}],
 				navigation: {
 					buttonOptions: {
@@ -281,7 +293,7 @@ block script
 					formatter: function () {
 						var name = this.point.name,
 						formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-						return formatted + '<br><b>£' + this.y + '</b>';
+						return formatted + '<br><b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
 					}
 				},
 				plotOptions: {
@@ -305,7 +317,7 @@ block script
 						formatter: function () {
 							var name = this.point.name,
 							formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-							return formatted + '<br>£' + this.y;
+							return formatted + '<br>£' + Highcharts.numberFormat(this.y,2,'.',',');
 						}
 					}
 				}],
@@ -333,7 +345,7 @@ block script
 					formatter: function () {
 						var name = this.point.name,
 						formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-						return formatted + '<br><b>£' + this.y + '</b>';
+						return formatted + '<br><b>£' + Highcharts.numberFormat(this.y,2,'.',',') + '</b>';
 					}
 				},
 				plotOptions: {
@@ -357,7 +369,7 @@ block script
 						formatter: function () {
 							var name = this.point.name,
 							formatted = name.length > 15 ? name.substring(0, 15) + '…' : name;
-							return formatted + '<br>£' + this.y;
+							return formatted + '<br>£' + Highcharts.numberFormat(this.y,2,'.',',');
 						}
 					}
 				}],
@@ -395,17 +407,17 @@ block content
 
 				p As your income isn’t covering your living costs:
 				ul
-					li see if there’s any way you can #[a cut your costs/reduce your spending]
-					li see if you can #[a get help towards your living costs]
-					li make sure you’re #[a prioritising the right bills] - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt
-					li if you’re really struggling with your money and are in lots of debt, you can get help from your #[a(href="") local Citizens Advice]
+					li see if there’s any way you can #[a(href="#") cut your costs/reduce your spending]
+					li see if you can #[a(href="#") get help towards your living costs]
+					li make sure you’re #[a(href="#") prioritising the right bills] - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt
+					li if you’re really struggling with your money and are in lots of debt, you can get help from your #[a(href="#") local Citizens Advice]
 
 			#covering.callout--confirmation
 				h3 You’ve got some money left each month
 
 				p As you’ve got some money spare each month you could consider:
 				ul
-					li #[a(href="") saving some money]
+					li #[a(href="#") saving some money]
 					li increasing your repayments, if you’re repaying debts
 
 			.callout--alert
@@ -420,7 +432,7 @@ block content
 
 			h3 Dealing with debts
 
-			p If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on #[a(href="") getting out of debt], or get help from your #[a(href="") local Citizens Advice]. 
+			p If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on #[a(href="#") getting out of debt], or get help from your #[a(href="#") local Citizens Advice]. 
 
 			h3 Tips for keeping on top of your budget
 
@@ -436,7 +448,7 @@ block content
 				li how to set up and use a bank account
 				li how to set up standing orders and direct debits 
 
-			p Ask #[a(href="") local Citizens Advice] whether they offer these services.
+			p Ask #[a(href="#") local Citizens Advice] whether they offer these services.
 
 			h2#detailed Monthly income breakdown
 

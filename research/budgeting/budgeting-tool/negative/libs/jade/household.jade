@@ -20,8 +20,8 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Grocery shopping (include food, drinks, toiletries and cleaning supplies etc)",
-				""
+				"Grocery shopping",
+				"Include food, drinks, toiletries and cleaning supplies etc"
 			]);
 			fields.push([
 				"Work lunches and coffees, teas etc",
@@ -32,8 +32,8 @@ block script
 				""
 			]);
 			fields.push([
-				"Alcohol (bought from an off-licence or shop but not from the pub, bar or restaurant)",
-				""
+				"Alcohol",
+				"Bought from an off-licence or shop but not from the pub, bar or restaurant"
 			]);
 			fields.push([
 				"Clothing and footwear",
@@ -44,8 +44,8 @@ block script
 				""
 			]);
 			fields.push([
-				"Hire purchases or conditional sale items (eg a sofa or TV paid in monthly instalments)",
-				""
+				"Hire purchases or conditional sale items",
+				"eg a sofa or TV paid in monthly instalments"
 			]);
 			fields.push([
 				"Haircuts",
@@ -56,30 +56,29 @@ block script
 				""
 			]);
 			fields.push([
-				"Medicines (including prescription charges)",
-				""
+				"Medicines",
+				"Including prescription charges"
 			]);
 			fields.push([
 				"Dentistry",
 				""
 			]);
 			fields.push([
-				"Insurance (life or home, but not travel)",
-				""
+				"Insurance",
+				"Life or home, but not travel"
 			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
 
-				/*
-				// Uncomment this to populate the page without add/remove functionality
-				if (value[1] === "" || value[1] == null) {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				} else {
-					$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
-				}
-				$('#add-more').hide();
-				*/
+				// Comment this to populate the page with add/remove functionality
+					if (value[1] === "" || value[1] == null) {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					} else {
+						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+					}
+					$('#add-more').hide();
+
 			});
 
 			$("#addField").click(function(e){
