@@ -43,6 +43,7 @@
     <script>
       $(document).ready(function() {
       
+      	// Check state of radio button and showOrHide additional fields
       	$('input[name="package"]').bind('change',function(){
       		var showOrHide = ($(this).val() == 1) ? true : false;
       		$('#package').toggle(showOrHide);
