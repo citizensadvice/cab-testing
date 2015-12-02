@@ -30,12 +30,15 @@
       $(document).ready(function() {
       	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
       
+      	var resultsNo = $(".side-nav-beta__sibling").length;
       	var x = 1;
       	$(".side-nav-beta.tools").each(function() {
-      		$("a", this).each(function() {
-      			$(this).prepend( x +'. ');
-      			x++;
-      		});
+      			$("a", this).each(function() {
+      				if (x != resultsNo) {
+      					$(this).prepend( x +'. ');
+      					x++;
+      				}
+      			});
       	});
       });
       
