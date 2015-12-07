@@ -1,6 +1,6 @@
 block settings
 	- var title = "Your budget"
-	- var sectionTitle = "Income"
+	- var sectionTitle = "Benefits"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -20,30 +20,106 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Enter your wages or earnings after tax",
+				"Attendance Allowance",
 				""
 			]);
 			fields.push([
-				"Enter how much money you get from lodger(s) or anyone else living with you",
+				"Bereavement Allowance",
 				""
 			]);
 			fields.push([
-				"Enter any amount you get from a pension",
+				"Bereavement payment (lump-sum)",
+				""
+			]);
+			fields.push([
+				"Carer’s Allowance",
+				""
+			]);
+			fields.push([
+				"Disability Living Allowance",
+				""
+			]);
+			fields.push([
+				"Employment and Support Allowance",
+				""
+			]);
+			fields.push([
+				"Housing Benefit",
+				""
+			]);
+			fields.push([
+				"Incapacity Benefit",
+				""
+			]);
+			fields.push([
+				"Income Support",
+				""
+			]);
+			fields.push([
+				"Industrial Injuries Benefit",
+				""
+			]);
+			fields.push([
+				"Jobseeker’s Allowance",
+				""
+			]);
+			fields.push([
+				"Maternity Allowance",
+				""
+			]);
+			fields.push([
+				"Pension Credit",
+				""
+			]);
+			fields.push([
+				"Personal Independence Payment",
+				""
+			]);
+			fields.push([
+				"Severe Disablement Allowance",
+				""
+			]);
+			fields.push([
+				"Universal Credit",
+				""
+			]);
+			fields.push([
+				"War Widow’s (or Widower’s) Pension",
+				""
+			]);
+			fields.push([
+				"Widowed Parent’s Allowance",
+				""
+			]);
+			fields.push([
+				"Widow’s Pension",
+				""
+			]);
+			fields.push([
+				"Winter Fuel Payment and Christmas Bonus",
+				""
+			]);
+			fields.push([
+				"Working Tax Credit",
+				""
+			]);
+			fields.push([
+				"Young Person’s Bridging Allowance",
 				""
 			]);
 
 			$.each(fields, function( index, value ) {
 				$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
 
-				
-				// Comment this to populate the page with add/remove functionality
+				/*
+				// Uncomment this to populate the page without add/remove functionality
 					if (value[1] === "" || value[1] == null) {
 						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
 					} else {
 						$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
 					}
 					$('#add-more').hide();
-				
+				*/
 			});
 
 			$("#addField").click(function(e){
@@ -91,12 +167,12 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p Enter any income you get. Leave them blank if they don't apply to you.
+				p You might be getting a benefit without realising it, so check our list below. Select and add any you receive, entering the amounts you get. Go to the next section if you don't get any.
 
 			fieldset
 				
 				#add-more.field-group.well
-					label(style="display:block;") Add an item
+					label(style="display:block;") Add a benefit
 					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select
@@ -106,7 +182,7 @@ block content
 
 			a(href="#", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
-			a(href="#", style="border: none;")
+			a(href="bills.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
 
 		include sidebar.jade

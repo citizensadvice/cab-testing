@@ -43,6 +43,75 @@
       });
       
     </script>
+    <script>
+      $(document).ready(function() {
+      
+      	var fields = [];
+      	fields.push([
+      		"Adult care",
+      		"For example care home costs for an elderly relative"
+      	]);
+      	fields.push([
+      		"Religious holiday spending",
+      		"For example Christmas, Ramadan, Diwali and Hannukah"
+      	]);
+      	fields.push([
+      		"Pet costs",
+      		"For example vet bills, pet food and pet insurance"
+      	]);
+      	fields.push([
+      		"Birthday presents",
+      		""
+      	]);
+      
+      	$.each(fields, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+      
+      		
+      		// Comment this to populate the page with add/remove functionality
+      			if (value[1] === "" || value[1] == null) {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			} else {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			}
+      			$('#add-more').hide();
+      		
+      	});
+      
+      	$("#addField").click(function(e){
+      		e.preventDefault();
+      
+      		var dataId = $('#fieldOptions').find(':selected').data("id");
+      		$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+      
+      		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      		
+      		var optionCount = $('#select option').length;
+      		if (optionCount < 1) {
+      			$('#add-more').hide();
+      		}
+      	});
+      
+      	$("#fields-body").on("click",".remove-field", function(e){
+      		e.preventDefault();
+      
+      		var thisId = $(this).data("id");
+      		$(this).parent().parent('fieldset').remove();
+      		$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount > 0) {
+      			$('#add-more').show();
+      		}
+      	})
+      
+      });
+      
+    </script>
   </head>
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
@@ -82,7 +151,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Savings</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Family and pets</span>
         </div>
       </nav>
       <aside class="section-notice">
@@ -97,23 +166,24 @@
         </div>
         <div class="articleContent">
           <div class="main-content__right">
-            <h2 style="margin-top: 0;">Savings</h2>
+            <h2 style="margin-top: 0;">Family and pets</h2>
             <div id="fields-body">
-              <p>If you regularly put money into a pension, savings or investments, enter the amount here.</p>
-              <fieldset>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-1" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-1">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
+              <p>Enter the amounts you spend on these family-related expenses. Leave them blank if they don't apply to you.</p>
+            </div>
+            <fieldset>
+              <div id="add-more" class="field-group well">
+                <label style="display:block;">Add an item</label>
+                <div id="fieldOptions" class="field">
+                  <div style="width:100%;" class="dropdown">
+                    <select id="select"></select>
                   </div>
                 </div>
-              </fieldset>
-            </div><a href="#" style="border: none;">
-              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="#" style="border: none;">
+                <div class="function">
+                  <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
+                </div>
+              </div>
+            </fieldset><a href="#" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="debt.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">

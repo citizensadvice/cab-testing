@@ -43,6 +43,136 @@
       });
       
     </script>
+    <script>
+      $(document).ready(function() {
+      
+      	var fields = [];
+      	fields.push([
+      		"Mortgage, rent or any loans secured against your home",
+      		""
+      	]);
+      	fields.push([
+      		"Council Tax",
+      		""
+      	]);
+      	fields.push([
+      		"Credit card, store card debts or payday loans",
+      		""
+      	]);
+      	fields.push([
+      		"Bank or building society loans",
+      		""
+      	]);
+      	fields.push([
+      		"Personal loans",
+      		""
+      	]);
+      	fields.push([
+      		"Catalogue, home credit or in-store credit debts",
+      		""
+      	]);
+      	fields.push([
+      		"Overdrafts",
+      		""
+      	]);
+      	fields.push([
+      		"Money borrowed from friends or family",
+      		""
+      	]);
+      	fields.push([
+      		"Income Tax, National Insurance and VAT",
+      		""
+      	]);
+      	fields.push([
+      		"Gas and electricity bills",
+      		""
+      	]);
+      	fields.push([
+      		"Child maintenance",
+      		""
+      	]);
+      	fields.push([
+      		"TV licence",
+      		""
+      	]);
+      	fields.push([
+      		"Hire purchase agreements",
+      		""
+      	]);
+      	fields.push([
+      		"Court fines",
+      		""
+      	]);
+      	fields.push([
+      		"Student loans",
+      		""
+      	]);
+      
+      	$.each(fields, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+      
+      		/*
+      		// Uncomment this to populate the page without add/remove functionality
+      			if (value[1] === "" || value[1] == null) {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			} else {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			}
+      			$('#add-more').hide();
+      		*/
+      	});
+      
+      	$("#addField").click(function(e){
+      		e.preventDefault();
+      
+      		var dataId = $('#fieldOptions').find(':selected').data("id");
+      		$('#fieldOptions option[data-id="'+dataId+'"]').remove();
+      
+      		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      		
+      		var optionCount = $('#select option').length;
+      		if (optionCount < 1) {
+      			$('#add-more').hide();
+      		}
+      	});
+      
+      	$("#fields-body").on("click",".remove-field", function(e){
+      		e.preventDefault();
+      
+      		var thisId = $(this).data("id");
+      		$(this).parent().parent('fieldset').remove();
+      		$("#select").append('<option data-id="'+thisId+'">'+fields[thisId][0]+'</option>');
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount > 0) {
+      			$('#add-more').show();
+      		}
+      	})
+      
+      });
+      
+      $(document).ready(function() {
+      
+      	// Check state of radio button and showOrHide additional fields
+      	$('input[name="debt"]').bind('change',function(){
+      		var showOrHide = ($(this).val() == 1) ? true : false;
+      		$('#management').toggle(showOrHide);
+      		var showOrHide = ($(this).val() == 2) ? true : false;
+      		$('#iva').toggle(showOrHide);
+      
+      		if ($(this).val() == 3) {
+      			$('#management').hide(showOrHide);
+      			$('#iva').hide(showOrHide);
+      		}
+      	});
+      
+      });
+      
+    </script>
   </head>
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
@@ -82,7 +212,7 @@
     </nav>
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Savings</span>
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Debt and arrears payments</span>
         </div>
       </nav>
       <aside class="section-notice">
@@ -97,10 +227,22 @@
         </div>
         <div class="articleContent">
           <div class="main-content__right">
-            <h2 style="margin-top: 0;">Savings</h2>
+            <h2 style="margin-top: 0;">Debt and arrears payments</h2>
             <div id="fields-body">
-              <p>If you regularly put money into a pension, savings or investments, enter the amount here.</p>
+              <p>If you have debts or arrears that you’re regularly paying off as part of a debt management plan, individual voluntary arrangement (IVA) or an agreement direct with your creditors (those you owe money to), you should include those regular payments here. Select and enter any current repayments you are making.</p>
               <fieldset>
+                <label class="radio radio--inline">
+                  <input name="debt" type="radio" value="1">Debt management company
+                </label>
+                <label class="radio radio--inline">
+                  <input name="debt" type="radio" value="2">IVA
+                </label>
+                <label class="radio radio--inline">
+                  <input checked name="debt" type="radio" value="3">Neither of these
+                </label>
+              </fieldset>
+              <fieldset id="management" style="display:none">
+                <label for="field-1">Payment to a debt management company</label>
                 <div style="clear:both" class="field-group field-group--dropdown">
                   <input id="field-1" placeholder="£" type="number">
                   <div class="dropdown">
@@ -112,8 +254,34 @@
                   </div>
                 </div>
               </fieldset>
-            </div><a href="#" style="border: none;">
-              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="#" style="border: none;">
+              <fieldset id="iva" style="display:none">
+                <label for="field-2">Payment into an IVA</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-2" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-2">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <fieldset>
+              <div id="add-more" class="field-group well">
+                <label style="display:block;">Direct payments to your creditors</label>
+                <div id="fieldOptions" class="field">
+                  <div style="width:100%;" class="dropdown">
+                    <select id="select"></select>
+                  </div>
+                </div>
+                <div class="function">
+                  <button id="addField" type="button" class="btn btn-success plus-button-icon">Add</button>
+                </div>
+              </div>
+            </fieldset><a href="#" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="results.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
           <nav class="side-nav-beta tools">

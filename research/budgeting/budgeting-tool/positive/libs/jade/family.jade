@@ -1,6 +1,6 @@
 block settings
 	- var title = "Your budget"
-	- var sectionTitle = "Income"
+	- var sectionTitle = "Family and pets"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -20,15 +20,19 @@ block script
 
 			var fields = [];
 			fields.push([
-				"Enter your wages or earnings after tax",
-				""
+				"Adult care",
+				"For example care home costs for an elderly relative"
 			]);
 			fields.push([
-				"Enter how much money you get from lodger(s) or anyone else living with you",
-				""
+				"Religious holiday spending",
+				"For example Christmas, Ramadan, Diwali and Hannukah"
 			]);
 			fields.push([
-				"Enter any amount you get from a pension",
+				"Pet costs",
+				"For example vet bills, pet food and pet insurance"
+			]);
+			fields.push([
+				"Birthday presents",
 				""
 			]);
 
@@ -91,8 +95,7 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p Enter any income you get. Leave them blank if they don't apply to you.
-
+				p Enter the amounts you spend on these family-related expenses. Leave them blank if they don't apply to you.
 			fieldset
 				
 				#add-more.field-group.well
@@ -106,7 +109,7 @@ block content
 
 			a(href="#", style="border: none;")
 				button.btn.btn-primary-light.left-button-icon(type="button") Previous
-			a(href="#", style="border: none;")
+			a(href="debt.html", style="border: none;")
 				button.btn.btn-primary.right-button-icon(type="button") Next
 
 		include sidebar.jade
