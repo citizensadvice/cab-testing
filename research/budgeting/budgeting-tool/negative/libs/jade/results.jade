@@ -162,11 +162,11 @@ block script
 			var totalFig = totalIncome - totalSpending;
 
 			if (totalFig <= 0) {
-				$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
-				$('#covering').hide();
+				$("#totals").append("<h3>You're spending £"+Math.abs((totalFig).toFixed(2))+" more than you've got coming in each month</h3>");
+				$("#covering").hide();
 			} else {
-				$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
-				$('#not-covering').hide();
+				$("#totals").append("<h3>You're spending £"+(totalFig).toFixed(2)+" less than you've got coming in each month</h3>");
+				$("#not-covering").hide();
 			}
 
 			// Hide pie charts if there is only one income source
@@ -403,14 +403,14 @@ block content
 					a(href="#detailed") See a detailed breakdown of your income and spending
 
 			#not-covering.callout--alert
-				h3 Your income isn’t covering your costs
+				h3 What you can do
 
-				p As your income isn’t covering your living costs:
+				p As your income isn’t covering your living costs you can:
 				ul
-					li see if there’s any way you can #[a(href="#") cut your costs/reduce your spending]
+					li see if there’s any way you can #[a(href="#") cut your costs or reduce your spending]
 					li see if you can #[a(href="#") get help towards your living costs]
-					li make sure you’re #[a(href="#") prioritising the right bills] - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt
-					li if you’re really struggling with your money and are in lots of debt, you can get help from your #[a(href="#") local Citizens Advice]
+				
+				p If you’re really struggling with your money and are in lots of debt, you can get help from your #[a(href="#") local Citizens Advice]
 
 			#covering.callout--confirmation
 				h3 You’ve got some money left each month
@@ -429,26 +429,6 @@ block content
 					li Phone/TV/broadband - short para of advice and LINK 
 					li Food - short para of advice and LINK 
 					li Insurance - short para of advice and LINK 
-
-			h3 Dealing with debts
-
-			p If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on #[a(href="#") getting out of debt], or get help from your #[a(href="#") local Citizens Advice]. 
-
-			h3 Tips for keeping on top of your budget
-
-			p Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.
-			ul
-				li Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.
-				li Sign up for online banking - it can be quicker and easier to check your bank balance.
-
-			p Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:
-			ul
-				li how to reduce your costs
-				li how to budget
-				li how to set up and use a bank account
-				li how to set up standing orders and direct debits 
-
-			p Ask #[a(href="#") local Citizens Advice] whether they offer these services.
 
 			h2#detailed Monthly income breakdown
 
@@ -471,6 +451,26 @@ block content
 			
 			.well
 				div#spending-chart(style="min-width: 310px; margin: 0 auto;")
+
+			h3 Dealing with debts
+
+			p If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on #[a(href="#") getting out of debt], or get help from your #[a(href="#") local Citizens Advice]. 
+
+			h3 Tips for keeping on top of your budget
+
+			p Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.
+			ul
+				li Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.
+				li Sign up for online banking - it can be quicker and easier to check your bank balance.
+
+			p Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:
+			ul
+				li how to reduce your costs
+				li how to budget
+				li how to set up and use a bank account
+				li how to set up standing orders and direct debits 
+
+			p Ask #[a(href="#") local Citizens Advice] whether they offer these services.
 
 			p.no-print
 				a(href="index.html", style="border: none;")

@@ -186,11 +186,11 @@
       	var totalFig = totalIncome - totalSpending;
       
       	if (totalFig <= 0) {
-      		$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
-      		$('#covering').hide();
+      		$("#totals").append("<h3>You're spending £"+Math.abs((totalFig).toFixed(2))+" more than you've got coming in each month</h3>");
+      		$("#covering").hide();
       	} else {
-      		$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
-      		$('#not-covering').hide();
+      		$("#totals").append("<h3>You're spending £"+(totalFig).toFixed(2)+" less than you've got coming in each month</h3>");
+      		$("#not-covering").hide();
       	}
       
       	// Hide pie charts if there is only one income source
@@ -556,8 +556,8 @@
                   <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family and pets</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt and arrears</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="savings.html">Savings</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
                 </ul>

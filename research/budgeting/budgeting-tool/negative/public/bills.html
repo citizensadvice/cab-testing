@@ -118,7 +118,7 @@
           <div class="main-content__right">
             <h2 style="margin-top: 0;">Bills</h2>
             <div id="fields-body">
-              <p>Enter the amount you spend on these bills. Leave fields empty which do not apply to you.</p>
+              <p>Enter the amount you spend on these bills. Leave them blank if they don't apply to you.</p>
               <fieldset>
                 <label for="field-1">Rent or mortgage</label>
                 <div style="clear:both" class="field-group field-group--dropdown">
@@ -138,19 +138,6 @@
                   <input id="field-2" placeholder="£" type="number">
                   <div class="dropdown">
                     <select id="select-2">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="field-3">Building and contents insurance</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-3" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-3">
                       <option>Weekly</option>
                       <option>Monthly</option>
                       <option>Yearly</option>
@@ -184,42 +171,31 @@
                   </div>
                 </div>
               </fieldset>
-              <fieldset>
-                <label for="field-6">TV licence</label>
-                <div style="clear:both" class="field-group field-group--dropdown">
-                  <input id="field-6" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-6">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <label for="toggle">Phone, TV and internet</label>
-                <label class="radio radio--inline">
-                  <input name="package" type="radio" value="1">I have a package deal
-                </label>
-                <label class="radio radio--inline">
-                  <input name="package" type="radio" value="2">I pay for them separately
-                </label>
-                <label class="radio radio--inline">
-                  <input checked name="package" type="radio" value="3">Neither
-                </label>
-                <div id="package" style="clear:both;display:none" class="field-group field-group--dropdown">
-                  <input id="field-package" placeholder="£" type="number">
-                  <div class="dropdown">
-                    <select id="select-package">
-                      <option>Weekly</option>
-                      <option>Monthly</option>
-                      <option>Yearly</option>
-                    </select>
-                  </div>
-                </div>
-              </fieldset>
-              <div id="non-package" style="display:none">
+              <!--fieldset
+              label(for="toggle") Phone, TV and internet
+              label.radio.radio--inline
+              	input(name="package", type="radio", value="1")
+              	| I have a package deal
+              label.radio.radio--inline
+              	input(name="package", type="radio", value="2")
+              	| I pay for them separately
+              label.radio.radio--inline
+              	input(checked, name="package", type="radio", value="3")
+              	| Neither
+              
+              
+              #package.field-group.field-group--dropdown(style="clear:both;display:none")
+              	input#field-package(placeholder="£", type="number")
+              	.dropdown
+              		select#select-package
+              			option Weekly
+              			option Monthly
+              			option Yearly
+              
+              -->
+              <div id="non-package" class="well--outline">
+                <label>Phone, TV and internet</label>
+                <p>If you have a package deal see your bill for how much you're charged for each service.</p>
                 <fieldset>
                   <label for="field-7">Home phone</label>
                   <div style="clear:both" class="field-group field-group--dropdown">
@@ -234,7 +210,7 @@
                   </div>
                 </fieldset>
                 <fieldset>
-                  <label for="field-8">TV subscription</label><span class="form-hint">eg Sky</span>
+                  <label for="field-8">TV subscription</label><span class="form-hint">For example Sky</span>
                   <div style="clear:both" class="field-group field-group--dropdown">
                     <input id="field-8" placeholder="£" type="number">
                     <div class="dropdown">
@@ -272,19 +248,86 @@
                     </div>
                   </div>
                 </fieldset>
+                <fieldset>
+                  <label for="field-6">TV licence</label>
+                  <div style="clear:both" class="field-group field-group--dropdown">
+                    <input id="field-6" placeholder="£" type="number">
+                    <div class="dropdown">
+                      <select id="select-6">
+                        <option>Weekly</option>
+                        <option>Monthly</option>
+                        <option>Yearly</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
-            </div>
-            <!--fieldset
-            #add-more.field-group.well
-            	label(style="display:block;") Add an item
-            	.field#fieldOptions
-            		.dropdown(style="width:100%;")
-            			select#select
-            
-            	.function
-            		button#addField.btn.btn-success.plus-button-icon(type="button") Add
-            
-            --><a href="#" style="border: none;">
+              <fieldset>
+                <label for="field-3">Building and contents insurance</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-3" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-3">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="field-11">Loan payments</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-11" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-11">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="field-12">Credit card payments</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-12" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-12">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="field-13">Hire purchase payments</label><span class="form-hint">For example catalogue purchases</span>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-13" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-13">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="field-14">Student loan payments</label>
+                <div style="clear:both" class="field-group field-group--dropdown">
+                  <input id="field-14" placeholder="£" type="number">
+                  <div class="dropdown">
+                    <select id="select-14">
+                      <option>Weekly</option>
+                      <option>Monthly</option>
+                      <option>Yearly</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+            </div><a href="#" style="border: none;">
               <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="household.html" style="border: none;">
               <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
           </div>
@@ -301,8 +344,8 @@
                   <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family and pets</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt and arrears payments</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
                 </ul>
               </li>

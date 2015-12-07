@@ -186,11 +186,11 @@
       	var totalFig = totalIncome - totalSpending;
       
       	if (totalFig <= 0) {
-      		$('#totals').append('<h3>You are spending £'+Math.abs((totalFig).toFixed(2))+' more than your income</h3>');
-      		$('#covering').hide();
+      		$("#totals").append("<h3>You're spending £"+Math.abs((totalFig).toFixed(2))+" more than you've got coming in each month</h3>");
+      		$("#covering").hide();
       	} else {
-      		$('#totals').append('<h3>You are spending £'+(totalFig).toFixed(2)+' less than your income</h3>');
-      		$('#not-covering').hide();
+      		$("#totals").append("<h3>You're spending £"+(totalFig).toFixed(2)+" less than you've got coming in each month</h3>");
+      		$("#not-covering").hide();
       	}
       
       	// Hide pie charts if there is only one income source
@@ -472,14 +472,13 @@
               <li> <a href="#detailed">See a detailed breakdown of your income and spending</a></li>
             </ul>
             <div id="not-covering" class="callout--alert">
-              <h3>Your income isn’t covering your costs</h3>
-              <p>As your income isn’t covering your living costs:</p>
+              <h3>What you can do</h3>
+              <p>As your income isn’t covering your living costs you can:</p>
               <ul>
-                <li>see if there’s any way you can <a href="#">cut your costs/reduce your spending</a></li>
+                <li>see if there’s any way you can <a href="#">cut your costs or reduce your spending</a></li>
                 <li>see if you can <a href="#">get help towards your living costs</a></li>
-                <li>make sure you’re <a href="#">prioritising the right bills</a> - this means that if getting into debt short-term is unavoidable, you can at least keep paying the most important bills and avoid some of the worst dangers of getting in debt</li>
-                <li>if you’re really struggling with your money and are in lots of debt, you can get help from your <a href="#">local Citizens Advice</a></li>
               </ul>
+              <p>If you’re really struggling with your money and are in lots of debt, you can get help from your <a href="#">local Citizens Advice</a></p>
             </div>
             <div id="covering" class="callout--confirmation">
               <h3>You’ve got some money left each month</h3>
@@ -499,22 +498,6 @@
                 <li>Insurance - short para of advice and LINK </li>
               </ul>
             </div>
-            <h3>Dealing with debts</h3>
-            <p>If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on <a href="#">getting out of debt</a>, or get help from your <a href="#">local Citizens Advice</a>. </p>
-            <h3>Tips for keeping on top of your budget</h3>
-            <p>Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.</p>
-            <ul>
-              <li>Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.</li>
-              <li>Sign up for online banking - it can be quicker and easier to check your bank balance.</li>
-            </ul>
-            <p>Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:</p>
-            <ul>
-              <li>how to reduce your costs</li>
-              <li>how to budget</li>
-              <li>how to set up and use a bank account</li>
-              <li>how to set up standing orders and direct debits </li>
-            </ul>
-            <p>Ask <a href="#">local Citizens Advice</a> whether they offer these services.</p>
             <h2 id="detailed">Monthly income breakdown</h2>
             <table id="income-table" class="full-width">
               <thead>
@@ -539,6 +522,22 @@
             <div class="well">
               <div id="spending-chart" style="min-width: 310px; margin: 0 auto;"></div>
             </div>
+            <h3>Dealing with debts</h3>
+            <p>If you have debts your budget can be used to help find the right debt solution for your circumstances. The options available to you depend on how much (if any) spare income you have each month. You can see our content on <a href="#">getting out of debt</a>, or get help from your <a href="#">local Citizens Advice</a>. </p>
+            <h3>Tips for keeping on top of your budget</h3>
+            <p>Keep a spending diary for a month to keep track of exactly what you spend. You could keep receipts and write down everything you spend your money on or use a spending diary app on your mobile phone.</p>
+            <ul>
+              <li>Sign up for text balance alerts from your bank - this can help you keep on top of your bank balance.</li>
+              <li>Sign up for online banking - it can be quicker and easier to check your bank balance.</li>
+            </ul>
+            <p>Some local Citizens Advice offices also run free sessions on budgeting and managing your money. They cover things like:</p>
+            <ul>
+              <li>how to reduce your costs</li>
+              <li>how to budget</li>
+              <li>how to set up and use a bank account</li>
+              <li>how to set up standing orders and direct debits </li>
+            </ul>
+            <p>Ask <a href="#">local Citizens Advice</a> whether they offer these services.</p>
             <p class="no-print"><a href="index.html" style="border: none;">
                 <button class="btn btn-secondary restart-button-icon">Restart</button></a><a href="javascript:window.print()" style="border: none;">
                 <button class="btn btn-secondary print-button-icon">Print</button></a></p>
@@ -556,8 +555,8 @@
                   <li class="side-nav-beta__sibling"><a href="#" data-url="household.html">Household</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="leisure.html">Leisure</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="travel.html">Travel</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family</a></li>
-                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="family.html">Family and pets</a></li>
+                  <li class="side-nav-beta__sibling"><a href="#" data-url="debt.html">Debt and arrears payments</a></li>
                   <li class="side-nav-beta__sibling"><a href="#" data-url="results.html">Results</a></li>
                 </ul>
               </li>

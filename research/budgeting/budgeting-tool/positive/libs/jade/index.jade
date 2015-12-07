@@ -1,0 +1,44 @@
+block settings
+	- var title = "Your budget"
+	- var sidebar = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Your budget"}])
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+				
+block content
+	.callout--alert
+		p If you've got bailiffs coming, have received court papers or are facing eviction you should get advice straight way. Call our #[a(href="#") advice line] or #[a(href="#") get help from your local Citizens Advice].
+
+
+	h2 What you’ll need
+
+	p Decide whether you're doing the budget for:
+	ul
+		li just you
+		li for you and your partner, or 
+		li for your family
+
+	p You then need:
+	ul
+		li bank statements
+		li payslips
+		li details of any benefits
+		li debit card statements or bills
+		li receipts from anything you paid for in cash
+
+	p The more accurate your figures are, the more accurate and useful the results will be to you. However, if you just want to use rough figures you can do that and get a general idea of your budget. 
+
+	p
+		a(href="benefits.html", style="border: none;")
+			button.btn.btn-primary.right-button-icon Start
