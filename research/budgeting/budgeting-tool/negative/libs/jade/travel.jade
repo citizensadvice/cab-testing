@@ -21,7 +21,7 @@ block script
 			var fields = [];
 			fields.push([
 				"Public transport",
-				"Including season tickets"
+				""
 			]);
 			fields.push([
 				"Taxis",
@@ -29,15 +29,11 @@ block script
 			]);
 			fields.push([
 				"Bicycle",
-				"Including running costs such as repair or rental"
+				"General running costs such as repair or rental"
 			]);
 			fields.push([
 				"Car rental",
-				"Including petrol"
-			]);
-			fields.push([
-				"Car hire as purchase payment",
-				""
+				"Include fuel, parking charges and tolls"
 			]);
 
 			$.each(fields, function( index, value ) {
@@ -99,7 +95,7 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p How much do you spend on transport? Leave items empty that do not apply to you.
+				p Enter the amount you spend on these bills. Leave them blank if they don't apply to you.
 
 			fieldset
 				#add-more.field-group.well

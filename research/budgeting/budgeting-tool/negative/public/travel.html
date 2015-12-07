@@ -49,7 +49,7 @@
       	var fields = [];
       	fields.push([
       		"Public transport",
-      		"Including season tickets"
+      		""
       	]);
       	fields.push([
       		"Taxis",
@@ -57,15 +57,11 @@
       	]);
       	fields.push([
       		"Bicycle",
-      		"Including running costs such as repair or rental"
+      		"General running costs such as repair or rental"
       	]);
       	fields.push([
       		"Car rental",
-      		"Including petrol"
-      	]);
-      	fields.push([
-      		"Car hire as purchase payment",
-      		""
+      		"Include fuel, parking charges and tolls"
       	]);
       
       	$.each(fields, function( index, value ) {
@@ -172,7 +168,7 @@
           <div class="main-content__right">
             <h2 style="margin-top: 0;">Travel</h2>
             <div id="fields-body">
-              <p>How much do you spend on transport? Leave items empty that do not apply to you.</p>
+              <p>Enter the amount you spend on these bills. Leave them blank if they don't apply to you.</p>
             </div>
             <fieldset>
               <div id="add-more" class="field-group well">
