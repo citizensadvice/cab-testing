@@ -114,9 +114,9 @@
       		/*
       		// Uncomment this to populate the page without add/remove functionality
       			if (value[1] === "" || value[1] == null) {
-      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
       			} else {
-      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
       			}
       			$('#add-more').hide();
       		*/
@@ -129,9 +129,9 @@
       		$('#fieldOptions option[data-id="'+dataId+'"]').remove();
       
       		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
-      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
       		} else {
-      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			$("#fields-body").append('<fieldset><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
       		}
       		
       		var optionCount = $('#select option').length;
@@ -249,7 +249,7 @@
                   <div class="dropdown">
                     <select id="select-1">
                       <option>Weekly</option>
-                      <option>Monthly</option>
+                      <option selected>Monthly</option>
                       <option>Yearly</option>
                     </select>
                   </div>
@@ -262,7 +262,7 @@
                   <div class="dropdown">
                     <select id="select-2">
                       <option>Weekly</option>
-                      <option>Monthly</option>
+                      <option selected>Monthly</option>
                       <option>Yearly</option>
                     </select>
                   </div>
