@@ -1,6 +1,6 @@
 block settings
 	- var title = "Your budget"
-	- var sectionTitle = "Debt"
+	- var sectionTitle = "Debt and arrears payments"
 	//- var sidebar = true
 	//- var toolbars = true
 	//- var cookiemonster = true
@@ -156,7 +156,7 @@ block content
 			h2(style="margin-top: 0;") #{sectionTitle}
 
 			#fields-body
-				p If you have debts that you’re regularly paying off as part of a debt management plan, IVA or an agreement direct with your creditors, you should include those regular payments here. Select and enter any current repayments you are making.
+				p If you have debts or arrears that you’re regularly paying off as part of a debt management plan, individual voluntary arrangement (IVA) or an agreement direct with your creditors (those you owe money to), you should include those regular payments here. Select and enter any current repayments you are making.
 
 				fieldset
 					label.radio.radio--inline
@@ -192,7 +192,7 @@ block content
 			fieldset
 				
 				#add-more.field-group.well
-					label(style="display:block;") Payments direct to my creditors
+					label(style="display:block;") Direct payments to your creditors
 					.field#fieldOptions
 						.dropdown(style="width:100%;")
 							select#select
