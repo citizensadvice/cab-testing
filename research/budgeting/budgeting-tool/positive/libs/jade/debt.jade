@@ -158,38 +158,38 @@ block content
 			#fields-body
 				p If you have debts or arrears that you’re regularly paying off as part of a debt management plan, individual voluntary arrangement (IVA) or an agreement direct with your creditors (those you owe money to), you should include those regular payments here. 
 
-				h4 Select and enter any current repayments you are making.
-
-				fieldset
-					label.radio.radio--inline
-						input(name="debt", type="radio", value="1")
-						| Debt management company
-					label.radio.radio--inline
-						input(name="debt", type="radio", value="2")
-						| IVA
-					label.radio.radio--inline
-						input(checked, name="debt", type="radio", value="3")
-						| Neither of these
-				
-				fieldset#management(style="display:none")
-					label(for="field-1") Direct payments to your creditors for arrears on your:
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-1(placeholder="£", type="number")
-						.dropdown
-							select#select-1
-								option Weekly
-								option(selected) Monthly
-								option Yearly
-				
-				fieldset#iva(style="display:none")
-					label(for="field-2") Payment into an IVA
-					.field-group.field-group--dropdown(style="clear:both")
-						input#field-2(placeholder="£", type="number")
-						.dropdown
-							select#select-2
-								option Weekly
-								option(selected) Monthly
-								option Yearly
+				.well--outline
+					h4 Select and enter any current repayments you are making.
+					fieldset(style="margin-bottom:0;")
+						label.radio.radio--inline
+							input(name="debt", type="radio", value="1")
+							| Debt management company
+						label.radio.radio--inline
+							input(name="debt", type="radio", value="2")
+							| IVA
+						label.radio.radio--inline
+							input(checked, name="debt", type="radio", value="3")
+							| Neither of these
+					
+					fieldset#management(style="display:none;margin-bottom:0;")
+						label(for="field-1") Direct payments to your creditors for arrears on your:
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-1(placeholder="£", type="number")
+							.dropdown
+								select#select-1
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+					
+					fieldset#iva(style="display:none")
+						label(for="field-2") Payment into an IVA
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-2(placeholder="£", type="number")
+							.dropdown
+								select#select-2
+									option Weekly
+									option(selected) Monthly
+									option Yearly
 
 			fieldset
 				
