@@ -1,0 +1,40 @@
+mixin link(title, href, text)
+	a(href=href ? href : '#', title!= title ? title : text)&attributes(attributes)!= text ? text : title
+
+mixin breadcrumbs(obj)
+	.main-breadcrumb__content
+		- var n = obj.length
+		- each item,index in obj
+			- if(index < n-1) {
+			span.breadcrumb__item
+				+link(item.title, item.href, item.text)
+				i.icon-guillemet-right
+			- } else {
+			span.breadcrumb__item!= item.text ? item.text : item.title
+			- }
+
+mixin sidebar(obj, key)
+	nav.side-nav-beta
+		ul
+			li.side-nav-beta__heading.-active.-open
+				a
+					span #{section}
+			li
+				ul
+					- each item,index in obj
+						- active = index === key ? "-current": ""
+						li.side-nav-beta__sibling
+							+link(item.title, item.href, item.text)(class=active)
+
+mixin sidebarSiblings(obj, key)
+	nav.side-nav-beta.sibling
+		ul
+			li.side-nav-beta__heading.-active.-open
+				a
+					span #{section}
+			li
+				ul
+					- each item,index in obj
+						- active = index === key ? "-current": ""
+						li.side-nav-beta__sibling
+							+link(item.title, item.href, item.text)(class=active)

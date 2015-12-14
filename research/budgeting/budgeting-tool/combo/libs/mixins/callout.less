@@ -1,0 +1,117 @@
+/**
+ * CALLOUT
+ *
+ * Styles for content callouts and coloured sections.
+ */
+
+// Creates a mixin for making callout styles, including their links
+.callout ( 
+		@callout-background: @gray-6;
+		@callout-headings: @text-color; 
+		@callout-text: @text-color; 
+		@callout-border: darken(@callout-background, 25%) 
+	){
+    padding: .75em 1em;
+    .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+    .spacing(margin,@box-spacing-vertical,0);
+    background-color: @callout-background;
+    color: @callout-text;
+    border: 0px @callout-border solid;
+    display: block;
+    &:before {
+    	color: @text-color;
+    	background-color: @callout-border;
+    }
+	> h1, > h2, > h3 {
+		color: @callout-headings; 
+		font-size: @font-size-h3;
+	}
+	a {
+		border-bottom-color: @callout-border;
+	}
+    > *:first-child {
+    	padding-top: 0;
+    }
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child {
+    	margin-top: 0;
+    	padding-top: 0;
+    }
+    li:first-child {
+    	padding-top: 0;
+    }
+    > *:last-child {
+    	margin-bottom: 0;
+    }
+	/*.callout__link {
+	 	cursor: pointer;
+	 	display: block;
+	    padding: @box-spacing-vertical @box-spacing-horizontal*4.5 @box-spacing-vertical @box-spacing-horizontal;
+	    margin: @box-spacing-vertical -@box-spacing-horizontal -@box-spacing-vertical -@box-spacing-horizontal;
+	    border: none;
+	    background-color: darken(spin(@callout-background, 15), 5%);
+	    color: @callout-text;
+	    border-bottom: 1px solid @callout-border;
+	    text-decoration: none;
+	    position: relative;
+		&:after {
+			box-sizing: border-box;
+		    font-family: 'FontAwesome';
+		    content: "\f054";
+		    color: @callout-text;
+		    background-color: darken(spin(@callout-background, 15), 10%);
+		    height: 100%;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    line-height: 3em;
+		    width: 3em;
+		    text-align: center;
+		}
+	    &:hover {
+	    	background-color: darken(spin(@callout-background, 15), 10%);
+	    	color: @callout-text;
+	    	&:after {
+	    		background-color: darken(spin(@callout-background, 15), 20%);
+	    	}
+	    }
+	    &--anchor:after {
+		    content: "\f063";
+	    }
+	}*/
+}
+
+// Callout icons
+.callout--icon(@icon) {
+		.callout--border;
+		.callout--border--left;  
+	    &:before {
+	        font-family: 'FontAwesome';
+	        font-size: .85rem;
+	        font-weight: 300;
+	        content: @icon;
+	        line-height: 1em;
+	        display: block;
+	        .spacing(margin,-@box-spacing-vertical,-@box-spacing-horizontal,@box-spacing-vertical,-@box-spacing-horizontal);
+	        .spacing(padding,@box-spacing-vertical,@box-spacing-horizontal);
+	    
+	}
+}
+
+// Callout borders
+.callout--border ( @callout--border--width: 1px ) {
+	border-width: @callout--border--width;
+	.callout__link:last-child {
+		border: none;
+	}
+}
+.callout--border--left ( @callout--border--left--width: @box-spacing/2 ) {
+	.spacing(border-left-width,@callout--border--left--width);
+}
+.callout--border--top ( @callout--border--top--width: @box-spacing/2 ) {
+	.spacing(border-top-width,@callout--border--top--width);
+}
