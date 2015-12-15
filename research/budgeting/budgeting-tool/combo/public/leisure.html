@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <title>Citizens Advice - Your budget
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="/static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../libs/vendors/prism/prism.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
+    <link href="https://www.citizensadvice.org.uk/static/layout/favicon.ico" rel="shortcut icon">
+    <link href="https://www.citizensadvice.org.uk/static/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Javascript-->
+    <script src="../libs/javascript/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../libs/javascript/beta-dap-accordion.js"></script>
+    <script src="../libs/javascript/collapse.js"></script>
+    <script src="../libs/vendors/prism/prism.js"></script>
+    <script src="../libs/javascript/smooth.js"></script>
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.side-nav-beta a[data-url="' + filename + '"]').addClass('-current');
+      
+      	var resultsNo = $(".side-nav-beta__sibling").length;
+      	var x = 1;
+      	$(".side-nav-beta.tools").each(function() {
+      			$("a", this).each(function() {
+      				if (x != resultsNo) {
+      					$(this).prepend( x +'. ');
+      					x++;
+      				}
+      			});
+      	});
+      });
+      
+    </script>
+    <script>
+      $(document).ready(function() {
+      
+      	var fields = [];
+      	fields.push([
+      		"Books or music",
+      		"In any format"
+      	]);
+      	fields.push([
+      		"Eating out",
+      		"Include coffees, teas and snacks"
+      	]);
+      	fields.push([
+      		"Event tickets",
+      		"Include cinema, theatre, sporting events, concerts, etc"
+      	]);
+      	fields.push([
+      		"Gambling",
+      		""
+      	]);
+      	fields.push([
+      		"Going out",
+      		"Include drinks, taxis, admission charges"
+      	]);
+      	fields.push([
+      		"Holiday",
+      		"Include cost of travel, accommodation, expenses while you’re there and travel insurance"
+      	]);
+      	fields.push([
+      		"Memberships",
+      		"For example gym or cinema membership"
+      	]);
+      	fields.push([
+      		"Newspapers and magazines",
+      		""
+      	]);
+      	fields.push([
+      		"Sports and hobbies",
+      		""
+      	]);
+      	fields.push([
+      		"Tobacco",
+      		"Include electronic cigarettes"
+      	]);
+      	fields.push([
+      		"Website subscriptions",
+      		"For example news, dating or music/video streaming websites"
+      	]);
+      
+      	$.each(fields, function( index, value ) {
+      		$("#select").append('<option data-id="'+index+'">'+value[0]+'</option>');
+      
+      		/*
+      		// Uncomment this to populate the page without add/remove functionality
+      			if (value[1] === "" || value[1] == null) {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			} else {
+      				$("#fields-body").append('<fieldset><label for="field'+index+'">'+value[0]+'</label><span class="form-hint">'+value[1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+index+'" placeholder="£" /><div class="dropdown"><select id="select'+index+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      			}
+      			$('#add-more').hide();
+      		*/
+      	});
+      
+      	$("#fieldOptions").on("change",function(e){
+      		e.preventDefault();
+      
+      		var dataId = $('#fieldOptions').find(':selected').data("id");
+      		$('#fieldOptions option[data-id="'+dataId+'"]').prop('hidden', true);
+      
+      		if (fields[dataId][1] === "" || fields[dataId][1] == null) {
+      			$("#fields-body").append('<fieldset style="display:none;"><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		} else {
+      			$("#fields-body").append('<fieldset style="display:none;"><label for="field'+dataId+'">'+fields[dataId][0]+'<a class="remove-field remove u-pull-right" data-id="'+dataId+'">Remove</a></label><span class="form-hint">'+fields[dataId][1]+'</span><div class="field-group field-group--dropdown"><input type="text" id="field'+dataId+'" placeholder="£" /><div class="dropdown"><select id="select'+dataId+'"><option>Weekly</option><option selected>Monthly</option><option>Yearly</option></select></div></div></fieldset>');
+      		}
+      
+      		$("#fields-body").find("fieldset:last").slideDown("fast");
+      		$("#fields-body").find("input:last").focus();
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount < 2) {
+      			$('#add-more').hide();
+      		}
+      
+      		$('#fieldOptions option[data-id="null"]').prop('selected', true);
+      	});
+      
+      	$("#fields-body").on("click",".remove-field", function(e){
+      		e.preventDefault();
+      
+      		var thisId = $(this).data("id");
+      		$(this).parent().parent('fieldset').slideUp("fast", function(){$(this).remove();});
+      		$('#fieldOptions option[data-id="'+thisId+'"]').prop('hidden', false);
+      
+      		var optionCount = $('#select option').length;
+      		if (optionCount > 1) {
+      			$('#add-more').show();
+      		}
+      	})
+      
+      });
+      
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <!--header.styleguide--header.mockup
+    .styleguide--header--content
+    	a(href="index.html")
+    		img(src="assets/images/ca-logo-hz-white-280px.svg")
+    -->
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo no-print"><img alt="Citizens Advice" src="assets/images/ca-logo_100px.svg"></a><a href="index.html" title="Citizens Advice home" class="main-header__logo no-print wide"><img alt="Citizens Advice" src="assets/images/ca-logo-hz-white-280px.svg"></a><a href="index.html" title="Citizens Advice home" class="main-header__logo print-only"><img alt="Citizens Advice" src="assets/images/ca-logo-hz-280px.svg"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html" title="Your budget">Your budget</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Leisure</span>
+        </div>
+      </nav>
+      <aside class="section-notice">
+        <h2 class="screenreader">Notice</h2>
+        <div class="section-notice__content">
+          <p><span class="badge">NEW</span> This page is part of <a href="#">our new approach to digital advice</a>.</p>
+        </div>
+      </aside>
+      <div class="main-content">
+        <div class="title">
+          <h1 class="title__heading js-ref"><span class="title__title">Your budget</span></h1>
+        </div>
+        <div class="articleContent">
+          <div class="main-content__right">
+            <h2 style="margin-top: 0;">Leisure</h2>
+            <div id="fields-body">
+              <p>Enter the amount you spend on entertainment and leisure. Leave them blank if they don't apply to you.</p>
+            </div>
+            <fieldset>
+              <div id="add-more" class="well">
+                <label style="display:block;">Add an item</label>
+                <div id="fieldOptions" class="field">
+                  <div style="width:100%;" class="dropdown">
+                    <select id="select">
+                      <option value="" data-id="null" disabled selected>Select an item...</option>
+                    </select>
+                  </div>
+                </div>
+                <!--.function
+                button#addField.btn.btn-success.plus-button-icon(type="button") Add
+                
+                -->
+              </div>
+            </fieldset><a href="household.html" style="border: none;">
+              <button type="button" class="btn btn-primary-light left-button-icon">Previous</button></a><a href="travel.html" style="border: none;">
+              <button type="button" class="btn btn-primary right-button-icon">Next</button></a>
+          </div>
+          <nav class="side-nav-beta tools">
+            <ul>
+              <!--li.side-nav-beta__heading.-active.-open
+              a
+              	span Budgeting tool
+              -->
+              <li>
+                <ul>
+                  <li class="side-nav-beta__sibling"><a href="income.html" data-url="income.html">Income</a></li>
+                  <li class="side-nav-beta__sibling"><a href="benefits.html" data-url="benefits.html">Benefits</a></li>
+                  <li class="side-nav-beta__sibling"><a href="bills.html" data-url="bills.html">Bills</a></li>
+                  <li class="side-nav-beta__sibling"><a href="household.html" data-url="household.html">Household</a></li>
+                  <li class="side-nav-beta__sibling"><a href="leisure.html" data-url="leisure.html">Leisure</a></li>
+                  <li class="side-nav-beta__sibling"><a href="travel.html" data-url="travel.html">Transport</a></li>
+                  <li class="side-nav-beta__sibling"><a href="family.html" data-url="family.html">Family and pets</a></li>
+                  <li class="side-nav-beta__sibling"><a href="debt.html" data-url="debt.html">Debt management and arrears payments</a></li>
+                  <li class="side-nav-beta__sibling"><a href="savings.html" data-url="savings.html">Savings</a></li>
+                  <li class="side-nav-beta__sibling"><a href="results.html" data-url="results.html">Results</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p> <img alt="" height="100" src="assets/images/ca-logo_100px.svg" width="100">Copyright © 2015 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../libs/javascript/advisor.js"></script>
+    <script src="../libs/javascript/core.js"></script>
+  </body>
+</html>

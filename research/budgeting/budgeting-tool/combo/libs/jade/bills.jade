@@ -1,0 +1,224 @@
+block settings
+	- var title = "Your budget"
+	- var sectionTitle = "Bills"
+	//- var sidebar = true
+	//- var toolbars = true
+	//- var cookiemonster = true
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Your budget", href: "index.html"},
+		{title: sectionTitle}])
+
+block script
+	script.
+		$(document).ready(function() {
+
+			// Check state of radio button and showOrHide additional fields
+			$('input[name="package"]').bind('change',function(){
+				var showOrHide = ($(this).val() == 1) ? true : false;
+				$('#package').toggle(showOrHide);
+				var showOrHide = ($(this).val() == 2) ? true : false;
+				$('#non-package').toggle(showOrHide);
+
+				if ($(this).val() == 3) {
+					$('#package').hide(showOrHide);
+					$('#non-package').hide(showOrHide);
+				}
+			});
+
+		});
+
+block section-notice
+	aside.section-notice
+		h2.screenreader Notice
+		.section-notice__content
+			p #[span.badge NEW] This page is part of #[a(href="#") our new approach to digital advice].
+
+block content
+	.articleContent
+		.main-content__right
+			h2(style="margin-top: 0;") #{sectionTitle}
+
+			#fields-body
+				p Enter the amount you spend on these bills. Leave them blank if they don't apply to you.
+
+				fieldset
+					label(for="field-1") Rent or mortgage
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-1(placeholder="£", type="number")
+						.dropdown
+							select#select-1
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-2") Council Tax / Rates
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-2(placeholder="£", type="number")
+						.dropdown
+							select#select-2
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-4") Gas and electricity
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-4(placeholder="£", type="number")
+						.dropdown
+							select#select-4
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-5") Water
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-5(placeholder="£", type="number")
+						.dropdown
+							select#select-5
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				//fieldset
+					label(for="toggle") Phone, TV and internet
+					label.radio.radio--inline
+						input(name="package", type="radio", value="1")
+						| I have a package deal
+					label.radio.radio--inline
+						input(name="package", type="radio", value="2")
+						| I pay for them separately
+					label.radio.radio--inline
+						input(checked, name="package", type="radio", value="3")
+						| Neither
+
+
+					#package.field-group.field-group--dropdown(style="clear:both;display:none")
+						input#field-package(placeholder="£", type="number")
+						.dropdown
+							select#select-package
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				#non-package.well--outline
+					h4 Phone, TV and internet
+					p If you have a package deal see your bill for how much you're charged for each service.
+
+					fieldset
+						label(for="field-7") Home phone
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-7(placeholder="£", type="number")
+							.dropdown
+								select#select-7
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+
+					fieldset
+						label(for="field-8") TV subscription
+						span.form-hint For example Sky
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-8(placeholder="£", type="number")
+							.dropdown
+								select#select-8
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+
+					fieldset
+						label(for="field-9") Internet
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-9(placeholder="£", type="number")
+							.dropdown
+								select#select-9
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+
+					fieldset
+						label(for="field-10") Mobile phone
+						span.form-hint If PAYG please estimate
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-10(placeholder="£", type="number")
+							.dropdown
+								select#select-10
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+
+					fieldset
+						label(for="field-6") TV licence
+						.field-group.field-group--dropdown(style="clear:both")
+							input#field-6(placeholder="£", type="number")
+							.dropdown
+								select#select-6
+									option Weekly
+									option(selected) Monthly
+									option Yearly
+
+				fieldset
+					label(for="field-3") Building and contents insurance
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-3(placeholder="£", type="number")
+						.dropdown
+							select#select-3
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-11") Loan payments
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-11(placeholder="£", type="number")
+						.dropdown
+							select#select-11
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-12") Credit card payments
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-12(placeholder="£", type="number")
+						.dropdown
+							select#select-12
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-13") Hire purchase payments
+					span.form-hint For example catalogue purchases
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-13(placeholder="£", type="number")
+						.dropdown
+							select#select-13
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+				fieldset
+					label(for="field-14") Student loan payments
+					.field-group.field-group--dropdown(style="clear:both")
+						input#field-14(placeholder="£", type="number")
+						.dropdown
+							select#select-14
+								option Weekly
+								option(selected) Monthly
+								option Yearly
+
+
+			a(href="benefits.html", style="border: none;")
+				button.btn.btn-primary-light.left-button-icon(type="button") Previous
+			a(href="household.html", style="border: none;")
+				button.btn.btn-primary.right-button-icon(type="button") Next
+
+		include sidebar.jade
