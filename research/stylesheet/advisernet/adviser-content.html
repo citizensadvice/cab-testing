@@ -79,12 +79,14 @@
           <p><span class="badge">NEW</span> This page is part of <a href="#">our new approach to digital advice</a>.</p>
         </div>
       </aside>
-      <aside id="sticker" style="background-color: white; z-index: 2;" class="section-notice--dev__adviser">
-        <h2 class="screenreader">Notice</h2>
-        <div class="section-notice--dev__content">
-          <p><span class="badge">ADVISER</span>This page is part of <a href="#">adviser only</a> content.</p>
-        </div>
-      </aside>
+      <!--aside.section-notice--dev__adviser#sticker(style="background-color: white; z-index: 2;")
+      h2.screenreader Notice
+      .section-notice--dev__content
+          p
+              span.badge ADVISER
+              | This page is part of <a href="#">adviser only</a> content.
+      
+      -->
       <div class="main-content">
         <div id="main" role="main" class="main-content__right">
           <div class="title">
@@ -233,9 +235,9 @@
             <li class="side-nav-beta__heading -active -open"><a><span>Before you claim PIP</span></a></li>
             <li>
               <ul>
-                <li class="side-nav-beta__sibling"><a href="#" title="How to fill in your PIP claim form" class="adviser-only -current">How to fill in your PIP claim form</a>
+                <li class="side-nav-beta__sibling"><a href="#" title="How to fill in your PIP claim form" class="adviser-only">How to fill in your PIP claim form</a>
                 </li>
-                <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP">How to claim PIP</a>
+                <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP" class="-current">How to claim PIP</a>
                 </li>
                 <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP if you have a terminal illness">How to claim PIP if you have a terminal illness</a>
                 </li>
