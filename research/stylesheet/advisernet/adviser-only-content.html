@@ -79,14 +79,12 @@
           <p><span class="badge">NEW</span> This page is part of <a href="#">our new approach to digital advice</a>.</p>
         </div>
       </aside>
-      <!--aside.section-notice--dev__adviser#sticker(style="background-color: white; z-index: 2;")
-      h2.screenreader Notice
-      .section-notice--dev__content
-          p
-              span.badge ADVISER
-              | This page is part of <a href="#">adviser only</a> content.
-      
-      -->
+      <aside id="sticker" style="background-color: white; z-index: 2;" class="section-notice--dev__adviser">
+        <h2 class="screenreader">Notice</h2>
+        <div class="section-notice--dev__content">
+          <p><span class="badge">ADVISER</span>This page is part of <a href="#">adviser only</a> content.</p>
+        </div>
+      </aside>
       <div class="main-content">
         <div id="main" role="main" class="main-content__right">
           <div class="title">
@@ -97,7 +95,7 @@
           </div>
           <div class="articleContent">
             <div>
-              <div class="collapse collapsible--adviser">
+              <div class="collapse collapsible">
                 <div class="collapse-toggle">I want to apply by phone</div>
                 <div class="collapse-content">
                   <p>PIP claim line</p>
@@ -137,7 +135,7 @@
               <ul>
                 <li>your full name, address and phone number</li>
                 <li>your national insurance number</li>
-                <li class="adviser">your bank or building society account details so payments can be made if PIP is awarded</li>
+                <li>your bank or building society account details so payments can be made if PIP is awarded</li>
                 <li>contact details of your GP or other health professionals you deal with</li>
                 <li>the dates and details of any stays in hospital or residential care</li>
                 <li>your nationality or immigration status</li>
@@ -149,7 +147,7 @@
                 <div class="collapse-content">
                   <p>PIP claim line</p>
                   <p>Telephone 0800 917 2222</p>
-                  <p class="adviser">Textphone 0800 917 7777</p>
+                  <p>Textphone 0800 917 7777</p>
                   <p>Open Monday to Friday, 8am to 6pm</p>
                   <p>Calls are free from landlines and from mobiles.</p>
                   <p>It should take about 20 minutes to complete the call. If you’d prefer someone else to call for you that’s fine, but you need to be with them so that you can give permission for them to speak for you.</p><a class="collapse-toggle-close">Close</a>
@@ -166,18 +164,18 @@
                   <p>WV99 1AH</p><a class="collapse-toggle-close">Close</a>
                 </div>
               </div>
-              <div class="callout--adviser callout--icon">
-                <h3>Information for advisers</h3>
-                <p>The PIP2 form is sometimes called ‘How your condition affects you’ form</p>
-                <ul>
-                  <li>DWP guidance: <a href="#" class="a-external-link">Sample PIP1 form</a></li>
-                  <li>DWP guidance: <a href="#" class="a-external-link">Sample PIP2 form</a></li>
-                  <li>DWP guidance: <a href="#" class="a-external-link">Compensation for poor service</a></li>
-                </ul>
-                <p>Case law: <a href="#">Unlawful delays in processing a PIP claim and the High Court’s decision</a></p>
-                <p>Power of attorney: <a href="#">making decisions for someone who lacks mental capacity</a></p>
-                <p><a href="#">Appointees and benefit claims</a></p>
-              </div>
+              <!--.callout--adviser.callout--icon
+              h3 Information for advisers
+              p The PIP2 form is sometimes called ‘How your condition affects you’ form
+              ul
+                  li DWP guidance: <a href="#" class="a-external-link">Sample PIP1 form</a>
+                  li DWP guidance: <a href="#" class="a-external-link">Sample PIP2 form</a>
+                  li DWP guidance: <a href="#" class="a-external-link">Compensation for poor service</a>
+              p Case law: <a href="#">Unlawful delays in processing a PIP claim and the High Court’s decision</a>
+              p Power of attorney: <a href="#">making decisions for someone who lacks mental capacity</a>
+              p <a href="#">Appointees and benefit claims</a>
+              
+              -->
               <div class="callout--related">
                 <h3>Next steps</h3>
                 <p>The DWP will assess whether you meet the basic eligibility conditions.</p>
@@ -235,9 +233,9 @@
             <li class="side-nav-beta__heading -active -open"><a><span>Before you claim PIP</span></a></li>
             <li>
               <ul>
-                <li class="side-nav-beta__sibling"><a href="#" title="How to fill in your PIP claim form" class="adviser-only">How to fill in your PIP claim form</a>
+                <li class="side-nav-beta__sibling"><a href="#" title="How to fill in your PIP claim form" class="adviser-only -current">How to fill in your PIP claim form</a>
                 </li>
-                <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP" class="-current">How to claim PIP</a>
+                <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP">How to claim PIP</a>
                 </li>
                 <li class="side-nav-beta__sibling"><a href="#" title="How to claim PIP if you have a terminal illness">How to claim PIP if you have a terminal illness</a>
                 </li>
