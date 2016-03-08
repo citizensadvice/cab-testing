@@ -1,0 +1,184 @@
+﻿/**
+ * MAIN CONTENT WRAPPER
+ */
+
+ .title__subheading {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: .35rem 0;
+    padding: 1rem 0 1rem 0;
+    border-top: @gray-7 1px solid;
+    border-bottom: @gray-7 1px solid;
+    font-size: @font-size-small;
+    line-height: 1.7rem;
+    color: @gray-2;
+ }
+
+ .title__subheading--footer {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-top: @gray-7 1px solid;
+    border-bottom: @gray-7 1px solid;
+    font-size: @font-size-small;
+    color: @gray-2;
+    a {
+        border-bottom: transparent;
+    }
+    p {
+        margin: 0;
+    }
+ }
+
+.main-content{
+    .limit-width;
+    .clearfix;
+    padding: 0 @box-spacing;
+    margin-top: @box-spacing*2;
+    margin-bottom: @box-spacing*1.5;
+
+    @media screen and ( max-width: (@breakpoint-content) ) {
+        display: flex;
+        flex-direction: column;
+        padding: 0 9%;
+    }
+    @media screen and ( max-width: (@breakpoint-sm - 1) ) {
+        padding: 0 1rem;
+    }
+}
+
+.main-content--full-width {
+    max-width: 60em;
+    @media ( max-width: @screen-sm-max ) {
+        max-width: none;
+        width: auto;
+    }
+}
+.main-content__right {
+    float: left;
+    width: @width-span-8;
+
+    @media ( min-width: @screen-sm-min ) {
+        padding-right: @box-spacing*2;
+    }
+
+    @media ( min-width: @screen-md-min ) {
+        padding-right: @box-spacing*3;
+    }
+
+    @media ( min-width: @screen-lg-min ) {
+        padding-right: @box-spacing*6;
+    }
+
+    @media ( max-width: @breakpoint-content ) {
+        float: none;
+        width: auto;
+        padding: 0;
+    }
+}
+.main-content__sidebar {
+    float: right;
+    width: @width-span-2;
+    overflow: hidden; // Stop margin collapsing issues
+    margin-bottom: @box-spacing*1.5;
+
+    @media ( max-width: @breakpoint-content ) {
+        float: none;
+        width: auto;
+        margin-top: @box-spacing*1.5;
+    }
+}
+
+
+.articleContent img {
+    height: auto;
+    border: 1px solid @blue-light;
+    border-radius: 2px;
+}
+
+.blocklink,
+.blockLinks {
+    margin: @box-spacing-vertical 0;
+    padding: @box-spacing-vertical;
+    background-color: @aqua-light;
+    color: @heritage-blue;
+    border: 1px solid @aqua;
+    font-size: @font-size-base;
+    font-weight: @font-weight-bolder;
+    display: block;
+    .btn-icon(@i-right,@color:@heritage-blue);
+
+    h1, h2, h3, h4, h5, h6, p {
+        text-decoration: none;
+        border: none;
+        font-size: @font-size-base;
+        font-weight: @font-weight-bolder;
+        margin: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken(@aqua-light, 10%);
+        border: 1px solid @aqua;
+    }
+
+    &:visited {
+        border: 1px solid @aqua;
+    }
+
+    // Changing the blocklink icon
+    &.i-doc-image {
+        .btn-icon(@i-doc-image,@color:@heritage-blue);
+    }
+
+    &.i-search {
+        .btn-icon(@i-search,@color:@heritage-blue);
+    }
+}
+
+// Used for the summary box at the top of long content pages
+.steps {
+    background-color: @heritage-blue-lightest;
+    padding: @box-spacing-horizontal;
+    h1,h2,h3,h4,h5,h6 {
+        margin-top: 0;
+    }
+}
+
+// @todo This needs renamed
+.articleContent {
+     @media ( max-width: @screen-sm-max ) {
+        width: auto;
+    }
+}
+
+@media ( max-width: @max-page-width-before-the-share-bar-ruins-it-all ) and ( min-width: @screen-sm-min ) {
+    .js .main-content {
+        padding-right: 3.5em;
+    }
+}
+
+// table of contents at the top of a page
+/*.articleContent nav {
+    .callout(
+        @gray-8,
+        @heritage-blue
+    );
+    //.callout--border;
+    .dap-panel;
+    ul, ol {
+        margin: 0;
+        padding: 0.25rem 0;
+        padding-left: @box-spacing-horizontal*1.25;
+        //list-style: none;
+        li {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            break-inside: avoid-column;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}*/
