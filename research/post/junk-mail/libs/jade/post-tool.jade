@@ -1,0 +1,43 @@
+block settings
+	- var title = "Post tool"
+	- var sidebar = true
+	- var toolbars = false
+	- var mockup = true
+
+extends ../template/template.jade
+
+block breadcrumbs
+	+breadcrumbs([
+		{title: "Home", href: "index.html"},
+		{title: "Templates", href: "index.html#templates"},
+		{title: "Content"}])
+
+block content
+	.articleContent
+		div
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue nisi sit amet tellus semper mollis. Integer ut congue ipsum. Pellentesque placerat sem ut tellus lacinia mattis. Sed viverra purus nec neque vehicula gravida.
+			fieldset
+				legend(for="checkbox") Which services would you like to register with?
+				label.checkbox.checkbox--block
+					input(name="checkbox", type="checkbox")
+					p
+						span Royal Mail Door to Door
+						br
+						| Could include information from local or national government.
+				label.checkbox.checkbox--block
+					input(name="checkbox", type="checkbox")
+					p
+						span Direct Marketing Association’s ‘Your Choice’ scheme
+						br
+						| Could include local authorities, central government, utilities, charities, political parties, local education bodies, local shops and providers of local services.
+				label.checkbox.checkbox--block
+					input(name="checkbox", type="checkbox")
+					| Mailing Preference Service
+				label.checkbox.checkbox--block
+					input(name="checkbox", type="checkbox")
+					p
+						span Your local electoral registration office
+						br
+						| This will not affect your right to vote.
+
+			a.btn.right-button-icon(href="post-tool-2.html") Start
