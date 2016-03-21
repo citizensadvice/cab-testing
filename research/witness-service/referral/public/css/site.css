@@ -1289,6 +1289,10 @@ button:disabled {
 form small {
   color: #808080;
 }
+.optional {
+  color: #606060;
+  font-weight: 400;
+}
 .valid,
 .invalid {
   padding-top: 4px;

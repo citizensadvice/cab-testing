@@ -112,51 +112,49 @@
           <div class="articleContent">
             <div>
               <h2>The Witness’s contact details</h2>
-              <p>Please only provide contact information that we can use to contact the witness.</p>
-              <fieldset>
-                <label for="standardField">Email address</label>
-                <input id="standardField" placeholder="" type="text">
-              </fieldset>
+              <div class="callout--alert">
+                <p>Please only provide contact information that we can use to contact the witness.</p>
+              </div>
               <fieldset>
                 <label for="standardField">Preferred phone number</label>
                 <input id="standardField" placeholder="" type="text">
               </fieldset>
               <fieldset>
-                <legend for="radio">Can the Witness Service leave a message if there is no answer?</legend>
+                <legend for="radio">Can the Witness Service leave a message if there is no answer?</legend><span class="form-hint">If unsure leave as 'No'</span>
                 <label class="radio radio--inline">
-                  <input name="radio" type="radio" value="option1">Yes
+                  <input name="radio2" type="radio" value="option1">Yes
                 </label>
                 <label class="radio radio--inline">
-                  <input checked name="radio" type="radio" value="option2">No
+                  <input checked name="radio2" type="radio" value="option2">No
                 </label>
               </fieldset>
               <fieldset>
-                <legend for="radio">Can the Witness Service send a text?</legend>
-                <label class="radio radio--inline">
-                  <input name="radio" type="radio" value="option1">Yes
-                </label>
-                <label class="radio radio--inline">
-                  <input checked name="radio" type="radio" value="option2">No
-                </label>
+                <label for="standardField">Email address</label>
+                <input id="standardField" placeholder="" type="text">
               </fieldset>
-              <div class="well--outline">
-                <h3>Your address</h3>
-                <fieldset>
-                  <label class="radio radio--inline">
-                    <input checked name="radio" type="radio" value="option1">Lookup address
-                  </label>
-                  <label class="radio radio--inline">
-                    <input name="radio" type="radio" value="option2">Enter address manually
-                  </label>
-                </fieldset>
-                <fieldset>
-                  <label for="field">Enter your postcode</label>
-                  <div class="search-results__field field-group field-group--buttons">
-                    <input type="search" placeholder="Enter postcode">
-                    <button class="btn btn-primary">Search&nbsp;&nbsp;<i class="icon-search"></i></button>
-                  </div>
-                </fieldset>
-              </div><a href="witness-form-3.html" class="btn-light left-button-icon">Back</a><a href="witness-form-5.html" class="btn right-button-icon">Next</a>
+              <!--h3 Witness's primary address-->
+              <!--fieldset
+              label(for="standardField") Preferred phone number
+              input(id="standardField" placeholder="" type="text")
+              -->
+              <!--fieldset
+              label.radio.radio--inline
+              	input(checked, name="radio", type="radio", value="option1")
+              	| Lookup address
+              label.radio.radio--inline
+              	input(name="radio", type="radio", value="option2")
+              	| Enter address manually
+              
+              -->
+              <!--fieldset
+              label(for="field") Enter your postcode
+              .search-results__field.field-group.field-group--buttons
+              	input(type="search", placeholder="Enter postcode")
+              	button.btn.btn-primary Search&nbsp;&nbsp;
+              		i.icon-search
+              
+              
+              --><a href="witness-form-3.html" class="btn-light left-button-icon">Back</a><a href="witness-form-5.html" class="btn right-button-icon">Next</a>
             </div>
           </div>
         </div>

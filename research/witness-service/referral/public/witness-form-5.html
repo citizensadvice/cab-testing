@@ -112,20 +112,23 @@
           <div class="articleContent">
             <div>
               <h2>The trial and the witness’s support needs</h2>
+              <h3>Defendants details</h3>
               <fieldset>
-                <label for="standardField">Defendant name(s)</label>
+                <label for="standardField">Defendant name(s)</label><span class="form-hint">Please enter names, seperated using a comma</span>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <!--fieldset
+              label(for="standardField") URN
+              span.form-hint Where this number comes from?
+              input(id="standardField" placeholder="" type="text")
+              
+              -->
+              <fieldset>
+                <label for="standardField">Offence(s) <span class="optional">(optional)</span></label>
                 <input id="standardField" placeholder="" type="text">
               </fieldset>
               <fieldset>
-                <label for="standardField">URN</label><span class="form-hint">Where this number comes from?</span>
-                <input id="standardField" placeholder="" type="text">
-              </fieldset>
-              <fieldset>
-                <label for="standardField">Offence</label>
-                <input id="standardField" placeholder="" type="text">
-              </fieldset>
-              <fieldset>
-                <legend for="radio">Involves domestic violence (DV)?</legend>
+                <legend for="radio">Does the case include domestic violence (DV)?</legend>
                 <label class="radio radio--inline">
                   <input name="radio" type="radio" value="option1">Yes
                 </label>
@@ -133,18 +136,13 @@
                   <input checked name="radio" type="radio" value="option2">No
                 </label>
               </fieldset>
+              <h3>Location</h3>
               <fieldset>
                 <label for="exampleSelect1">Court where the trial will be heard</label>
-                <div class="dropdown">
-                  <select id="exampleSelect1">
-                    <option>Please select</option>
-                    <option>London</option>
-                    <option>Leeds</option>
-                  </select>
-                </div>
+                <input id="standardField" placeholder="" type="text">
               </fieldset>
               <div style="overflow: auto;" class="form-group-date">
-                <legend>Date of trial</legend>
+                <legend>Date of trial <span class="optional">(optional)</span></legend>
                 <fieldset>
                   <label for="dob-day"><span class="screenreader">What is the witnesses date of birth? Date field,</span>Day</label>
                   <input id="dob-day" max="31" min="1" placeholder="DD" type="number">
