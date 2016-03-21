@@ -111,42 +111,48 @@
           </div>
           <div class="articleContent">
             <div>
-              <h2>Information about the person being referred</h2>
+              <h2>Your contact details</h2>
+              <p>Please tell us how we can get in touch with you. We can help you best by phone and we will call you, to save you the cost. We will call between 11 am and 7 pm.</p>
               <fieldset>
-                <label for="standardField">First name</label><span class="form-hint">The witnesses first name</span>
+                <label for="standardField">Preferred phone number</label>
                 <input id="standardField" placeholder="" type="text">
               </fieldset>
               <fieldset>
-                <label for="standardField">Last name</label><span class="form-hint">The witnesses last name</span>
-                <input id="standardField" placeholder="" type="text">
+                <legend for="radio">Can the Witness Service leave a message if there is no answer?</legend>
+                <label class="radio radio--inline">
+                  <input name="radio2" type="radio" value="option1">Yes
+                </label>
+                <label class="radio radio--inline">
+                  <input checked name="radio2" type="radio" value="option2">No
+                </label>
               </fieldset>
               <fieldset>
-                <legend for="radio">Gender</legend><span class="form-hint">As defined by the witness</span>
-                <label class="radio radio--block">
-                  <input name="radio" type="radio" value="option1">Female
-                </label>
-                <label class="radio radio--block">
-                  <input name="radio" type="radio" value="option2">Male
-                </label>
-                <label class="radio radio--block">
-                  <input checked name="radio" type="radio" value="option3">Prefer not to say
-                </label>
+                <label for="standardField">Email address</label>
+                <input id="standardField" placeholder="" type="text">
               </fieldset>
-              <div style="overflow: auto;" class="form-group-date">
-                <legend>Date of birth <span class="optional">(optional)</span></legend><span class="form-hint">The witnesses date of birth</span>
-                <fieldset>
-                  <label for="dob-day"><span class="screenreader">What is the witnesses date of birth? Date field,</span>Day</label>
-                  <input id="dob-day" max="31" min="1" placeholder="DD" type="number">
-                </fieldset>
-                <fieldset>
-                  <label for="dob-month">Month</label>
-                  <input id="dob-month" max="12" min="1" placeholder="MM" type="number">
-                </fieldset>
-                <fieldset>
-                  <label for="dob-year">Year</label>
-                  <input id="dob-year" max="2100" placeholder="YYYY" type="number">
-                </fieldset>
-              </div><a href="witness-form-2.html" class="btn-light left-button-icon">Back</a><a href="witness-form-4.html" class="btn right-button-icon">Next</a>
+              <!--h3 Witness's primary address-->
+              <!--fieldset
+              label(for="standardField") Preferred phone number
+              input(id="standardField" placeholder="" type="text")
+              -->
+              <!--fieldset
+              label.radio.radio--inline
+              	input(checked, name="radio", type="radio", value="option1")
+              	| Lookup address
+              label.radio.radio--inline
+              	input(name="radio", type="radio", value="option2")
+              	| Enter address manually
+              
+              -->
+              <!--fieldset
+              label(for="field") Enter your postcode
+              .search-results__field.field-group.field-group--buttons
+              	input(type="search", placeholder="Enter postcode")
+              	button.btn.btn-primary Search&nbsp;&nbsp;
+              		i.icon-search
+              
+              
+              --><a href="witness-self-form-2.html" class="btn-light left-button-icon">Back</a><a href="witness-self-form-4.html" class="btn right-button-icon">Next</a>
             </div>
           </div>
         </div>

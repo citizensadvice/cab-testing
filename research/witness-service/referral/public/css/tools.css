@@ -1723,6 +1723,10 @@ img.cabtools .cabtools .content-right {
 .cabtools form small {
   color: #808080;
 }
+.cabtools .optional {
+  color: #606060;
+  font-weight: 400;
+}
 .cabtools .valid,
 .cabtools .invalid {
   padding-top: 4px;
