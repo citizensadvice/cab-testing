@@ -108,7 +108,7 @@
         <div id="main" role="main" class="main-content__right">
           <div class="articleContent">
             <div>
-              <h2>About you</h2>
+              <h2>Please tell us about the witness</h2>
               <fieldset>
                 <label for="standardField">First name</label>
                 <input id="standardField" placeholder="" type="text">
@@ -117,22 +117,23 @@
                 <label for="standardField">Last name</label>
                 <input id="standardField" placeholder="" type="text">
               </fieldset>
-              <fieldset>
-                <legend for="radio">Gender</legend>
-                <label class="radio radio--block">
-                  <input name="radio" type="radio" value="option1">Female
-                </label>
-                <label class="radio radio--block">
-                  <input name="radio" type="radio" value="option2">Male
-                </label>
-                <label class="radio radio--block">
-                  <input checked name="radio" type="radio" value="option3">Prefer not to say
-                </label>
-              </fieldset>
+              <!--fieldset
+              legend(for="radio") Gender
+              label.radio.radio--block
+              	input(name="radio", type="radio", value="option1")
+              	| Female
+              label.radio.radio--block
+              	input(name="radio", type="radio", value="option2")
+              	| Male
+              label.radio.radio--block
+              	input(checked, name="radio", type="radio", value="option3")
+              	| Prefer not to say
+              
+              -->
               <div style="overflow: auto;" class="form-group-date">
                 <legend>Date of birth <span class="optional">(optional)</span></legend>
                 <fieldset>
-                  <label for="dob-day"><span class="screenreader">What is the witnesses date of birth? Date field,</span>Day</label>
+                  <label for="dob-day"><span class="screenreader">What is the witness's date of birth? Date field,</span>Day</label>
                   <input id="dob-day" max="31" min="1" placeholder="DD" type="number">
                 </fieldset>
                 <fieldset>

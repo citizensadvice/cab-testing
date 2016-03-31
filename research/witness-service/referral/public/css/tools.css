@@ -405,6 +405,20 @@ button:disabled {
   /**
  * FORMS
  */
+  /* Do we want to make valid/invalid selectors inline?
+input {
+    &:valid {
+        .valid {
+            display: inline-block;
+        }
+    }
+    &:invalid {
+        .invalid {
+            display: inline-block;
+        }
+    }
+}
+*/
   /* Radio and checkboxed */
   /*.date {
     display: table;
@@ -1720,12 +1734,12 @@ img.cabtools .cabtools .content-right {
 .cabtools .toolbar-button:not([href]) {
   text-decoration: none;
 }
-.cabtools form small {
-  color: #808080;
-}
 .cabtools .optional {
   color: #606060;
   font-weight: 400;
+}
+.cabtools form small {
+  color: #808080;
 }
 .cabtools .valid,
 .cabtools .invalid {
@@ -1783,6 +1797,7 @@ img.cabtools .cabtools .content-right {
 .cabtools input[type=password],
 .cabtools input[type=email],
 .cabtools input[type=number],
+.cabtools input[type=tel],
 .cabtools input[type=search] {
   padding: 12px 16px;
   padding: 0.75rem 1rem;
@@ -2011,7 +2026,111 @@ img.cabtools .cabtools .content-right {
 }
 .cabtools .radio--block p span,
 .cabtools .checkbox--block p span {
+  font-weight: 600;
+}
+.cabtools .radio--conditional {
+  clear: both;
+  float: left;
+  width: 100%;
+  display: table;
+}
+.cabtools .radio--conditional p {
+  display: block;
+  display: table-cell;
+  margin: 0;
+}
+.cabtools .radio--conditional p span {
   font-weight: 700;
+}
+.cabtools .radio--conditional input {
+  display: inline-block;
+}
+.cabtools .radio--conditional input:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-user-select: none;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #dfdfdf;
+  z-index: -1;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  margin-right: 8px;
+  margin-right: 0.5rem;
+}
+.cabtools .radio--conditional input:hover:before {
+  border-color: #bfbfbf;
+}
+.cabtools .radio--conditional input:disabled {
+  cursor: not-allowed !important;
+}
+.cabtools .radio--conditional input:disabled:before {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+}
+.cabtools .radio--conditional input:checked:before {
+  border-color: #A5BDDC;
+  background-color: #f2f8ff;
+}
+.cabtools .radio--conditional input:checked:hover:before {
+  border-color: #A5BDDC;
+}
+.cabtools .radio--conditional input:focus {
+  outline: 2px solid #FCBB69;
+}
+.cabtools .radio--conditional input:not(checked) ~ .conditional--content {
+  display: none;
+}
+.cabtools .radio--conditional input:checked ~ .conditional--content {
+  display: block;
+}
+.cabtools .conditional--content input {
+  display: inline-block;
+}
+.cabtools .conditional--content input:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  -webkit-user-select: none;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #dfdfdf;
+  z-index: -1;
+  background-color: #FFF;
+  box-sizing: border-box;
+  margin-right: 8px;
+  margin-right: 0.5rem;
+}
+.cabtools .conditional--content input:hover:before {
+  border-color: #bfbfbf;
+}
+.cabtools .conditional--content input:disabled {
+  cursor: not-allowed !important;
+}
+.cabtools .conditional--content input:disabled:before {
+  cursor: not-allowed !important;
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+}
+.cabtools .conditional--content input:checked:before {
+  border-color: #A5BDDC;
+  background-color: #caeaff;
+}
+.cabtools .conditional--content input:checked:hover:before {
+  border-color: #A5BDDC;
+}
+.cabtools .conditional--content input:focus {
+  outline: 2px solid #FCBB69;
 }
 .cabtools .dropdown {
   border-radius: 2px;
@@ -2068,6 +2187,9 @@ img.cabtools .cabtools .content-right {
   border-radius: 2px;
   display: inline-block;
   padding-right: 0;
+}
+.cabtools .form-group-date {
+  overflow: auto;
 }
 .cabtools .form-group-date fieldset {
   width: 80px;
