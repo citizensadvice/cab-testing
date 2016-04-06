@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <title>Citizens Advice style guide- Witness Service referral form
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="/static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="css/guide.css" rel="stylesheet">
+    <link href="images/favicon/32.png" rel="shortcut icon">
+    <link href="images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="index.html#templates" title="Witness Service">Witness Service</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Referral form</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Witness Service referral form</span></h1>
+          </div>
+          <div class="articleContent">
+            <div>
+              <p>To ensure the Witness Service can effectively contact, needs assess and support witnesses we need as much information as possible with the initial referral.</p>
+              <p>Sharing the necessary information in the referral document also prevents the witness being asked the same questions again and again; something we know causes distress and frustration.</p>
+              <p>The referral documentation should be sent to the Witness Service by secure email at least four weeks prior to the trial date (unless the witness is called to give evidence at shorter notice) to enable contact to be made and pre-trial support provided if needed.</p>
+              <h2>About the referring body</h2>
+              <div class="well--outline">
+                <fieldset>
+                  <label for="exampleSelect1">Source of referral</label>
+                  <div class="dropdown">
+                    <select id="exampleSelect1">
+                      <option>Please select</option>
+                      <option>Defence (please say which below)</option>
+                      <option>WCU (Witness Care Unit)</option>
+                      <option>WCU (Witness Care Unit)</option>
+                      <option>Department for Work and Pensions (DWP)</option>
+                      <option>Environment Agency (EA)</option>
+                      <option>Local Authority (please say which below)</option>
+                      <option>RSPCA</option>
+                      <option>Other prosecuting authority (please say which below)</option>
+                      <option>IDVA/ ISVA</option>
+                      <option>Any other - not a prosecuting authority (please say which below)</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <label for="standardField">Other</label><span class="form-hint">Not a prosecuting authority</span>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset>
+              </div>
+              <fieldset>
+                <label for="standardField">Your organisation’s name</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <label for="standardField">Your name</label><span class="form-hint">The name of the person referring this witness to the Witness Service</span>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <label for="standardField">Your phone number</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <label for="standardField">Your email address</label>
+                <input id="standardField" placeholder="" type="email">
+              </fieldset>
+              <fieldset>
+                <label for="standardField">Your reference for this referral</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <h2>Information about the person being referred</h2>
+              <fieldset>
+                <label for="exampleSelect1">Your title</label>
+                <div class="dropdown">
+                  <select id="exampleSelect1">
+                    <option>Please select</option>
+                    <option>Mr</option>
+                    <option> </option>
+                  </select>
+                </div>
+              </fieldset>
+              <fieldset>
+                <label for="standardField">First name</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <label for="standardField">Last name</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Gender</legend><span class="form-hint">As defined by the witness</span>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">Female
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option2">Male
+                </label>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option3">Prefer not to say
+                </label>
+              </fieldset>
+              <div style="overflow: auto;" class="form-group-date">
+                <legend>Date of birth</legend>
+                <fieldset>
+                  <label for="dob-day"><span class="screenreader">What is the witnesses date of birth? Date field,</span>Day</label>
+                  <input id="dob-day" max="31" min="1" placeholder="DD" type="number">
+                </fieldset>
+                <fieldset>
+                  <label for="dob-month">Month</label>
+                  <input id="dob-month" max="12" min="1" placeholder="MM" type="number">
+                </fieldset>
+                <fieldset>
+                  <label for="dob-year">Year</label>
+                  <input id="dob-year" max="2100" placeholder="YYYY" type="number">
+                </fieldset>
+              </div>
+              <h2>The Witness’s contact details</h2>
+              <p>Please only provide contact information that we can use to contact the witness.</p>
+              <div class="well--outline">
+                <fieldset>
+                  <label for="standardField">Preferred phone number</label>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset>
+                <fieldset>
+                  <legend for="radio">Can the Witness Service leave a message if there is no answer?</legend>
+                  <label class="radio radio--block">
+                    <input name="radio" type="radio" value="option1">Yes
+                  </label>
+                  <label class="radio radio--block">
+                    <input checked name="radio" type="radio" value="option2">No
+                  </label>
+                </fieldset>
+              </div>
+              <div class="well--outline">
+                <fieldset>
+                  <label for="standardField">Alternative phone number</label>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset>
+                <fieldset>
+                  <legend for="radio">Can the Witness Service leave a message if there is no answer?</legend>
+                  <label class="radio radio--block">
+                    <input name="radio" type="radio" value="option1">Yes
+                  </label>
+                  <label class="radio radio--block">
+                    <input checked name="radio" type="radio" value="option2">No
+                  </label>
+                </fieldset>
+              </div>
+              <div class="well--outline">
+                <fieldset>
+                  <label for="standardField">Mobile number</label>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset>
+                <fieldset>
+                  <legend for="radio">Can the Witness Service send a text?</legend>
+                  <label class="radio radio--block">
+                    <input name="radio" type="radio" value="option1">Yes
+                  </label>
+                  <label class="radio radio--block">
+                    <input checked name="radio" type="radio" value="option2">No
+                  </label>
+                </fieldset>
+              </div>
+              <fieldset>
+                <label for="standardField">Email address</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <div class="well--outline">
+                <h3>Your address</h3>
+                <fieldset>
+                  <label class="radio radio--inline">
+                    <input checked name="radio" type="radio" value="option1">Lookup address
+                  </label>
+                  <label class="radio radio--inline">
+                    <input name="radio" type="radio" value="option2">Enter address manually
+                  </label>
+                </fieldset>
+                <fieldset>
+                  <label for="field">Enter your postcode</label>
+                  <div class="search-results__field field-group field-group--buttons">
+                    <input type="search" placeholder="Enter postcode">
+                    <button class="btn btn-primary">Search&nbsp;&nbsp;<i class="icon-search"></i></button>
+                  </div>
+                </fieldset>
+              </div>
+              <h2>The trial and the witness’s support needs</h2>
+              <div class="well--outline">
+                <fieldset>
+                  <label for="standardField">Defendant name</label>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset>
+                <fieldset>
+                  <label for="standardField">URN</label><span class="form-hint">Where this number comes from?</span>
+                  <input id="standardField" placeholder="" type="text">
+                </fieldset><a href="#" class="btn plus-button-icon">Add defendant</a>
+              </div>
+              <fieldset>
+                <label for="standardField">Offence</label>
+                <input id="standardField" placeholder="" type="text">
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Involves domestic violence (DV)?</legend>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">Yes
+                </label>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option2">No
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="exampleSelect1">Court where the trial will be heard</label>
+                <div class="dropdown">
+                  <select id="exampleSelect1">
+                    <option>Please select</option>
+                    <option>London</option>
+                    <option>Leeds</option>
+                  </select>
+                </div>
+              </fieldset>
+              <div style="overflow: auto;" class="form-group-date">
+                <legend>Date of trial</legend>
+                <fieldset>
+                  <label for="dob-day"><span class="screenreader">What is the witnesses date of birth? Date field,</span>Day</label>
+                  <input id="dob-day" max="31" min="1" placeholder="DD" type="number">
+                </fieldset>
+                <fieldset>
+                  <label for="dob-month">Month</label>
+                  <input id="dob-month" max="12" min="1" placeholder="MM" type="number">
+                </fieldset>
+                <fieldset>
+                  <label for="dob-year">Year</label>
+                  <input id="dob-year" max="2100" placeholder="YYYY" type="number">
+                </fieldset>
+              </div>
+              <h3>How are you involved in the trial?</h3>
+              <fieldset>
+                <legend for="radio">Are you a witness?</legend>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, for the defence
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, for the prosecution
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, but I’m not sure who for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">no
+                </label>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">I’m not sure/don’t know
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Have you been affected by a crime that the trial is about?</legend>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, as a victim or survivor
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, the victim was in my family or very close to me
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">yes, but I’m not sure who for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">no
+                </label>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">I’m not sure/don’t know
+                </label>
+              </fieldset>
+              <div class="well--outline">
+                <fieldset>
+                  <legend for="checkbox">Grounds for Special Measures for vulnerable or intimidated witnesses (VIW)</legend><span class="form-hint">Select all that apply</span>
+                  <label class="checkbox checkbox--block">
+                    <input name="checkbox" type="checkbox">Young person (under 18) 
+                  </label>
+                  <label class="checkbox checkbox--block">
+                    <input name="checkbox" type="checkbox">Physical disability (including sensory impairment) 
+                  </label>
+                  <label class="checkbox checkbox--block">
+                    <input name="checkbox" type="checkbox">Learning disability or difficulty 
+                  </label>
+                  <label class="checkbox checkbox--block">
+                    <input name="checkbox" type="checkbox">Mental health issues 
+                  </label>
+                  <label class="checkbox checkbox--block">
+                    <input name="checkbox" type="checkbox">Intimidated
+                  </label>
+                </fieldset>
+              </div>
+              <h3>What special measures have been identified, applied for or granted?</h3>
+              <fieldset>
+                <legend for="radio">Screens</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Evidence in chief</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Livelink</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Pre-recorded cross examination</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Closed court</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Removal of wigs and gowns</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Intermediary</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend for="radio">Aids to communication</legend>
+                <label class="radio radio--block">
+                  <input checked name="radio" type="radio" value="option1">don’t know/ not needed 
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">need identified
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">applied for
+                </label>
+                <label class="radio radio--block">
+                  <input name="radio" type="radio" value="option1">granted
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="exampleTextarea">Individual support needs, including the support of a specialist at court </label><span class="form-hint">e.g. an IDVA or intermediary (please give their name and role)</span>
+                <textarea id="exampleTextarea" rows="3"></textarea>
+              </fieldset>
+              <fieldset>
+                <label for="exampleTextarea">Individual communication needs and contact preferences</label><span class="form-hint">Include the support of an interpreter or other language support (please give their name and role)</span>
+                <textarea id="exampleTextarea" rows="3"></textarea>
+              </fieldset><a href="#" class="btn right-button-icon">Submit</a>
+            </div>
+          </div>
+        </div>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="images/ca-logo_100px.svg" width="100">Copyright © 2015 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notice">
+      <div class="notice__content">
+        <p>We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider upgrading to <a href="#" class="a-external-link">Google Chrome</a>.</p>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/jquery.fn.cssSlide.js"></script>
+    <script src="js/revealable.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/smooth.js"></script>
+    <script src="js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="js/advisor.js")-->
+    <script src="js/sidebar.js"></script>
+    <!--script(src="js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href="' + filename + '"]').addClass('active');
+      });
+    </script>
+  </body>
+</html>

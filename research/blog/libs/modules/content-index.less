@@ -1,0 +1,61 @@
+/**
+ * CONTENT INDEX PAGES
+ */
+
+.beta-index-page {
+    margin-bottom: @box-spacing*2;
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.beta-index-page__box {
+    border-bottom: 1px solid @gray-7;
+    margin-bottom: @box-spacing;
+    float: left;
+
+    &:last-child {
+        margin-bottom: @box-spacing*2;
+    }
+}
+
+.content__header {
+    background-color: @gray-7;
+    h1 {
+        margin: @box-spacing 0;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        margin-top: 0; // No breadcrumb trail
+    }
+}
+
+/* Arrrrggggggg
+.section-notice + * .content__header {
+    margin-top: -@box-spacing;
+}*/
+
+.content__header__content {
+    .limit-width();
+    padding: @box-spacing;
+
+    h2 {
+        font-size: @font-size-medium;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    a {
+        font-weight: @font-weight-bold;
+    }
+}
+
+.beta-index-page__section {
+    padding-bottom: 1rem;
+    ul {
+        margin-bottom: 0;
+    }
+}
