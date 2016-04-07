@@ -36,8 +36,8 @@
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
     <header class="styleguide--header">
-      <div class="styleguide--header--content"><img src="images/ca-logo-hz-white-280px.svg">
-        <div class="styleguide--header--content-nav"><a href="#">The Team</a><a href="#">About</a><a href="#">Get involved</a><a href="#">Jobs</a></div>
+      <div class="styleguide--header--content"><a href="blog-home.html"><img src="images/ca-logo-hz-white-280px.svg"></a>
+        <div class="styleguide--header--content-nav"><a href="blog-team.html">The Team</a><a href="#">About</a><a href="blog-get-involved.html">Get involved</a><a href="#">Jobs</a></div>
       </div>
     </header>
     <!--header.main-header
@@ -148,18 +148,61 @@
         </div>
       </div>
     </div>
-    <footer data-track-zone="footer" id="footer" class="main-footer">
-      <div class="styleguide--footer">
-        <div>
-          <p><img alt="" height="100" src="images/ca-logo_100px.svg" width="100">Copyright © 2015 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+    <!--#footer.main-footer(data-track-zone="footer")
+    .footer--legal
+    	.footer--legal--content
+    		img(alt="", src="images/ca_wo-logo-100px.svg")
+    		p
+    			| Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.
+    			br
+    			| Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD
+    -->
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Digital Blog</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Jobs</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Content style guide</a></li>
+                <li><a href="#">UI design guide</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <!--li #[a(href="#") Help]-->
+            <!--li #[a(href="#") Cymraeg]-->
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <div class="notice">
-      <div class="notice__content">
-        <p>We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider upgrading to <a href="#" class="a-external-link">Google Chrome</a>.</p>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
       </div>
-    </div><!--[if IE 8]></div><![endif]-->
+    </div>
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider upgrading to <a href="#" class="a-external-link">Google Chrome</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
     <script src="js/advisor.js"></script>
     <script src="js/core.js"></script>
   </body>

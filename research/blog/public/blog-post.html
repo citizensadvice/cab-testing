@@ -36,8 +36,8 @@
   <body><!--[if IE 8]><div class="ie8"><![endif]-->
     <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
     <header class="styleguide--header">
-      <div class="styleguide--header--content"><img src="images/ca-logo-hz-white-280px.svg">
-        <div class="styleguide--header--content-nav"><a href="#">The Team</a><a href="#">About</a><a href="#">Get involved</a><a href="#">Jobs</a></div>
+      <div class="styleguide--header--content"><a href="blog-home.html"><img src="images/ca-logo-hz-white-280px.svg"></a>
+        <div class="styleguide--header--content-nav"><a href="blog-team.html">The Team</a><a href="#">About</a><a href="blog-get-involved.html">Get involved</a><a href="#">Jobs</a></div>
       </div>
     </header>
     <!--header.main-header
@@ -49,8 +49,6 @@
     -->
     <div class="main-container">
       <nav class="main-breadcrumb">
-        <div class="main-breadcrumb__content"><span class="breadcrumb__item">Home</span>
-        </div>
       </nav>
       <div class="main-content">
         <div id="main" role="main" class="main-content__right">
@@ -61,11 +59,13 @@
           <div class="articleContent">
             <div>
               <h1 style="margin-top:0.2rem;">Working with advisers to design new PIP content</h1>
-              <p class="small"><a href="#">Stephen Rehill</a> on January 18, 2016 in <a href="#">Content</a>, <a href="#">Design</a> </p>
-              <div class="title__subheading"><a href="javascript:emailCurrentPage()" data-track="Email page" class="a-social-email">Email</a><a href="javascript:window.print();" data-track="Print" class="a-social-print">Print</a></div>
+              <!--p.small #[a(href="#") Stephen Rehill] on January 18, 2016 in #[a(href="#") Content], #[a(href="#") Design]-->
+              <div class="title__subheading"><a href="#">Stephen Rehill</a> on January 18, 2016 in <a href="#">Research</a>, <a href="#">Content</a>
+                <!--a.a-social-print(href="javascript:window.print();", data-track="Print") Print-->
+              </div>
               <p>Content is only as good as the advice that sits behind it. The values inherent in that advice come from an understanding of our audience – their goals and their problems. By designing content that focuses on these things we can create something original and valuable that users will engage with and understand.</p>
               <p>Working with advisers is an an essential part of our content design process.</p>
-              <p>How we involved advisers </p>
+              <p>How we involved advisers</p>
               <p>Here’s an outline of just some of the ways advisers have been helping us design content for people looking for help to fill out their Personal Independence Payment (PIP) claim form.</p>
               <ol>
                 <li>We sat down with advisers in their local Citizens Advice and, armed with little more than a copy of the claim form and some post-it notes, listened to what advisers had to say, This helped us identify user problems (there were lots).</li>
@@ -75,9 +75,34 @@
               </ol>
               <p>If someone can go to an adviser and get expert advice and help with their PIP claim form then they should also get that same value from our website.</p>
               <p>From 15 February people will be able to do just that. We’ll be publishing new content that focuses on the help people need and not the nuances and complications of the DWP claim form, assessment criteria and unhelpful guidance (all 70,000-plus jargon-filled words of it),</p>
+              <div class="blog-tag">Research</div>
+              <div class="blog-tag">Content</div>
             </div>
             <div class="title__subheading--footer">
-              <p>Share this page<br><a href="https://twitter.com/share?url=" data-track="Twitter" rel="external" class="a-social-twitter">Twitter</a><a href="https://www.facebook.com/sharer/sharer.php?u=" data-track="Facebook" rel="external" class="a-social-facebook">Facebook</a><a href="https://plus.google.com/share?url=" data-track="Google+" rel="external" class="a-social-google-plus">Google Plus</a><a href="javascript:window.location='whatsapp://send?text='+encodeURIComponent(location.href);" class="a-social-whatsapp show-mobile">Whatsapp</a></p>
+              <p>Share this page. <a #>Find out more about sharing.</a></p><a href="https://twitter.com/share?url=" data-track="Twitter" rel="external" class="a-social-twitter">Twitter</a><a href="https://www.facebook.com/sharer/sharer.php?u=" data-track="Facebook" rel="external" class="a-social-facebook">Facebook</a><a href="https://plus.google.com/share?url=" data-track="Google+" rel="external" class="a-social-google-plus">Google Plus</a><a href="javascript:window.location='whatsapp://send?text='+encodeURIComponent(location.href);" class="a-social-whatsapp show-mobile">Whatsapp</a>
+            </div>
+            <div class="comments">
+              <div class="comments-single">
+                <div style="clear:both;">
+                  <h3 style="width: 60%; display: inline-block;" class="col-xs-8">Domenico Perri</h3>
+                  <p style="width: 39%; display: inline-block; text-align: right;" class="col-xs-4 small">Posted 2 weeks ago. <a>Reply</a></p>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tellus tortor, ullamcorper eu placerat eget, suscipit vel quam.</p>
+              </div>
+              <div class="comments-single reply">
+                <div style="clear:both;">
+                  <h3 style="width: 60%; display: inline-block;" class="col-xs-8">Eliot Hill</h3>
+                  <p style="width: 39%; display: inline-block; text-align: right;" class="col-xs-4 small">Posted 2 weeks ago. <a>Reply</a></p>
+                </div>
+                <p>Lorem ipsum dolor.</p>
+              </div>
+              <div class="comments-single">
+                <div style="clear:both;">
+                  <h3 style="width: 60%; display: inline-block;" class="col-xs-8">Paul Chanthapanya</h3>
+                  <p style="width: 39%; display: inline-block; text-align: right;" class="col-xs-4 small">Posted yesterday. <a>Reply</a></p>
+                </div>
+                <p>In sit amet massa semper, ultricies nulla at, vestibulum nulla. Nulla id arcu quis odio molestie porttitor et id lacus. In fermentum aliquet libero eget rutrum.</p>
+              </div>
             </div>
             <div style="background-color:#fff;" class="well">
               <fieldset>
@@ -101,27 +126,33 @@
           </div>
         </div>
         <div class="side-nav-beta">
-          <div style="background-color: #f2f8ff; border: 0px #dfdfdf solid;" class="well">
+          <div style="background-color: #fff; border-left: 0px; border-right: 0px; border-bottom: 0px; border-top: 8px #fcbb69 solid !important; margin-top: 2rem; padding:.75em 0 !important;" class="well">
             <fieldset>
-              <label for="search">Search this blog</label>
-              <div style="width:85%;" class="search-results__field field-group field-group--buttons">
-                <input type="search" placeholder="" value="Search" style="border:1px solid #fff;">
-                <button style="background-color:#fcbb69; border:1px solid #fff;" class="btn btn-primary"><i class="icon-search"></i></button>
+              <!--label(for="search") Search this blog-->
+              <div class="search-results__field field-group field-group--buttons">
+                <input type="search" placeholder="" value="Search" style="border: 1px solid #ccc;">
+                <button style="background-color:#fcbb69;border: 1px solid #fcbb69;" class="btn btn-primary"><i class="icon-search"></i></button>
               </div>
             </fieldset>
           </div>
-          <div style="background-color: #f2f8ff; border: 0px #dfdfdf solid;" class="well">
-            <label>Recent posts</label>
-            <ul>
-              <li><a href="#">Making things simpler: Personal Independence Payment (PIP)</a></li>
-              <li> <a href="#">Introducing… immigration advice</a></li>
-              <li> <a href="#">How people look for things</a></li>
-              <li> <a href="#">Casebook: An intro to what's been happening</a></li>
-              <li> <a href="#">A present (kind of) from the digital team</a></li>
-              <li> <a href="#">Your digital team needs you!</a></li>
-            </ul>
-          </div>
-          <div style="background-color: #fee4c3; border: 0px #dfdfdf solid;" class="well">
+          <!--.well(style="background-color: #f2f8ff; border: 0px #dfdfdf solid;")
+          label Recent posts
+          ul
+              li
+                  a(href="#") Making things simpler: Personal Independence Payment (PIP)
+              li
+                  a(href="#") Introducing… immigration advice
+              li
+                  a(href="#") How people look for things
+              li
+                  a(href="#") Casebook: An intro to what's been happening
+              li
+                  a(href="#") A present (kind of) from the digital team
+              li
+                  a(href="#") Your digital team needs you!
+          
+          -->
+          <div style="background-color: #fee4c3; border: 0px #dfdfdf solid; margin-top:0; margin-bottom:2rem;" class="well">
             <fieldset>
               <label for="exampleSelect1">Select Category</label>
               <div class="dropdown">
@@ -136,17 +167,18 @@
             </fieldset>
           </div>
           <div style="color:#fff; background-color:#32457E;" class="cards">
-            <div style="background-color:#32457E;" class="card-banner-top">
-              <p style="color:#fff;">Get updates by email</p>
+            <div class="card-banner-top">
+              <p style="color:#fff;">Get updates of new blogs here</p>
             </div>
             <div class="card-text">
+              <p>If you would like to test any of the new future research and testing you can sign up on the <a href="#" style="color:#FCBB69;">Get Involved page</a>.</p>
               <fieldset>
                 <label for="name" style="color:#fff;">Your name</label>
-                <div style="width:95%; margin-bottom: 10px;" class="search-results__field">
+                <div style="margin-bottom: 10px;">
                   <input type="Email" placeholder="Name" style="padding: 0.75rem !important;">
                 </div>
                 <label for="email" style="color:#fff;">Your email</label>
-                <div style="width:95%; margin-bottom: 10px;" class="search-results__field">
+                <div style="margin-bottom: 10px;">
                   <input type="Email" placeholder="Email" style="padding: 0.75rem !important;">
                   <button style="padding: 1.5rem 0.5rem -1.5rem 0 !important;" class="btn btn-primary tick-button-icon">Submit</button>
                 </div>
@@ -185,18 +217,61 @@
         </div>
       </div>
     </div>
-    <footer data-track-zone="footer" id="footer" class="main-footer">
-      <div class="styleguide--footer">
-        <div>
-          <p><img alt="" height="100" src="images/ca-logo_100px.svg" width="100">Copyright © 2015 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+    <!--#footer.main-footer(data-track-zone="footer")
+    .footer--legal
+    	.footer--legal--content
+    		img(alt="", src="images/ca_wo-logo-100px.svg")
+    		p
+    			| Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.
+    			br
+    			| Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD
+    -->
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Digital Blog</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">The Team</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Jobs</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Content style guide</a></li>
+                <li><a href="#">UI design guide</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <!--li #[a(href="#") Help]-->
+            <!--li #[a(href="#") Cymraeg]-->
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <div class="notice">
-      <div class="notice__content">
-        <p>We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider upgrading to <a href="#" class="a-external-link">Google Chrome</a>.</p>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
       </div>
-    </div><!--[if IE 8]></div><![endif]-->
+    </div>
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider upgrading to <a href="#" class="a-external-link">Google Chrome</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
     <script src="js/advisor.js"></script>
     <script src="js/core.js"></script>
   </body>
