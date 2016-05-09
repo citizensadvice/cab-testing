@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- How to get sick pay
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../#" title="Workplace Rights">Workplace Rights</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">How to get sick pay</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">How to get sick pay</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:emailCurrentPage()" data-track="Email page" class="toolbar-button a-social-email">Share this advice</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <p>Your employer must tell you what to do when you’re off work sick. Usually they’ll have rules about:</p>
+          <ul>
+            <li>when to tell them you’re sick</li>
+            <li>what information to give them about your illness</li>
+          </ul>
+          <p>If they haven’t told you, make sure you ask them what to do or check your staff handbook.</p>
+          <p>You should always follow their rules as you’ll be breaking your contract if you don’t. You can still get the statutory <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/">sick pay you’re entitled to</a>, but you might not get extra contractual sick pay and could eventually lose your job.</p>
+          <div class="callout--adviser">
+            <p>This page mostly covers statutory sick pay. <a href="https://www.citizensadvice.org.uk/development/workplace-rights/adviser-sick-pay-to-test/adviser-contractual-sick-pay/">Get more detail on contractual sick pay</a>.</p>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">How to get statutory sick pay</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If your employer hasn’t told you what to do to get statutory sick pay (SSP), you should:</p>
+          <ol>
+            <li>Tell your employer straight away that you’re sick and can’t work.</li>
+            <li>Let your employer know what the first day of your illness was, even if it was a non-working day.</li>
+            <li>Confirm your illness in writing if your employer asks for it (this is called ‘self-certification’). You’ll need to do this within 7 days of telling your employer you’re sick.</li>
+            <li>Get a doctor’s note if you’re sick for longer than 7 days, and your employer asks you to get one. The 7 days includes days you wouldn’t normally be working.</li>
+          </ol>
+          <h3 class="ref-heading"><span class="ref-heading__heading">What your employer can’t ask you to do</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h3>
+          <p>If you’re entitled to SSP, and your contract doesn’t have any extra rules about contractual sick pay, your employer isn’t allowed to:</p>
+          <ul>
+            <li>demand that you tell them you’re sick by a certain time of day</li>
+            <li>make you contact them more than once a week</li>
+            <li>make you get a doctor’s note before you’ve been sick for 8 days</li>
+            <li>insist you use a specific form to tell them about your illness (self-certification)</li>
+            <li>refuse to let someone else tell them you’re sick, for example if you’re too ill to get in touch yourself</li>
+          </ul>
+          <p>If your employer refuses to pay your SSP because of any of these reasons, you can <a href="https://www.citizensadvice.org.uk/work/rights-at-work/pay/problems-getting-paid/">take steps to get paid</a>. <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/search-for-your-local-citizens-advice/">Contact your nearest Citizens Advice</a> for help.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Getting a note from your doctor</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If you’re sick for more than 7 days you’ll probably have to get a note from your doctor. You might hear these referred to as ‘fit notes’ (they used to be called ‘sick notes’).</p>
+          <p>On the note, your doctor will say that you:</p>
+          <ul>
+            <li>are not fit for work</li>
+            <li>may be fit for work</li>
+          </ul>
+          <p>If your doctor says you ‘may be fit for work’ they can recommend the type of work you might be able to do.</p>
+          <p>If your employer can’t make the changes your doctor recommends, you’ll still be considered unfit for work and can carry on getting sick pay.</p>
+          <div class="callout--alert">
+            <p>If you’re off work sick because of a disability, your employer has a legal duty to make ‘<a href="https://www.citizensadvice.org.uk/discrimination/what-are-the-different-types-of-discrimination/duty-to-make-reasonable-adjustments-for-disabled-people/">reasonable adjustments</a>’ to help you return to work.</p>
+            <p>If you’re not sure your condition is classed as a disability, you can get help from <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/search-for-your-local-citizens-advice/">your nearest Citizens Advice</a>.</p>
+          </div>
+          <div class="callout--adviser">
+            <h3 class="ref-heading"><span class="ref-heading__heading">If an employer doubts your client’s incapacity to work</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h3>
+            <p>If an employer has doubts about your client’s incapacity for work, they can contact Medical Services via HMRC for help.</p>
+            <p>GOV.UK has detailed guidance about fit notes and what happens if an employer asks for <a href="https://www.gov.uk/guidance/statutory-sick-pay-employee-fitness-to-work">medical advice through HMRC</a>.</p>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Returning to work</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If you want to return to work early, your employer might ask you to get a note from your doctor confirming you’re fit for work. This will usually be because your employer needs it for their insurance.</p>
+          <p>Your doctor can recommend that you work less hours or days for a bit, and gradually increase them back to normal - this is called a ‘phased return’. This could affect your pay so you need to discuss it with your employer.</p>
+          <h3 class="ref-heading"><span class="ref-heading__heading">Doing ’lighter work’</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h3>
+          <p>Your employer might offer to let you do lighter duties than usual until you’re properly well again.</p>
+          <p>You’re allowed to say no if you don’t want to do it  - your employer still has to pay statutory sick pay you’re entitled to.</p>
+          <p>If you prefer to do lighter work rather than stay at home, you won’t be entitled to statutory sick pay. You’ll need to tell your employer you’ll do lighter work temporarily and return to your old job when you’re fit to do it. You should agree this in writing with your employer if you can.</p>
+          <p>Contact <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/search-for-your-local-citizens-advice/">your nearest Citizens Advice</a> if you want help working out what your options are.</p>
+          <div class="callout--adviser">
+            <h3 class="ref-heading"><span class="ref-heading__heading">Planning a phased return to work</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h3>
+            <p>Before agreeing a phased return to work, make sure the client doesn’t lose out on money.</p>
+            <p>For days the client works, they’re entitled to their normal pay.</p>
+            <p>For days they’re off they might still be entitled to either:</p>
+            <ul>
+              <li>contractual sick pay - check their contract or with their employer</li>
+              <li>statutory sick pay - as long as the times they’re off work last for at least 4 days</li>
+            </ul>
+            <p>Any days your client gets SSP will count towards the 28-week maximum.</p>
+            <div class="callout--example">
+              <h3>Example</h3>
+              <p>Susan was off sick for 6 weeks and got statutory sick pay in that time. She normally works full time, Monday to Friday. She has agreed with her employer to return to work on a phased basis.</p>
+              <p>For the first 2 weeks back Susan comes in 3 days a week - Wednesday to Friday. The third week she works 4 days - Tuesday to Friday. From her fourth week she returns to working full-time, Monday to Friday.</p>
+              <h4>Susan’s sick pay</h4>
+              <p>For the first 2 weeks she gets SSP for Monday and Tuesday. This is because she’s classed as being sick for 4 days in a row - Saturday, Sunday, Monday, Tuesday.</p>
+              <p>She also gets her normal pay for working on Wednesday to Friday.</p>
+              <p>In her 3rd week back she doesn’t get SSP for the Monday as she hasn’t been sick for 4 days in a row - just Saturday, Sunday, and Monday.</p>
+              <p>She gets her normal pay for working on Tuesday to Friday.</p>
+              <p>When she returns to work full time she gets her normal full pay.</p>
+            </div>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">How you’re paid sick pay</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>You’re usually paid statutory and contractual sick pay in the same way as your normal wages - for example weekly into your bank account. You’ll pay tax and National Insurance on your sick pay.</p>
+          <p>As well as sick pay, you might be able to <a href="https://www.citizensadvice.org.uk/development/workplace-rights/sick-pay/money-when-sick/">get other money while you’re off work</a>.</p>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Sick pay" class="section-nav__parent">Sick pay</a>
+              <ul>
+                <li><a href="entitled-to-sick-pay.html" title="Check if you're entitled to sick pay">Check if you're entitled to sick pay</a>
+                </li>
+                <li><a href="how-to-get-sick-pay.html" title="How to get sick pay">How to get sick pay</a>
+                </li>
+                <li><a href="getting-money-when-youre-off-sick.html" title="Getting money when you're off work sick">Getting money when you're off work sick</a>
+                </li>
+                <li><a href="sick-pay-when-youre-pregnant.html" title="Getting sick pay when you're pregnant">Getting sick pay when you're pregnant</a>
+                </li>
+                <li><a href="contractual-sick-pay.html" title="Contractual sick pay" class="adviser-only">Contractual sick pay</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      });
+    </script>
+  </body>
+</html>
