@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Contractual sick pay
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../index.html#Modules" title="Modules">Modules</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Content toolbar</span>
+        </div>
+      </nav>
+      <aside class="section-notice__adviser">
+        <h2 class="screenreader">Notice</h2>
+        <div class="section-notice__content">
+          <p><span class="badge">ADVISER</span>This page is part of <a href="#">adviser only</a> content.</p>
+        </div>
+      </aside>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Contractual sick pay</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:emailCurrentPage()" data-track="Email page" class="toolbar-button a-social-email">Share this advice</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <p>If an employer has their own sick pay scheme it should be included in your client’s employment contract. It can be:</p>
+          <ul>
+            <li>explained in writing - in the contract itself or in the ‘written statement of employment particulars’ they should get within 2 months of starting work</li>
+            <li>based on a verbal agreement with the employer</li>
+            <li>implied by a custom and practice at their place of work - for example if your client had it in the past, or other employees have been paid it</li>
+          </ul>
+          <h2 class="ref-heading"><span class="ref-heading__heading">What evidence an employer can ask for</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>Contractual schemes can have different rules from statutory sick pay for what your client has to do to get paid. The employer can specify:</p>
+          <ul>
+            <li>what evidence they need about the sickness</li>
+            <li>when they should get the evidence</li>
+          </ul>
+          <p>This can include asking the client to self-certify or get a doctor’s note straight away. You can find more information about <a href="https://www.gov.uk/taking-sick-leave" rel="external" class="a-external">self-certification and sickness on GOV.UK</a>.</p>
+          <p>A doctor might charge a fee to provide a note before the 8th day of sickness. The client’s contract should say who has to pay the fee - the employer or the client.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">How much contractual sick pay a client should get</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>Employers don’t have to pay contractual sick pay at the normal rate of pay. Your client's contract can set any amount, as long as it's at least the statutory £88.45 a week for up to 28 weeks. This applies even if your client’s sickness is classed as a disability.</p>
+          <p>You can use the <a href="https://www.gov.uk/calculate-statutory-sick-pay" rel="external" class="a-external">statutory sick pay calculator on GOV.UK</a> to check the mimimum they should get.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">If an employer stops a client returning to work</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>An employer can stop someone returning to work until they’ve been examined by a company doctor - even if their own GP says they’re fit to work.</p>
+          <p>In this situation the Employment Appeal Tribunal decided that an employee who is willing to work should be paid their normal wage, unless their contract says otherwise.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">When to raise a grievance over procedure</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>The employer should clearly explain its sickness procedure to your client. The procedure should be based on evidence and mustn't discriminate.</p>
+          <p>If there’s evidence proper procedure hasn’t been followed, a client can <a href="/advisernet/work/dispute-resolution/grievances/grievances-at-work/">raise a grievance</a> if the employer:</p>
+          <ul>
+            <li>refuses to pay contractual sick pay</li>
+            <li>doesn't pay the right amount</li>
+          </ul>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Getting benefits as well if sick pay goes beyond 28 weeks</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>Your client might be entitled to contractual sick pay for longer than 28 weeks (the maximum for statutory sick pay). In this case they can also claim contributory <a href="/advisernet/benefits/esa-and-incapacity-benefit/employment-and-support-allowance-esa/employment-and-support-allowance-esa/">Employment and Support Allowance</a> (ESA) after 28 weeks.</p>
+          <p>ESA isn’t reduced by the amount of contractual sick pay. But the employer can reduce the contractual sick pay by the amount of ESA they get, if it’s in your client’s contract.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Implying contractual sick pay into contracts that don't mention it</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <div class="callout--alert">
+            <p>In these cases you’ll probably need to refer your client for <a href="/cablink/advice-and-education/expert-advice-team/Citizens-Advice-Expert-Advice-team/ask-the-expert-consultancy/">specialist help</a>.</p>
+          </div>
+          <p>Your client might be entitled to contractual sick pay if it's implied in their contract, even if it it isn't specifically mentioned.</p>
+          <p>For example, they might be able to argue that they had it in the past or that other employees have been paid it. This will depend on:</p>
+          <ul>
+            <li>how long ago they got contractual sick pay</li>
+            <li>any changes to their contract about their entitlement to contractual sick pay</li>
+          </ul>
+          <p>Depending on the contract and the circumstances, a tribunal might decide the right to contractual sick pay should be implied into the contract.</p>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Sick pay" class="section-nav__parent">Sick pay</a>
+              <ul>
+                <li><a href="entitled-to-sick-pay.html" title="Check if you're entitled to sick pay">Check if you're entitled to sick pay</a>
+                </li>
+                <li><a href="how-to-get-sick-pay.html" title="How to get sick pay">How to get sick pay</a>
+                </li>
+                <li><a href="getting-money-when-youre-off-sick.html" title="Getting money when you're off work sick">Getting money when you're off work sick</a>
+                </li>
+                <li><a href="sick-pay-when-youre-pregnant.html" title="Getting sick pay when you're pregnant">Getting sick pay when you're pregnant</a>
+                </li>
+                <li><a href="contractual-sick-pay.html" title="Contractual sick pay" class="adviser-only">Contractual sick pay</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      });
+    </script>
+  </body>
+</html>
