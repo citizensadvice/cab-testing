@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Jobs
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="/static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="/css/guide.css" rel="stylesheet">
+    <link href="/images/favicon/32.png" rel="shortcut icon">
+    <link href="/images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header id="main-nav-beta">
+      <div class="branding">
+        <div class="content">
+          <ul>
+            <li><a href="locator.html" class="icon-local">Find a local Citizens Advice</a></li>
+            <li href="#"><a>Cymraeg</a></li>
+            <li href="#"><a>Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="content"><a href="/index.html" class="logo"><img src="/images/ca-logo-hz-280px.svg" class="wide"><img src="/images/ca-logo-st-220px.svg" class="slim"></a>
+          <ul>
+            <li id="get-advice"><a href="#"><span>Get&nbsp;</span><span>Advice</span></a></li>
+            <li id="get-involved"><a href="#"><span>Get&nbsp;</span><span>Involved</span></a></li>
+            <li id="search-toggle"><a href="#"><i class="icon-search"></i></a></li>
+          </ul>
+          <div class="search">
+            <div class="field-group field-group--buttons">
+              <input id="field" type="search" placeholder="Search">
+              <button class="btn"><i class="icon-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="main-nav-beta--search">
+      <div class="field-group field-group--buttons">
+        <input id="field" type="search" placeholder="Search">
+        <button class="btn"><i class="icon-search"></i></button>
+      </div>
+    </div>
+    <div id="main-nav-beta--advice">
+      <div class="content">
+        <ul>
+          <li><a href="group.html">Benefits</a><br>Benefit eligibility and calculators. Applying and problems with applications.</li>
+          <li><a href="">Work</a><br>Rights at work, workplace discrimination, self-employment, rules and regulations of work.</li>
+          <li><a href="">Debt and money</a><br>Dealing with debts and arrears, budgeting, mortgages and pension services.</li>
+          <li><a href="">Consumer</a><br>The law and your rights when purchasing goods and services.</li>
+          <li><a href="">Relationship</a><br>Marriage, divorce, partnerships and looking after people. Births, deaths and wills.</li>
+          <li><a href="">Housing</a><br>Renting or buying a house, tenancy agreements and your rights as a homeowner or tenant.</li>
+          <li><a href="">Law and rights</a><br>Legal and civil rights, policing, the prison system and witness services.</li>
+          <li><a href="">Discrimination</a><br>Types of discrimination, steps to take if you have been discriminated against.</li>
+          <li><a href="">Tax</a><br>Taxable income, payments, refunds and problems. Council, pensioners and inheritance tax.</li>
+          <li><a href="">Healthcare</a><br>Help with NHS and dental. Private, alternative and armed forces healthcare.</li>
+          <li><a href="">Education</a><br>School and higher education, support for learning, discrimination and financial advice.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="main-nav-beta--involved">
+      <div class="content">
+        <ul>
+          <li><a href="">About Citizens Advice</a></li>
+          <li><a href="">Contact us</a></li>
+          <li><a href="">Policy research</a></li>
+          <li><a href="">Our blogs</a></li>
+          <li><a href="">Campaigns</a></li>
+          <li><a href="">How Citizens Advice works</a></li>
+          <li><a href="">Volunteer</a></li>
+          <li><a href="">Jobs</a></li>
+          <li><a href="">Press releases</a></li>
+          <li><a href="">Support us</a></li>
+          <li><a href="">The difference we make</a></li>
+          <li><a href="">Find your local Citizens Advice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="/index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="/index.html#Modules" title="Modules">Modules</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Jobs</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div class="title">
+          <h1 class="title__heading js-ref"><span class="title__title">Jobs</span></h1>
+        </div>
+        <form>
+          <div class="main-content--full-width">
+            <div class="title">
+              <h1 class="page-title">Job opportunities with local Citizens Advice</h1>
+            </div>
+            <div>
+              <p class="first-paragraph">Find a job with our local Citizens Advice. Opportunities are available across a wide range of roles in England and Wales.</p>
+            </div>
+            <div class="page-list">
+              <div class="align-right-page-list">
+                <p>Sort by: <a id="RootPlaceHolder_RootPlaceHolder_SortByJobTitle">Role title</a> | <a id="RootPlaceHolder_RootPlaceHolder_SortByClosingDate">Closing date</a></p>
+              </div>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Advice Session Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Weston-super-Mare</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 30 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Part Time Outreach Gateway Assessor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Across the Borough of Bournemouth</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 23 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Part Time Outreach Gateway Assessor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Across the Borough of Bournemouth</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 23 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Development Manager</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> South Gloucestershire</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 13 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>EPP (Expert Patient Programme) Project Coordinator</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Swadlincote</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 09 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Training and Development Team Leader</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Weston-super-Mare</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 06 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Debt Adviser</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Woolwich and outreach in the Royal Borough of Greenwich</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 06 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Generalist Adviser</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Greenwich</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 06 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Admin Support Worker</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Tunbridge Wells</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 05 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Advice Session Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> South Gloucestershire</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 03 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>GP Surgery/Children's Centre Caseworker</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> 1 day at Sturminster Newton GP Surgery, other hours at Sure Start Children's Centres in North Dorset</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 02 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Welfare Benefits Caseworker</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Offices across North Dorset</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 02 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Telephone Service Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Enfield, London</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 01 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Administration Officer</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> London</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 01 June 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Form Filler</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Manchester City Centre/Outreach Venues accross Manchester</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Enhanced Triage Assessor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Manchester City Centre</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Advice Session Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Hatfield, Hertfordshire</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Advice Session Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Birmingham</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Mental Health Caseworker</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Tunbridge Wells</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+              <article>
+                <div class="page-list-content">
+                  <h2><a>Advice Session Supervisor</a></h2>
+                  <p></p>
+                  <p class="job-meta"><strong>Location:</strong> Castle Point, Essex</p>
+                  <p class="job-meta"><strong>Closing date:</strong> 31 May 2016</p>
+                </div>
+              </article>
+            </div>
+            <div class="width-page-list">
+              <div class="pagination">
+                <ul>
+                  <li class="active"><span>1</span></li>
+                  <li><a>2</a></li>
+                  <li><a>3</a></li>
+                  <li><a>Next</a></li>
+                  <li><a>Last</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="print-only">
+          <h2>This section is print only</h2>
+        </div>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="/images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/js/translate.js"></script>
+    <script src="/js/jquery.fn.cssSlide.js"></script>
+    <script src="/js/revealable.js"></script>
+    <script src="/js/prism.js"></script>
+    <script src="/js/smooth.js"></script>
+    <script src="/js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="/js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Click #get-advice
+      	$('#get-advice').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-involved').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--advice').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--advice').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#get-involved').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-advice').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--involved').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--involved').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#search-toggle').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#get-advice').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#get-involved').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--search').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--search').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      });
+    </script>
+  </body>
+</html>
