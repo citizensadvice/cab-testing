@@ -12497,9 +12497,9 @@ h4:hover .save-button {
   border-color: #fee4c3;
 }
 #main-nav-beta--search,
-#main-nav-beta--news,
-#main-nav-beta--job,
-#main-nav-beta--org {
+#main-nav-beta--one,
+#main-nav-beta--two,
+#main-nav-beta--three {
   display: none;
 }
 #main-nav-beta--search {
@@ -12547,22 +12547,22 @@ h4:hover .save-button {
     display: none !important;
   }
 }
-#main-nav-beta--news,
-#main-nav-beta--job,
-#main-nav-beta--org {
+#main-nav-beta--one,
+#main-nav-beta--two,
+#main-nav-beta--three {
   background-color: #fff4e6;
 }
-#main-nav-beta--news .content,
-#main-nav-beta--job .content,
-#main-nav-beta--org .content {
+#main-nav-beta--one .content,
+#main-nav-beta--two .content,
+#main-nav-beta--three .content {
   max-width: 1080px;
   padding: 24px 24px 8px 24px;
   padding: 1.5rem 1.5rem .5rem 1.5rem;
   margin: 0 auto;
 }
-#main-nav-beta--news .content ul,
-#main-nav-beta--job .content ul,
-#main-nav-beta--org .content ul {
+#main-nav-beta--one .content ul,
+#main-nav-beta--two .content ul,
+#main-nav-beta--three .content ul {
   list-style: none;
   padding-left: 0;
   width: 100%;
@@ -12574,9 +12574,9 @@ h4:hover .save-button {
           column-gap: 4rem;
   margin: 0;
 }
-#main-nav-beta--news .content ul li,
-#main-nav-beta--job .content ul li,
-#main-nav-beta--org .content ul li {
+#main-nav-beta--one .content ul li,
+#main-nav-beta--two .content ul li,
+#main-nav-beta--three .content ul li {
   -webkit-column-break-inside: avoid;
      page-break-inside: avoid;
           break-inside: avoid-column;
@@ -12585,15 +12585,15 @@ h4:hover .save-button {
   display: inline-block;
   width: 100%;
 }
-#main-nav-beta--news .content ul li a,
-#main-nav-beta--job .content ul li a,
-#main-nav-beta--org .content ul li a {
+#main-nav-beta--one .content ul li a,
+#main-nav-beta--two .content ul li a,
+#main-nav-beta--three .content ul li a {
   font-weight: bold;
 }
 @media screen and (max-width: 599px) {
-  #main-nav-beta--news .content ul,
-  #main-nav-beta--job .content ul,
-  #main-nav-beta--org .content ul {
+  #main-nav-beta--one .content ul,
+  #main-nav-beta--two .content ul,
+  #main-nav-beta--three .content ul {
     -webkit-column-gap: 2rem;
        -moz-column-gap: 2rem;
             column-gap: 2rem;
