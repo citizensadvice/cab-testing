@@ -1,0 +1,66 @@
+block settings
+	- var title = "Volunteering with the Citizens Advice network"
+	- var fullpage = true
+	- var dir = ""
+	- var newfooter = true
+	- var nofooter = true
+
+extends /template/template-site.jade
+
+block content
+		.main-container
+			.home-first(style="background-color:#f2f8ff; background-image:url(#{dir}images/sample-blog/intranet-home.jpg); background-size:cover;")
+				.home__content
+					.flex-container.flex-row
+						.col-md-8.col-sm-12(style="background-color: rgba(255,255,255,0.8); padding: 3rem;")
+							.blog-lead
+								.blog-name
+									p Tuesday 13 June
+							h1(style="margin-top:0;") Hello Firstname Lastname
+							p Welcome to the intranet, this is your site for the latest organisational information, news and tools to help you do your best work. If you have any feedback #[a(href="#") let us know].
+							//.home__content-trends
+								h2 Most viewed
+								p #[a(href="#") Employment Support Allowance ]
+								p #[a(href="#") Personal Independence Payment ]
+								p #[a(href="#") Basic rights at work ]
+								p #[a(href="#") Report to Trading Standards ]
+								p #[a(href="#") Consumer ]
+						//.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+							.card-banner-top
+								p(style="color:#004b88;") Some heading
+							.card-text
+								p(style="color:#333;") Some content stuff.
+
+
+		.home-second
+			.home__content
+				.flex-container.flex-row
+					div.col-sm-12.col-sm-12
+						h2 Create your homepage
+						p Click on the plus in the box below or when you visit one of the pages in the site, making it easier to go back to where you go regularly
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#B8E3DF; height:100%;")
+						.card-banner-top
+							p(style="color:#004b88;") Job Opportunities
+						.card-text
+							p(style="color:#333;") Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+						.card-text(style="padding: 5.5rem; text-align: center;")
+							img(src="#{dir}images/intranet/plus.svg")
+
+
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+						.card-text(style="padding: 5.5rem; text-align: center;")
+							img(src="#{dir}images/intranet/plus.svg")
+
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+						.card-text(style="padding: 5.5rem; text-align: center;")
+							img(src="#{dir}images/intranet/plus.svg")
+
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+						.card-text(style="padding: 5.5rem; text-align: center;")
+							img(src="#{dir}images/intranet/plus.svg")
+
+					.col-md-4.col-sm-12.blog-sidebar--updates(style="background-color:#f2f2f2; height:100%;")
+						.card-text(style="padding: 5.5rem; text-align: center;")
+							img(src="#{dir}images/intranet/plus.svg")
