@@ -8,24 +8,22 @@ extends /template/template-site.jade
 block breadcrumbs
 	+breadcrumbs([
 		{title: "Do your job", href: dir + "home-1.html"},
-		{title: "Talent", href: dir + "home-1.html"},
+		{title: "Talent", href: dir + "talent.html"},
 		{title: title}])
 
 block content
 	.fullwidth-content
 			h1 #{title}
-			p Lorem ipsum
 
 	.fullwidth-content
 		.flex-container.flex-row
 			.col-md-8.col-sm-12
 				.contents-page__section
-					h2 Legal and policies for volunteers
+					h2#legal Legal and policies for volunteers
 					p #[a Volunteering strategy]
 					p #[a Policies for volunteers]
-					p #[a Legal status and rights of volunteers]
+					p #[a(href="legal-status-of-volunteers.html") Legal status of volunteers]
 					p #[a Keeping volunteer records]
-					p #[a Volunteers without a contract]
 					p #[a Who can volunteer?]
 
 				.contents-page__section
@@ -36,10 +34,10 @@ block content
 					p #[a References and DBS checks]
 
 				.contents-page__section
-					h2 Managing volunteers
+					h2#managing Managing volunteers
 					p #[a Induction]
 					p #[a Performance management]
-					p #[a Recognition]
+					p #[a(href="recognition.html") Recognising volunteers]
 					p #[a Volunteer complaints]
 					p #[a Measuring impact]
 					p #[a Volunteer administration]
