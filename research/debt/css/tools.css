@@ -2981,6 +2981,17 @@ img.cabtools .cabtools .content-right {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.cabtools .i-brand {
+  font-family: 'brand' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .cabtools .inline-icon {
   font-family: 'cab-icons' !important;
   speak: none;
@@ -4872,6 +4883,33 @@ img.cabtools .cabtools .content-right {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   top: 50%;
+}
+.cabtools .blocklink.blocklinks--back,
+.cabtools .blockLinks.blocklinks--back {
+  position: relative;
+  padding-right: 2.5em;
+  text-align: left;
+  padding-left: 2.5em;
+}
+.cabtools .blocklink.blocklinks--back:after,
+.cabtools .blockLinks.blocklinks--back:after {
+  right: 1em;
+  font-family: 'cab-icons' !important;
+  font-weight: 300;
+  content: "\e604";
+  color: #004B88;
+  text-align: center;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+}
+.cabtools .blocklink.blocklinks--back:after,
+.cabtools .blockLinks.blocklinks--back:after {
+  left: 16px;
+  left: 1rem;
+  text-align: left;
 }
 .cabtools .steps {
   background-color: #f2f8ff;
