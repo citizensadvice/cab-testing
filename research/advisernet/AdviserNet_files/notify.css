@@ -1,0 +1,62 @@
+/**
+ * ADVISERNET NOTIFICATION
+ *
+ */
+
+.section-notice__content {
+  max-width: 100%;
+  margin: auto;
+  clear: left;
+  padding: 16px 0 0 16px;
+  padding: 0 0 0 1rem;
+  border-bottom: #eeeeee 1px solid;
+  background-color: #FEE4C3;
+}
+.section-notice__content .badge {
+  background-color: #004b88;
+  color: #fff;
+  margin-right: 16px;
+  margin-right: 1rem;
+}
+.section-notice__content .badge.changing {
+  background-color: #FCBB69;
+}
+@media (max-width: 599px) {
+  .section-notice {
+    display: none;
+  }
+}
+#sitenotice {
+  background-color: #fee4c3;
+}
+#sitenotice .sitenotice__content {
+  max-width: 1080px;
+  margin: auto;
+  clear: left;
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  overflow: hidden;
+}
+@media (max-width: 599px) {
+  #sitenotice .sitenotice__content {
+    font-size: 0.875rem;
+  }
+}
+#sitenotice .sitenotice__content p {
+  margin: 0;
+}
+#sitenotice .sitenotice__content .badge {
+  background-color: #004b88;
+  color: #fff;
+  margin-right: 8px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+@media (max-width: 839px) {
+  .section-notice__content {
+    padding: 1rem 1rem 0 1rem;
+  }
+  .section-notice__content p {
+    font-size: 0.875rem;
+  }
+}
