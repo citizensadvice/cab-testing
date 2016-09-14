@@ -113,9 +113,9 @@
           <div class="articleContent">
             <h2>About your energy</h2>
             <div>
-              <h3>Confirm your suppliers</h3>
+              <h3>Confirm your providers</h3>
               <div class="fieldset">
-                <label for="energySupplier">Your water supplier</label>
+                <label for="waterSupplier">Your water supplier</label>
                 <div class="dropdown">
                   <select id="energySupplier"> 
                     <option>Thames Water</option>
@@ -126,9 +126,24 @@
                 </div>
               </div>
               <div class="fieldset">
-                <label for="energySupplier">Your electricity distributor</label>
+                <label for="energyDistributor">Your electricity distributor</label>
                 <div class="dropdown">
                   <select id="energySupplier"> 
+                    <option>Western Power</option>
+                    <option>Scottish Power</option>
+                    <option>Energy Networks</option>
+                    <option>SSE Networks</option>
+                    <option>Northen Powergrid</option>
+                    <option>Energy North West</option>
+                    <option>UK Power Networks</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fieldset">
+                <label for="electricitySupplier">Choose your electricity supplier</label>
+                <div class="dropdown">
+                  <select id="energySupplier"> 
+                    <option>Please select</option>
                     <option>Better Energy</option>
                     <option>Bristol Energy</option>
                     <option>British Gas</option>
@@ -158,49 +173,15 @@
                 </div>
               </div>
               <fieldset class="conditional">
-                <label for="conditional-two">Is your energy supplier different to the distributor?</label>
+                <label for="conditional-two">Is your gas supplier different to the energy supplier?</label>
                 <label class="radio radio--block">
-                  <input checked name="conditional-two" type="radio" value="1">Same as above
+                  <input checked name="conditional-two" type="radio" value="1">Same supplier
                 </label>
                 <label class="radio radio--block">
-                  <input name="conditional-two" type="radio" value="2">Different 
+                  <input name="conditional-two" type="radio" value="2">Different supplier 
                 </label>
               </fieldset>
               <div class="conditional--fields">
-                <div class="fieldset"></div>
-                <label for="energySupplier">Electricity supplier</label>
-                <div class="dropdown">
-                  <select id="energySupplier"> 
-                    <option>Better Energy</option>
-                    <option>Bristol Energy</option>
-                    <option>British Gas</option>
-                    <option>Cooperative Energy</option>
-                    <option>E Electricity and Gas</option>
-                    <option>Ebico</option>
-                    <option>Economy Energy</option>
-                    <option>Ecotricity</option>
-                    <option>EDF Energy</option>
-                    <option>EON</option>
-                    <option>Extra Energy</option>
-                    <option>First Utility</option>
-                    <option>Flow Energy</option>
-                    <option>GB Energy</option>
-                    <option>Good Energy</option>
-                    <option>Green Star Energy</option>
-                    <option>Npower</option>
-                    <option>Octopus Energy</option>
-                    <option>Ovo Energy</option>
-                    <option>Robin Hood Energy</option>
-                    <option>ScottishPower</option>
-                    <option>Spark Energy</option>
-                    <option>SSE</option>
-                    <option>Utilita</option>
-                    <option>Utility Warehouse</option>
-                  </select>
-                </div>
-                <div>
-                  <p></p>
-                </div>
                 <div class="fieldset">
                   <label for="energySupplier">Gas supplier</label>
                   <div class="dropdown">
