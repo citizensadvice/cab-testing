@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Energy supplier comparison
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="#" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="#" title="Energy">Energy</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Energy supplier comparison</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Energy supplier comparison</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <div class="articleContent">
+            <p>Morbi porta justo sem, eget consequat purus porttitor nec. Pellentesque vitae euismod nulla, a commodo diam. Phasellus eget tincidunt nibh.</p>
+            <h2>Overview</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor dui semper, vulputate magna ut, suscipit eros. Nunc non nunc nec ligula consequat aliquet non eu elit.</p>
+            <table class="sortable energy-comparison modern">
+              <thead>
+                <tr>
+                  <th scope="col" class="col-rank sorttable_numeric">Rank</th>
+                  <th scope="col" class="col-supp">Supplier</th>
+                  <th scope="col" class="col-rate">Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="openit" style="cursor:pointer">
+                  <td class="increase"><span class="inline-badge">1</span></td>
+                  <td>Supplier A</td>
+                  <td class="rating"><span>3</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">2</span></td>
+                  <td>Supplier B</td>
+                  <td class="rating"><span>3.25</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">3</span></td>
+                  <td>Supplier C</td>
+                  <td class="rating"><span>4</span></td>
+                </tr>
+                <tr>
+                  <td><span class="inline-badge">4</span></td>
+                  <td>Supplier D</td>
+                  <td class="rating"><span>3</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">5</span></td>
+                  <td>Supplier E</td>
+                  <td class="rating"><span>3.5</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">6</span></td>
+                  <td>Supplier F</td>
+                  <td class="rating"><span>2.25</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">7</span></td>
+                  <td>Supplier G</td>
+                  <td class="rating"><span>2.5</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">8</span></td>
+                  <td>Supplier H</td>
+                  <td class="rating"><span>2.75</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">9</span></td>
+                  <td>Supplier I</td>
+                  <td class="rating"><span>2</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">10</span></td>
+                  <td>Supplier J</td>
+                  <td class="rating"><span>2.25</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">11</span></td>
+                  <td>Supplier K</td>
+                  <td class="rating"><span>3.25</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">12</span></td>
+                  <td>Supplier L</td>
+                  <td class="rating"><span>3.5</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">13</span></td>
+                  <td>Supplier M</td>
+                  <td class="rating"><span>2.5</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">14</span></td>
+                  <td>Supplier N</td>
+                  <td class="rating"><span>2.5</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">15</span></td>
+                  <td>Supplier O</td>
+                  <td class="rating"><span>2.75</span></td>
+                </tr>
+                <tr>
+                  <td class="increase"><span class="inline-badge">16</span></td>
+                  <td>Supplier P</td>
+                  <td class="rating"><span>3.25</span></td>
+                </tr>
+                <tr>
+                  <td><span class="inline-badge">17</span></td>
+                  <td>Supplier Q</td>
+                  <td class="rating"><span>2.75</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">18</span></td>
+                  <td>Supplier R</td>
+                  <td class="rating"><span>n/a</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">19</span></td>
+                  <td>Supplier S</td>
+                  <td class="rating"><span>n/a</span></td>
+                </tr>
+                <tr>
+                  <td class="decrease"><span class="inline-badge">20</span></td>
+                  <td>Supplier T</td>
+                  <td class="rating"><span>n/a</span></td>
+                </tr>
+                <tr>
+                  <td><span class="inline-badge">21</span></td>
+                  <td>Supplier U</td>
+                  <td class="rating"><span>n/a</span></td>
+                </tr>
+                <tr>
+                  <td><span class="inline-badge">22</span></td>
+                  <td>Supplier V</td>
+                  <td class="rating"><span>n/a</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <h2>Methodology</h2>
+            <p>Morbi porta justo sem, eget consequat purus porttitor nec. Pellentesque vitae euismod nulla, a commodo diam. Phasellus eget tincidunt nibh. Ut sem arcu, aliquam non lectus eu, faucibus viverra lacus.</p><a href="comparison-details.html" class="blocklink">How we score values</a>
+            <div id="overlay" style="display:none" class="overlay">
+              <div role="alertdialog" aria-labelledby="dialog-1-label" aria-describedby="dialog-1-main" tabindex="-1" style="z-index: 3;" class="dialog">
+                <header class="dialog__header">
+                  <h2 id="dialog-1-label" class="dialog__title">Supplier A</h2>
+                  <button type="button" data-action="close" class="dialog__close"><i aria-hidden="true" class="dialog__close-icon"></i><span class="dialog__close-text">Close</span></button>
+                </header>
+                <div id="dialog-1-main" class="dialog__main">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th scope="row" width="40%">Complaints per 100,000 customers</th>
+                        <td width="40%">40.6</td>
+                        <td width="20%" class="rating"><span>5</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Customers satisfied with service</th>
+                        <td>53.78%</td>
+                        <td class="rating"><span>2</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Customers satisfied with billing</th>
+                        <td>40.6</td>
+                        <td class="rating"><span>5</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Proportion of switches in 21 days</th>
+                        <td>80.94%</td>
+                        <td class="rating"><span>3</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Customer commitment</th>
+                        <td>Signed to switching guarantee<br>Not signed to billing code</td>
+                        <td class="rating"><span>4</span></td>
+                      </tr>
+                    </tbody>
+                  </table><a href="comparison-details.html" class="blocklink">How we score values</a>
+                  <h3>Contact</h3>
+                  <p><strong>Telephone:</strong> 0800 0480202<br><strong>Email:</strong> <a>contact@suppliera.co.uk</a><br><strong>Web Chat:</strong> n/a<br><strong>Ring backs:</strong> n/a<br><strong>Mobile hotline:</strong> n/a<br><strong>Minicom / Text:</strong> 18001 0800 072 8626<br></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Energy" class="section-nav__parent">Energy</a>
+              <ul>
+                <li><a href="comparison-5.html" title="Energy supplier comparison">Energy supplier comparison</a>
+                </li>
+                <li><a href="comparison-details.html" title="How we score values">How we score values</a>
+                </li>
+                <li><a href="#" title="Compare energy prices">Compare energy prices</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="../../images/ca-logo_100px.svg" width="100">Copyright © 2016 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <script src="../../js/sorttable.js"></script>
+    <script>
+      $(document).ready(function() {
+      	$('#openit').click(function(){
+      		$('#overlay').show();
+      	})
+      	$('.dialog__close').click(function(){
+      		$('#overlay').hide();
+      	})
+      
+      	$(".rating").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score < 2) {
+      			$(this).find('span').addClass("rate-1--badge");
+      		} else if (score > 1 && score < 3) {
+      			$(this).find('span').addClass("rate-2--badge");
+      		} else if (score > 2 && score < 4) {
+      			$(this).find('span').addClass("rate-3--badge");
+      		} else if (score > 3 && score < 5) {
+      			$(this).find('span').addClass("rate-4--badge");
+      		} else if (score > 4 && score < 6) {
+      			$(this).find('span').addClass("rate-5--badge");
+      		}
+      	})
+      
+      	$(".modern .rating").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score < 2) {
+      			$(this).addClass("rate-1--cell");
+      		} else if (score > 1 && score < 3) {
+      			$(this).addClass("rate-2--cell");
+      		} else if (score > 2 && score < 4) {
+      			$(this).addClass("rate-3--cell");
+      		} else if (score > 3 && score < 5) {
+      			$(this).addClass("rate-4--cell");
+      		} else if (score > 4 && score < 6) {
+      			$(this).addClass("rate-5--cell");
+      		}
+      	})
+      });
+      
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

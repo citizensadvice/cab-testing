@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Making a complaint
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+    <style>
+      .resolver {
+      	border: none !important;
+      	float: right;
+      	margin: 0 0 1rem 1rem;
+      }
+      @media screen and (max-width: 599px) {
+      	.resolver {
+      		display: block;
+      		float: none;
+      		margin: 0 0 1rem 0;
+      	}
+      }
+      
+    </style>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header id="main-nav-beta">
+      <div class="branding">
+        <div class="content">
+          <ul>
+            <li><a href="locator.html" class="icon-local">Find a local Citizens Advice</a></li>
+            <li href="#"><a>Cymraeg</a></li>
+            <li href="#"><a>Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="content"><a href="../../index.html" class="logo"><img src="../../images/ca-logo-hz-280px.svg" class="wide"><img src="../../images/ca-logo-st-220px.svg" class="slim"></a>
+          <ul>
+            <li id="get-advice"><a href="#"><span>Get&nbsp;</span><span>Advice</span></a></li>
+            <li id="get-involved"><a href="#"><span>Get&nbsp;</span><span>Involved</span></a></li>
+            <li id="search-toggle"><a href="#"><i class="icon-search"></i></a></li>
+          </ul>
+          <div class="search">
+            <div class="field-group field-group--buttons">
+              <input id="field" type="search" placeholder="Search">
+              <button class="btn"><i class="icon-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="main-nav-beta--search">
+      <div class="field-group field-group--buttons">
+        <input id="field" type="search" placeholder="Search">
+        <button class="btn"><i class="icon-search"></i></button>
+      </div>
+    </div>
+    <div id="main-nav-beta--advice">
+      <div class="content">
+        <ul>
+          <li><a href="group.html">Benefits</a><br>Benefit eligibility and calculators. Applying and problems with applications.</li>
+          <li><a href="">Work</a><br>Rights at work, workplace discrimination, self-employment, rules and regulations of work.</li>
+          <li><a href="">Debt and money</a><br>Dealing with debts and arrears, budgeting, mortgages and pension services.</li>
+          <li><a href="">Consumer</a><br>The law and your rights when purchasing goods and services.</li>
+          <li><a href="">Relationship</a><br>Marriage, divorce, partnerships and looking after people. Births, deaths and wills.</li>
+          <li><a href="">Housing</a><br>Renting or buying a house, tenancy agreements and your rights as a homeowner or tenant.</li>
+          <li><a href="">Law and rights</a><br>Legal and civil rights, policing, the prison system and witness services.</li>
+          <li><a href="">Discrimination</a><br>Types of discrimination, steps to take if you have been discriminated against.</li>
+          <li><a href="">Tax</a><br>Taxable income, payments, refunds and problems. Council, pensioners and inheritance tax.</li>
+          <li><a href="">Healthcare</a><br>Help with NHS and dental. Private, alternative and armed forces healthcare.</li>
+          <li><a href="">Education</a><br>School and higher education, support for learning, discrimination and financial advice.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="main-nav-beta--involved">
+      <div class="content">
+        <ul>
+          <li><a href="">About Citizens Advice</a></li>
+          <li><a href="">Contact us</a></li>
+          <li><a href="">Policy research</a></li>
+          <li><a href="">Our blogs</a></li>
+          <li><a href="">Campaigns</a></li>
+          <li><a href="">How Citizens Advice works</a></li>
+          <li><a href="">Volunteer</a></li>
+          <li><a href="">Jobs</a></li>
+          <li><a href="">Press releases</a></li>
+          <li><a href="">Support us</a></li>
+          <li><a href="">The difference we make</a></li>
+          <li><a href="">Find your local Citizens Advice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="#" title="Get Advice">Get Advice</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="#" title="Consumer">Consumer</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Your energy supply</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Making a complaint</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <div class="articleContent">
+            <p>
+              <!--img.resolver(alt="", src="#{dir}images/logo-resolver.png", width="175")-->Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida eget magna ut imperdiet. Donec vel urna et lectus congue eleifend quis pharetra nunc. Nullam at dapibus sem. Vivamus vitae nulla ex. Duis pellentesque ultricies ullamcorper. Sed a metus dolor. Mauris pellentesque quam arcu.
+            </p>
+            <div class="fieldset">
+              <label>Select your energy supplier</label>
+              <div class="dropdown">
+                <select>
+                  <option value="">Please select</option>
+                  <option value="Affect Energy">Affect Energy</option>
+                  <option value="Avro Energy">Avro Energy</option>
+                  <option value="Bristol Energy">Bristol Energy</option>
+                  <option value="British Gas">British Gas</option>
+                  <option value="Bulb">Bulb</option>
+                  <option value="Co-operative Energy">Co-operative Energy</option>
+                  <option value="E">E</option>
+                  <option value="E.ON">E.ON</option>
+                  <option value="EBICo">EBICo</option>
+                  <option value="EDF Energy">EDF Energy</option>
+                  <option value="Economy Energy">Economy Energy</option>
+                  <option value="Ecotricity">Ecotricity</option>
+                  <option value="EnergySW">EnergySW</option>
+                  <option value="Extra Energy">Extra Energy</option>
+                  <option value="Fairerpower">Fairerpower</option>
+                  <option value="First Utility">First Utility</option>
+                  <option value="Flow Energy">Flow Energy</option>
+                  <option value="Future Energy">Future Energy</option>
+                  <option value="GB Energy Supply">GB Energy Supply</option>
+                  <option value="Glide">Glide</option>
+                  <option value="GnERGY">GnERGY</option>
+                  <option value="Go Effortless Energy">Go Effortless Energy</option>
+                  <option value="Good Energy">Good Energy</option>
+                  <option value="Green Energy (UK) plc">Green Energy (UK) plc</option>
+                  <option value="Green Star Energy">Green Star Energy</option>
+                  <option value="IRESA Limited">IRESA Limited</option>
+                  <option value="iSupplyEnergy">iSupplyEnergy</option>
+                  <option value="LoCO2 Energy">LoCO2 Energy</option>
+                  <option value="M&amp;amp;S Energy">M&amp;S Energy</option>
+                  <option value="npower">npower</option>
+                  <option value="OVO Energy">OVO Energy</option>
+                  <option value="Octopus Energy">Octopus Energy</option>
+                  <option value="Oink Energy">Oink Energy</option>
+                  <option value="PFP Energy">PFP Energy</option>
+                  <option value="Peterborough Energy">Peterborough Energy</option>
+                  <option value="Robin Hood Energy">Robin Hood Energy</option>
+                  <option value="SSE">SSE</option>
+                  <option value="SSE Atlantic">SSE Atlantic</option>
+                  <option value="SSE Scottish Hydro">SSE Scottish Hydro</option>
+                  <option value="SSE Southern Electric">SSE Southern Electric</option>
+                  <option value="SSE Swalec">SSE Swalec</option>
+                  <option value="Sainsbury's Energy">Sainsbury's Energy</option>
+                  <option value="ScottishPower">ScottishPower</option>
+                  <option value="So Energy">So Energy</option>
+                  <option value="Southend Energy">Southend Energy</option>
+                  <option value="Spark Energy">Spark Energy</option>
+                  <option value="Telecom Plus">Telecom Plus</option>
+                  <option value="Tonik Energy">Tonik Energy</option>
+                  <option value="Utilita">Utilita</option>
+                </select>
+              </div>
+              <button class="btn right-button-icon">Begin a complaint</button>
+            </div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Make a complaint" class="section-nav__parent">Make a complaint</a>
+              <ul>
+                <li><a href="resolver.html" title="Complain to your energy supplier">Complain to your energy supplier</a>
+                </li>
+                <li><a href="#" title="Complain to the energy ombudsman">Complain to the energy ombudsman</a>
+                </li>
+                <li><a href="#" title="Letter to complain to an energy supplier">Letter to complain to an energy supplier</a>
+                </li>
+                <li><a href="#" title="Check the prepayment meter rules your supplier has to follow">Check the prepayment meter rules your supplier has to follow</a>
+                </li>
+                <li><a href="resolver-2.html" title="Making a complaint">Making a complaint</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <!--script(src="#{dir}js/smooth.js")-->
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Click #get-advice
+      	$('#get-advice').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-involved').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--advice').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--advice').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#get-involved').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-advice').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--involved').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--involved').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#search-toggle').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#get-advice').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#get-involved').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--search').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--search').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

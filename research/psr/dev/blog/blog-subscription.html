@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Subscribe by email
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="blog-header">
+      <div class="blog-header--content"><a href="blog-home.html" style="border: none;"><img src="../../images/ca-logo-hz-white-280px.svg" class="wide"><img src="../../images/ca-logo-st-white-220px.svg" class="slim"></a>
+        <!--#toggle-->
+        <!--ul.blog-navigation
+        li
+        	a(href="blog-team.html") The Team
+        li
+        	a(href="#") About
+        li
+        	a(href="blog-get-involved.html") Get involved
+        li
+        	a(href="blog-jobs.html") Jobs
+        
+        -->
+        <div class="blog-header--branding"><a href="#"></a></div>
+      </div>
+      <div class="blog-header--branding">
+        <p>Blog</p>
+        <h1>Policy blog</h1>
+      </div>
+    </header>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+      </nav>
+      <div class="fullwidth">
+        <div class="fullwidth-content">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Subscribe by email</span></h1>
+          </div>
+          <div class="flex-row">
+            <div class="col-sm-8">
+              <form></form>
+              <div class="fieldset">
+                <label for="standardField">Your email</label>
+                <input id="standardField" placeholder="email@email.com" type="email">
+              </div>
+              <div style="display:block;" class="fieldset">
+                <legend for="checkbox">Select the blogs you'd like to subscribe to</legend>
+                <label class="checkbox checkbox--block">
+                  <input name="checkbox" type="checkbox">
+                  <p><span>Charity blog</span><br>A blog for the whole charity</p>
+                </label>
+                <label class="checkbox checkbox--block">
+                  <input name="checkbox" type="checkbox">
+                  <p><span>Policy blog</span><br>Our blog about policy updates and changes</p>
+                </label>
+                <label class="checkbox checkbox--block">
+                  <input checked name="checkbox" type="checkbox">
+                  <p><span>Digital blog</span><br>The digital teams blog</p>
+                </label>
+              </div>
+              <div class="fieldset">
+                <button type="submit" class="btn tick-button-icon">Update email preferences</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <!--script(src="#{dir}js/smooth.js")-->
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

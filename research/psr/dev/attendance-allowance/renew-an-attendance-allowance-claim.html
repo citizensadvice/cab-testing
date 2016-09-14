@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Renew an Attendance Allowance claim
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign out</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../index.html" title="Claiming Attendance Allowance">Claiming Attendance Allowance</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Renew an Attendance Allowance claim</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Renew an Attendance Allowance claim</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <div class="articleContent">
+            <div>
+              <p>Your Attendance Allowance will be awarded for either a fixed or indefinite period.</p>
+              <p>If you were told you&apos;d get Attendance Allowance for a fixed period, you&apos;ll need to renew your claim before the fixed period ends. You&apos;ll still need to meet the <a href="check-if-youre-entitled-to-attendance-allowance.html">eligibility criteria</a> when you claim again.</p>
+              <p>Your Attendance Allowance will stop if you don&apos;t renew your claim.</p>
+              <h2 id="h-your-renewal-letter" class="ref-heading"><span class="ref-heading__heading">Your renewal letter</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You should get a letter from the Department for Work and Pensions (DWP) about 4 months before your Attendance Allowance is due to end. The letter will remind you that you have to make a new claim.</p>
+              <p>It&apos;s a good idea to reapply at least 2 months before the end of your existing Attendance Allowance award. If you reapply 2 months before your existing claim ends, there won&apos;t be a break in your payments if you get Attendance Allowance again.</p>
+              <div class="callout--alert">
+                <p>Don&apos;t ignore your Attendance Allowance renewal letter - your money will stop if you don&apos;t make a new claim.</p>
+              </div>
+              <h3 id="h-if-you-don-t-get-a-renewal-letter" class="ref-heading"><span class="ref-heading__heading">If you don&apos;t get a renewal letter</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>If you don&apos;t get a renewal letter it doesn&apos;t mean your Attendance Allowance will continue - you&apos;ll still need to reapply.</p>
+              <p>If your benefit is due to end within 2 months and you haven&apos;t got a letter yet, call the DWP&apos;s Attendance Allowance helpline. Tell them your Attendance Allowance is ending and you need to renew your claim - they&apos;ll send you a renewal claim form.</p>
+              <p>Attendance Allowance helpline<br>Telephone: 0345 605 6055<br>Textphone: 0345 604 5312<br>Open Monday to Friday, 8am to 6pm<br>Calls cost up to 12p a minute from landlines, or from 3p to 45p a minute from mobiles.</p>
+              <h2 id="h-filling-in-the-renewal-claim-form" class="ref-heading"><span class="ref-heading__heading">Filling in the renewal claim form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You should look at your original Attendance Allowance claim form if you kept a copy - it could help you answer the questions on your new claim form.</p>
+              <p>Don&apos;t worry if you didn&apos;t keep a copy - a specialist at&nbsp; <a href="#">your nearest Citizens Advice</a>&nbsp;can help you with the form, or even fill it in for you.</p>
+              <p>You can also read our advice on <a href="help-with-filling-in-the-attendance-allowance-form.html">help with the Attendance Allowance claim form</a>.</p>
+              <h2 id="h-if-you-have-an-indefinite-award-" class="ref-heading"><span class="ref-heading__heading">If you have an &apos;indefinite award&apos;</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You might have been given Attendance Allowance for an indefinite period. This doesn&apos;t mean you&apos;ll continue to get Attendance Allowance for the rest of your life - it just means there&apos;s no fixed date for the DWP to review your claim.</p>
+              <p>The DWP might want to review your claim if you tell them about a change that could affect your Attendance Allowance. You must tell them if:</p>
+              <ul>
+                <li>your illness or disability gets better or worse</li>
+                <li>you go into hospital</li>
+                <li>you go into a care home</li>
+              </ul>
+              <p>Read more about changes that could affect your Attendance Allowance.</p>
+              <h2 id="h-if-your-attendance-allowance-has-ended" class="ref-heading"><span class="ref-heading__heading">If your Attendance Allowance has ended</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>If your Attendance Allowance ended less than 2 years ago, you can make a new claim for the same illness or disability. You won&apos;t have to meet the 6-month qualifying period again. You&apos;ll need to meet all the other <a href="check-if-youre-entitled-to-attendance-allowance.html">eligibility criteria</a>.</p>
+              <p>Contact the DWP&apos;s Attendance Allowance helpline to make a new claim. Tell them that your Attendance Allowance ended less than 2 years ago and that you&apos;re reapplying for the same condition.</p>
+              <p><strong>Attendance Allowance helpline</strong><br>Telephone: 0345 605 6055<br>Textphone: 0345 604 5312<br>Open Monday to Friday, 8am to 6pm<br>Calls cost up to 12p a minute from landlines, or from 3p to 45p a minute from mobiles.</p>
+              <p>If your Attendance Allowance ended more than 2 years ago, you&apos;ll need to make a new claim. Your previous claim will be disregarded, even if you&apos;re applying for the same illness or disability.</p>
+              <p>You&apos;ll need to meet the 6-month qualifying period and all the other <a href="check-if-youre-entitled-to-attendance-allowance.html">eligibility criteria</a>.</p>
+            </div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Claiming Attendance Allowance" class="section-nav__parent">Claiming Attendance Allowance</a>
+              <ul>
+                <li><a href="how-to-claim-attendance-allowance.html" title="How to claim Attendance Allowance">How to claim Attendance Allowance</a>
+                </li>
+                <li><a href="help-with-filling-in-the-attendance-allowance-form.html" title="Help with filling in the Attendance Allowance form">Help with filling in the Attendance Allowance form</a>
+                </li>
+                <li><a href="claiming-attendance-allowance-if-youre-terminally-ill.html" title="Claiming Attendance Allowance if you're terminally ill">Claiming Attendance Allowance if you're terminally ill</a>
+                </li>
+                <li><a href="renew-an-attendance-allowance-claim.html" title="Renew an Attendance Allowance claim">Renew an Attendance Allowance claim</a>
+                </li>
+                <li><a href="change-of-circumstances-while-youre-getting-attendance-allowance.html" title="Change of circumstances while you're getting Attendance Allowance">Change of circumstances while you're getting Attendance Allowance</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="../../images/ca-logo_100px.svg" width="100">Copyright © 2016 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
