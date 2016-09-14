@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- North East Doncaster (Thorne)
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../../css/guide.css" rel="stylesheet">
+    <link href="../../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header id="main-nav-beta">
+      <div class="branding">
+        <div class="content">
+          <ul>
+            <li><a href="locator.html" class="icon-local">Find a local Citizens Advice</a></li>
+            <li href="#"><a>Cymraeg</a></li>
+            <li href="#"><a>Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="content"><a href="../../../index.html" class="logo"><img src="../../../images/ca-logo-hz-280px.svg" class="wide"><img src="../../../images/ca-logo-st-220px.svg" class="slim"></a>
+          <ul>
+            <li id="get-advice"><a href="#"><span>Get&nbsp;</span><span>Advice</span></a></li>
+            <li id="get-involved"><a href="#"><span>Get&nbsp;</span><span>Involved</span></a></li>
+            <li id="search-toggle"><a href="#"><i class="icon-search"></i></a></li>
+          </ul>
+          <div class="search">
+            <div class="field-group field-group--buttons">
+              <input id="field" type="search" placeholder="Search">
+              <button class="btn"><i class="icon-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="main-nav-beta--search">
+      <div class="field-group field-group--buttons">
+        <input id="field" type="search" placeholder="Search">
+        <button class="btn"><i class="icon-search"></i></button>
+      </div>
+    </div>
+    <div id="main-nav-beta--advice">
+      <div class="content">
+        <ul>
+          <li><a href="group.html">Benefits</a><br>Benefit eligibility and calculators. Applying and problems with applications.</li>
+          <li><a href="">Work</a><br>Rights at work, workplace discrimination, self-employment, rules and regulations of work.</li>
+          <li><a href="">Debt and money</a><br>Dealing with debts and arrears, budgeting, mortgages and pension services.</li>
+          <li><a href="">Consumer</a><br>The law and your rights when purchasing goods and services.</li>
+          <li><a href="">Relationship</a><br>Marriage, divorce, partnerships and looking after people. Births, deaths and wills.</li>
+          <li><a href="">Housing</a><br>Renting or buying a house, tenancy agreements and your rights as a homeowner or tenant.</li>
+          <li><a href="">Law and rights</a><br>Legal and civil rights, policing, the prison system and witness services.</li>
+          <li><a href="">Discrimination</a><br>Types of discrimination, steps to take if you have been discriminated against.</li>
+          <li><a href="">Tax</a><br>Taxable income, payments, refunds and problems. Council, pensioners and inheritance tax.</li>
+          <li><a href="">Healthcare</a><br>Help with NHS and dental. Private, alternative and armed forces healthcare.</li>
+          <li><a href="">Education</a><br>School and higher education, support for learning, discrimination and financial advice.</li>
+        </ul>
+      </div>
+    </div>
+    <div id="main-nav-beta--involved">
+      <div class="content">
+        <ul>
+          <li><a href="">About Citizens Advice</a></li>
+          <li><a href="">Contact us</a></li>
+          <li><a href="">Policy research</a></li>
+          <li><a href="">Our blogs</a></li>
+          <li><a href="">Campaigns</a></li>
+          <li><a href="">How Citizens Advice works</a></li>
+          <li><a href="">Volunteer</a></li>
+          <li><a href="">Jobs</a></li>
+          <li><a href="">Press releases</a></li>
+          <li><a href="">Support us</a></li>
+          <li><a href="">The difference we make</a></li>
+          <li><a href="">Find your local Citizens Advice</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-container">
+      <header id="local-nav" class="js-make-sticky">
+        <div class="local-branding">
+          <div class="content"><img src="../../../images/local/North-East-Doncaster.svg">
+            <!--.local-name North East Doncaster (Thorne)-->
+            <ul>
+              <li><a href="local-home.html">Home</a></li>
+              <!--lia News
+              -->
+              <li><a href="local-about.html">About</a></li>
+              <li><a href="local-contact.html">Contact us</a></li>
+              <li>
+                <button type="button" class="btn btn-success">Donate</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <nav class="main-breadcrumb">
+      </nav>
+      <div class="fullwidth">
+        <div class="fullwidth-content">
+          <div class="flex-row">
+            <div class="col-sm-8">
+              <h2 style="margin-top:0;">About Citizens Advice North East Doncaster (Thorne)</h2>
+              <p>We provide free, confidential and impartial advice and campaign on big issues affecting people's lives.</p>
+              <p>Our goal is to help everyone find a way forward, whatever problem they face.</p>
+              <p>We're an independent charity and part of the Citizens Advice network across England and Wales.</p>
+              <h2>Our supporters</h2>
+              <p>As a charity we could not help give free, confidential advice to help people without the backing of our supporters, we thank them for all their support:</p>
+              <ul>
+                <li>Big Lottery Fund</li>
+                <li>Money Advice Service</li>
+                <li>Robert Forster Charity</li>
+                <li>Doncaster Metropolitan Borough Council</li>
+                <li>Hatfield Town Council</li>
+                <li>Stainforth Town Council</li>
+                <li>Thorne-Moorends Town Council.</li>
+              </ul><img src="../../../images/local/mas.jpg"><img src="../../../images/local/lottery.jpg">
+            </div>
+            <div class="col-sm-4">
+              <!--h3 Our supporters-->
+              <!--img(src="#{dir}images/local/mas.jpg")-->
+              <!--img(src="#{dir}images/local/lottery.jpg")-->
+              <div class="row">
+                <div class="cards">
+                  <div style="background-color:#004b88;" class="card-banner-top">
+                    <h3 style="color:#fff;">Our main office</h3>
+                  </div>
+                  <div class="card-image-top"><img src="../../../images/local/kilburn-cab.jpg"></div>
+                  <div class="card-text">
+                    <p>Thorne Office, Marriott House 5a Browns Lane Thorne</p>DONCASTER<br>South Yorkshire<br>DN8 5AF.
+                    <p><a href="#">See our opening times</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fullwidth-content">
+        <div class="flex-row">
+          <div class="col-sm-12"></div>
+        </div>
+      </div>
+      <!--.fullwidth-yellow
+      .fullwidth-content
+      	.flex-row
+      		.col-sm-6
+      			form(action="http://maps.google.co.uk/maps" method="get")
+      				label Get directions from your location
+      				.field-group.field-group--buttons
+      					input#saddr(type="search", name="saddr")
+      					button.btn(type="submit") Directions&nbsp; <span class="i">&#xe605;</span>
+      					input(type="hidden", name="daddr", value="DN8 5AF")
+      					input(type="hidden", name="hl", value="en")
+      
+      	.flex-row
+      		.col-sm-12
+      			iframe(src="https://fusiontables.googleusercontent.com/fusiontables/embedviz?q=select+col2+from+16BWr4oiZboc2VpRHEJt37SmzHVoN-EzKM9aLkkMQ+where+col1+in+(%27Super+tester%27,+%27Tester%27,+%27Not+signed+up%27)&viz=MAP&h=false&lat=52.36404897789263&lng=-1.6940654999999651&t=1&z=7&l=col2&y=2&tmplt=2&hml=ONE_COL_LAT_LNG", width="100%", height="300px", scrolling="no")
+      -->
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../../js/translate.js"></script>
+    <script src="../../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../../js/revealable.js"></script>
+    <script src="../../../js/prism.js"></script>
+    <!--script(src="#{dir}js/smooth.js")-->
+    <script src="../../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Click #get-advice
+      	$('#get-advice').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-involved').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--advice').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--advice').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#get-involved').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-advice').hasClass("active") || $('#search-toggle').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#search-toggle').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			$('#main-nav-beta--search').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--involved').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--involved').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      
+      	// Click #get-advice
+      	$('#search-toggle').click(function(){
+      		// If either of the other two are active
+      		if ($('#get-involved').hasClass("active") || $('#get-advice').hasClass("active")) {
+      			// Remove class from other two
+      			$('#get-advice').removeClass("active");
+      			$('#get-involved').removeClass("active");
+      			// Slide other two up
+      			$('#main-nav-beta--involved').slideUp('fast');
+      			$('#main-nav-beta--advice').slideUp('fast');
+      			// Wait 250ms and then slide down
+      			$('#main-nav-beta--search').delay(250).slideDown('fast');
+      
+      		} else {
+      			$('#main-nav-beta--search').slideToggle('fast');
+      		}
+      		$(this).toggleClass("active");
+      	});
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+      	$("li[role='tab']").click(function(){
+      		$("li[role='tab']").attr("aria-selected","false"); //deselect all tabs
+      		$("div[role='tabpanel']").attr("aria-hidden","true"); //hide all panels
+      
+      		$(this).attr("aria-selected","true");  // select this tab
+      		$("#"+($(this).attr("aria-controls"))).attr("aria-hidden","false");  // show this panel
+      	});
+      
+      	$("li[role='tab']").keydown(function(ev) {
+      		if (ev.which ==13) {
+      			$(this).click()
+      		}
+      	});
+      
+      	//This adds keyboard function that pressing an arrow left or arrow right from the tabs toggle the tabs.
+      	$("li[role='tab']").keydown(function(ev) {
+      		var selected= $(this).attr("aria-selected");
+      		if (ev.which ==39) {
+      			if ($(this).next().length) {
+      				$("li[role='tab']").attr("aria-selected","false"); //deselect all tabs
+      				$("div[role='tabpanel']").attr("aria-hidden","true"); //hide all panels
+      
+      				$(this).attr("aria-selected","false").next().attr("aria-selected","true").focus();
+      				var tabpanid= $("li[aria-selected='true']").attr("aria-controls");
+      				$("div[role='tabpanel']").attr("aria-hidden","true");
+      				$("#"+tabpanid).attr("aria-hidden","false");
+      			}
+      		} else if (ev.which ==37) {
+      			if ($(this).prev().length) {
+      				$("li[role='tab']").attr("aria-selected","false"); //deselect all tabs
+      				$("div[role='tabpanel']").attr("aria-hidden","true"); //hide all panels
+      
+      				$(this).attr("aria-selected","false").prev().attr("aria-selected","true").focus();
+      				var tabpanid= $("li[aria-selected='true']").attr("aria-controls");
+      				$("div[role='tabpanel']").attr("aria-hidden","true");
+      				$("#"+tabpanid).attr("aria-hidden","false");
+      			}
+      		}
+      	});
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

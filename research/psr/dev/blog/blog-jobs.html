@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Join the digital team
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="blog-header">
+      <div class="blog-header--content"><a href="blog-home.html" style="border: none;"><img src="../../images/ca-logo-hz-white-280px.svg" class="wide"><img src="../../images/ca-logo-st-white-220px.svg" class="slim"></a>
+        <!--#toggle-->
+        <!--ul.blog-navigation
+        li
+        	a(href="blog-team.html") The Team
+        li
+        	a(href="#") About
+        li
+        	a(href="blog-get-involved.html") Get involved
+        li
+        	a(href="blog-jobs.html") Jobs
+        
+        -->
+        <div class="blog-header--branding"><a href="#">Digital Blog</a></div>
+      </div>
+      <div class="blog-header--branding">
+        <p>Blog</p>
+        <h1>Policy blog</h1>
+      </div>
+    </header>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Join the digital team</span></h1>
+          </div>
+          <div class="articleContent">
+            <div class="flex-row">
+              <div class="col-12">
+                <p><strong>“We design content and tools to help the most vulnerable in society - who face increasing problems in today&#39;s world.”</strong></p>
+                <p>That’s what one person said when we asked our digital team what it’s like to work at Citizens Advice recently, and it sums up why we think the team is so special. Our work can make a real difference to people at difficult times in their lives. We help people solve problems - and, as another person put it, we are “doing something with a positive social purpose, not just aimed at achieving more traffic or selling things.”</p>
+                <p>Citizens Advice is doing important digital work: we are designing content and tools for challenges that haven’t been solved before, like helping people fill out claim forms for Personal Independence Payment or Employment and Support Allowance.</p>
+                <p>Our team is collaborative. Join us and you’ll get the chance to:</p>
+                <p>work in a multi-disciplinary team, learning from your colleagues and other parts of the organisation take part in user research and testing, seeing the difference your work can make to real people. We work in an experimental, agile way - it’s okay to fail fast and learn early from any mistakes.</p>
+                <div style="background-color: #F2F2F2; padding: 1rem;">
+                  <h3 style="margin-top: 0;">Available roles</h3>
+                  <section class="revealable">
+                    <h3>Content Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada mattis euismod. In varius nisl vel ex eleifend, eget pellentesque sem feugiat. Ut tristique, augue eget pellentesque rutrum, justo nunc convallis leo, tempor rhoncus lacus metus efficitur odio. Phasellus metus erat, condimentum sit amet leo ac, viverra consectetur lorem.</p>
+                  </section>
+                  <section class="revealable">
+                    <h3>UX Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada mattis euismod. In varius nisl vel ex eleifend, eget pellentesque sem feugiat. Ut tristique, augue eget pellentesque rutrum, justo nunc convallis leo, tempor rhoncus lacus metus efficitur odio. Phasellus metus erat, condimentum sit amet leo ac, viverra consectetur lorem.</p>
+                  </section>
+                  <section class="revealable">
+                    <h3>Research</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada mattis euismod. In varius nisl vel ex eleifend, eget pellentesque sem feugiat. Ut tristique, augue eget pellentesque rutrum, justo nunc convallis leo, tempor rhoncus lacus metus efficitur odio. Phasellus metus erat, condimentum sit amet leo ac, viverra consectetur lorem.</p>
+                  </section>
+                  <h3>Job alerts by email</h3>
+                  <fieldset style="margin-bottom: 0;">
+                    <div class="field-group field-group--buttons">
+                      <input type="text" placeholder="Email">
+                      <button class="btn btn-primary">Go</button>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="col-sm-6">
+                <div style="margin: 2rem 0;" class="stats">
+                  <div class="i-brand">&#xe96d;</div>
+                  <h3> 1.9m</h3>
+                  <p>people helped by our local Citizens Advice network</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div style="margin: 2rem 0;" class="stats">
+                  <div class="i-brand">&#xe993;</div>
+                  <h3>20.7m</h3>
+                  <p>people assisted via our website</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="col-sm-12">
+                <p style="position: relative;padding-bottom: 52.1%; padding-top: 25px;height: 0;">
+                  <iframe src="https://www.youtube.com/embed/jtLJKyNLV_E" frameborder="0" allowfullscreen style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></iframe>
+                </p>
+              </div>
+            </div>
+            <div class="flex-row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <div style="margin: 1rem 0 2rem 0; overflow: hidden;">
+                  <div class="speech-lines">
+                    <h3 style="margin-top: 0;">Excellent information. Clear, practical advice. Thank you.</h3>
+                    <p class="cite">Website user</p>
+                    <div class="box-speech-line"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-1"></div>
+            </div>
+            <div class="flex-row">
+              <div class="col-sm-8">
+                <h3 style="margin-top: 0;">Flexible working</h3>
+                <div class="blog-lead">
+                  <div class="blog-name">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euimdod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4"><img src="../..//images/charity-times-winner.jpg" style="max-height: 200px; border: none;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="side-nav-beta blog-sidebar">
+          <div class="blog-sidebar--category">
+            <label>About the digital blog</label>
+            <p>The digital team is redesigning our online content and building a new case management system for Citizens Advice based on user need.</p>
+          </div>
+          <div class="blog-sidebar--search">
+            <label>Search blog</label>
+            <fieldset>
+              <div class="search-results__field field-group field-group--buttons">
+                <input type="search" placeholder="Search">
+                <button class="btn btn-primary"><i class="icon-search"></i></button>
+              </div>
+            </fieldset>
+          </div>
+          <div class="blog-sidebar--category">
+            <fieldset>
+              <label for="exampleSelect1">Select Category</label>
+              <div class="dropdown">
+                <select id="exampleSelect1">
+                  <option>All categories</option>
+                  <option>Content</option>
+                  <option>Design</option>
+                  <option>Casebook</option>
+                  <option>Research</option>
+                </select>
+              </div>
+            </fieldset>
+          </div>
+          <div class="blog-sidebar--navigation">
+            <div class="fieldset">
+              <label>Blog pages</label>
+            </div>
+            <ul>
+              <li><a href="blog-home.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="blog-team.html">The Team</a></li>
+              <li><a href="blog-get-involved.html">Get involved</a></li>
+              <li><a href="blog-jobs.html">Jobs</a></li>
+            </ul>
+          </div>
+          <div class="blog-sidebar--updates">
+            <label for="">Subscribe by email</label>
+            <div style="margin-bottom: 0;" class="fieldset">
+              <div class="field-group field-group--buttons">
+                <input type="text" placeholder="Email">
+                <button class="btn btn-primary">Go</button>
+              </div>
+            </div>
+          </div>
+          <div class="blog-sidebar--link">
+            <div class="fieldset">
+              <label>Other Citizens Advice blogs</label>
+            </div>
+            <ul>
+              <li><a href="#">Citizens Advice blog</a></li>
+              <li><a href="#">Policy blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <!--script(src="#{dir}js/smooth.js")-->
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
