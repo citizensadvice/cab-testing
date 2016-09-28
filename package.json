@@ -1,0 +1,8 @@
+{
+  "name": "cab-testing",
+  "private": true,
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "glob": "^7.1.0"
+  }
+}
