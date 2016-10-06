@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Energy supplier comparison
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+      </nav>
+      <div class="main-content">
+        <div class="title">
+          <h1 class="title__heading js-ref"><span class="title__title">Energy supplier comparison</span></h1>
+        </div>
+        <div class="articleContent">
+          <div class="flex-row">
+            <div class="col-md-8">
+              <p>Morbi porta justo sem, eget consequat purus porttitor nec. Pellentesque vitae euismod nulla, a commodo diam. Phasellus eget tincidunt nibh. Ut sem arcu, aliquam non lectus eu, faucibus viverra lacus. Vestibulum tellus turpis, sollicitudin quis efficitur id, convallis nec velit. Nulla facilisi. Cras id neque quis lacus placerat hendrerit. Etiam neque augue, eleifend sit amet fermentum at, faucibus vel odio. Morbi ac bibendum ante, ut rutrum ipsum. Ut vel finibus est.</p>
+              <p>
+                <button class="btn right-button-icon">Compare energy prices</button>
+              </p>
+            </div>
+          </div>
+          <h2>Overview</h2>
+          <div class="flex-row">
+            <div class="col-md-8">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor dui semper, vulputate magna ut, suscipit eros. Nunc non nunc nec ligula consequat aliquet non eu elit.</p>
+            </div>
+          </div>
+          <table class="sortable energy-comparison">
+            <thead>
+              <tr>
+                <th scope="col" class="col-rank sorttable_numeric">Rank</th>
+                <th scope="col" class="col-supp">Supplier</th>
+                <th scope="col" class="lg-only">Complaints per 100,000 customers</th>
+                <th scope="col" class="lg-only">Customers satisfied with service</th>
+                <th scope="col" class="lg-only">Customers satisfied with billing</th>
+                <th scope="col" class="lg-only">Proportion of switches in 21 days</th>
+                <th scope="col" class="lg-only">Customer commitment</th>
+                <th scope="col" class="col-rate">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="increase"><span class="inline-badge">1</span></td>
+                <td>Supplier A</td>
+                <td class="complaints">40.6</td>
+                <td class="service">57.89%</td>
+                <td class="billing">53.78%</td>
+                <td class="switch">80.94%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>3</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">2</span></td>
+                <td>Supplier B</td>
+                <td class="complaints">70.4</td>
+                <td class="service">67.89%</td>
+                <td class="billing">56.8%</td>
+                <td class="switch">100%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>3.25</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">3</span></td>
+                <td>Supplier C</td>
+                <td class="complaints">140.7</td>
+                <td class="service">92.67%</td>
+                <td class="billing">82.34%</td>
+                <td class="switch">74.68%</td>
+                <td class="commitment">5</td>
+                <td class="rating"><span>4</span></td>
+              </tr>
+              <tr>
+                <td><span class="inline-badge">4</span></td>
+                <td>Supplier D</td>
+                <td class="complaints">35.7</td>
+                <td class="service">65.01%</td>
+                <td class="billing">57.86%</td>
+                <td class="switch">91.35%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>3</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">5</span></td>
+                <td>Supplier E</td>
+                <td class="complaints">80.8</td>
+                <td class="service">54.67%</td>
+                <td class="billing">74.67%</td>
+                <td class="switch">100%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>3.5</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">6</span></td>
+                <td>Supplier F</td>
+                <td class="complaints">405.6</td>
+                <td class="service">62.2%</td>
+                <td class="billing">45.67%</td>
+                <td class="switch">60.54%</td>
+                <td class="commitment">5</td>
+                <td class="rating"><span>2.25</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">7</span></td>
+                <td>Supplier G</td>
+                <td class="complaints">500.6</td>
+                <td class="service">85.75%</td>
+                <td class="billing">49.87%</td>
+                <td class="switch">96.8%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2.5</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">8</span></td>
+                <td>Supplier H</td>
+                <td class="complaints">230.5</td>
+                <td class="service">51.23%</td>
+                <td class="billing">45.67%</td>
+                <td class="switch">77.56%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>2.75</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">9</span></td>
+                <td>Supplier I</td>
+                <td class="complaints">700.8</td>
+                <td class="service">74.79%</td>
+                <td class="billing">23.47%</td>
+                <td class="switch">98.7%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">10</span></td>
+                <td>Supplier J</td>
+                <td class="complaints">460</td>
+                <td class="service">66.05%</td>
+                <td class="billing">61.2%</td>
+                <td class="switch">58.97%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2.25</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">11</span></td>
+                <td>Supplier K</td>
+                <td class="complaints">90.4</td>
+                <td class="service">53.3%</td>
+                <td class="billing">61.5%</td>
+                <td class="switch">96.34%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>3.25</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">12</span></td>
+                <td>Supplier L</td>
+                <td class="complaints">46.8</td>
+                <td class="service">76.44%</td>
+                <td class="billing">25.67%</td>
+                <td class="switch">54.23%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>3.5</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">13</span></td>
+                <td>Supplier M</td>
+                <td class="complaints">330.5</td>
+                <td class="service">30.56%</td>
+                <td class="billing">72.3%</td>
+                <td class="switch">97.89%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2.5</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">14</span></td>
+                <td>Supplier N</td>
+                <td class="complaints">111.2</td>
+                <td class="service">68.79%</td>
+                <td class="billing">51.64%</td>
+                <td class="switch">97.4%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2.5</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">15</span></td>
+                <td>Supplier O</td>
+                <td class="complaints">546.9</td>
+                <td class="service">42.38%</td>
+                <td class="billing">80.67%</td>
+                <td class="switch">82.34%</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>2.75</span></td>
+              </tr>
+              <tr>
+                <td class="increase"><span class="inline-badge">16</span></td>
+                <td>Supplier P</td>
+                <td class="complaints">55.4</td>
+                <td class="service">71.23%</td>
+                <td class="billing">67.56%</td>
+                <td class="switch">40.21%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>3.25</span></td>
+              </tr>
+              <tr>
+                <td><span class="inline-badge">17</span></td>
+                <td>Supplier Q</td>
+                <td class="complaints">800.7</td>
+                <td class="service">72.45%</td>
+                <td class="billing">76.45%</td>
+                <td class="switch">30.45%</td>
+                <td class="commitment">0</td>
+                <td class="rating"><span>2.75</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">18</span></td>
+                <td>Supplier R</td>
+                <td class="complaints">340.5</td>
+                <td class="service">-</td>
+                <td class="billing">-</td>
+                <td class="switch">-</td>
+                <td class="commitment">-</td>
+                <td class="rating"><span>n/a</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">19</span></td>
+                <td>Supplier S</td>
+                <td class="complaints">375.6</td>
+                <td class="service">-</td>
+                <td class="billing">-</td>
+                <td class="switch">-</td>
+                <td class="commitment">4</td>
+                <td class="rating"><span>n/a</span></td>
+              </tr>
+              <tr>
+                <td class="decrease"><span class="inline-badge">20</span></td>
+                <td>Supplier T</td>
+                <td class="complaints">345.3</td>
+                <td class="service">-</td>
+                <td class="billing">-</td>
+                <td class="switch">-</td>
+                <td class="commitment">-</td>
+                <td class="rating"><span>n/a</span></td>
+              </tr>
+              <tr>
+                <td><span class="inline-badge">21</span></td>
+                <td>Supplier U</td>
+                <td class="complaints">950.6</td>
+                <td class="service">-</td>
+                <td class="billing">-</td>
+                <td class="switch">-</td>
+                <td class="commitment">-</td>
+                <td class="rating"><span>n/a</span></td>
+              </tr>
+              <tr>
+                <td><span class="inline-badge">22</span></td>
+                <td>Supplier V</td>
+                <td class="complaints">-</td>
+                <td class="service">-</td>
+                <td class="billing">-</td>
+                <td class="switch">-</td>
+                <td class="commitment">5</td>
+                <td class="rating"><span>n/a</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <h2>Methodology</h2>
+          <div class="flex-row">
+            <div class="col-md-8">
+              <p>Morbi porta justo sem, eget consequat purus porttitor nec. Pellentesque vitae euismod nulla, a commodo diam. Phasellus eget tincidunt nibh. Ut sem arcu, aliquam non lectus eu, faucibus viverra lacus.</p><a href="comparison-details.html" class="blocklink">How we score values</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="../../images/ca-logo_100px.svg" width="100">Copyright © 2016 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <script src="../../js/sorttable.js"></script>
+    <script>
+      $(document).ready(function() {
+      	$(".complaints").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score >= 0 && score <= 50) {
+      			$(this).addClass("rate-5");
+      		} else if (score > 50 && score <= 100) {
+      			$(this).addClass("rate-4");
+      		} else if (score > 100 && score <= 350) {
+      			$(this).addClass("rate-3");
+      		} else if (score > 350 && score <= 550) {
+      			$(this).addClass("rate-2");
+      		} else if (score > 550) {
+      			$(this).addClass("rate-1");
+      		}
+      	})
+      
+      	$(".service").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score <= 49) {
+      			$(this).addClass("rate-1");
+      		} else if (score > 50 && score <= 59) {
+      			$(this).addClass("rate-2");
+      		} else if (score > 60 && score <= 69) {
+      			$(this).addClass("rate-3");
+      		} else if (score > 70 && score <= 74) {
+      			$(this).addClass("rate-4");
+      		} else if (score > 74) {
+      			$(this).addClass("rate-5");
+      		}
+      	})
+      
+      	$(".billing").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score <= 49) {
+      			$(this).addClass("rate-1");
+      		} else if (score > 50 && score <= 59) {
+      			$(this).addClass("rate-2");
+      		} else if (score > 60 && score <= 69) {
+      			$(this).addClass("rate-3");
+      		} else if (score > 70 && score <= 74) {
+      			$(this).addClass("rate-4");
+      		} else if (score > 74) {
+      			$(this).addClass("rate-5");
+      		}
+      	})
+      
+      	$(".switch").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score <= 49) {
+      			$(this).addClass("rate-1");
+      		} else if (score > 50 && score <= 74) {
+      			$(this).addClass("rate-2");
+      		} else if (score > 74 && score <= 94) {
+      			$(this).addClass("rate-3");
+      		} else if (score > 94 && score <= 99) {
+      			$(this).addClass("rate-4");
+      		} else if (score >= 100) {
+      			$(this).addClass("rate-5");
+      		}
+      	})
+      
+      	$(".commitment").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score == 0) {
+      			$(this).addClass("rate-1");
+      		} else if (score > 0 && score <= 1) {
+      			$(this).addClass("rate-1");
+      		} else if (score > 1 && score <= 2) {
+      			$(this).addClass("rate-2");
+      		} else if (score > 2 && score <= 3) {
+      			$(this).addClass("rate-3");
+      		} else if (score > 3 && score <= 4) {
+      			$(this).addClass("rate-4");
+      		} else if (score > 4) {
+      			$(this).addClass("rate-5");
+      		}
+      	})
+      
+      	$(".rating").each(function() {
+      		var score = parseInt($(this).text().trim());
+      		if (score > 0 && score < 2) {
+      			$(this).find('span').addClass("rate-1--badge");
+      		} else if (score > 1 && score < 3) {
+      			$(this).find('span').addClass("rate-2--badge");
+      		} else if (score > 2 && score < 4) {
+      			$(this).find('span').addClass("rate-3--badge");
+      		} else if (score > 3 && score < 5) {
+      			$(this).find('span').addClass("rate-4--badge");
+      		} else if (score > 4 && score < 6) {
+      			$(this).find('span').addClass("rate-5--badge");
+      		}
+      	})
+      });
+      
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
