@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Help with filling in the Attendance Allowance form
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign out</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../index.html" title="Claiming Attendance Allowance">Claiming Attendance Allowance</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Help with filling in the Attendance Allowance form</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Help with filling in the Attendance Allowance form</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <div class="articleContent">
+            <div>
+              <p>Filling in the Attendance Allowance form can be difficult - there are some personal questions which can be emotionally draining. Don&apos;t worry though - help is available and you don&apos;t have to fill in the form alone.</p>
+              <p>A specialist at your&nbsp;<a href="#">nearest Citizens Advice &nbsp;can help you with the form, or even fill it in for you.</a></p>
+              <p><br>The form is 31 pages and can take a long time to fill in so you might need to ask for an appointment if you want help from your nearest Citizens Advice.</p>
+              <p>You can ask a friend, relative or carer if you&apos;d rather they help you with the form.<br>If you&apos;re terminally ill you&apos;ll only need to answer some of the questions. Read more about .</p>
+              <h2 id="h-what-you-should-write-about-on-the-form" class="ref-heading"><span class="ref-heading__heading">What you should write about on the form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>The Department for Work and Pensions (DWP) will use your form to decide whether to give you Attendance Allowance. They&apos;ll be looking to see:</p>
+              <ul>
+                <li>how much help you need</li>
+                <li>how often you need help</li>
+                <li>what sort of help you need</li>
+              </ul>
+              <p>You don&apos;t have to be getting any help at the moment - the important thing is that you need it.</p>
+              <p>Questions 27-43 ask about your care needs with personal tasks. It&apos;s really important that you use the blank boxes to explain if you need:</p>
+              <ul>
+                <li>someone to help you with personal tasks - for example washing, getting out of bed or getting dressed - at least 3 times during the day</li>
+                <li>someone to supervise you throughout the day to make sure you stay safe - for example to stop you falling or to look after you if you have seizures or blackouts</li>
+                <li>someone to help you with personal tasks repeatedly (2 or more times) during the night or just once if it&apos;s for 20 minutes or more - for example if you need help getting out of bed, going to the toilet or changing the sheets if you have an accident</li>
+                <li>someone to watch over you or supervise you during the night to make sure you&apos;re safe - they need to help you at least 3 times, or just once if it&apos;s for 20 minutes or more, for example in case you have a fit while you&apos;re asleep, or to stop you falling over if you have to get up</li>
+              </ul>
+              <h2 id="h-keep-a-diary" class="ref-heading"><span class="ref-heading__heading">Keep a diary</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>It&apos;s worth keeping a diary of your needs for at least a week before you fill in the form. <a href="#" class="a-binary">You can use our diary template</a>.</p>
+              <p>The diary can give you a good idea of your &apos;care needs&apos; - this is the help you need to complete personal tasks.</p>
+              <p>Help with personal tasks<strong>does not  mean help with things like housework or gardening or other tasks around the home.</strong></p>
+              <p>Personal tasks means things like:</p>
+              <ul>
+                <li>getting in or out of bed</li>
+                <li>having a bath or shower</li>
+                <li>getting dressed</li>
+                <li>being reminded or encouraged to eat or drink</li>
+              </ul>
+              <p>Remember to include any help you need during the night too.</p>
+              <p>You should also write on the diary how many times you need help with tasks like getting out of chairs.</p>
+              <p>If you get help to fill in the form from&nbsp;<a href="#">Contact your nearest Citizens Advice , remember to take your diary with you.</a></p>
+              <h2 id="h-tips-for-filling-in-the-form" class="ref-heading"><span class="ref-heading__heading">Tips for filling in the form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You should read all these tips before you start filling in your form.</p>
+              <h3 id="h-write-in-the-blank-boxes" class="ref-heading"><span class="ref-heading__heading">Write in the blank boxes</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>It&apos;s really important that you explain the help or supervision you need in the blank boxes for Q27-43. Don&apos;t just tick the boxes or write how many times you need help or supervision.</p>
+              <h3 id="h-don-t-expect-the-person-making-the-decision-to-know-about-your-condition" class="ref-heading"><span class="ref-heading__heading">Don&apos;t expect the person making the decision to know about your condition</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>The person making a decision on Attendance Allowance won&apos;t be a medical expert, so don&apos;t assume they&apos;ll know about your condition. It&apos;s important you give as much information as possible on the form about how much help you need. Don&apos;t think that any detail is too small to include.&nbsp;Use an extra sheet of paper if you need to.</p>
+              <h3 id="h-remember-to-say-how-many-times-you-need-help-with-tasks" class="ref-heading"><span class="ref-heading__heading">Remember to say how many times you need help with tasks</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>It&apos;s really important that you explain how many times you need or get help each day for the &apos;care needs&apos; questions. For example if you need help getting to and from the toilet, remember to write the total amount for the day. <a href="#" class="a-binary">Filling in our diary template</a> will help you.</p>
+              <h3 id="h-it-s-fine-to-repeat-yourself-in-different-answers" class="ref-heading"><span class="ref-heading__heading">It&apos;s fine to repeat yourself in different answers</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>You might feel like you&apos;re repeating some of your answers. It&apos;s fine to write about the same thing again if it&apos;s relevant to more than one question. For example if you have mobility problems and have difficulty getting to the toilet, you should explain this in Q28. You should also explain you have difficulty getting to the toilet in Q31 - moving around indoors.</p>
+              <h3 id="h-mention-the-adaptations-you-use-in-the-relevant-question" class="ref-heading"><span class="ref-heading__heading">Mention the adaptations you use in the relevant question</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>You&apos;re asked to list all the adaptations and aids you use in Q25 but you should also write about them in the relevant &apos;care needs&apos; questions. For example if you use a grab rail to get in and out of the shower you should also mention it in Q29.</p>
+              <h3 id="h-explain-if-you-have-good-days-and-bad-days" class="ref-heading"><span class="ref-heading__heading">Explain if you have good days and bad days</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>If your illness or disability means you have good and bad days try to explain how many of each you have in an average week. Filling in our diary template can help you do this. Explain what help you need on a good day and on a bad day.</p>
+              <h3 id="h-explain-if-tasks-take-you-longer" class="ref-heading"><span class="ref-heading__heading">Explain if tasks take you longer</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>If you can do some personal tasks on your own but they take you a long time, explain this on the form. It might help if you can compare how long it takes you to a friend or someone else you know who doesn&apos;t have your condition.</p>
+              <h3 id="h-remember-to-write-about-the-help-you-need" class="ref-heading"><span class="ref-heading__heading">Remember to write about the help you need</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>Remember you don&apos;t actually have to be getting any help to get Attendance Allowance - the important thing is that you need it and that you explain why you need it on the form.</p>
+              <h2 id="h-example-answers-for-q27-29" class="ref-heading"><span class="ref-heading__heading">Example answers for Q27-29</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You&apos;ll need to write in a lot of blank boxes on the Attendance Allowance form. Read our examples to help you get an idea of what to write.</p>
+              <section class="revealable">
+                <h3 id="h-example-answer-for-q27">Example answer for Q27</h3>
+                <p>James has depression and his wife, Doreen, has to encourage him to get out of bed in the morning.</p>
+                <p>He writes in the blank box for Q27: &apos;My depression makes me feel like it&apos;s not worth getting out of bed in the morning. On a bad day - about 3 times a week - I&apos;m awake at 4am and can&apos;t get back to sleep. I don&apos;t want to get up but I don&apos;t want to stay in bed either - I just don&apos;t want to do anything. Doreen will talk to me and encourage me to get up and tell me what we can do that day if I feel up to it. If Doreen&apos;s out visiting a friend I&apos;ll just lay there until she comes home as I can&apos;t face getting up.</p>
+                <p>On a good day, Doreen will still need to encourage me to do things like have dinner or go to bed - otherwise I&apos;ll just stay up until 3am because I&apos;m worried I won&apos;t be able to sleep again and it will make my depression worse.&quot;</p>
+              </section>
+              <section class="revealable">
+                <h3 id="h-example-answer-for-q28">Example answer for Q28</h3>
+                <p>Judith has dementia and is sometimes incontinent during the night. Her husband, Jeremy helps her.</p>
+                <p>She writes in the blank box for Q28: &quot;Sometimes I don&apos;t realise I need to go to the toilet when I&apos;m asleep and I have an accident. Jeremy sleeps in the same room and knows when it happens as I get upset when I realise. He helps me get out of bed and into the shower. He then helps me put on some clean pyjamas and he changes the sheets. He also puts the washing machine on so that the sheets are clean in the morning and he&apos;ll then sit by my bed comforting me until I go back to sleep. All this usually takes about 45 minutes - I don&apos;t know what I&apos;d do if Jeremy didn&apos;t help me.&quot;</p>
+              </section>
+              <section class="revealable">
+                <h3 id="h-example-answer-for-q29">Example answer for Q29</h3>
+                <p>Sue has arthritis in her knees. Her niece, Rose, helps her shower in the morning.</p>
+                <p>She writes in the blank box for Q29: &quot;I struggle to get in and out of the shower by myself. The last time I did I slipped over and banged my head. I&apos;ve got a grab rail to hold while I&apos;m in the shower but Rose still has to help me get up the step to get in and then help me down when I get out. She helps me 5 days a week - on the days she doesn&apos;t come I don&apos;t shower - it would take me too long to get in and out by myself and I&apos;m worried I&apos;ll have another fall. I&apos;m getting a special shower seat fitted to help while I&apos;m washing but I&apos;ll still need help up and down the step.&quot;</p>
+              </section>
+              <h2 id="h-get-someone-who-knows-you-to-fill-in-q49" class="ref-heading"><span class="ref-heading__heading">Get someone who knows you to fill in Q49</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>Q49 on the form asks for a &apos;statement from someone who knows you&apos;. You don&apos;t have to get someone to fill it in but it&apos;s best if you do. It can be anyone who knows about your illness or disability and how it affects your ability to do personal tasks.</p>
+              <p>It&apos;s best if you can get a healthcare professional you&apos;ve seen recently to fill in Q49 - for example a doctor, consultant or Macmillan nurse.</p>
+              <p>If you can&apos;t get a healthcare professional you can ask a friend, relative or carer. Before they write on the form, talk to them about how your illness or disability affects you. Tell them that the DWP wants to know how much help you need with personal tasks. It&apos;s worth asking them to read the advice on this page before they answer Q49.</p>
+              <p>The box for Q49 is quite small - if they run out of space you can get them to continue on a separate sheet of paper. You can use our template for this.</p>
+              <h2 id="h-before-you-send-the-form" class="ref-heading"><span class="ref-heading__heading">Before you send the form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>Read through the form again before you send it to make sure you&apos;ve answered everything properly.</p>
+              <p>Make a copy of the form in case you need to refer to it later, or in case it gets lost.</p>
+            </div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Claiming Attendance Allowance" class="section-nav__parent">Claiming Attendance Allowance</a>
+              <ul>
+                <li><a href="how-to-claim-attendance-allowance.html" title="How to claim Attendance Allowance">How to claim Attendance Allowance</a>
+                </li>
+                <li><a href="help-with-filling-in-the-attendance-allowance-form.html" title="Help with filling in the Attendance Allowance form">Help with filling in the Attendance Allowance form</a>
+                </li>
+                <li><a href="claiming-attendance-allowance-if-youre-terminally-ill.html" title="Claiming Attendance Allowance if you're terminally ill">Claiming Attendance Allowance if you're terminally ill</a>
+                </li>
+                <li><a href="renew-an-attendance-allowance-claim.html" title="Renew an Attendance Allowance claim">Renew an Attendance Allowance claim</a>
+                </li>
+                <li><a href="change-of-circumstances-while-youre-getting-attendance-allowance.html" title="Change of circumstances while you're getting Attendance Allowance">Change of circumstances while you're getting Attendance Allowance</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="../../images/ca-logo_100px.svg" width="100">Copyright © 2016 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- How to claim Attendance Allowance
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign out</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../index.html" title="Claiming Attendance Allowance">Claiming Attendance Allowance</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">How to claim Attendance Allowance</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">How to claim Attendance Allowance</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <div class="articleContent">
+            <div>
+              <p>You can claim Attendance Allowance if you&apos;re 65 or over and have care or supervision needs because of an illness or disability. You need to have had your illness or disability for at least 6 months before you&apos;ll get Attendance Allowance.</p>
+              <p>You could get money that will help you stay independent in your own home for longer.</p>
+              <h2 id="h-applying-for-someone-else" class="ref-heading"><span class="ref-heading__heading">Applying for someone else</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <div class="callout">
+                <h3 id="h-if-you-re-applying-for-someone-who-s-terminally-ill" class="ref-heading"><span class="ref-heading__heading">If you&apos;re applying for someone who&apos;s terminally ill</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+                <p>There are special rules if the person you&apos;re applying for is terminally ill. Read our advice on&nbsp; <a href="claiming-attendance-allowance-if-youre-terminally-ill.html">how to claim Attendance Allowance if you have a terminal illness</a>.</p>
+              </div>
+              <p>You might need to apply for Attendance Allowance for someone else, for example if they&apos;re too ill to fill in the form or if they don&apos;t have the &apos;mental capacity&apos;. This means they&apos;re unable to make decisions.</p>
+              <p>It&apos;s okay to fill in the form for someone if they can sign it themselves.&nbsp;</p>
+              <p>If they can&apos;t sign the form you&apos;ll need to have the legal right to do it for them. You can sign the form for them if you:</p>
+              <ul>
+                <li>are an appointee</li>
+                <li>have power of attorney</li>
+                <li>are a deputy</li>
+              </ul>
+              <h3 id="h-get-permission-to-apply-for-someone-else" class="ref-heading"><span class="ref-heading__heading">Get permission to apply for someone else</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h3>
+              <p>You&apos;ll need to get the legal right if you want to apply for Attendance Allowance on behalf of someone who can&apos;t sign the form themselves.</p>
+              <p>It can take a while to get this permission so it&apos;s best to do this as soon as possible so you don&apos;t delay the Attendance Allowance claim.</p>
+              <section class="revealable">
+                <h3 id="h-if-you-just-want-to-sort-out-someone-s-benefits-become-an-appointee">If you just want to sort out someone&apos;s benefits: become an appointee</h3>
+                <p>An appointee has the legal right to sort out someone&apos;s benefits for them. This includes spending the money in a way that helps the claimant and being responsible for reporting any changes, for example if they go into hospital.</p>
+                <p>You can <a href="#" rel="external" class="a-external">apply to become an appointee</a> at GOV.UK.</p>
+              </section>
+              <section class="revealable">
+                <h3 id="h-if-you-want-to-make-decisions-about-benefits-and-other-things-get-power-of-attorney">If you want to make decisions about benefits and other things: get power of attorney</h3>
+                <p>You&apos;ll be able to make decisions for someone or help them make their own decisions if you have a lasting power of attorney (LPA). The person who wants you to be their LPA must be able to make their own decisions when they apply.</p>
+                <p>There are 2 types of LPA - you can have 1 or both:</p>
+                <ul>
+                  <li>health and welfare</li>
+                  <li>property and financial affairs</li>
+                </ul>
+                <p>You can <a href="#" rel="external" class="a-external">apply to get power of attorney</a> at GOV.UK.</p>
+              </section>
+              <section class="revealable">
+                <h3 id="h-if-the-person-you-want-to-make-decisions-for-can-no-longer-make-them-become-a-deputy">If the person you want to make decisions for can no longer make them: become a deputy</h3>
+                <p>You should only apply to become a deputy for someone if they can&apos;t make decisions for themselves and there&apos;s no power of attorney for them.</p>
+                <p>If they can still make decisions, it&apos;s probably best to become an appointee or get power of attorney for them.</p>
+                <p>If they can&apos;t make decisions, you can <a href="#" rel="external" class="a-external">apply to become a deputy</a> at GOV.UK.</p>
+              </section>
+              <h2 id="h-get-an-application-form" class="ref-heading"><span class="ref-heading__heading">Get an application form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You can either phone for an application form or download one.&nbsp;</p>
+              <div class="callout">
+                <p>It&apos;s best to phone because your payments will be backdated to the date you phoned. If you&nbsp;download an application form,&nbsp;you&apos;ll only be paid from the date that the DWP receive the form.</p>
+              </div>
+              <p>Attendance Allowance helpline<br>Telephone: 0345 605 6055<br>Textphone: 0345 604 5312<br>Monday to Friday, 8am to 6pm<br>Calls cost up to 12p a minute from landlines, or from 3p to 45p a minute from mobiles.</p>
+              <p dir="ltr">It&rsquo;s a quick call - you just need to give your name and address.</p>
+              <h2 id="h-keeping-a-diary" class="ref-heading"><span class="ref-heading__heading">Keeping a diary</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>It&apos;s a good idea to keep a diary of your condition for at least a week before you fill in the form - particularly if you have bad days and good days. <a href="#" class="a-binary">Fill in our diary template to help you</a>. Write down your difficulties, the care or supervision you need and how long it took.</p>
+              <p>The diary will help you when you answer questions on the form. You can also send it with the form to support your claim.</p>
+              <h2 id="h-fill-in-the-application-form" class="ref-heading"><span class="ref-heading__heading">Fill in the application form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>The form can be confusing and difficult to understand - filling it in can also be emotionally difficult and time-consuming.</p>
+              <p>You don&apos;t have to go through it alone - read our advice on&nbsp;<a href="help-with-filling-in-the-attendance-allowance-form.html">filling in the Attendance Allowance form .</a></p>
+              <h2 id="h-send-your-application-form" class="ref-heading"><span class="ref-heading__heading">Send your application form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>It&apos;s a good idea to make a copy of your filled-in application form and any other documents you send. This will be useful in case you need to refer to them later, for example if you need to reapply for Attendance Allowance after a few years.</p>
+              <p>Send the form to:</p>
+              <p>Attendance Allowance Unit<br>Mail Handling Site A<br>Wolverhampton<br>WV98 2AD</p>
+              <p>If you&apos;re waiting for something like a letter from your doctor, you should still send the form before the 6 week deadline. Include a letter saying you&apos;ll send more evidence and give them an approximate date for when you&apos;ll send it. If you send the form late you&apos;ll only get paid from when the DWP receives it.</p>
+              <h2 id="h-after-you-ve-sent-your-form" class="ref-heading"><span class="ref-heading__heading">After you&apos;ve sent your form</span><span class="ref-heading__toggle ref-heading__toggle--off"><a href="#!" class="js-toggle-ref">Add reference</a></span></h2>
+              <p>You&apos;ll get a letter from the DWP within 2 weeks saying they&apos;ve received your claim. Call the Attendance Allowance helpline if you haven&apos;t received a letter after 2 weeks.</p>
+              <p>You&apos;ll normally get a &apos;decision letter&apos; within 8 weeks - this will tell you whether or not you&apos;ll get Attendance Allowance. It will also tell you how much you&apos;ll get and how long your Attendance Allowance will last for.</p>
+              <p>If you&apos;re terminally ill you&apos;ll get your decision letter within 2 weeks. You&apos;ll be awarded the higher rate of Attendance Allowance for 3 years.</p>
+              <p>Next steps -&nbsp;<a href="help-with-filling-in-the-attendance-allowance-form.html">Help with your Attendance Allowance claim form</a></p>
+            </div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Claiming Attendance Allowance" class="section-nav__parent">Claiming Attendance Allowance</a>
+              <ul>
+                <li><a href="how-to-claim-attendance-allowance.html" title="How to claim Attendance Allowance">How to claim Attendance Allowance</a>
+                </li>
+                <li><a href="help-with-filling-in-the-attendance-allowance-form.html" title="Help with filling in the Attendance Allowance form">Help with filling in the Attendance Allowance form</a>
+                </li>
+                <li><a href="claiming-attendance-allowance-if-youre-terminally-ill.html" title="Claiming Attendance Allowance if you're terminally ill">Claiming Attendance Allowance if you're terminally ill</a>
+                </li>
+                <li><a href="renew-an-attendance-allowance-claim.html" title="Renew an Attendance Allowance claim">Renew an Attendance Allowance claim</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="main-footer__content flex-row js-equal-height">
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Benefits</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Debt and money</a></li>
+            <li><a href="#">Consumer</a></li>
+            <li><a href="#">Relationships</a></li>
+            <li><a href="#">Housing</a></li>
+            <li><a href="#">Law and rights</a></li>
+            <li><a href="#">Discrimination</a></li>
+            <li><a href="#">Tax</a></li>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">A to Z of advice</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>Resources and tools</h2>
+          <ul class="li--arrow">
+            <li><a href="#">Budgeting tool</a></li>
+            <li><a href="#">Advice fact sheets</a></li>
+            <li><a href="#">Advice online, by phone and in person</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>More from us</h2>
+          <ul class="li--arrow">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Annual reports</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Complaints</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Campaigns</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Policy research</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">Volunteering</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box col-md-3 col-sm-6">
+          <h2>About Citizens Advice</h2>
+          <ul class="li--arrow">
+            <li><a href="#">How we provide advice</a></li>
+            <li><a href="#">The difference we make</a></li>
+            <li><a href="#">Support us</a></li>
+            <li><a href="#">How Citizens Advice works</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Disclaimer and copyright</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+        <div class="main-footer__box main-footer__box--copyright">
+          <div>
+            <p><img alt="" height="100" src="../../images/ca-logo_100px.svg" width="100">Copyright © 2016 Citizens Advice. All rights reserved.<br>Citizens Advice is an operating name of the National Association of Citizens Advice Bureaux. Registered charity number 279057<br>VAT number 726 0202 76 Company limited by guarantee. Registered number 1436945 England<br>Registered office: Citizens Advice, 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
