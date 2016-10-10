@@ -7,9 +7,6 @@
   max-width: 100%;
   margin: auto;
   clear: left;
-  padding: 16px 0 0 16px;
-  padding: 0 0 0 1rem;
-  border-bottom: #eeeeee 1px solid;
   background-color: #FFbF47;
 }
 .section-notice__content .badge {
