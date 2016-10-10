@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Getting sick pay when you're pregnant
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../index.html#Modules" title="Modules">Modules</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Content toolbar</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Getting sick pay when you're pregnant</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <p>If you get Statutory Sick Pay (SSP) while you’re pregnant, different rules might apply depending if your illness is related to your pregnancy or not.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Getting sick pay can affect maternity pay</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>Your maternity pay might be affected if you're off sick while you're pregnant and your pay is less than usual.</p>
+          <p>This is because your first 6 weeks of maternity pay is 90% of your average pay during an 8 week ‘qualifying period’. This qualifying period takes place while you're pregnant.</p>
+          <p>Example</p>
+          <div class="callout--quote">
+            <p>You work during the whole 8-week maternity pay qualifying period and receive your usual pay of £200 per week. This means your first 6 weeks of maternity pay will be £180 per week.</p>
+            <p>However, if you're off sick for 2 weeks during your maternity pay qualifying period, your normal pay of £200 per week drops to £88.45 per week (the amount for statutory sick pay). This means your first 6 weeks of maternity pay will drop from £180 per week to £154.91 per week, because you'd claimed sick pay.</p>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Off work sick because of your pregnancy</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If you're ill because of your pregnancy you can claim:</p>
+          <ul>
+            <li><a href="/development/workplace-rights/sick-pay/check-if-youre-entitled-to-sick-pay/">sick pay</a> until 4 weeks before your baby is due</li>
+            <li><a href="/work/rights-at-work/parental-rights/parental-rights-at-work/">maternity pay</a> in the 4 weeks before your baby is due - this happens automatically and is not up to your employer to decide</li>
+          </ul>
+          <p>Your doctor can tell you if you're ill because of your pregnancy.</p>
+          <p>You can’t be dismissed for having time off sick because of your pregnancy as you’re protected against <a href="/discrimination/what-are-the-different-types-of-discrimination/pregnancy-and-maternity-discrimination/">discrimination while you’re pregnant</a>.</p>
+          <p>You also have other <a href="/work/rights-at-work/parental-rights/parental-rights-at-work/">rights while you’re pregnant</a>, for example time off for ante-natal appointments.</p>
+          <p>You can read more about <a href="http://www.maternityaction.org.uk/advice-2/mums-dads-scenarios/pregnant/sickness-during-pregnancy-and-maternity-leave/" rel="external" class="a-external">sickness during pregnancy and maternity leave</a> on the Maternity Action website.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Sickness not related to your pregnancy</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If you’re sick and it’s got nothing to do with being pregnant, for example you have the flu or a stomach bug, you can claim any sick pay you’re entitled to as usual, until either:</p>
+          <ul>
+            <li>the week the baby is due</li>
+            <li>the date you’ve chosen your maternity pay to start</li>
+          </ul>
+          <p>Then you’ll start getting any maternity pay you’re entitled to.</p>
+          <p>You should be treated the same as anyone else who is off work sick. If you think you're being treated differently because you're pregnant contact <a href="/about-us/how-we-provide-advice/">your local Citizens Advice</a> for help.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Problems getting sick pay</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>There are things you can do if you have any problems getting sick pay. If your employer:</p>
+          <ul>
+            <li>says you can’t get it - <a href="/development/workplace-rights/sick-pay/check-if-youre-entitled-to-sick-pay/">check you’re entitled to get sick pay</a></li>
+            <li>won’t pay you for time off sick or has paid you the wrong amount - find out the <a href="/work/rights-at-work/pay/problems-getting-paid/">steps to get the sick pay you’re owed</a></li>
+            <li>has dismissed you or forced you to resign because you’re sick - find out <a href="/work/work-comes-to-an-end/dismissal/">whether your dismissal is fair or not</a></li>
+          </ul>
+          <div class="callout--adviser">
+            <h2 class="ref-heading"><span class="ref-heading__heading">When your client has given birth recently</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+            <p>When your client can get SSP depends on whether she's entitled to statutory maternity pay (SMP) or Maternity Allowance (MA). (You might hear this referred to as the 'disqualifying period').</p>
+          </div>
+          <section class="revealable revealable--adviser">
+            <h3>If your client gets maternity pay</h3>
+            <p>Your client can't get statutory sick pay while she's getting statutory maternity pay or Maternity Allowance.</p>
+            <p>If she's sick before or during her 39 weeks of maternity pay, she can't get sick pay until whichever is later out of:</p>
+            <ul>
+              <li>8 weeks after her maternity pay ends</li>
+              <li>8 weeks after her sickness ends</li>
+            </ul>
+            <p>This means your client could lose out on sick pay if she calls in sick before she's due to return to work.</p>
+            <p>If she's sick after her 39 weeks of maternity pay, the normal rules for sick pay apply.</p>
+            <div class="callout--quote">
+              <p><strong>Example</strong></p>
+              <p>If Alice phones in sick on the day she's due to start work after her maternity pay ends, she could get SSP if she meets the other conditions.</p>
+              <p>If she phones in during the last week of her maternity pay and says she won't be able to return to work because she's sick, she won't get SSP for at least 8 weeks.</p>
+            </div>
+          </section>
+          <section class="revealable revealable--adviser">
+            <h3>If your client can't get maternity pay</h3>
+            <p>Unless she's already getting SSP, your client isn't entitled to SSP until 18 weeks after the earlier of:</p>
+            <ul>
+              <li>the start of the week the baby is born</li>
+              <li>the start of the 4th week before the baby’s due, if your client is off sick because of the pregnancy</li>
+            </ul>
+            <p>Your client should get form SSP1 from her employer and claim benefits from the Jobcentre.</p>
+            <p>You can <a href="/benefits/benefits-introduction/what-benefits-can-i-get/benefit-checker/">use the benefits checker</a> to see what she might be entitled to.</p>
+          </section>
+          <div class="title__subheading--footer">
+            <p>Share this page. <a href="#">Find out more about sharing.</a></p><a href="javascript:window.location='whatsapp://send?text='+encodeURIComponent(location.href);" class="a-social-whatsapp show-mobile">Whatsapp</a><a href="javascript:window.location='fb-messenger://share?link='+encodeURIComponent(location.href);" class="a-social-messenger show-mobile">Messenger</a><a href="https://twitter.com/share?url=" data-track="Twitter" rel="external" class="a-social-twitter">Twitter</a><a href="https://www.facebook.com/sharer/sharer.php?u=" data-track="Facebook" rel="external" class="a-social-facebook">Facebook</a><a href="javascript:emailCurrentPage()" data-track="Email page" class="a-social-email">Email</a>
+            <button class="a-social-copy">Copy link
+              <div class="copied">Copied!</div>
+            </button>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Sick pay" class="section-nav__parent">Sick pay</a>
+              <ul>
+                <li><a href="entitled-to-sick-pay.html" title="Check if you're entitled to sick pay">Check if you're entitled to sick pay</a>
+                </li>
+                <li><a href="how-to-get-sick-pay.html" title="How to get sick pay">How to get sick pay</a>
+                </li>
+                <li><a href="getting-money-when-youre-off-sick.html" title="Getting money when you're off work sick">Getting money when you're off work sick</a>
+                </li>
+                <li><a href="sick-pay-when-youre-pregnant.html" title="Getting sick pay when you're pregnant">Getting sick pay when you're pregnant</a>
+                </li>
+              </ul>
+            </li>
+            <li class="adviser-nav"><span class="section-nav__parent">Sick pay</span>
+              <ul>
+                <li><a href="contractual-sick-pay.html" title="Contractual sick pay">Contractual sick pay</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

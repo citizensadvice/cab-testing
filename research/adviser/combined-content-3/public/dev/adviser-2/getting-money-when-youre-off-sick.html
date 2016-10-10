@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="keywords">
+    <meta name="description">
+    <!--base(href="#{dir}")-->
+    <title>Citizens Advice style guide- Getting money when you’re off work sick
+    </title>
+    <!-- Mobile Specific Metas-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2.0" name="viewport">
+    <meta content="48a2415d-980f-4763-a5b9-e10e000636b3" name="cab-guid">
+    <meta content="EWS" name="cab-extent">
+    <meta content="../../static/images/apple-touch-icon.png">
+    <meta content="B53C5C20449FC2233D3862B4DBEDFA3E" name="msvalidate.01">
+    <!-- Stylesheets-->
+    <link href="../../css/guide.css" rel="stylesheet">
+    <link href="../../images/favicon/32.png" rel="shortcut icon">
+    <link href="../../images/favicon/228.png" rel="apple-touch-icon">
+    <script>/**
+ *  @fileoverview
+ *
+ *  Scripts to go directly into the <head> element
+ *  These should be very small and therefore they should not be included as a file, but as inline JS
+ *  
+ *  This script needs minfiying before being added to the <head>
+ */
+
+( function (document, window ) {
+
+    /**
+     *	Update the no-js class to js
+     */
+    var html = document.documentElement;
+    html.className = html.className.replace(/\bno-js\b/, 'js');
+
+    /**
+     *	Creates a dummy version of $
+     *	Any functions add will be queued to run after jQuery is built and ready
+     */
+    window.$ = function (fn) {
+        var q = window.$.q = window.$.q || [];
+        q.push(fn);
+        if (typeof fn !== 'function') {
+            throw new Error('jQuery not yet loaded');
+        }
+    };
+
+    /**
+     *	Cookie banner
+     */
+    if (/\beprivacy=3(;|$)/i.test(document.cookie)) {
+        html.className += ' hide-cookie-monster';
+    }
+
+    /**
+     *  Are (session) cookies accepted
+     */
+    document.cookie = 'z=1; path=/';
+    if (/(?:^| )z=1(?:;|$)/.test(document.cookie)) {
+        document.cookie = 'z=; expires=' + new Date(0).toUTCString() + '; path=/';
+    } else {
+        html.className = html.className += ' no-cookies';
+    }
+
+}( document, window ));
+
+    </script>
+  </head>
+  <body><!--[if IE 8]><div class="ie8"><![endif]-->
+    <div class="skip-nav"><a class="screenreader screenreader--focusable">Skip to content</a><a class="screenreader screenreader--focusable">Skip to footer</a></div>
+    <header class="main-header">
+      <div class="main-header__content"><a href="index.html" title="Citizens Advice home" class="main-header__logo"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo_100px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo_100px.svg" height="80"><img onerror="this.onerror=null;this.src='../../images/logos/ca-logo-hz-white-280px.svg.png';" alt="Citizens Advice" src="../../images/ca-logo-hz-white-280px.svg" class="main-header__img--mobile no-print wide"></a>
+        <div data-track-zone="top-bar" class="main-header__links"><a href="" class="main-header__menu-link js-toggle-menu"><i class="icon-menu"></i>Menu</a>
+          <nav class="main-header__top-nav"><a href="#">Cymraeg</a></a><a href="" class="hide-offline main-header__login"><i class="icon-key"></i>Sign-in</a></nav>
+          <form action="" class="main-header__search hide-offline">
+            <label for="main-header__search__input" class="screenreader">Search</label>
+            <input id="main-header__search__input" name="q" placeholder="" type="search" class="main-header__search__input">
+            <button title="Search" type="submit" class="main-header__search__submit"><i class="icon-search icon--no-text"></i><span class="screenreader">Search</span></button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <nav data-track-zone="main-nav" style="overflow: visible;" class="main-nav">
+      <ul class="nav-list-primary">
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Benefits</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Work</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Debt and money</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Consumer</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Relationships</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Housing</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Law and rights</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Discrimination</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Tax</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Healthcare</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">Education</a></li>
+        <li style="display: list-item;" class="top-item js-mega-menu"><a href="#">More from us</a></li>
+        <li style="display: none;" class="nav-list-primary-more js-more-menu"><a href="#">More<i class="icon-down"></i></a></li>
+      </ul>
+    </nav>
+    <div class="main-container">
+      <nav class="main-breadcrumb">
+        <div class="main-breadcrumb__content"><span class="breadcrumb__item"><a href="../../index.html" title="Home">Home</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item"><a href="../../#" title="Workplace Rights">Workplace Rights</a><i class="icon-guillemet-right"></i></span><span class="breadcrumb__item">Getting money when you’re off work sick</span>
+        </div>
+      </nav>
+      <div class="main-content">
+        <div id="main" role="main" class="main-content__right">
+          <div class="title">
+            <h1 class="title__heading js-ref"><span class="title__title">Getting money when you’re off work sick</span></h1>
+          </div>
+          <div class="title__subheading">This advice is for
+            <button id="showSimpleModal" type="button" class="btn-secondary btn-small"><span class="screenreader">This advice is for</span>England</button>
+            <button href="javascript:window.print();" data-track="Print" class="toolbar-button a-social-print">Print</button>
+          </div>
+          <p>If you’re entitled to Statutory Sick Pay (SSP) when you’re off work sick, you can get £88.45 per week for up to 28 weeks.</p>
+          <p>Your employer might pay you more than the statutory amount (called contractual sick pay), so you should always check with them.</p>
+          <p>To <a href="https://www.citizensadvice.org.uk/development/workplace-rights/sick-pay/how-to-get-sick-pay/">get sick pay</a> you’ll need to follow your employer’s rules.</p>
+          <div class="callout--adviser">
+            <p>This page mostly covers statutory sick pay. <a href="https://www.citizensadvice.org.uk/development/workplace-rights/adviser-sick-pay-to-test/adviser-contractual-sick-pay/">Get more detail on contractual sick pay</a>.</p>
+            <p>For SSP you can use the <a href="https://www.gov.uk/calculate-statutory-sick-pay">statutory sick pay calculator on GOV.UK</a> to work out exactly what your client should get for the time they have off sick.</p>
+            <p>You won’t be able to use the calculator if they work irregular hours - you’ll need to <a href="https://www.gov.uk/guidance/statutory-sick-pay-manually-calculate-your-employees-payments">work the amount out manually</a> or <a href="https://www.citizensadvice.org.uk/cablink/advice-and-education/expert-advice-team/Citizens-Advice-Expert-Advice-team/ask-the-expert-consultancy/">get specialist advice</a>.</p>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">What extra money you could be entitled to</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If your income is reduced while you’re off work sick, you might be able to claim benefits like housing benefit. You can <a href="https://www.citizensadvice.org.uk/development/workplace-rights/sick-pay/how-to-get-sick-pay/">use our benefits checker</a> to check what you might be entitled to.</p>
+          <p>You might also be entitled to get benefits like <a href="https://www.citizensadvice.org.uk/development/workplace-rights/sick-pay/how-to-get-sick-pay/">Personal Independence Payment (PIP)</a> if <a href="https://www.citizensadvice.org.uk/discrimination/protected-characteristics/disability-discrimination/">your condition is classed as a disability</a>. You can get advice from <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/">your local Citizens Advice</a> if you’re not sure your condition is a disability.</p>
+          <div class="callout--adviser">
+            <p>Proving that someone who’s off work sick is classed as disabled can be difficult. You might need to get <a href="https://www.citizensadvice.org.uk/cablink/advice-and-education/expert-advice-team/Citizens-Advice-Expert-Advice-team/ask-the-expert-consultancy/">specialist advice</a>.</p>
+          </div>
+          <h3>If you already get benefits, including tax credits</h3>
+          <p>You’ll still get tax credits when you’re getting sick pay.</p>
+          <p>Some benefits might increase while your pay is less than usual. Tell any departments that pay you benefits about your illness to see if you are entitled to more.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">Using your holiday pay</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>You’ll still build up your <a href="https://www.citizensadvice.org.uk/work/rights-at-work/holiday/holiday-pay-what-youre-entitled-to/">holiday entitlement</a> while you’re off sick.</p>
+          <p>Holiday pay is the same amount as your normal pay so you might be able to take holiday pay instead of sick pay. For example if you’ve run out of sick pay or gone on to a reduced rate of sick pay.</p>
+          <p>You’ll need to talk to your employer about it as they don’t have to let you.</p>
+          <div class="callout--example">
+            <p>You’ve been off sick for 6 months and aren’t likely to return to work for another month. Your contract says you’re entitled to be off sick on full pay for 6 months and then on half pay for a further 6 months. You ask to take the next 4 weeks as holiday, so you receive full pay instead of half pay.</p>
+          </div>
+          <h2 class="ref-heading"><span class="ref-heading__heading">When your sick pay ends</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>If you have a long-term illness and your sick pay is coming to an end, you might be able to get Employment and Support Allowance (ESA). <a href="https://www.citizensadvice.org.uk/benefits/sick-or-disabled-people-and-carers/employment-and-support-allowance/before-you-apply-for-esa/eligiblility-for-esa/">Check if you’re eligible for ESA</a>.</p>
+          <p>You can <a href="https://www.citizensadvice.org.uk/benefits/sick-or-disabled-people-and-carers/employment-and-support-allowance/help-with-your-esa-claim/claiming-esa-filling-in-the-esa1-form/">start your claim for ESA</a> 3 months before your sick pay ends, as the application process can take a while.</p>
+          <h2 class="ref-heading"><span class="ref-heading__heading">If you’re not getting the sick pay you’re entitled to</span><span class="ref-heading__toggle ref-heading__toggle--off"><a class="js-toggle-ref">Add reference</a></span></h2>
+          <p>There are <a href="https://www.citizensadvice.org.uk/work/rights-at-work/pay/problems-getting-paid/">steps you can take to get money you’re owed</a> if you’re not getting pay your contract says you’re entitled to.</p>
+          <p>Try speaking to your employer if you think your statutory sick pay is wrong - ask them to explain how they’ve worked it out. The rules can be tricky. You:</p>
+          <ul>
+            <li>have to be sick for at least 4 days in a row (including non-working days)</li>
+            <li>won’t get SSP for the first 3 working days you’re off sick - unless you had been sick and getting SSP in the last 8 weeks and are eligible to start getting it again</li>
+            <li>If you’re not happy with your employer’s explanation, you should contact HM Revenue and Customs (HMRC).</li>
+          </ul>
+          <p>HMRC employees’ enquiry line<br>Telephone: 0300 200 3500<br>Textphone: 0300 200 3212</p>
+          <p>Open Monday to Friday, 8am to 5pm.</p>
+          <p>Calls can cost up to 12p a minute from landlines, and between 3p and 45p a minute from mobiles.</p>
+          <p>If you need more help at any stage, you can get advice from <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/">your local Citizens Advice</a>.</p>
+          <div class="callout--alert">
+            <p>If you’re having money problems you can:</p>
+            <ul>
+              <li><a href="https://budgetplanner.adviceguide.org.uk/guidancenotes">get help with bills</a></li>
+              <li><a href="https://budgetplanner.adviceguide.org.uk/guidancenotes">use our budgeting tool</a> to see where your money goes each month</li>
+              <li>get ideas to <a href="https://www.citizensadvice.org.uk/archived-content/archived-advice/epics-archive/budgeting/how-to-spend-less/">make your money go further</a></li>
+              <li><a href="http://benefits-calculator.turn2us.org.uk/AboutYou">check you’re getting all the benefits you’re entitled to</a></li>
+            </ul>
+            <p>If you need more help, you can get advice from <a href="https://www.citizensadvice.org.uk/about-us/how-we-provide-advice/advice/">your local Citizens Advice</a>.</p>
+          </div>
+          <div class="title__subheading--footer">
+            <p>Share this page. <a href="#">Find out more about sharing.</a></p><a href="javascript:window.location='whatsapp://send?text='+encodeURIComponent(location.href);" class="a-social-whatsapp show-mobile">Whatsapp</a><a href="javascript:window.location='fb-messenger://share?link='+encodeURIComponent(location.href);" class="a-social-messenger show-mobile">Messenger</a><a href="https://twitter.com/share?url=" data-track="Twitter" rel="external" class="a-social-twitter">Twitter</a><a href="https://www.facebook.com/sharer/sharer.php?u=" data-track="Facebook" rel="external" class="a-social-facebook">Facebook</a><a href="javascript:emailCurrentPage()" data-track="Email page" class="a-social-email">Email</a>
+            <button class="a-social-copy">Copy link
+              <div class="copied">Copied!</div>
+            </button>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <h2 class="section-nav__heading"><a>In this section</a></h2>
+          <ul>
+            <li><a href="../#Sick pay" class="section-nav__parent">Sick pay</a>
+              <ul>
+                <li><a href="entitled-to-sick-pay.html" title="Check if you're entitled to sick pay">Check if you're entitled to sick pay</a>
+                </li>
+                <li><a href="how-to-get-sick-pay.html" title="How to get sick pay">How to get sick pay</a>
+                </li>
+                <li><a href="getting-money-when-youre-off-sick.html" title="Getting money when you're off work sick">Getting money when you're off work sick</a>
+                </li>
+                <li><a href="sick-pay-when-youre-pregnant.html" title="Getting sick pay when you're pregnant">Getting sick pay when you're pregnant</a>
+                </li>
+              </ul>
+            </li>
+            <li class="adviser-nav"><span class="section-nav__parent">Sick pay</span>
+              <ul>
+                <li><a href="contractual-sick-pay.html" title="Contractual sick pay">Contractual sick pay</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-feedback">
+      <h2 class="screenreader">Feedback</h2>
+      <div class="footer-feedback__content">
+        <p>Is there anything wrong with this page? <a href="#">Let us know</a>.</p>
+      </div>
+    </div>
+    <div id="footer" data-track-zone="footer" class="main-footer">
+      <div class="footer-content flex-row">
+        <div class="flex-column col-xs-12 col-md-9">
+          <h3>Get Advice</h3>
+          <div style="padding: 0;" class="flex-row">
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Benefits</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Debt and money</a></li>
+                <li><a href="#">Consumer</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Relationships</a></li>
+                <li><a href="#">Housing</a></li>
+                <li><a href="#">Law and rights</a></li>
+                <li><a href="#">Discrimination</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul>
+                <li><a href="#">Tax</a></li>
+                <li><a href="#">Healthcare</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">A to Z of advice</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex-column col-xs-12 col-md-3">
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Cymraeg</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Privacy and cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--legal">
+        <div class="footer--legal--content"><img alt="" src="../../images/ca_wo-logo-100px.svg">
+          <p>Copyright © 2016 Citizens Advice, an operating name of the National Association of Citizens Advice Bureaux.<br>Registered charity number 279057; Registered in England 1436945; VAT number GB726020276. 3rd Floor North, 200 Aldersgate, London, EC1A 4HD</p>
+        </div>
+      </div>
+    </div>
+    <!-- Code changed, not using here as implimented through cms-->
+    <!--.notice
+    .notice__content
+    	p We no longer support Internet Explorer 8. To avoid problems viewing this website, please consider <a href="http://browsehappy.com/" class="a-external-link">upgrading your browser</a>.
+    
+    --><!--[if IE 8]></div><![endif]-->
+    <script src="../../js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="../../js/translate.js"></script>
+    <script src="../../js/jquery.fn.cssSlide.js"></script>
+    <script src="../../js/revealable.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/smooth.js"></script>
+    <script src="../../js/jquery.fn.top-sticky.js"></script>
+    <!--script(src="#{dir}js/advisor.js")-->
+    <script src="../../js/sidebar.js"></script>
+    <!--script(src="#{dir}js/core.js")-->
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard( '.a-social-copy', {
+          text: function(trigger) {
+              return window.location.href;
+          }
+      });
+      clipboard.on('success', function(e) {
+      	$( '.copied' ).fadeIn( 'fast' );
+      	$( '.copied' ).delay(400).queue(function(){
+      	    $( this ).fadeOut( 'fast' );
+      		$( this ).stop();
+      	});
+      });
+      
+      var filename = document.location.pathname.match(/[^\/]+$/)[0];
+      $(document).ready(function() {
+      	$('.section-nav a[href*="' + filename + '"]').addClass('active');
+      
+      	// Connect up LinkedIn buttons
+      	$('.a-social-linkedin').attr('href', "http://www.linkedin.com/shareArticle?mini=true&title="+document.title+"&url="+window.location);
+      });
+    </script>
+    <!-- GA script-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-8734782-29', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
